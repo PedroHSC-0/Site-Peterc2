@@ -54,12 +54,15 @@ main {
 
 /* centralização reutilizável */
 .center {
-  height: 100vh;
+  min-height: 100vh; /* em vez de height */
   display: flex;
   justify-content: center;
-  align-items: center;
+
+  align-items: center; /* mantém central quando cabe */
   flex-direction: column;
   text-align: center;
+
+  padding: 40px 20px; /* espaço pra não cortar */
 }
 
 /* =========================
