@@ -312,3 +312,199 @@ audio {
 .track-nav a:hover {
   color: #fff;
 }
+
+
+/* =========================================================
+   TEMAS POR ÁLBUM
+   Cores extraídas diretamente das capas.
+
+   Como usar:
+     <body class="ocean-trench">   ← The Ocean Trench
+     <body class="desert-sample">  ← Desert Sample
+
+   Funciona tanto na página do álbum quanto em cada música.
+========================================================= */
+
+/* ---------------------------------------------------------
+   THE OCEAN TRENCH
+   Paleta da capa: roxo acinzentado, magenta, carmim, rosa
+   Fundo: a própria capa desfocada + overlay escuro
+   Caminhos do background-image são relativos ao HTML —
+   ajuste se necessário (../../ para páginas de música)
+--------------------------------------------------------- */
+.ocean-trench {
+  --color-primary:   #e0006a;   /* magenta da capa */
+  --color-secondary: #a04080;   /* roxo médio */
+  --color-muted:     #c070a0;   /* rosa queimado */
+  --color-text:      #ddb0c8;   /* texto claro com tom rosa */
+  --color-dim:       #6a2040;
+
+  /* overlay azul-roxo escuro — contraste com o texto rosa/magenta */
+  background-color: #07050f;
+  background-image:
+    linear-gradient(rgba(12, 8, 30, 0.85), rgba(12, 8, 30, 0.85)),
+    url('/assets/imagens/the-ocean-trench-cover.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: var(--color-text);
+}
+
+.ocean-trench::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  /* borrão via backdrop — reforça a textura sem JS */
+  backdrop-filter: blur(60px) saturate(0.6);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ocean-trench main {
+  position: relative;
+  z-index: 1;
+}
+
+.ocean-trench h1,
+.ocean-trench h2,
+.ocean-trench h3 {
+  color: #e00070;
+  text-shadow: 0 0 20px rgba(192, 0, 64, 0.4);
+}
+
+.ocean-trench a {
+  color: var(--color-muted);
+}
+
+.ocean-trench a:hover {
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(224, 0, 106, 0.5);
+}
+
+.ocean-trench .back {
+  color: var(--color-muted);
+}
+
+.ocean-trench .back:hover {
+  color: var(--color-primary);
+  text-shadow: -2px 0 var(--color-primary), 2px 0 var(--color-secondary);
+}
+
+.ocean-trench .tracklist a {
+  color: var(--color-muted);
+}
+
+.ocean-trench .tracklist a:hover {
+  color: var(--color-primary);
+}
+
+.ocean-trench .lyrics {
+  color: var(--color-muted);
+}
+
+.ocean-trench .track-nav a {
+  color: var(--color-muted);
+}
+
+.ocean-trench .track-nav a:hover {
+  color: var(--color-primary);
+}
+
+.ocean-trench .small-text {
+  color: var(--color-muted);
+}
+
+.ocean-trench audio {
+  filter: hue-rotate(300deg) saturate(1.2) contrast(1.1);
+}
+
+
+/* ---------------------------------------------------------
+   DESERT SAMPLE
+   Paleta da capa: azul índigo, noite profunda, céu árido
+   Fundo: a própria capa desfocada + overlay escuro
+--------------------------------------------------------- */
+.desert-sample {
+  --color-primary:   #8aaad8;   /* azul claro vibrante */
+  --color-secondary: #6080c0;   /* azul médio */
+  --color-muted:     #7090c0;   /* azul legível */
+  --color-text:      #b8d0e8;   /* texto azul claro */
+
+  background-color: #0f0805;
+  background-image:
+    linear-gradient(rgba(28, 14, 8, 0.85), rgba(28, 14, 8, 0.85)),
+    url('/assets/imagens/desert-sample-cover.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  color: var(--color-text);
+}
+
+.desert-sample::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(60px) saturate(0.5);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.desert-sample main {
+  position: relative;
+  z-index: 1;
+}
+
+.desert-sample h1,
+.desert-sample h2,
+.desert-sample h3 {
+  color: var(--color-primary);
+  text-shadow: 0 0 20px rgba(96, 128, 192, 0.3);
+}
+
+.desert-sample a {
+  color: var(--color-muted);
+}
+
+.desert-sample a:hover {
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(96, 128, 192, 0.4);
+}
+
+.desert-sample .back {
+  color: var(--color-muted);
+}
+
+.desert-sample .back:hover {
+  color: var(--color-primary);
+  text-shadow: -2px 0 var(--color-secondary), 2px 0 var(--color-muted);
+}
+
+.desert-sample .tracklist a {
+  color: var(--color-muted);
+}
+
+.desert-sample .tracklist a:hover {
+  color: var(--color-primary);
+}
+
+.desert-sample .lyrics {
+  color: var(--color-muted);
+}
+
+.desert-sample .track-nav a {
+  color: var(--color-muted);
+}
+
+.desert-sample .track-nav a:hover {
+  color: var(--color-primary);
+}
+
+.desert-sample .small-text {
+  color: var(--color-muted);
+}
+
+.desert-sample audio {
+  filter: hue-rotate(200deg) saturate(1.1) contrast(1.1);
+}
