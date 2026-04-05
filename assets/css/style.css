@@ -114,7 +114,6 @@ audio {
 
 /* =========================
    CLASSES ARTÍSTICAS BASE
-   (você vai reutilizar MUITO)
 ========================= */
 
 /* vibe mais escura */
@@ -317,11 +316,6 @@ audio {
 /* =========================================================
    TEMAS POR ÁLBUM
    Cores extraídas diretamente das capas.
-
-   Como usar:
-     <body class="ocean-trench">   ← The Ocean Trench
-     <body class="desert-sample">  ← Desert Sample
-
    Funciona tanto na página do álbum quanto em cada música.
 ========================================================= */
 
@@ -425,6 +419,7 @@ audio {
    Paleta da capa: azul índigo, noite profunda, céu árido
    Fundo: a própria capa desfocada + overlay escuro
 --------------------------------------------------------- */
+
 .desert-sample {
   --color-primary:   #8aaad8;   /* azul claro vibrante */
   --color-secondary: #6080c0;   /* azul médio */
@@ -507,4 +502,151 @@ audio {
 
 .desert-sample audio {
   filter: hue-rotate(200deg) saturate(1.1) contrast(1.1);
+}
+
+/* ===== MUSIC SECTION ===== */
+.music-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* ===== PLAYER WRAPPER ===== */
+.player-wrapper {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* base visual */
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255,255,255,0.1);
+  padding: 6px;
+
+  /* glow */
+  box-shadow: 
+    0 0 30px rgba(255,255,255,0.08),
+    0 0 80px rgba(0,150,255,0.15);
+
+  transition: all 0.3s ease;
+}
+
+/* hover */
+.player-wrapper:hover {
+  transform: scale(1.02);
+}
+
+/* ===== FUNDO ATMOSFÉRICO ===== */
+.player-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+
+  background: radial-gradient(circle, rgba(0,150,255,0.25), transparent 70%);
+  filter: blur(30px);
+  z-index: -1;
+}
+
+/* ===== IFRAME QUADRADO ===== */
+.player-wrapper iframe {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 🔥 quadrado */
+  border: none;
+  display: block;
+}
+
+.platform-links {
+  margin-top: 40px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.platform-links a {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 16px;
+
+  border-radius: 25px;
+  text-decoration: none;
+  color: white;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0,0,0,0.4);
+
+  transition: all 0.3s ease;
+}
+
+/* hover geral */
+.platform-links a:hover {
+  transform: scale(1.05);
+}
+
+/* cores */
+.platform-links .yt:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+
+.platform-links .sp:hover {
+  background: #1db954;
+  border-color: #1db954;
+}
+
+.platform-links .am:hover {
+  background: #ffffff;
+  color: black;
+  border-color: #ffffff;
+}
+
+/* =========================
+   PLATFORM ICONS (SVG FIX)
+========================= */
+
+.platform-icons {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.platform-icons a {
+  display: inline-block;
+  margin: 12px;
+}
+
+/* 🔥 tamanho consistente */
+.platform-icons img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+
+  /* deixa redondo */
+  border-radius: 50%;
+
+  /* fundo leve */
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+
+  transition: all 0.3s ease;
+}
+
+/* animação */
+.platform-icons img:hover {
+  transform: scale(1.15) translateY(-5px);
+
+  box-shadow: 
+    0 0 15px rgba(255,255,255,0.2),
+    0 0 25px rgba(0,150,255,0.3);
+}
+
+/* cores por plataforma */
+.platform-icons a:nth-child(1) img:hover {
+  box-shadow: 0 0 20px #ff0000; /* YouTube */
+}
+
+.platform-icons a:nth-child(2) img:hover {
+  box-shadow: 0 0 20px #1db954; /* Spotify */
+}
+
+.platform-icons a:nth-child(3) img:hover {
+  box-shadow: 0 0 20px #ffffff; /* Apple */
 }
