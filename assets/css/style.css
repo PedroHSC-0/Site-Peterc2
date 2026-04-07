@@ -476,6 +476,15 @@ audio {
   filter: hue-rotate(300deg) saturate(1.2) contrast(1.1);
 }
 
+.ocean-trench .platform-icons img {
+  filter: brightness(0.5) sepia(1) hue-rotate(300deg) saturate(1.2);
+}
+
+.ocean-trench .platform-icons img:hover {
+  filter: brightness(0.9) sepia(0.5) hue-rotate(300deg) saturate(1.4);
+  box-shadow: 0 0 20px rgba(224, 0, 106, 0.6);
+}
+
 
 /* ---------------------------------------------------------
    DESERT SAMPLE
@@ -565,6 +574,15 @@ audio {
 
 .desert-sample audio {
   filter: hue-rotate(200deg) saturate(1.1) contrast(1.1);
+}
+
+.desert-sample .platform-icons img {
+  filter: brightness(0.5) sepia(1) hue-rotate(190deg) saturate(1.1);
+}
+
+.desert-sample .platform-icons img:hover {
+  filter: brightness(0.9) sepia(0.5) hue-rotate(190deg) saturate(1.3);
+  box-shadow: 0 0 20px rgba(96, 128, 192, 0.6);
 }
 
 /* ===== MUSIC SECTION ===== */
