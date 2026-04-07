@@ -163,17 +163,103 @@ audio {
    HOME / PROJETOS
 ========================= */
 
+/* ---------------------------------------------------------
+   HOME
+   Paleta da foto-ícone: caneta esferográfica azul em papel
+   pautado. Fundo quase-branco frio, traços azul-índigo.
+   Fundo: a própria foto desfocada + overlay escuro
+--------------------------------------------------------- */
+ 
+.home {
+  --color-primary:   #8fa0b5;
+  --color-secondary: #4a5f78;
+  --color-muted:     #6a8098;
+  --color-text:      #a8bcc8;
+  --color-dim:       #2a3a4e;
+ 
+  background-color: #0a0d12;
+  background-image:
+    linear-gradient(rgba(10, 13, 18, 0.58), rgba(10, 13, 18, 0.58)),
+    url('/assets/imagens/Peterc2_Icon.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+ 
+  color: var(--color-text);
+}
+ 
+.home::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(40px) saturate(0.45) brightness(0.88);
+  pointer-events: none;
+  z-index: 0;
+}
+ 
+.home main,
+.home .center {
+  position: relative;
+  z-index: 1;
+}
+ 
+.home h1,
+.home h2,
+.home h3 {
+  color: #dcdcdc;
+  text-shadow: 0 0 20px rgba(143, 160, 181, 0.25);
+}
+ 
+.home a {
+  color: var(--color-muted);
+}
+ 
+.home a:hover {
+  color: var(--color-primary);
+  text-shadow: 0 0 8px rgba(143, 160, 181, 0.4);
+}
+ 
+.home .project {
+  color: var(--color-secondary);
+}
+ 
+.home .project:hover {
+  color: var(--color-primary);
+  text-shadow: 0 0 14px rgba(143, 160, 181, 0.45);
+}
+ 
+.home .platform-icons img {
+  filter: brightness(0.5) sepia(1) hue-rotate(185deg) saturate(0.6);
+}
+ 
+.home .platform-icons img:hover {
+  filter: brightness(0.85) sepia(0.6) hue-rotate(185deg) saturate(0.8);
+}
+ 
+.home .platform-icons a:nth-child(1) img:hover {
+  box-shadow: 0 0 20px rgba(143, 160, 181, 0.6);
+}
+ 
+.home .platform-icons a:nth-child(2) img:hover {
+  box-shadow: 0 0 20px rgba(143, 160, 181, 0.6);
+}
+ 
+.home .platform-icons a:nth-child(3) img:hover {
+  box-shadow: 0 0 20px rgba(143, 160, 181, 0.6);
+}
+ 
+.home .platform-icons a:nth-child(4) img:hover {
+  box-shadow: 0 0 20px rgba(200, 215, 230, 0.5);
+}
+
 .project {
   color: #777;
   margin: 10px 0;
   font-size: 14px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   display: block;
 
   transition: all 0.3s ease;
-
-  /* animação leve */
-  animation: floatText 4s infinite ease-in-out;
 }
 
 .project:hover {
@@ -187,28 +273,6 @@ audio {
   0% { transform: translateX(0px); }
   50% { transform: translateX(3px); }
   100% { transform: translateX(0px); }
-}
-
-/* =========================
-   SOCIAL LINKS
-========================= */
-
-.social {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-}
-
-.social a {
-  opacity: 0.6;
-}
-
-.social a:hover {
-  opacity: 1;
-  letter-spacing: 2px;
 }
 
 /* =========================
@@ -324,7 +388,6 @@ audio {
    Paleta da capa: roxo acinzentado, magenta, carmim, rosa
    Fundo: a própria capa desfocada + overlay escuro
    Caminhos do background-image são relativos ao HTML —
-   ajuste se necessário (../../ para páginas de música)
 --------------------------------------------------------- */
 .ocean-trench {
   --color-primary:   #e0006a;   /* magenta da capa */
@@ -620,7 +683,7 @@ audio {
   object-fit: contain;
 
   /* deixa redondo */
-  border-radius: 50%;
+  border-radius: 30%;
 
   /* fundo leve */
   background: rgba(255,255,255,0.05);
@@ -639,14 +702,19 @@ audio {
 }
 
 /* cores por plataforma */
+
 .platform-icons a:nth-child(1) img:hover {
-  box-shadow: 0 0 20px #ff0000; /* YouTube */
+  box-shadow: 0 0 20px rgba(143, 160, 181, 0.6);
 }
 
 .platform-icons a:nth-child(2) img:hover {
-  box-shadow: 0 0 20px #1db954; /* Spotify */
+  box-shadow: 0 0 20px rgba(143, 160, 181, 0.6);
 }
 
 .platform-icons a:nth-child(3) img:hover {
-  box-shadow: 0 0 20px #ffffff; /* Apple */
+  box-shadow: 0 0 20px rgba(143, 160, 181, 0.6);
+}
+
+.platform-icons a:nth-child(4) img:hover {
+  box-shadow: 0 0 20px rgba(143, 160, 181, 0.6);
 }
