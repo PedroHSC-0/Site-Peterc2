@@ -48,6 +48,21 @@ a:hover {
 /* =========================
    LAYOUT BASE
 ========================= */
+.main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Esquerda ocupa 2 partes, Direita ocupa 1 */
+  gap: 40px; /* Espaço entre as colunas */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 main {
   padding: 40px;
 }
@@ -83,8 +98,14 @@ main {
 /* =========================
    ÁLBUM / TRACKLIST BASE
 ========================= */
+.tracklist {
+  display: flex;
+  flex-direction: column; /* Coloca um embaixo do outro */
+  align-items: flex-start; /* Faz o link ocupar apenas a largura do texto */
+}
+
 .tracklist a {
-  display: block;
+  display: inline-block;
   margin: 6px 0;
 }
 
