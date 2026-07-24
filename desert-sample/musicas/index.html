@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Desert Sample</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="../../assets/imagens/desert-sample-cover.jpeg">
+</head>
+
+<body class="desert-sample">
+
+<main class="center">
+
+  <a href="../index.html" class="back">← voltar</a>
+
+  <h1 id="track-title">—</h1>
+
+  <p class="artist small-text" id="track-artist"></p>
+
+  <div class="music-section">
+    <div class="player-wrapper">
+      <iframe
+        id="track-video"
+        width="560"
+        height="315"
+        src=""
+        title=""
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="lyrics" id="track-lyrics"></div>
+
+  <div class="small-text" style="margin-top: 20px;">
+    EP: Desert Sample <br>
+    Written and produced by Peterc2 & JC Dive
+  </div>
+
+  <div class="track-nav">
+    <a href="#" id="track-prev" class="prev">← anterior</a>
+    <a href="#" id="track-next" class="next">próxima →</a>
+  </div>
+
+</main>
+
+<script src="tracks.js"></script>
+<script>
+  function render(slug) {
+    const idx = TRACKS.findIndex(t => t.slug === slug);
+    const track = TRACKS[idx === -1 ? 0 : idx];
+
+    document.getElementById('track-title').textContent = track.title;
+    document.getElementById('track-artist').textContent = track.artist;
+    document.getElementById('track-lyrics').textContent = track.lyrics.trim();
+
+    const video = document.getElementById('track-video');
+    video.src = 'https://www.youtube.com/embed/' + track.youtube;
+    video.title = track.title;
+
+    const prev = TRACKS[(idx - 1 + TRACKS.length) % TRACKS.length];
+    const next = TRACKS[(idx + 1) % TRACKS.length];
+    document.getElementById('track-prev').href = '?track=' + prev.slug;
+    document.getElementById('track-next').href = '?track=' + next.slug;
+
+    // atualiza a URL sem recarregar (deixa o link compartilhável)
+    history.replaceState(null, '', '?track=' + track.slug);
+    window.scrollTo(0, 0);
+  }
+
+  const params = new URLSearchParams(location.search);
+  render(params.get('track'));
+</script>
+
+</body>
+</html>

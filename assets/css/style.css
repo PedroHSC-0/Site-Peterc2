@@ -248,7 +248,56 @@ audio {
   color: var(--color-primary);
   text-shadow: 0 0 14px rgba(143, 160, 181, 0.45);
 }
- 
+
+/* ---- Seções de projetos (solo / colab) ---- */
+.home .projects-section {
+  margin: 18px 0;
+}
+
+.home .section-title {
+  font-size: 16px;
+  letter-spacing: 3px;
+  color: var(--color-secondary, #8fa0b5);
+  margin-bottom: 4px;
+}
+
+.home .section-sub {
+  margin-bottom: 6px;
+}
+
+.home .coming-soon {
+  margin: 4px 0 0;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+/* ---- Cores por autoria ----
+   cada seção (e seus links) recebe uma cor distinta */
+.home .projects-section.s-peterc2 .section-title,
+.home .projects-section.s-peterc2 .project {
+  color: #637683;
+}
+
+.home .projects-section.s-jcdive .section-title,
+.home .projects-section.s-jcdive .project {
+  color: #b794f6;
+}
+
+.home .projects-section.s-collab .section-title,
+.home .projects-section.s-collab .project {
+  color: #0d14a1;
+}
+
+.home .projects-section.s-litter .section-title,
+.home .projects-section.s-litter .project {
+  color: #d4159b;
+}
+
+/* mantém o brilho no hover, herdando a cor da seção */
+.home .projects-section .project:hover {
+  text-shadow: 0 0 14px currentColor;
+}
+
 .home .platform-icons img {
   filter: brightness(0.5) sepia(1) hue-rotate(185deg) saturate(0.6);
 }
