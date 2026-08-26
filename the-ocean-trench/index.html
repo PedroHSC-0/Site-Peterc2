@@ -2,75 +2,176 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>The Ocean Trench</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ocean Trench - Álbum</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="icon" type="image/x-icon" href="../assets/imagens/the-ocean-trench-cover.jpeg">
+  <link rel="icon" type="image/x-icon" href="../assets/imagens/capas/the-ocean-trench-cover.jpeg">
 </head>
 
 <body class="ocean-trench">
 
-<main>
+  <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
+  <header class="top-nav">
+    <div class="top-nav-container">
+      <span class="top-nav-logo">THE OCEAN TRENCH</span>
+      <nav class="top-nav-links">
+        <a href="../index.html">INÍCIO</a>
+        <a href="../peterc2/index.html">PETERC2</a>
+        <a href="../jcdive/index.html">JC DIVE</a>
+        <a href="../littering/index.html">LITTERING</a>
+        <a href="../index.html#contato" class="nav-contact-btn">CONTATO</a>
+      </nav>
+    </div>
+  </header>
 
-  <a href="../index.html" class="back">← voltar</a>
+<main class="center">
 
-  <h1>The Ocean Trench</h1>
+  <a href="../index.html" class="back">← voltar ao início</a>
 
-  <a href="#cover-full">
-    <img src="../assets/imagens/the-ocean-trench-cover.jpeg" alt="Capa" class="cover">
-  </a>
+  <!-- ===================== PAINEL DO ÁLBUM & TRACKLIST ===================== -->
+  <div class="album-detail-container">
+    <img src="../assets/imagens/capas/the-ocean-trench-cover.jpeg" alt="Capa The Ocean Trench" class="album-detail-cover">
 
-  <div id="cover-full" class="lightbox">
-    <a href="#" class="close">×</a>
-    <img src="../assets/imagens/the-ocean-trench-cover.jpeg" alt="Capa ampliada">
-  </div>
+    <div class="album-detail-info">
+      <h1 class="album-detail-title">The Ocean Trench</h1>
+      <p class="album-detail-sub">PETERC2 & JC DIVE</p>
+      <p class="small-text">LANÇAMENTO: 10/04/2026</p>
 
-  <p class="artist small-text">Album colaborativo Peterc2 JC Dive</p>
+      <!-- PLATAFORMAS DE STREAMING -->
+      <div class="platform-icons">
+        <a href="https://www.youtube.com/watch?v=EPZbv-gqIFM" target="_blank" title="YouTube">
+          <img src="../assets/imagens/icones/youtube.svg" alt="YouTube">
+        </a>
+        <a href="https://open.spotify.com/album/4QOkz5ITgkpBjD1UTeUVXt" target="_blank" title="Spotify">
+          <img src="../assets/imagens/icones/spotify.svg" alt="Spotify">
+        </a>
+        <a href="https://music.apple.com/br/album/the-ocean-trench/1891698389" target="_blank" title="Apple Music">
+          <img src="../assets/imagens/icones/apple.svg" alt="Apple Music">
+        </a>
+        <a href="../index.html#contato" title="Bandcamp">
+          <img src="../assets/imagens/icones/bandcamp.svg" alt="Bandcamp">
+        </a>
+      </div>
 
-  <div class="tracklist">
+      <!-- FAIXAS / TRACKLIST ESTILO APPLE MUSIC -->
+      <div class="album-tracklist-box">
+        <h2 class="album-tracklist-title">FAIXAS DO ÁLBUM</h2>
 
-    <a href="musicas/index.html?track=the-ocean-trench">01 - The Ocean Trench</a>
-    <a href="musicas/index.html?track=golden-trick">02 - Golden Trick</a>
-    <a href="musicas/index.html?track=cleaning">03 - Cleaning</a>
-    <a href="musicas/index.html?track=birds-and-seeds">04 - Birds and Seeds</a>
-    <a href="musicas/index.html?track=canto-do-silencio">05 - Canto do Silêncio</a>
-    <a href="musicas/index.html?track=how-bad-is-it">06 - How Bad Is It</a>
-    <a href="musicas/index.html?track=i-will-cut-into-you">07 - I Will Cut Into You</a>
-    <a href="musicas/index.html?track=on-the-house">08 - On The House</a>
-    <a href="musicas/index.html?track=lilly">09 - Lilly</a>
-    <a href="musicas/index.html?track=not-bad-at-all">10 - Not Bad at All</a>
-    <a href="musicas/index.html?track=my-view-is-bad">11 - My View Is Bad</a>
-    <a href="musicas/index.html?track=possession">12 - Possession</a>
-    <a href="musicas/index.html?track=littering">13 - Littering</a>
-    <a href="musicas/index.html?track=the-night-shifts">14 - The Night Shifts X Radio Report</a>
-    <a href="musicas/index.html?track=slow-attack">15 - Slow Attack</a>
-    <a href="musicas/index.html?track=understone">16 - Understone</a>
-    <a href="musicas/index.html?track=your-skull">17 - Your Skull Is Warm and Soft</a>
-    <a href="musicas/index.html?track=our-king">18 - Our King</a>
-    <a href="musicas/index.html?track=noname2">19 - Noname 2</a>
-    <a href="musicas/index.html?track=return-to-the-shed">20 - Return To The Shed</a>
-    <a href="musicas/index.html?track=corner-van">21 - Corner Van</a>
+        <div class="tracklist-table">
+          <a href="musicas/index.html?track=the-ocean-trench" class="track-row">
+            <span class="track-num">01</span>
+            <span class="track-title">The Ocean Trench</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=golden-trick" class="track-row">
+            <span class="track-num">02</span>
+            <span class="track-title">Golden Trick</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=cleaning" class="track-row">
+            <span class="track-num">03</span>
+            <span class="track-title">Cleaning</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=birds-and-seeds" class="track-row">
+            <span class="track-num">04</span>
+            <span class="track-title">Birds and Seeds</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=canto-do-silencio" class="track-row">
+            <span class="track-num">05</span>
+            <span class="track-title">Canto do Silêncio</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=how-bad-is-it" class="track-row">
+            <span class="track-num">06</span>
+            <span class="track-title">How Bad Is It</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=i-will-cut-into-you" class="track-row">
+            <span class="track-num">07</span>
+            <span class="track-title">I Will Cut Into You</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=on-the-house" class="track-row">
+            <span class="track-num">08</span>
+            <span class="track-title">On The House</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=lilly" class="track-row">
+            <span class="track-num">09</span>
+            <span class="track-title">Lilly</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=not-bad-at-all" class="track-row">
+            <span class="track-num">10</span>
+            <span class="track-title">Not Bad at All</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=my-view-is-bad" class="track-row">
+            <span class="track-num">11</span>
+            <span class="track-title">My View Is Bad</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=possession" class="track-row">
+            <span class="track-num">12</span>
+            <span class="track-title">Possession</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=littering" class="track-row">
+            <span class="track-num">13</span>
+            <span class="track-title">Littering (Faixa da Banda)</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=the-night-shifts" class="track-row">
+            <span class="track-num">14</span>
+            <span class="track-title">The Night Shifts X Radio Report</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=slow-attack" class="track-row">
+            <span class="track-num">15</span>
+            <span class="track-title">Slow Attack</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=understone" class="track-row">
+            <span class="track-num">16</span>
+            <span class="track-title">Understone</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=your-skull" class="track-row">
+            <span class="track-num">17</span>
+            <span class="track-title">Your Skull Is Warm and Soft</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=our-king" class="track-row">
+            <span class="track-num">18</span>
+            <span class="track-title">Our King</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=noname2" class="track-row">
+            <span class="track-num">19</span>
+            <span class="track-title">Noname 2</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=return-to-the-shed" class="track-row">
+            <span class="track-num">20</span>
+            <span class="track-title">Return To The Shed</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=corner-van" class="track-row">
+            <span class="track-num">21</span>
+            <span class="track-title">Corner Van</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+        </div>
+      </div>
 
-  </div>
-  
-  <p class="artist small-text"> 10/04/2026</p>
-
-  <div class="platform-icons">
-
-    <a href="https://www.youtube.com/watch?v=EPZbv-gqIFM" target="_blank">
-      <img src="../assets/imagens/youtube.svg" alt="YouTube">
-    </a>
-
-    <a href="https://open.spotify.com/album/4QOkz5ITgkpBjD1UTeUVXt" target="_blank">
-      <img src="../assets/imagens/spotify.svg" alt="Spotify">
-    </a>
-
-    <a href="https://music.apple.com/br/album/the-ocean-trench/1891698389" target="_blank">
-      <img src="../assets/imagens/apple.svg" alt="Apple Music">
-    </a>
-
+    </div>
   </div>
 
 </main>
 
+  <script src="../assets/js/site-data.js"></script>
+  <script src="../assets/js/analytics.js"></script>
 </body>
 </html>

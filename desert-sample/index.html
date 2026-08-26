@@ -2,59 +2,96 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Desert Sample</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desert Sample - EP</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="icon" type="image/x-icon" href="../assets/imagens/desert-sample-cover.jpeg">
+  <link rel="icon" type="image/x-icon" href="../assets/imagens/capas/desert-sample-cover.jpeg">
 </head>
 
 <body class="desert-sample">
 
-<main>
+  <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
+  <header class="top-nav">
+    <div class="top-nav-container">
+      <span class="top-nav-logo">DESERT SAMPLE (EP)</span>
+      <nav class="top-nav-links">
+        <a href="../index.html">INÍCIO</a>
+        <a href="../peterc2/index.html">PETERC2</a>
+        <a href="../jcdive/index.html">JC DIVE</a>
+        <a href="../littering/index.html">LITTERING</a>
+        <a href="../index.html#contato" class="nav-contact-btn">CONTATO</a>
+      </nav>
+    </div>
+  </header>
 
-  <a href="../index.html" class="back">← voltar</a>
+<main class="center">
 
-  <h1>Desert Sample</h1>
+  <a href="../index.html" class="back">← voltar ao início</a>
 
-  <a href="#cover-full">
-    <img src="../assets/imagens/desert-sample-cover.jpeg" alt="Capa" class="cover">
-  </a>
+  <!-- ===================== PAINEL DO ÁLBUM & TRACKLIST ===================== -->
+  <div class="album-detail-container">
+    <img src="../assets/imagens/capas/desert-sample-cover.jpeg" alt="Capa Desert Sample" class="album-detail-cover">
 
-  <div id="cover-full" class="lightbox">
-    <a href="#" class="close">×</a>
-    <img src="../assets/imagens/desert-sample-cover.jpeg" alt="Capa ampliada">
+    <div class="album-detail-info">
+      <h1 class="album-detail-title">Desert Sample</h1>
+      <p class="album-detail-sub">PETERC2 & JC DIVE</p>
+      <p class="small-text">LANÇAMENTO: 13/03/2026</p>
+
+      <!-- PLATAFORMAS DE STREAMING -->
+      <div class="platform-icons">
+        <a href="https://youtu.be/GMJ9MhhTVsw" target="_blank" title="YouTube">
+          <img src="../assets/imagens/icones/youtube.svg" alt="YouTube">
+        </a>
+        <a href="https://open.spotify.com/intl-pt/album/6e4YM0KzxqGHjwpnneDjBG" target="_blank" title="Spotify">
+          <img src="../assets/imagens/icones/spotify.svg" alt="Spotify">
+        </a>
+        <a href="https://music.apple.com/br/album/desert-sample-ep/1889619290" target="_blank" title="Apple Music">
+          <img src="../assets/imagens/icones/apple.svg" alt="Apple Music">
+        </a>
+        <a href="../index.html#contato" title="Bandcamp">
+          <img src="../assets/imagens/icones/bandcamp.svg" alt="Bandcamp">
+        </a>
+      </div>
+
+      <!-- FAIXAS / TRACKLIST ESTILO APPLE MUSIC -->
+      <div class="album-tracklist-box">
+        <h2 class="album-tracklist-title">FAIXAS DO ÁLBUM</h2>
+        
+        <div class="tracklist-table">
+          <a href="musicas/index.html?track=the-ocean-trench" class="track-row">
+            <span class="track-num">01</span>
+            <span class="track-title">The Ocean Trench</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=canto-do-silencio" class="track-row">
+            <span class="track-num">02</span>
+            <span class="track-title">Canto do Silêncio</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=noname29" class="track-row">
+            <span class="track-num">03</span>
+            <span class="track-title">Noname 29</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=your-skull" class="track-row">
+            <span class="track-num">04</span>
+            <span class="track-title">My Skull Is Warm And Soft</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+          <a href="musicas/index.html?track=lilly" class="track-row">
+            <span class="track-num">05</span>
+            <span class="track-title">Lilly</span>
+            <span class="track-action">OUVIR ▶</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
-
-  <p class="artist small-text">EP colaborativo Peterc2 & JC Dive</p>
-
-  <div class="tracklist">
-
-    <a href="musicas/index.html?track=the-ocean-trench">01 - The Ocean Trench</a>
-    <a href="musicas/index.html?track=canto-do-silencio">02 - Canto do Silêncio</a>
-    <a href="musicas/index.html?track=noname29">03 - Noname 29</a>
-    <a href="musicas/index.html?track=your-skull">04 - My Skull Is Warm And Soft</a>
-    <a href="musicas/index.html?track=lilly">05 - Lilly</a>
-
-  </div>
-  <p class="artist small-text"> 13/03/2026</p>
-
-  <div class="platform-icons">
-
-    <a href="https://youtu.be/GMJ9MhhTVsw" target="_blank">
-      <img src="../assets/imagens/youtube.svg" alt="YouTube">
-    </a>
-
-    <a href="https://open.spotify.com/intl-pt/album/6e4YM0KzxqGHjwpnneDjBG" target="_blank">
-      <img src="../assets/imagens/spotify.svg" alt="Spotify">
-    </a>
-
-    <a href="https://music.apple.com/br/album/desert-sample-ep/1889619290" target="_blank">
-      <img src="../assets/imagens/apple.svg" alt="Apple Music">
-    </a>
-
-  </div>
-
 
 </main>
 
+  <script src="../assets/js/site-data.js"></script>
+  <script src="../assets/js/analytics.js"></script>
 </body>
 </html>

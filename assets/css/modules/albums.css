@@ -1,0 +1,181 @@
+/* =========================================================
+   TEMAS E ESTRUTURA CENTRALIZADA DAS PÁGINAS DE ÁLBUM
+   ========================================================= */
+
+.ocean-trench,
+.desert-sample {
+  background-color: #0d0d0d;
+  color: #cccccc;
+}
+
+.ocean-trench h1,
+.desert-sample h1 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.ocean-trench a,
+.desert-sample a {
+  color: #aaaaaa;
+}
+
+.ocean-trench a:hover,
+.desert-sample a:hover {
+  color: #ffffff;
+}
+
+/* =========================================================
+   ESTRUTURA DA PÁGINA DE ÁLBUM E TRACKLIST (CENTRALIZAÇÃO ABSOLUTA)
+   ========================================================= */
+.album-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 650px;
+  width: 100%;
+  margin: 20px auto;
+  background: #111111;
+  border: 1px solid #222222;
+  padding: 30px 25px;
+}
+
+.album-detail-cover {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border: 1px solid #333333;
+  margin: 0 auto 20px auto;
+  display: block;
+}
+
+.album-detail-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.album-detail-title {
+  font-size: 22px;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin-bottom: 2px;
+  text-align: center;
+}
+
+.album-detail-sub {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #888888;
+  text-align: center;
+}
+
+.album-tracklist-box {
+  margin-top: 25px;
+  border-top: 1px solid #262626;
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.album-tracklist-title {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #aaaaaa;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* =========================================================
+   TRACKLIST ESTILO APPLE MUSIC (LISTA LIMPA SEM RETÂNGULOS)
+   ========================================================= */
+.tracklist-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.track-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #1a1a1a;
+  color: #cccccc;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  width: 100%;
+}
+
+.track-row:last-child {
+  border-bottom: none;
+}
+
+.track-row:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+}
+
+.track-row .track-num {
+  width: 35px;
+  font-size: 12px;
+  color: #666666;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+.track-row .track-title {
+  flex-grow: 1;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: left;
+  color: #dddddd;
+}
+
+.track-row:hover .track-title {
+  color: #ffffff;
+}
+
+.track-row .track-action {
+  font-size: 11px;
+  color: #555555;
+  letter-spacing: 1px;
+  transition: color 0.15s ease;
+}
+
+.track-row:hover .track-action {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .album-detail-container {
+    padding: 20px 15px;
+  }
+
+  .album-detail-cover {
+    width: 180px;
+    height: 180px;
+  }
+
+  .album-detail-title {
+    font-size: 18px;
+  }
+
+  .track-row {
+    padding: 10px 6px;
+  }
+
+  .track-row .track-title {
+    font-size: 13px;
+  }
+}

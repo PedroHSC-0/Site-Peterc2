@@ -1,0 +1,160 @@
+/* =========================================================
+   BASE & DNA VISUAL (ESTILO SECO / MINIMALISTA TRADICIONAL)
+   ========================================================= */
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Configuração do corpo da página - Fundo escuro fosco e texto limpo */
+body {
+  background-color: #0d0d0d;
+  color: #cccccc;
+  font-family: "Courier New", Courier, monospace;
+  overflow-x: hidden;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding-top: 65px; /* Offset para a barra superior fixa (fixed) */
+}
+
+/* Tipografia */
+h1, h2, h3, h4 {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #eeeeee;
+  word-break: break-word;
+  text-align: center;
+}
+
+p {
+  color: #888888;
+  text-align: center;
+}
+
+/* Links globais */
+a {
+  color: #aaaaaa;
+  text-decoration: none;
+  transition: color 0.15s linear;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+/* Container de layout centralizado */
+.main-container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Centralização perfeita de página */
+.center {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Botões genéricos tradicionais */
+.button {
+  border: 1px solid #444444;
+  padding: 8px 16px;
+  margin-top: 15px;
+  display: inline-block;
+  color: #cccccc;
+  background: transparent;
+  text-align: center;
+}
+
+.button:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* Botão voltar simples centralizado */
+.back {
+  display: inline-block;
+  margin: 0 auto 25px auto;
+  font-size: 12px;
+  color: #777777;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.back:hover {
+  color: #ffffff;
+}
+
+/* Utilitários de texto */
+.small-text {
+  font-size: 12px;
+  color: #666666;
+  text-align: center;
+}
+
+/* Media Queries Globais para Responsividade */
+@media (max-width: 768px) {
+  body {
+    padding-top: 90px; /* Offset maior para a barra superior responsiva em mobile */
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+  
+  h2 {
+    font-size: 15px;
+  }
+  
+  main, .center {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  body {
+    font-size: 13px;
+  }
+}

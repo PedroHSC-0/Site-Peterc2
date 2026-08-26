@@ -2,79 +2,180 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Peterc2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pigpenfan</title>
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" type="image/x-icon" href="assets/imagens/peterc2-Icon.jpg">
+  <link rel="icon" type="image/x-icon" href="assets/imagens/icones/peterc2-icon.jpg">
 </head>
 
-  <body class="home">
+<body class="home">
 
-    <div class="center">
+  <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
+  <header class="top-nav">
+    <div class="top-nav-container">
+      <span class="top-nav-logo">PIGPENFAN</span>
+      <nav class="top-nav-links">
+        <a href="index.html" class="active">INÍCIO</a>
+        <a href="peterc2/index.html">PETERC2</a>
+        <a href="jcdive/index.html">JC DIVE</a>
+        <a href="littering/index.html">LITTERING</a>
+        <a href="#contato" class="nav-contact-btn">CONTATO</a>
+      </nav>
+    </div>
+  </header>
 
-    <h1></h1>
+  <div class="center">
 
-    <a>
-      <br>
-      <br>
-    </a>
+    <h1 style="margin-top: 20px;">ARTISTAS & PROJETOS</h1>
 
-    <!-- ===================== PETERC2 (SOLO) ===================== -->
-    <section class="projects-section s-peterc2">
-      <h2 class="section-title">Peterc2</h2>
-      <!-- futuro álbum solo: <a href="meu-album/index.html" class="project">Nome do Álbum</a> -->
-      <a href="" class="project">
-        The Rescue of the Cosmic Metaphysical Engineers
-        <br>(Em Breve)
-      </a>
-    </section>
+    <!-- ===================== GRADE DE IMAGENS DOS ARTISTAS ===================== -->
+    <div class="artist-gallery">
 
-    <!-- ===================== JC DIVE (SOLO) ===================== -->
-    <section class="projects-section s-jcdive">
-      <h2 class="section-title">JC Dive</h2>
-      <!-- futuro álbum solo do JC: <a href="album-jc/index.html" class="project">Nome do Álbum</a> -->
-      <p class="small-text coming-soon">em breve</p>
-    </section>
-
-    <!-- ===================== COLABORACOES ===================== -->
-    <section class="projects-section s-collab">
-      <h2 class="section-title">Peterc2 & JC Dive</h2>
-
-      <a href="desert-sample/index.html" class="project">
-        Desert Sample
+      <!-- PETERC2 -->
+      <a href="peterc2/index.html" class="artist-image-card">
+        <img src="assets/imagens/icones/peterc2-icon.jpg" alt="Peterc2" class="artist-portrait">
+        <span class="artist-card-title">Peterc2</span>
       </a>
 
-      <a href="the-ocean-trench/index.html" class="project">
-        The Ocean Trench
+      <!-- JC DIVE -->
+      <a href="jcdive/index.html" class="artist-image-card">
+        <img src="assets/imagens/icones/jcdive-icon.jpeg" alt="JC Dive" class="artist-portrait">
+        <span class="artist-card-title">JC Dive</span>
       </a>
+
+      <!-- LITTERING -->
+      <a href="littering/index.html" class="artist-image-card">
+        <img src="assets/imagens/icones/littering-icon.png" alt="Littering" class="artist-portrait">
+        <span class="artist-card-title">Littering</span>
+      </a>
+
+    </div>
+
+    <!-- ===================== SEÇÃO DE COLABORAÇÕES (ORDENADA POR DATA DE LANÇAMENTO) ===================== -->
+    <section class="collab-section" style="width: 100%; max-width: 900px;">
+      <h2 class="collab-title">Colaborações</h2>
+      <div class="album-gallery">
+        <!-- Desert Sample: Lançamento 13/03/2026 -->
+        <a href="desert-sample/index.html" class="album-card" data-release-date="2026-03-13">
+          <img src="assets/imagens/capas/desert-sample-cover.jpeg" alt="Desert Sample" class="album-card-cover">
+          <span class="album-card-title">Desert Sample</span>
+          <span class="album-card-sub">Peterc2 & JC Dive • 13/03/2026</span>
+        </a>
+        <!-- The Ocean Trench: Lançamento 10/04/2026 -->
+        <a href="the-ocean-trench/index.html" class="album-card" data-release-date="2026-04-10">
+          <img src="assets/imagens/capas/the-ocean-trench-cover.jpeg" alt="The Ocean Trench" class="album-card-cover">
+          <span class="album-card-title">The Ocean Trench</span>
+          <span class="album-card-sub">Peterc2 & JC Dive • 10/04/2026</span>
+        </a>
+      </div>
     </section>
 
-        <!-- ===================== LITTERING ===================== -->
-    <section class="projects-section s-litter">
-      <h2 class="section-title">Littering</h2>
-          <p class="small-text coming-soon">em breve</p>
+    <!-- ===================== SEÇÃO DE CONTATOS TRADICIONAL ===================== -->
+    <section id="contato" class="contacts-section">
+      <h2 class="contacts-header">CONTATOS & REDES SOCIAIS</h2>
+
+      <!-- CONTATOS PETERC2 -->
+      <div class="contact-group">
+        <h3 class="contact-group-title">Peterc2</h3>
+        <div class="contact-list">
+          <a href="https://www.instagram.com/peterc2_/" target="_blank" class="contact-item clickable">
+            <img src="assets/imagens/icones/instagram.svg" alt="Instagram" class="icon">
+            <span class="label">Instagram</span>
+            <span class="value">@peterc2_</span>
+          </a>
+          <a href="https://www.youtube.com/@Peterc2" target="_blank" class="contact-item clickable">
+            <img src="assets/imagens/icones/youtube.svg" alt="YouTube" class="icon">
+            <span class="label">YouTube</span>
+            <span class="value">@Peterc2</span>
+          </a>
+          <a href="https://open.spotify.com/intl-pt/album/6e4YM0KzxqGHjwpnneDjBG" target="_blank" class="contact-item clickable">
+            <img src="assets/imagens/icones/spotify.svg" alt="Spotify" class="icon">
+            <span class="label">Spotify</span>
+            <span class="value">Peterc2</span>
+          </a>
+          <a href="https://music.apple.com/br/album/desert-sample-ep/1889619290" target="_blank" class="contact-item clickable">
+            <img src="assets/imagens/icones/apple.svg" alt="Apple Music" class="icon">
+            <span class="label">Apple Music</span>
+            <span class="value">Peterc2</span>
+          </a>
+          <a href="https://peterc2.bandcamp.com/" target="_blank" class="contact-item clickable">
+            <img src="assets/imagens/icones/bandcamp.svg" alt="Bandcamp" class="icon">
+            <span class="label">Bandcamp</span>
+            <span class="value">peterc2.bandcamp.com</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- CONTATOS JC DIVE -->
+      <div class="contact-group">
+        <h3 class="contact-group-title">JC Dive</h3>
+        <div class="contact-list">
+          <a href="https://www.instagram.com/jcdive_/" target="_blank" class="contact-item clickable">
+            <img src="assets/imagens/icones/instagram.svg" alt="Instagram" class="icon">
+            <span class="label">Instagram</span>
+            <span class="value">@jcdive_</span>
+          </a>
+          <div class="contact-item placeholder">
+            <img src="assets/imagens/icones/youtube.svg" alt="YouTube" class="icon">
+            <span class="label">YouTube</span>
+            <span class="value">Em Breve</span>
+          </div>
+          <div class="contact-item placeholder">
+            <img src="assets/imagens/icones/spotify.svg" alt="Spotify" class="icon">
+            <span class="label">Spotify</span>
+            <span class="value">Em Breve</span>
+          </div>
+          <div class="contact-item placeholder">
+            <img src="assets/imagens/icones/apple.svg" alt="Apple Music" class="icon">
+            <span class="label">Apple Music</span>
+            <span class="value">Em Breve</span>
+          </div>
+          <div class="contact-item placeholder">
+            <img src="assets/imagens/icones/bandcamp.svg" alt="Bandcamp" class="icon">
+            <span class="label">Bandcamp</span>
+            <span class="value">Em Breve</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTATOS LITTERING -->
+      <div class="contact-group">
+        <h3 class="contact-group-title">Littering</h3>
+        <div class="contact-list">
+          <a href="https://www.instagram.com/litteringband/" target="_blank" class="contact-item clickable">
+            <img src="assets/imagens/icones/instagram.svg" alt="Instagram" class="icon">
+            <span class="label">Instagram</span>
+            <span class="value">@litteringband</span>
+          </a>
+          <a href="https://www.youtube.com/@litteringband" target="_blank" class="contact-item clickable">
+            <img src="assets/imagens/icones/youtube.svg" alt="YouTube" class="icon">
+            <span class="label">YouTube</span>
+            <span class="value">@litteringband</span>
+          </a>
+          <div class="contact-item placeholder">
+            <img src="assets/imagens/icones/spotify.svg" alt="Spotify" class="icon">
+            <span class="label">Spotify</span>
+            <span class="value">Em Breve</span>
+          </div>
+          <div class="contact-item placeholder">
+            <img src="assets/imagens/icones/apple.svg" alt="Apple Music" class="icon">
+            <span class="label">Apple Music</span>
+            <span class="value">Em Breve</span>
+          </div>
+          <div class="contact-item placeholder">
+            <img src="assets/imagens/icones/bandcamp.svg" alt="Bandcamp" class="icon">
+            <span class="label">Bandcamp</span>
+            <span class="value">Em Breve</span>
+          </div>
+        </div>
+      </div>
+
     </section>
-
-  <div class="platform-icons">
-
-    <a href="https://www.instagram.com/peterc2_/" target="_blank">
-      <img src="assets/imagens/instagram.svg" alt="Instagram">
-    </a>
-
-    <a href="https://www.youtube.com/@Peterc2" target="_blank">
-      <img src="assets/imagens/youtube.svg" alt="YouTube">
-    </a>
-
-    <a href="https://open.spotify.com/intl-pt/album/6e4YM0KzxqGHjwpnneDjBG" target="_blank">
-      <img src="assets/imagens/spotify.svg" alt="Spotify">
-    </a>
-
-    <a href="https://music.apple.com/br/album/desert-sample-ep/1889619290" target="_blank">
-      <img src="assets/imagens/apple.svg" alt="Apple Music">
-    </a>
 
   </div>
 
-  </div>
-
-  </body>
+  <script src="assets/js/site-data.js"></script>
+  <script src="assets/js/render-engine.js"></script>
+  <script src="assets/js/analytics.js"></script>
+</body>
 </html>

@@ -2,22 +2,37 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>The Ocean Trench</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Ocean Trench - Faixa</title>
   <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="icon" type="image/x-icon" href="../../assets/imagens/the-ocean-trench-cover.jpeg">
+  <link rel="icon" type="image/x-icon" href="../../assets/imagens/capas/the-ocean-trench-cover.jpeg">
 </head>
 
 <body class="ocean-trench">
 
+  <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
+  <header class="top-nav">
+    <div class="top-nav-container">
+      <span class="top-nav-logo">THE OCEAN TRENCH</span>
+      <nav class="top-nav-links">
+        <a href="../../index.html">INÍCIO</a>
+        <a href="../../peterc2/index.html">PETERC2</a>
+        <a href="../../jcdive/index.html">JC DIVE</a>
+        <a href="../../littering/index.html">LITTERING</a>
+        <a href="../../index.html#contato" class="nav-contact-btn">CONTATO</a>
+      </nav>
+    </div>
+  </header>
+
 <main class="center">
 
-  <a href="../index.html" class="back">← voltar</a>
+  <a href="../index.html" class="back">← voltar ao álbum</a>
 
   <h1 id="track-title">—</h1>
 
   <p class="artist small-text" id="track-artist"></p>
 
-  <div class="music-section">
+  <div class="music-section" style="width: 100%;">
     <div class="player-wrapper">
       <iframe
         id="track-video"
@@ -52,6 +67,7 @@
     const idx = TRACKS.findIndex(t => t.slug === slug);
     const track = TRACKS[idx === -1 ? 0 : idx];
 
+    document.title = track.title + " - The Ocean Trench";
     document.getElementById('track-title').textContent = track.title;
     document.getElementById('track-artist').textContent = track.artist;
     document.getElementById('track-lyrics').textContent = track.lyrics.trim();
