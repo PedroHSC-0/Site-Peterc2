@@ -173,6 +173,18 @@ const SITE_DATA = {
           title: "Lady Broom",
           artist: "Peterc2",
           lyrics: `I've been drying (A turtle misplaced in to be pure)\nYou've been resting low (skepting blighters, you're clame the swan)\nI've been trying (Are you so under weather)\nYou're my nesting flow (write the letter show me the pleasure)\n(I don't wanna listen your fucking blues)\n\nI've been crying (I will stab to be sure)\nYou've been resting low (You're a eerie shore)\nI've been drying (if you wanna live underwater)\nUnleashed is bad to know (hand me the letter and show me your lesson)\n\nI will stab you to be sure\n\nOhh\noohh`
+        },
+        {
+          slug: "nothing-spoked",
+          title: "Nothing spoked",
+          artist: "Peterc2",
+          lyrics: `You maintain controling me\nMy head into my feet\nSpecs all in to me\nAs I walk into the bar\nAnd you roamimg\nI bleed\n\nand you're flaking me\nI love you flaking me\nAs you spoke`
+        },
+        {
+          slug: "the-rescue",
+          title: "The Rescue",
+          artist: "Peterc2",
+          lyrics: `I feel mistrust behind a blunt\nNobody is here for me\Disgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad\nyourself is enough and a need for me\nI want to live down forever`
         }
       ]
     }

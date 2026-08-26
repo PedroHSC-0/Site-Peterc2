@@ -188,5 +188,34 @@ I will stab you to be sure
 
 Ohh
 oohh`
+  },
+  {
+    slug: "nothing-spoked",
+    title: "Nothing spoked",
+    artist: "Peterc2",
+    youtube: "",
+    lyrics: `You maintain controling me
+My head into my feet
+Specs all in to me
+As I walk into the bar
+And you roamimg
+I bleed
+
+and you're flaking me
+I love you flaking me
+As you spoke`
+  },
+  {
+    slug: "the-rescue",
+    title: "The Rescue",
+    artist: "Peterc2",
+    youtube: "",
+    lyrics: `I feel mistrust behind a blunt
+Nobody is here for me
+Disgusted by a drill of wonder
+I'am leveling self deprecation
+because the world is round and glad
+yourself is enough and a need for me
+I want to live down forever`
   }
 ];
