@@ -402,15 +402,19 @@ audio {
    5. MEDIA QUERIES RESPONSIVAS PARA TODO O SITE
    ========================================================= */
 @media (max-width: 768px) {
+  .top-nav {
+    padding: 10px 14px;
+  }
+
   .top-nav-container {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    gap: 8px;
   }
 
   .top-nav-links {
     justify-content: center;
-    gap: 12px;
+    gap: 8px 12px;
   }
 
   .top-nav-links a {
@@ -444,23 +448,28 @@ audio {
 }
 
 @media (max-width: 480px) {
+  .top-nav {
+    padding: 8px 10px;
+  }
+
   .artist-gallery,
   .album-gallery {
     grid-template-columns: 1fr;
   }
 
   .top-nav-logo {
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 2px;
   }
 
   .top-nav-links {
-    gap: 8px;
+    gap: 6px 8px;
   }
 
   .top-nav-links a {
     font-size: 10px;
     letter-spacing: 1px;
+    padding: 2px 4px;
   }
 
   .cover {

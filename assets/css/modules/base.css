@@ -127,7 +127,7 @@ main {
 /* Media Queries Globais para Responsividade */
 @media (max-width: 768px) {
   body {
-    padding-top: 90px; /* Offset maior para a barra superior responsiva em mobile */
+    padding-top: 125px; /* Offset adequado para a barra superior responsiva em dispositivos móveis */
   }
 
   h1 {
@@ -139,11 +139,23 @@ main {
   }
   
   main, .center {
-    padding: 20px 15px;
+    padding: 15px 15px 30px 15px;
+    justify-content: flex-start;
+    min-height: auto;
+  }
+
+  .back {
+    margin-top: 10px;
+    margin-bottom: 25px;
   }
 }
 
 @media (max-width: 480px) {
+  body {
+    padding-top: 135px; /* Offset para telas extra pequenas quando os links da top-nav quebram linha */
+    font-size: 13px;
+  }
+
   h1 {
     font-size: 16px;
     letter-spacing: 2px;
@@ -152,9 +164,5 @@ main {
   h2 {
     font-size: 14px;
     letter-spacing: 1px;
-  }
-
-  body {
-    font-size: 13px;
   }
 }
