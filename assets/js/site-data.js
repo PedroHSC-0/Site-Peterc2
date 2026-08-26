@@ -107,13 +107,13 @@ const SITE_DATA = {
     },
     {
       id: "rescue-cosmic",
-      title: "The Rescue of the Cosmic Metaphysical Engineers",
+      title: "The Return of the Metaphysical Engineers",
       subtitle: "Em Breve",
       type: "Solo",
       releaseDate: "2026-12-31",
       formattedDate: "Em Breve",
       cover: null,
-      link: "",
+      link: "the-rescue-cosmic/index.html",
       artists: ["peterc2"],
       streaming: {}
     }

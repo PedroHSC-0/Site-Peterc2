@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Return of the Metaphysical Engineers - Faixa</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="../../assets/imagens/icones/peterc2-icon.jpg">
+</head>
+
+<body class="artist-peterc2">
+
+  <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
+  <header class="top-nav">
+    <div class="top-nav-container">
+      <span class="top-nav-logo">THE RETURN OF THE METAPHYSICAL ENGINEERS</span>
+      <nav class="top-nav-links">
+        <a href="../../index.html">INÍCIO</a>
+        <a href="../../peterc2/index.html">PETERC2</a>
+        <a href="../../jcdive/index.html">JC DIVE</a>
+        <a href="../../littering/index.html">LITTERING</a>
+        <a href="../../index.html#contato" class="nav-contact-btn">CONTATO</a>
+      </nav>
+    </div>
+  </header>
+
+<main class="center">
+
+  <a href="../index.html" class="back">← voltar ao álbum</a>
+
+  <h1 id="track-title">—</h1>
+
+  <p class="artist small-text" id="track-artist"></p>
+
+  <div class="music-section" style="width: 100%;">
+    <div class="player-wrapper">
+      <iframe
+        id="track-video"
+        width="560"
+        height="315"
+        src=""
+        title=""
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="lyrics" id="track-lyrics"></div>
+
+  <div class="small-text" style="margin-top: 20px;">
+    Álbum: The Return of the Metaphysical Engineers <br>
+    Written and produced by Peterc2
+  </div>
+
+  <div class="track-nav">
+    <a href="#" id="track-prev" class="prev">← anterior</a>
+    <a href="#" id="track-next" class="next">próxima →</a>
+  </div>
+
+</main>
+
+<script src="tracks.js"></script>
+<script>
+  function render(slug) {
+    const idx = TRACKS.findIndex(t => t.slug === slug);
+    const track = TRACKS[idx === -1 ? 0 : idx];
+
+    document.title = track.title + " - The Return of the Metaphysical Engineers";
+    document.getElementById('track-title').textContent = track.title;
+    document.getElementById('track-artist').textContent = track.artist;
+    document.getElementById('track-lyrics').textContent = track.lyrics ? track.lyrics.trim() : '';
+
+    const video = document.getElementById('track-video');
+    if (track.youtube) {
+      video.src = 'https://www.youtube.com/embed/' + track.youtube;
+      video.title = track.title;
+      video.parentElement.parentElement.style.display = 'flex';
+    } else {
+      video.parentElement.parentElement.style.display = 'none';
+    }
+
+    const prev = TRACKS[(idx - 1 + TRACKS.length) % TRACKS.length];
+    const next = TRACKS[(idx + 1) % TRACKS.length];
+    document.getElementById('track-prev').href = '?track=' + prev.slug;
+    document.getElementById('track-next').href = '?track=' + next.slug;
+
+    history.replaceState(null, '', '?track=' + track.slug);
+    window.scrollTo(0, 0);
+  }
+
+  const params = new URLSearchParams(location.search);
+  render(params.get('track'));
+</script>
+
+</body>
+</html>
