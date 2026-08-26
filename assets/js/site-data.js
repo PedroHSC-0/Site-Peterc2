@@ -25,6 +25,7 @@ const SITE_DATA = {
       name: "Peterc2",
       role: "",
       portrait: "assets/imagens/icones/peterc2-icon.jpg",
+      page: "artistas/peterc2/index.html",
       contacts: {
         instagram: { label: "Instagram", value: "@peterc2_", url: "https://www.instagram.com/peterc2_/", icon: "assets/imagens/icones/instagram.svg" },
         youtube:   { label: "YouTube",   value: "@Peterc2",   url: "https://www.youtube.com/@Peterc2",   icon: "assets/imagens/icones/youtube.svg" },
@@ -38,6 +39,7 @@ const SITE_DATA = {
       name: "JC Dive",
       role: "",
       portrait: "assets/imagens/icones/jcdive-icon.jpeg",
+      page: "artistas/jcdive/index.html",
       contacts: {
         instagram: { label: "Instagram", value: "@jcdive_", url: "https://www.instagram.com/jcdive_/", icon: "assets/imagens/icones/instagram.svg" },
         youtube:   { label: "YouTube",   value: null, url: null, icon: "assets/imagens/icones/youtube.svg" },
@@ -51,6 +53,7 @@ const SITE_DATA = {
       name: "Littering",
       role: "",
       portrait: "assets/imagens/icones/littering-icon.png",
+      page: "artistas/littering/index.html",
       members: [
         { name: "Peterc2", role: "Guitarra e vocais" },
         { name: "JC Dive", role: "Guitarra e vocais" },
@@ -79,7 +82,7 @@ const SITE_DATA = {
       releaseDate: "2026-03-13",
       formattedDate: "13/03/2026",
       cover: "assets/imagens/capas/desert-sample-cover.jpeg",
-      link: "desert-sample/index.html",
+      link: "projetos/desert-sample/index.html",
       artists: ["peterc2", "jcdive"],
       streaming: {
         youtube: "https://youtu.be/GMJ9MhhTVsw",
@@ -96,7 +99,7 @@ const SITE_DATA = {
       releaseDate: "2026-04-10",
       formattedDate: "10/04/2026",
       cover: "assets/imagens/capas/the-ocean-trench-cover.jpeg",
-      link: "the-ocean-trench/index.html",
+      link: "projetos/the-ocean-trench/index.html",
       artists: ["peterc2", "jcdive", "littering"],
       streaming: {
         youtube: "https://www.youtube.com/watch?v=EPZbv-gqIFM",
@@ -113,7 +116,7 @@ const SITE_DATA = {
       releaseDate: "2026-12-31",
       formattedDate: "Em Breve",
       cover: null,
-      link: "the-rescue-of-the-metaphysical-engineers/index.html",
+      link: "projetos/the-rescue-of-the-metaphysical-engineers/index.html",
       artists: ["peterc2"],
       streaming: {},
       tracks: [
