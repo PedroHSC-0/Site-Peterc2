@@ -110,13 +110,13 @@ const SITE_DATA = {
     },
     {
       id: "rescue-cosmic",
-      title: "The Rescue Of The Metaphysical Engineers",
+      title: "The Rescue Of The Cosmic Metaphysical Engineers",
       subtitle: "Em Breve",
       type: "Solo",
       releaseDate: "2026-12-31",
       formattedDate: "Em Breve",
       cover: null,
-      link: "projetos/the-rescue-of-the-metaphysical-engineers/index.html",
+      link: "projetos/the-rescue-of-the-cosmic-metaphysical-engineers/index.html",
       artists: ["peterc2"],
       streaming: {},
       tracks: [
@@ -184,7 +184,7 @@ const SITE_DATA = {
           slug: "the-rescue",
           title: "The Rescue",
           artist: "Peterc2",
-          lyrics: `I feel mistrust behind a blunt\nNobody is here for me\Disgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad\nyourself is enough and a need for me\nI want to live down forever`
+          lyrics: `I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad\nyourself is enough and a need for me\nI want to live down forever`
         }
       ]
     }

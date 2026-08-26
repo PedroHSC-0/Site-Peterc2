@@ -2,7 +2,7 @@
    DADOS DO ÁLBUM "THE RESCUE OF THE COSMIC METAPHYSICAL ENGINEERS"
    ========================================================= */
 const ALBUM = {
-  name: "The Rescue Of Cosmic The Metaphysical Engineers",
+  name: "The Rescue Of The Cosmic Metaphysical Engineers",
   credit: "Peterc2"
 };
 
@@ -196,7 +196,7 @@ oohh`
     youtube: "",
     lyrics: `You maintain controling me
 My head into my feet
-Specs all into me
+Specs all in to me
 As I walk into the bar
 And you roamimg
 I bleed
