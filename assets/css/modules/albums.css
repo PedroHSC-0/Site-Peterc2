@@ -96,7 +96,7 @@
 }
 
 /* =========================================================
-   TRACKLIST ESTILO APPLE MUSIC (LISTA LIMPA SEM RETÂNGULOS)
+   TRACKLIST ESTILO APPLE MUSIC (LISTA LIMPA COM ESPAÇAMENTO PERFEITO)
    ========================================================= */
 .tracklist-table {
   display: flex;
@@ -109,6 +109,8 @@
 .track-row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 15px;
   padding: 12px 10px;
   border-bottom: 1px solid #1a1a1a;
   color: #cccccc;
@@ -127,7 +129,7 @@
 }
 
 .track-row .track-num {
-  width: 35px;
+  width: 30px;
   font-size: 12px;
   color: #666666;
   text-align: left;
@@ -139,13 +141,17 @@
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 1;
+  min-width: 0;
 }
 
 .track-row .track-title {
+  flex-grow: 1;
   font-size: 14px;
   letter-spacing: 1px;
   text-align: left;
   color: #dddddd;
+  padding-right: 15px;
+  word-break: break-word;
 }
 
 .track-artist-sub {
@@ -164,6 +170,10 @@
   color: #555555;
   letter-spacing: 1px;
   transition: color 0.15s ease;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-left: 15px;
+  white-space: nowrap;
 }
 
 .track-row:hover .track-action {
@@ -186,9 +196,15 @@
 
   .track-row {
     padding: 10px 6px;
+    gap: 10px;
   }
 
   .track-row .track-title {
     font-size: 13px;
+    padding-right: 10px;
+  }
+
+  .track-row .track-action {
+    padding-left: 10px;
   }
 }
