@@ -115,7 +115,7 @@ const SITE_DATA = {
       type: "Solo",
       releaseDate: "2026-12-31",
       formattedDate: "Em Breve",
-      cover: null,
+      cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.jpeg",
       link: "projetos/the-rescue-of-the-cosmic-metaphysical-engineers/index.html",
       artists: ["peterc2"],
       streaming: {},
