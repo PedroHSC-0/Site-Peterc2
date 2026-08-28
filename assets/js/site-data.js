@@ -145,12 +145,6 @@ const SITE_DATA = {
           lyrics: `A voice mumbling "carrot babies"\nyou just can't understand\n\nFlooding churches\nIn the bachelor station\nBut you can wash yourself\n\nThe freaks step crushed your handbones baby\nYou can just pay their band\n\nI feel stopped as the winds are spreading\nAnd you had just payed your rent\n\nohh ohh`
         },
         {
-          slug: "asleep",
-          title: "Asleep",
-          artist: "Peterc2",
-          lyrics: `I am not a dream\nYou're not asleep\nWe are so free\nYou're not asleep\n\nI won't brag a thing\nDo you glad it all to me\nDreams are led, sir (and all come true)\n\nI am on your tree\nIgnore the screams\nI am not a dream`
-        },
-        {
           slug: "shaking-hands",
           title: "Shaking Hands",
           artist: "Peterc2",
@@ -161,6 +155,12 @@ const SITE_DATA = {
           title: "The Sailor (Interlude)",
           artist: "Peterc2",
           lyrics: `Sailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons`
+        },
+        {
+          slug: "asleep",
+          title: "Asleep",
+          artist: "Peterc2",
+          lyrics: `I am not a dream\nYou're not asleep\nWe are so free\nYou're not asleep\n\nI won't brag a thing\nDo you glad it all to me\nDreams are led, sir (and all come true)\n\nI am on your tree\nIgnore the screams\nI am not a dream`
         },
         {
           slug: "no-one-spoke",

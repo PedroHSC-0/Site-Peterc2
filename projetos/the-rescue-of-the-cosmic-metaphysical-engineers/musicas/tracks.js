@@ -100,24 +100,6 @@ And you had just payed your rent
 ohh ohh`
   },
   {
-    slug: "asleep",
-    title: "Asleep",
-    artist: "Peterc2",
-    youtube: "",
-    lyrics: `I am not a dream
-You're not asleep
-We are so free
-You're not asleep
-
-I won't brag a thing
-Do you glad it all to me
-Dreams are led, sir (and all come true)
-
-I am on your tree
-Ignore the screams
-I am not a dream`
-  },
-  {
     slug: "shaking-hands",
     title: "Shaking Hands",
     artist: "Peterc2",
@@ -149,6 +131,24 @@ Sailing away in a mountain of cottons
 Sailing away in a mountain of cottons`
   },
   {
+    slug: "asleep",
+    title: "Asleep",
+    artist: "Peterc2",
+    youtube: "",
+    lyrics: `I am not a dream
+You're not asleep
+We are so free
+You're not asleep
+
+I won't brag a thing
+Do you glad it all to me
+Dreams are led, sir (and all come true)
+
+I am on your tree
+Ignore the screams
+I am not a dream`
+  },
+  {
     slug: "no-one-spoke",
     title: "No One Spoke",
     artist: "Peterc2",
@@ -173,7 +173,7 @@ As you spoke`
   },
   {
     slug: "the-rescue-interlude",
-    title: "The Rescue",
+    title: "The Rescue (Interlude)",
     artist: "Peterc2",
     youtube: "",
     lyrics: `I feel mistrust behind a blunt
@@ -227,7 +227,7 @@ oohh`
   },
   {
     slug: "cosmic-metaphysical-engineers",
-    title: "Cosmic Metaphysical Engineers",
+    title: "Cosmic metaphysical Engineers",
     artist: "Peterc2",
     youtube: "",
     lyrics: `Breathe in
