@@ -28,35 +28,36 @@
 
   <a href="../index.html" class="back">← voltar ao álbum</a>
 
-  <h1 id="track-title">—</h1>
+  <div class="album-detail-container">
+    <h1 id="track-title" class="album-detail-title">—</h1>
+    <p class="artist small-text" id="track-artist" style="margin-top: 4px; color: #888888; letter-spacing: 2px;"></p>
 
-  <p class="artist small-text" id="track-artist"></p>
-
-  <div class="music-section" style="width: 100%;">
-    <div class="player-wrapper">
-      <iframe
-        id="track-video"
-        width="560"
-        height="315"
-        src=""
-        title=""
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+    <div class="music-section" style="width: 100%; margin-top: 20px;">
+      <div class="player-wrapper">
+        <iframe
+          id="track-video"
+          width="560"
+          height="315"
+          src=""
+          title=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
-  </div>
 
-  <div class="lyrics" id="track-lyrics"></div>
+    <div class="lyrics" id="track-lyrics" style="margin-top: 20px;"></div>
 
-  <div class="small-text" style="margin-top: 20px;">
-    EP: Desert Sample <br>
-    Written and produced by Peterc2 & JC Dive
-  </div>
+    <div class="small-text" style="margin-top: 20px; color: #666666;">
+      EP: Desert Sample <br>
+      Written and produced by Peterc2 & JC Dive
+    </div>
 
-  <div class="track-nav">
-    <a href="#" id="track-prev" class="prev">← anterior</a>
-    <a href="#" id="track-next" class="next">próxima →</a>
+    <div class="track-nav" style="margin-top: 25px;">
+      <a href="#" id="track-prev" class="prev">← anterior</a>
+      <a href="#" id="track-next" class="next">próxima →</a>
+    </div>
   </div>
 
 </main>
@@ -70,11 +71,16 @@
     document.title = track.title + " - Desert Sample";
     document.getElementById('track-title').textContent = track.title;
     document.getElementById('track-artist').textContent = track.artist;
-    document.getElementById('track-lyrics').textContent = track.lyrics.trim();
+    document.getElementById('track-lyrics').textContent = track.lyrics ? track.lyrics.trim() : '';
 
     const video = document.getElementById('track-video');
-    video.src = 'https://www.youtube.com/embed/' + track.youtube;
-    video.title = track.title;
+    if (track.youtube) {
+      video.src = 'https://www.youtube.com/embed/' + track.youtube;
+      video.title = track.title;
+      video.parentElement.parentElement.style.display = 'flex';
+    } else {
+      video.parentElement.parentElement.style.display = 'none';
+    }
 
     const prev = TRACKS[(idx - 1 + TRACKS.length) % TRACKS.length];
     const next = TRACKS[(idx + 1) % TRACKS.length];
