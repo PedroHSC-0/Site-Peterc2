@@ -172,7 +172,7 @@ const SITE_DATA = {
           slug: "under-scort",
           title: "Under Scort",
           artist: "Peterc2",
-          lyrics: ``
+          lyrics: `[Faixa Instrumental]`
         },
         {
           slug: "the-rescue-interlude",

@@ -173,7 +173,7 @@ The stress goes for you (All below you)`
     title: "Under Scort",
     artist: "Peterc2",
     youtube: "",
-    lyrics: ``
+    lyrics: `[Faixa Instrumental]`
   },
   {
     slug: "the-rescue-interlude",
