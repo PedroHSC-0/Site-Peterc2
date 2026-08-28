@@ -230,6 +230,37 @@ oohh`
     title: "Cosmic metaphysical Engineers",
     artist: "Peterc2",
     youtube: "",
-    lyrics: ``
+    lyrics: `Breathe in 
+the letter I send you
+whoever it goes
+cut out fawn
+been crashing through the floor
+you're done
+with nowhere to go
+
+Burned bushes
+she ripped and plunged
+to feel undereating
+I constantly pushed the very best from you
+your polluted eyes 
+is where i recover from you
+
+In ripnic jerks 
+i greet the rest of you 
+a union lever 
+or seas of bloodsheds
+the gods of stinginess
+in rings of plastic 
+I brush this blessing from
+the fraud you are
+
+Its like a dune devil race
+Its like a doom devil rain
+its like a dune devil eraser
+Its like a dune devil race
+Its like a dune devil race
+Its like a dune devil race
+Its like a dune devil race
+Its like a dune devil race`
   }
 ];
