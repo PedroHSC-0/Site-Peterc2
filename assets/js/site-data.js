@@ -163,10 +163,10 @@ const SITE_DATA = {
           lyrics: `Sailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons`
         },
         {
-          slug: "death-valley",
-          title: "Death Valley",
+          slug: "no-one-spoke",
+          title: "No One Spoke",
           artist: "Peterc2",
-          lyrics: `Elaboring future faces\nAround the world the rest is yours\nSeen bumping around\ncounting and forming\nWith the winds below\n\nBeen sent around the wishes\nall because of you\nSworn around the fishes\nand lead 'cause of you\nsilenced by your changes\nI weep 'cause of you\nhang around the distance\nThe stress goes for you (All below you)`
+          lyrics: `You maintain controling me\nMy head into my feet\nSpecs all in to me\nAs I walk into the bar\nAnd you roamimg\nI bleed\n\nand you're flaking me\nI love you flaking me\nAs you spoke`
         },
         {
           slug: "under-scort",
@@ -181,10 +181,10 @@ const SITE_DATA = {
           lyrics: `I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad\nyourself is enough and a need for me\nI want to live down forever`
         },
         {
-          slug: "no-one-spoke",
-          title: "No One Spoke",
+          slug: "death-valley",
+          title: "Death Valley",
           artist: "Peterc2",
-          lyrics: `You maintain controling me\nMy head into my feet\nSpecs all in to me\nAs I walk into the bar\nAnd you roamimg\nI bleed\n\nand you're flaking me\nI love you flaking me\nAs you spoke`
+          lyrics: `Elaboring future faces\nAround the world the rest is yours\nSeen bumping around\ncounting and forming\nWith the winds below\n\nBeen sent around the wishes\nall because of you\nSworn around the fishes\nand lead 'cause of you\nsilenced by your changes\nI weep 'cause of you\nhang around the distance\nThe stress goes for you (All below you)`
         },
         {
           slug: "lady-broom",

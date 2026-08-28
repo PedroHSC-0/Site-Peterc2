@@ -149,24 +149,20 @@ Sailing away in a mountain of cottons
 Sailing away in a mountain of cottons`
   },
   {
-    slug: "death-valley",
-    title: "Death Valley",
+    slug: "no-one-spoke",
+    title: "No One Spoke",
     artist: "Peterc2",
     youtube: "",
-    lyrics: `Elaboring future faces
-Around the world the rest is yours
-Seen bumping around
-counting and forming
-With the winds below
+    lyrics: `You maintain controling me
+My head into my feet
+Specs all in to me
+As I walk into the bar
+And you roamimg
+I bleed
 
-Been sent around the wishes
-all because of you
-Sworn around the fishes
-and lead 'cause of you
-silenced by your changes
-I weep 'cause of you
-hang around the distance
-The stress goes for you (All below you)`
+and you're flaking me
+I love you flaking me
+As you spoke`
   },
   {
     slug: "under-scort",
@@ -189,20 +185,24 @@ yourself is enough and a need for me
 I want to live down forever`
   },
   {
-    slug: "no-one-spoke",
-    title: "No One Spoke",
+    slug: "death-valley",
+    title: "Death Valley",
     artist: "Peterc2",
     youtube: "",
-    lyrics: `You maintain controling me
-My head into my feet
-Specs all in to me
-As I walk into the bar
-And you roamimg
-I bleed
+    lyrics: `Elaboring future faces
+Around the world the rest is yours
+Seen bumping around
+counting and forming
+With the winds below
 
-and you're flaking me
-I love you flaking me
-As you spoke`
+Been sent around the wishes
+all because of you
+Sworn around the fishes
+and lead 'cause of you
+silenced by your changes
+I weep 'cause of you
+hang around the distance
+The stress goes for you (All below you)`
   },
   {
     slug: "lady-broom",
@@ -230,7 +230,7 @@ oohh`
     title: "Cosmic metaphysical Engineers",
     artist: "Peterc2",
     youtube: "",
-    lyrics: `Breathe in 
+    lyrics: `Breathe in
 the letter I send you
 whoever it goes
 cut out fawn
@@ -242,15 +242,15 @@ Burned bushes
 she ripped and plunged
 to feel undereating
 I constantly pushed the very best from you
-your polluted eyes 
+your polluted eyes
 is where i recover from you
 
-In ripnic jerks 
-i greet the rest of you 
-a union lever 
+In ripnic jerks
+i greet the rest of you
+a union lever
 or seas of bloodsheds
 the gods of stinginess
-in rings of plastic 
+in rings of plastic
 I brush this blessing from
 the fraud you are
 
