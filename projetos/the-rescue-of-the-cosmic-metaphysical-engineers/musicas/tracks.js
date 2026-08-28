@@ -227,7 +227,7 @@ oohh`
   },
   {
     slug: "cosmic-metaphysical-engineers",
-    title: "Cosmic metaphysical Engineers",
+    title: "Cosmic Metaphysical Engineers",
     artist: "Peterc2",
     youtube: "",
     lyrics: `Breathe in
