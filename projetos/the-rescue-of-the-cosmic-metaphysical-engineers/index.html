@@ -37,76 +37,12 @@
       <p class="album-detail-sub">PETERC2</p>
       <p class="small-text">LANÇAMENTO: EM BREVE</p>
 
-      <!-- FAIXAS / TRACKLIST ESTILO APPLE MUSIC -->
+      <!-- FAIXAS / TRACKLIST DINÂMICA DEDUZIDA DE TRACKS.JS -->
       <div class="album-tracklist-box">
         <h2 class="album-tracklist-title">FAIXAS DO ÁLBUM</h2>
 
-        <div class="tracklist-table">
-          <a href="musicas/index.html?track=pull-back-the-ancients" class="track-row">
-            <span class="track-num">01</span>
-            <span class="track-title">Pull Back the Ancients</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=its-calling-you" class="track-row">
-            <span class="track-num">02</span>
-            <span class="track-title">Its Calling You</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=possession-part-2" class="track-row">
-            <span class="track-num">03</span>
-            <span class="track-title">Possession Part 2</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=human-museum" class="track-row">
-            <span class="track-num">04</span>
-            <span class="track-title">Human Museum</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=asleep" class="track-row">
-            <span class="track-num">05</span>
-            <span class="track-title">Asleep</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=shaking-hands" class="track-row">
-            <span class="track-num">06</span>
-            <span class="track-title">Shaking Hands</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=the-sailor-interlude" class="track-row">
-            <span class="track-num">07</span>
-            <span class="track-title">The Sailor (Interlude)</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=no-one-spoke" class="track-row">
-            <span class="track-num">08</span>
-            <span class="track-title">No One Spoke</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=under-scort" class="track-row">
-            <span class="track-num">09</span>
-            <span class="track-title">Under Scort</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=the-rescue-interlude" class="track-row">
-            <span class="track-num">10</span>
-            <span class="track-title">The Rescue (Interlude)</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=death-valley" class="track-row">
-            <span class="track-num">11</span>
-            <span class="track-title">Death Valley</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=lady-broom" class="track-row">
-            <span class="track-num">12</span>
-            <span class="track-title">Lady Broom</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
-          <a href="musicas/index.html?track=cosmic-metaphysical-engineers" class="track-row">
-            <span class="track-num">13</span>
-            <span class="track-title">Cosmic metaphysical Engineers</span>
-            <span class="track-action">VER LETRA ▶</span>
-          </a>
+        <div class="tracklist-table" id="tracklist-table">
+          <!-- Gerado automaticamente a partir de musicas/tracks.js -->
         </div>
       </div>
 
@@ -115,7 +51,26 @@
 
 </main>
 
+  <script src="musicas/tracks.js"></script>
   <script src="../../assets/js/site-data.js"></script>
   <script src="../../assets/js/analytics.js"></script>
+  <script>
+    (function renderDynamicTracklist() {
+      const container = document.getElementById('tracklist-table');
+      if (!container || typeof TRACKS === 'undefined') return;
+
+      container.innerHTML = TRACKS.map((track, i) => {
+        const num = String(i + 1).padStart(2, '0');
+        const actionText = track.youtube ? 'OUVIR ▶' : 'VER LETRA ▶';
+        return `
+          <a href="musicas/index.html?track=${track.slug}" class="track-row">
+            <span class="track-num">${num}</span>
+            <span class="track-title">${track.title}</span>
+            <span class="track-action">${actionText}</span>
+          </a>
+        `;
+      }).join('');
+    })();
+  </script>
 </body>
 </html>

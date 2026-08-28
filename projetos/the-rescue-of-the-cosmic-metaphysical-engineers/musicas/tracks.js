@@ -173,7 +173,7 @@ As you spoke`
   },
   {
     slug: "the-rescue-interlude",
-    title: "The Rescue (Interlude)",
+    title: "The Rescue",
     artist: "Peterc2",
     youtube: "",
     lyrics: `I feel mistrust behind a blunt
@@ -227,7 +227,7 @@ oohh`
   },
   {
     slug: "cosmic-metaphysical-engineers",
-    title: "Cosmic metaphysical Engineers",
+    title: "Cosmic Metaphysical Engineers",
     artist: "Peterc2",
     youtube: "",
     lyrics: `Breathe in
