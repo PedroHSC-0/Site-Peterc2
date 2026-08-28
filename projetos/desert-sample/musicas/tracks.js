@@ -44,7 +44,7 @@ Fly me like a hot balloon in space in place in place in place`
   {
     slug: "canto-do-silencio",
     title: "Canto do Silêncio",
-    artist: "Peterc2",
+    artist: "JC Dive & Peterc2",
     youtube: "Vb42AxNU-pg",
     lyrics: `O canto do silêncio
 Fez sangrar
@@ -70,7 +70,7 @@ Que aquilo não era amor`
   {
     slug: "your-skull",
     title: "Your Skull Is Warm and Soft",
-    artist: "Peterc2",
+    artist: "Peterc2 & JC Dive",
     youtube: "37bsAFdPYCw",
     lyrics: `Try, try, try do the wind blows ( I hope to return to your skull)
 Try, try, try do the wind blows (I hope to return to your skull)
@@ -95,7 +95,7 @@ I will never pay attention`
   {
     slug: "lilly",
     title: "Lilly",
-    artist: "JC Dive",
+    artist: "JC Dive & Peterc2",
     youtube: "px3f54XOjCs",
     lyrics: `Lilly knows too well
 How to make me feel a thrill sometimes

@@ -134,12 +134,25 @@
   flex-shrink: 0;
 }
 
-.track-row .track-title {
+.track-info-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   flex-grow: 1;
+}
+
+.track-row .track-title {
   font-size: 14px;
   letter-spacing: 1px;
   text-align: left;
   color: #dddddd;
+}
+
+.track-artist-sub {
+  font-size: 11px;
+  color: #666666;
+  margin-top: 2px;
+  text-align: left;
 }
 
 .track-row:hover .track-title {

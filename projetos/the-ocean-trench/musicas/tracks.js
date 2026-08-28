@@ -104,7 +104,7 @@ A blossom would set them down`
   {
     slug: "canto-do-silencio",
     title: "Canto do Silêncio",
-    artist: "JC Dive",
+    artist: "JC Dive & Peterc2",
     youtube: "1OFMx_H76qQ",
     lyrics: `O canto do silêncio
 Fez sangrar
@@ -221,7 +221,7 @@ Is your love`
   {
     slug: "lilly",
     title: "Lilly",
-    artist: "JC Dive",
+    artist: "JC Dive & Peterc2",
     youtube: "l9orgvq8REc",
     lyrics: `Lilly knows too well
 How to make me feel a thrill sometimes
@@ -286,7 +286,7 @@ put your head in place`
   {
     slug: "my-view-is-bad",
     title: "My View Is Bad",
-    artist: "Peterc2",
+    artist: "Peterc2 & JC Dive",
     youtube: "FPIJmeBQYa8",
     lyrics: `My view from here is bad but not every time
 All the clues could have brought me high
@@ -394,7 +394,7 @@ What can we do for life to shine again?`
   {
     slug: "your-skull",
     title: "Your Skull Is Warm and Soft",
-    artist: "Peterc2",
+    artist: "Peterc2 & JC Dive",
     youtube: "37bsAFdPYCw",
     lyrics: `Try, try, try do the wind blows ( I hope to return to your skull)
 Try, try, try do the wind blows (I hope to return to your skull)
