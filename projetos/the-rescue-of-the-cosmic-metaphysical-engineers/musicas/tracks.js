@@ -121,8 +121,8 @@ you know
 you know`
   },
   {
-    slug: "the-sailor-interlude",
-    title: "The Sailor (Interlude)",
+    slug: "the-sailor",
+    title: "The Sailor",
     artist: "Peterc2",
     youtube: "",
     lyrics: `Sailing away in a mountain of cottons
@@ -172,8 +172,8 @@ As you spoke`
     lyrics: `[Faixa Instrumental]`
   },
   {
-    slug: "the-rescue-interlude",
-    title: "The Rescue (Interlude)",
+    slug: "the-rescue",
+    title: "The Rescue",
     artist: "Peterc2",
     youtube: "",
     lyrics: `I feel mistrust behind a blunt
@@ -227,7 +227,7 @@ oohh`
   },
   {
     slug: "cosmic-metaphysical-engineers",
-    title: "Cosmic Metaphysical Engineers",
+    title: "Cosmic metaphysical Engineers",
     artist: "Peterc2",
     youtube: "",
     lyrics: `Breathe in

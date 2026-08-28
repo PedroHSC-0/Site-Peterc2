@@ -151,8 +151,8 @@ const SITE_DATA = {
           lyrics: `You had my possessions\nand I won't forget you.\nFeel like natural thing,\nbut I won't forget you.\n\nAnd I hadn't\nshowed any pleasure\nYou know\nI listen to you\nAbsolution\nYou know I hadn't\nYou lost the picture\nyou know\nyou know\nyou know`
         },
         {
-          slug: "the-sailor-interlude",
-          title: "The Sailor (Interlude)",
+          slug: "the-sailor",
+          title: "The Sailor",
           artist: "Peterc2",
           lyrics: `Sailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons`
         },
@@ -175,8 +175,8 @@ const SITE_DATA = {
           lyrics: `[Faixa Instrumental]`
         },
         {
-          slug: "the-rescue-interlude",
-          title: "The Rescue (Interlude)",
+          slug: "the-rescue",
+          title: "The Rescue",
           artist: "Peterc2",
           lyrics: `I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad\nyourself is enough and a need for me\nI want to live down forever`
         },
