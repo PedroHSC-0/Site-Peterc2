@@ -121,14 +121,8 @@ const SITE_DATA = {
       streaming: {},
       tracks: [
         {
-          slug: "asleep-interlude",
-          title: "Asleep (Interlude)",
-          artist: "Peterc2",
-          lyrics: `I am not a dream\nYou're not asleep\nWe are so free\nYou're not asleep\n\nI won't brag a thing\nDo you glad it all to me\nDreams are led, sir (and all come true)\n\nI am on your tree\nIgnore the screams\nI am not a dream`
-        },
-        {
-          slug: "pull-back-the-ancient",
-          title: "Pull Back The Ancient",
+          slug: "pull-back-the-ancients",
+          title: "Pull Back the Ancients",
           artist: "Peterc2",
           lyrics: `If you want do the right to me\nIf you want me to stay\nand i know, i won't dare\nIf you want me to solve the clues\nI am the ancient love\n\nIf you want play the blind with me\nIf you want me to stay\nand you know, i don't care\nIf you want me to share the truth\nI'll be the last to love forevermore`
         },
@@ -145,10 +139,16 @@ const SITE_DATA = {
           lyrics: `I don't have the time but I would die for you\nI don't have the time but I would die for you\nI don't have the time but I would die for you (I do)\nI would die for you If i had the time`
         },
         {
-          slug: "death-valley",
-          title: "Death Valley",
+          slug: "human-museum",
+          title: "Human Museum",
           artist: "Peterc2",
-          lyrics: `Elaboring future faces\nAround the world the rest is yours\nSeen bumping around\ncounting and forming\nWith the winds below\n\nBeen sent around the wishes\nall because of you\nSworn around the fishes\nand lead 'cause of you\nsilenced by your changes\nI weep 'cause of you\nhang around the distance\nThe stress goes for you (All below you)`
+          lyrics: `A voice mumbling "carrot babies"\nyou just can't understand\n\nFlooding churches\nIn the bachelor station\nBut you can wash yourself\n\nThe freaks step crushed your handbones baby\nYou can just pay their band\n\nI feel stopped as the winds are spreading\nAnd you had just payed your rent\n\nohh ohh`
+        },
+        {
+          slug: "asleep",
+          title: "Asleep",
+          artist: "Peterc2",
+          lyrics: `I am not a dream\nYou're not asleep\nWe are so free\nYou're not asleep\n\nI won't brag a thing\nDo you glad it all to me\nDreams are led, sir (and all come true)\n\nI am on your tree\nIgnore the screams\nI am not a dream`
         },
         {
           slug: "shaking-hands",
@@ -157,16 +157,34 @@ const SITE_DATA = {
           lyrics: `You had my possessions\nand I won't forget you.\nFeel like natural thing,\nbut I won't forget you.\n\nAnd I hadn't\nshowed any pleasure\nYou know\nI listen to you\nAbsolution\nYou know I hadn't\nYou lost the picture\nyou know\nyou know\nyou know`
         },
         {
-          slug: "human-museum",
-          title: "Human Museum",
-          artist: "Peterc2",
-          lyrics: `A voice mumbling "carrot babies"\nyou just can't understand\n\nFlooding churches\nIn the bachelor station\nBut you can wash yourself\n\nThe freaks step crushed your handbones baby\nYou can just pay their band\n\nI feel stopped as the winds are spreading\nAnd you had just payed your rent\n\nohh ohh`
-        },
-        {
           slug: "the-sailor-interlude",
           title: "The Sailor (Interlude)",
           artist: "Peterc2",
           lyrics: `Sailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons`
+        },
+        {
+          slug: "death-valley",
+          title: "Death Valley",
+          artist: "Peterc2",
+          lyrics: `Elaboring future faces\nAround the world the rest is yours\nSeen bumping around\ncounting and forming\nWith the winds below\n\nBeen sent around the wishes\nall because of you\nSworn around the fishes\nand lead 'cause of you\nsilenced by your changes\nI weep 'cause of you\nhang around the distance\nThe stress goes for you (All below you)`
+        },
+        {
+          slug: "under-scort",
+          title: "Under Scort",
+          artist: "Peterc2",
+          lyrics: ``
+        },
+        {
+          slug: "the-rescue-interlude",
+          title: "The Rescue (Interlude)",
+          artist: "Peterc2",
+          lyrics: `I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad\nyourself is enough and a need for me\nI want to live down forever`
+        },
+        {
+          slug: "no-one-spoke",
+          title: "No One Spoke",
+          artist: "Peterc2",
+          lyrics: `You maintain controling me\nMy head into my feet\nSpecs all in to me\nAs I walk into the bar\nAnd you roamimg\nI bleed\n\nand you're flaking me\nI love you flaking me\nAs you spoke`
         },
         {
           slug: "lady-broom",
@@ -175,16 +193,10 @@ const SITE_DATA = {
           lyrics: `I've been drying (A turtle misplaced in to be pure)\nYou've been resting low (skepting blighters, you're clame the swan)\nI've been trying (Are you so under weather)\nYou're my nesting flow (write the letter show me the pleasure)\n(I don't wanna listen your fucking blues)\n\nI've been crying (I will stab to be sure)\nYou've been resting low (You're a eerie shore)\nI've been drying (if you wanna live underwater)\nUnleashed is bad to know (hand me the letter and show me your lesson)\n\nI will stab you to be sure\n\nOhh\noohh`
         },
         {
-          slug: "nothing-spoked",
-          title: "Nothing spoked",
+          slug: "cosmic-metaphysical-engineers",
+          title: "Cosmic metaphysical Engineers",
           artist: "Peterc2",
-          lyrics: `You maintain controling me\nMy head into my feet\nSpecs all in to me\nAs I walk into the bar\nAnd you roamimg\nI bleed\n\nand you're flaking me\nI love you flaking me\nAs you spoke`
-        },
-        {
-          slug: "the-rescue",
-          title: "The Rescue",
-          artist: "Peterc2",
-          lyrics: `I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad\nyourself is enough and a need for me\nI want to live down forever`
+          lyrics: ``
         }
       ]
     }
