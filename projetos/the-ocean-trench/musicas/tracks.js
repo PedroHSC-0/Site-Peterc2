@@ -398,7 +398,7 @@ What can we do for life to shine again?`
     slug: "your-skull",
     title: "Your Skull Is Warm and Soft",
     artist: "Peterc2 & JC Dive",
-    youtube: "SaNMSY2",
+    youtube: "nro1IzIxfh4",
     lyrics: `Try, try, try do the wind blows ( I hope to return to your skull)
 Try, try, try do the wind blows (I hope to return to your skull)
 Try, try, try do the wind blows ( I hope to return to your skull)
