@@ -4,6 +4,29 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+/* =========================================================
+   FONTES CUSTOMIZADAS: FAKE SMITHS & OUT OF TUNE
+   ========================================================= */
+@font-face {
+  font-family: 'Fake Smiths';
+  src: url('../fonts/FakeSmiths.ttf') format('truetype'),
+       url('../fonts/FakeSmiths.otf') format('opentype'),
+       url('../fonts/fake-smiths.ttf') format('truetype'),
+       url('../fonts/fake_smiths.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Out of Tune';
+  src: url('../fonts/OutOfTune.ttf') format('truetype'),
+       url('../fonts/OutOfTune.otf') format('opentype'),
+       url('../fonts/out-of-tune.ttf') format('truetype'),
+       url('../fonts/out_of_tune.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "modules/base.css";
 @import "modules/components.css";
 @import "modules/home.css";

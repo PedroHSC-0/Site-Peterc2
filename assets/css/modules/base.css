@@ -10,14 +10,14 @@
 }
 
 body, p, a, span, li, button, input, select, textarea, table, td, th {
-  font-family: Impact, fantasy, sans-serif;
+  font-family: "Out of Tune", Impact, fantasy, sans-serif;
 }
 
 /* Configuração do corpo da página - Fundo escuro fosco e texto limpo */
 body {
   background-color: #0d0d0d;
   color: #cccccc;
-  font-family: Impact, fantasy, sans-serif;
+  font-family: "Out of Tune", Impact, fantasy, sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
   display: flex;
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6,
 .artist-card-title,
 .album-card-title,
 .album-tracklist-title {
-  font-family: "Indie Flower", cursive, sans-serif;
+  font-family: "Fake Smiths", "Indie Flower", cursive, sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: normal;
