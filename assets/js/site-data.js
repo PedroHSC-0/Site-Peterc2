@@ -199,6 +199,18 @@ const SITE_DATA = {
           lyrics: `Breathe in\nthe letter I send you\nwhoever it goes\ncut out fawn\nbeen crashing through the floor\nyou're done\nwith nowhere to go\n\nBurned bushes\nshe ripped and plunged\nto feel undereating\nI constantly pushed the very best from you\nyour polluted eyes\nis where i recover from you\n\nIn ripnic jerks\ni greet the rest of you\na union lever\nor seas of bloodsheds\nthe gods of stinginess\nin rings of plastic\nI brush this blessing from\nthe fraud you are\n\nIts like a dune devil race\nIts like a doom devil rain\nits like a dune devil eraser\nIts like a dune devil race\nIts like a dune devil race\nIts like a dune devil race\nIts like a dune devil race\nIts like a dune devil race`
         }
       ]
+    },
+    {
+      id: "out-of-style",
+      title: "Out Of Style",
+      subtitle: "Littering • Em Breve",
+      type: "Banda",
+      releaseDate: "2026-12-31",
+      formattedDate: "Em Breve",
+      cover: "assets/imagens/capas/out-of-style-cover.jpeg",
+      link: "artistas/littering/index.html",
+      artists: ["littering", "peterc2", "jcdive"],
+      streaming: {}
     }
   ]
 };

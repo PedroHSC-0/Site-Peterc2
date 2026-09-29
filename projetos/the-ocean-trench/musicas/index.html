@@ -72,8 +72,9 @@
 <script src="tracks.js"></script>
 <script>
   function render(slug) {
-    const idx = TRACKS.findIndex(t => t.slug === slug);
-    const track = TRACKS[idx === -1 ? 0 : idx];
+    const foundIdx = TRACKS.findIndex(t => t.slug === slug);
+    const idx = foundIdx === -1 ? 0 : foundIdx;
+    const track = TRACKS[idx];
 
     document.title = track.title + " - The Ocean Trench";
     document.getElementById('track-title').textContent = track.title;
