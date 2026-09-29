@@ -77,7 +77,7 @@ const SITE_DATA = {
     {
       id: "desert-sample",
       title: "Desert Sample",
-      subtitle: "Peterc2 & JC Dive • 13/03/2026",
+      subtitle: "Peterc2 e JC Dive • 13/03/2026",
       type: "Colaboração",
       releaseDate: "2026-03-13",
       formattedDate: "13/03/2026",
@@ -94,7 +94,7 @@ const SITE_DATA = {
     {
       id: "the-ocean-trench",
       title: "The Ocean Trench",
-      subtitle: "Peterc2 & JC Dive • 10/04/2026",
+      subtitle: "Peterc2 e JC Dive • 10/04/2026",
       type: "Colaboração",
       releaseDate: "2026-04-10",
       formattedDate: "10/04/2026",

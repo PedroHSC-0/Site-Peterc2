@@ -7,14 +7,14 @@
 ========================================================= */
 const ALBUM = {
   name: "The Ocean Trench",
-  credit: "Peterc2 & JC Dive"
+  credit: "Peterc2 e JC Dive"
 };
 
 const TRACKS = [
   {
     slug: "the-ocean-trench",
     title: "The Ocean Trench",
-    artist: "Peterc2 & JC Dive",
+    artist: "Peterc2 e JC Dive",
     youtube: "6JNBU0PBISE",
     lyrics: `I could be better
 Bring the fire of you
@@ -107,7 +107,7 @@ A blossom would set them down`
   {
     slug: "canto-do-silencio",
     title: "Canto do Silêncio",
-    artist: "JC Dive & Peterc2",
+    artist: "JC Dive e Peterc2",
     youtube: "1OFMx_H76qQ",
     lyrics: `O canto do silêncio
 Fez sangrar
@@ -224,7 +224,7 @@ Is your love`
   {
     slug: "lilly",
     title: "Lilly",
-    artist: "JC Dive & Peterc2",
+    artist: "JC Dive e Peterc2",
     youtube: "l9orgvq8REc",
     lyrics: `Lilly knows too well
 How to make me feel a thrill sometimes
@@ -289,7 +289,7 @@ put your head in place`
   {
     slug: "my-view-is-bad",
     title: "My View Is Bad",
-    artist: "Peterc2 & JC Dive",
+    artist: "Peterc2 e JC Dive",
     youtube: "FPIJmeBQYa8",
     lyrics: `My view from here is bad but not every time
 All the clues could have brought me high
@@ -314,7 +314,7 @@ Like frank sinatra when you fry within`
   {
     slug: "littering",
     title: "Littering",
-    artist: "JC Dive & Peterc2",
+    artist: "JC Dive e Peterc2",
     youtube: "NjArWBfAS7c",
     lyrics: `So cold
 Animals assexual
@@ -397,7 +397,7 @@ What can we do for life to shine again?`
   {
     slug: "your-skull",
     title: "Your Skull Is Warm and Soft",
-    artist: "Peterc2 & JC Dive",
+    artist: "Peterc2 e JC Dive",
     youtube: "ycQuwThmUME",
     lyrics: `Try, try, try do the wind blows ( I hope to return to your skull)
 Try, try, try do the wind blows (I hope to return to your skull)
@@ -471,7 +471,7 @@ you can let them stay`
   {
     slug: "corner-van",
     title: "Corner Van",
-    artist: "Peterc2 & JC Dive",
+    artist: "Peterc2 e JC Dive",
     youtube: "8A399hebh6A",
     lyrics: `Licks in my veins
 Riffs are made never the same
