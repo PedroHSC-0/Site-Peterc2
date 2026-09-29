@@ -51,3 +51,37 @@
   color: #ffffff;
   border-color: #555555;
 }
+
+/* =========================================================
+   SEÇÃO DE LANÇAMENTOS RECENTES (ESTILO COMPACTO)
+   ========================================================= */
+.home .recent-releases-section {
+  width: 100%;
+  max-width: 650px;
+  margin: 15px auto 20px auto;
+  padding: 12px 16px;
+  background: #111111;
+  border: 1px solid #222222;
+  text-align: left;
+}
+
+.home .recent-releases-section .album-gallery {
+  grid-template-columns: repeat(auto-fit, minmax(130px, 160px));
+  gap: 12px;
+  margin-top: 8px;
+  justify-content: flex-start;
+}
+
+.home .recent-releases-section .album-card {
+  padding: 8px;
+}
+
+.home .recent-releases-section .album-card-title {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.home .recent-releases-section .album-card-sub {
+  font-size: 10px;
+}
+
