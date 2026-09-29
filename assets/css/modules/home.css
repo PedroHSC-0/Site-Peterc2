@@ -52,52 +52,5 @@
   border-color: #555555;
 }
 
-/* =========================================================
-   SEÇÃO DE LANÇAMENTOS RECENTES (ESTILO COMPACTO & SIMÉTRICO)
-   ========================================================= */
-.home .recent-releases-section {
-  width: 100%;
-  max-width: 850px;
-  margin: 20px auto;
-  padding: 16px 20px;
-  background: #111111;
-  border: 1px solid #222222;
-  text-align: center;
-}
-
-.home .recent-releases-section .collab-title {
-  font-size: 13px;
-  letter-spacing: 2px;
-  color: #aaaaaa;
-  margin-bottom: 14px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.home .recent-releases-section .album-gallery {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  gap: 20px;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.home .recent-releases-section .album-card {
-  width: 180px;
-  max-width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
-.home .recent-releases-section .album-card-title {
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-.home .recent-releases-section .album-card-sub {
-  font-size: 11px;
-}
 
 

@@ -20,6 +20,7 @@
   }
 
   // Retorna álbuns lançados ou a serem lançados a uma distância de até X dias (passado e futuro)
+  // ou lançamentos sem data definida ("Em Breve")
   function getRecentReleases(daysDistance = 60) {
     if (typeof SITE_DATA === 'undefined' || !SITE_DATA.albums) return [];
 
@@ -27,9 +28,13 @@
     const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
 
     return SITE_DATA.albums.filter(album => {
-      if (!album.releaseDate || album.releaseDate === '9999-12-31') return false;
+      // Inclui lançamentos sem data definida ou marcados como "Em Breve"
+      if (!album.releaseDate || album.formattedDate === 'Em Breve' || album.releaseDate === '9999-12-31') {
+        return true;
+      }
+
       const parts = album.releaseDate.split('-');
-      if (parts.length !== 3) return false;
+      if (parts.length !== 3) return true;
       
       const releaseDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
       
@@ -38,7 +43,11 @@
       const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
 
       return diffDays <= daysDistance;
-    }).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+    }).sort((a, b) => {
+      const dateA = new Date(a.releaseDate || '9999-12-31');
+      const dateB = new Date(b.releaseDate || '9999-12-31');
+      return dateA - dateB;
+    });
   }
 
   // Renderiza a seção de lançamentos recentes se o container existir na página HTML
