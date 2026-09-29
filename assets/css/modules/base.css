@@ -7,13 +7,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Marker Felt", fantasy;
 }
 
 /* Configuração do corpo da página - Fundo escuro fosco e texto limpo */
 body {
   background-color: #0d0d0d;
   color: #cccccc;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Marker Felt", fantasy;
   overflow-x: hidden;
   line-height: 1.6;
   display: flex;
