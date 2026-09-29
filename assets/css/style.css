@@ -15,20 +15,25 @@
    ========================================================= */
 @font-face {
   font-family: 'Fake Smiths';
-  src: url('../fonts/FakeSmiths.ttf') format('truetype'),
-       url('../fonts/FakeSmiths.otf') format('opentype'),
-       url('../fonts/fake-smiths.ttf') format('truetype'),
-       url('../fonts/fake_smiths.ttf') format('truetype');
+  src: url('../fonts/fake-smiths-font/FakeSmiths-zG4l.ttf') format('truetype'),
+       url('../fonts/FakeSmiths.ttf') format('truetype'),
+       url('../fonts/fake-smiths.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Out of Tune';
-  src: url('../fonts/OutOfTune.ttf') format('truetype'),
-       url('../fonts/OutOfTune.otf') format('opentype'),
-       url('../fonts/out-of-tune.ttf') format('truetype'),
-       url('../fonts/out_of_tune.ttf') format('truetype');
+  src: url('../fonts/out-of-tune-font/OutOfTune-A6zA.ttf') format('truetype'),
+       url('../fonts/OutOfTune.ttf') format('truetype'),
+       url('../fonts/out-of-tune.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Shady Lane';
+  src: url('../fonts/shady-lane-font/ShadyLane-7XvK.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
