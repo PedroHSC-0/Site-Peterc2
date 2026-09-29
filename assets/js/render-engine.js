@@ -3,8 +3,8 @@
  * 
  * Lê centralizadamente os dados de SITE_DATA e garante:
  * 1. Ordenação cronológica rigorosa por data de lançamento (releaseDate asc).
- * 2. Formatação dinâmica do título da aba (document.title = Track - Album).
- * 3. Renderização fluida e responsiva.
+ * 2. Cálculo e exibição dinâmica de lançamentos recentes (±60 dias do passado e futuro).
+ * 3. Formatação dinâmica de títulos e componentes.
  */
 
 (function () {
@@ -17,6 +17,54 @@
       const dateB = new Date(b.releaseDate || '9999-12-31');
       return order === 'asc' ? dateA - dateB : dateB - dateA;
     });
+  }
+
+  // Retorna álbuns lançados ou a serem lançados a uma distância de até X dias (passado e futuro)
+  function getRecentReleases(daysDistance = 60) {
+    if (typeof SITE_DATA === 'undefined' || !SITE_DATA.albums) return [];
+
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+    return SITE_DATA.albums.filter(album => {
+      if (!album.releaseDate || album.releaseDate === '9999-12-31') return false;
+      const parts = album.releaseDate.split('-');
+      if (parts.length !== 3) return false;
+      
+      const releaseDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+      
+      // Diferença em milissegundos convertida em dias (Math.abs considera futuro e passado)
+      const diffMs = Math.abs(releaseDate - today);
+      const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+      return diffDays <= daysDistance;
+    }).sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate));
+  }
+
+  // Renderiza a seção de lançamentos recentes se o container existir na página HTML
+  function renderRecentReleasesSection() {
+    const section = document.getElementById('recent-releases-section');
+    const gallery = document.getElementById('recent-releases-gallery');
+    if (!section || !gallery) return;
+
+    const recentAlbums = getRecentReleases(60);
+    if (recentAlbums.length === 0) {
+      section.style.display = 'none';
+      return;
+    }
+
+    gallery.innerHTML = recentAlbums.map(album => {
+      const coverImg = album.cover || 'assets/imagens/capas/placeholder.jpeg';
+      return `
+        <a href="${album.link}" class="album-card" data-release-date="${album.releaseDate}">
+          <img src="${coverImg}" alt="${album.title}" class="album-card-cover">
+          <span class="album-card-title">${album.title}</span>
+          <span class="album-card-sub">${album.subtitle}</span>
+        </a>
+      `;
+    }).join('');
+
+    section.style.display = 'block';
   }
 
   // Executa a ordenação dos cards de álbuns presentes na página HTML
@@ -41,13 +89,19 @@
   }
 
   // Inicializa quando o documento HTML estiver pronto
-  document.addEventListener('DOMContentLoaded', () => {
-    sortDOMAlbumGalleries('asc');
-  });
+  if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', () => {
+      renderRecentReleasesSection();
+      sortDOMAlbumGalleries('asc');
+    });
+  }
 
   // Exporta ajudantes globais
-  window.SiteEngine = {
-    getSortedAlbums,
-    sortDOMAlbumGalleries
-  };
+  if (typeof window !== 'undefined') {
+    window.SiteEngine = {
+      getSortedAlbums,
+      getRecentReleases,
+      sortDOMAlbumGalleries
+    };
+  }
 })();
