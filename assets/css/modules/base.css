@@ -2,19 +2,22 @@
    BASE & DNA VISUAL (ESTILO SECO / MINIMALISTA TRADICIONAL)
    ========================================================= */
 
-/* Reset básico */
-*, body, button, input, select, textarea {
+/* Reset básico & Fonte para textos normais */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Marker Felt", "Permanent Marker", fantasy, cursive, sans-serif !important;
+}
+
+body, p, a, span, li, button, input, select, textarea, table, td, th {
+  font-family: Impact, fantasy, sans-serif;
 }
 
 /* Configuração do corpo da página - Fundo escuro fosco e texto limpo */
 body {
   background-color: #0d0d0d;
   color: #cccccc;
-  font-family: "Marker Felt", "Permanent Marker", fantasy, cursive, sans-serif !important;
+  font-family: Impact, fantasy, sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
   display: flex;
@@ -25,8 +28,18 @@ body {
   padding-top: 80px; /* Offset amplo para a barra superior fixa em todas as resoluções */
 }
 
-/* Tipografia */
-h1, h2, h3, h4 {
+/* Tipografia para Títulos */
+h1, h2, h3, h4, h5, h6,
+.top-nav-logo,
+.section-title,
+.collab-title,
+.contacts-header,
+.contact-group-title,
+.album-detail-title,
+.artist-card-title,
+.album-card-title,
+.album-tracklist-title {
+  font-family: "Marker Felt", "Permanent Marker", fantasy, cursive, sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
   font-weight: normal;
