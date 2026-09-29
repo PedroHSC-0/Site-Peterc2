@@ -2,6 +2,8 @@
    SITE PETERC2 - ESTILOS PRINCIPAIS (MODULARIZADO)
    ========================================================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
 @import "modules/base.css";
 @import "modules/components.css";
 @import "modules/home.css";
