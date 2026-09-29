@@ -10,14 +10,14 @@
 }
 
 body, p, a, span, li, button, input, select, textarea, table, td, th {
-  font-family: "Out of Tune", Impact, fantasy, sans-serif;
+  font-family: "Serial Publication", Impact, fantasy, sans-serif;
 }
 
 /* Configuração do corpo da página - Fundo escuro fosco e texto limpo */
 body {
   background-color: #0d0d0d;
   color: #cccccc;
-  font-family: "Out of Tune", Impact, fantasy, sans-serif;
+  font-family: "Serial Publication", Impact, fantasy, sans-serif;
   overflow-x: hidden;
   line-height: 1.6;
   display: flex;

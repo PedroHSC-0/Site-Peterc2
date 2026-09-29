@@ -11,13 +11,22 @@
 @import "modules/albums.css";
 
 /* =========================================================
-   FONTES CUSTOMIZADAS: FAKE SMITHS & OUT OF TUNE
+   FONTES CUSTOMIZADAS: FAKE SMITHS, SERIAL PUBLICATION, OUT OF TUNE & SHADY LANE
    ========================================================= */
 @font-face {
   font-family: 'Fake Smiths';
   src: url('../fonts/fake-smiths-font/FakeSmiths-zG4l.ttf') format('truetype'),
        url('../fonts/FakeSmiths.ttf') format('truetype'),
        url('../fonts/fake-smiths.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Serial Publication';
+  src: url('../fonts/serial-publication-font/Serialpublicationdemo-qxo1.ttf') format('truetype'),
+       url('../fonts/Serialpublicationdemo-qxo1.ttf') format('truetype'),
+       url('../fonts/serial-publication.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
