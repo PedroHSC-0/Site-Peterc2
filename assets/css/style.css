@@ -2,7 +2,13 @@
    SITE PETERC2 - ESTILOS PRINCIPAIS (MODULARIZADO)
    ========================================================= */
 
+/* TODOS OS @IMPORT DEVEM FICAR NO TOPO DO ARQUIVO CSS */
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import "modules/base.css";
+@import "modules/components.css";
+@import "modules/home.css";
+@import "modules/artists.css";
+@import "modules/albums.css";
 
 /* =========================================================
    FONTES CUSTOMIZADAS: FAKE SMITHS & OUT OF TUNE
@@ -26,9 +32,3 @@
   font-weight: normal;
   font-style: normal;
 }
-
-@import "modules/base.css";
-@import "modules/components.css";
-@import "modules/home.css";
-@import "modules/artists.css";
-@import "modules/albums.css";
