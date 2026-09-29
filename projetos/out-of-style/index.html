@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Out Of Style - Single</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="../../assets/imagens/capas/out-of-style-cover.jpeg">
+</head>
+
+<body class="artist-littering">
+
+  <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
+  <header class="top-nav">
+    <div class="top-nav-container">
+      <span class="top-nav-logo">PIGPENFAN</span>
+      <nav class="top-nav-links">
+        <a href="../../index.html">INÍCIO</a>
+        <a href="../../artistas/peterc2/index.html">PETERC2</a>
+        <a href="../../artistas/jcdive/index.html">JC DIVE</a>
+        <a href="../../artistas/littering/index.html" class="active">LITTERING</a>
+        <a href="../../index.html#contato" class="nav-contact-btn">CONTATO</a>
+      </nav>
+    </div>
+  </header>
+
+<main class="center">
+
+  <a href="../../artistas/littering/index.html" class="back">← voltar ao artista</a>
+
+  <!-- ===================== PAINEL DO ÁLBUM & TRACKLIST ===================== -->
+  <div class="album-detail-container">
+    <img src="../../assets/imagens/capas/out-of-style-cover.jpeg" alt="Out Of Style" class="album-detail-cover">
+
+    <div class="album-detail-info">
+      <h1 class="album-detail-title">Out Of Style</h1>
+      <p class="album-detail-sub">LITTERING</p>
+      <p class="small-text">LANÇAMENTO: 09/10/2026</p>
+
+      <!-- FAIXAS / TRACKLIST DINÂMICA DEDUZIDA DE TRACKS.JS -->
+      <div class="album-tracklist-box">
+        <h2 class="album-tracklist-title">FAIXAS DO SINGLE</h2>
+
+        <div class="tracklist-table" id="tracklist-table">
+          <!-- Gerado automaticamente a partir de musicas/tracks.js -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+  <script src="musicas/tracks.js"></script>
+  <script src="../../assets/js/site-data.js"></script>
+  <script src="../../assets/js/analytics.js"></script>
+  <script>
+    (function renderDynamicTracklist() {
+      const container = document.getElementById('tracklist-table');
+      if (!container || typeof TRACKS === 'undefined') return;
+
+      container.innerHTML = TRACKS.map((track, i) => {
+        const num = String(i + 1).padStart(2, '0');
+        const actionText = track.youtube ? 'OUVIR ▶' : 'VER LETRA ▶';
+        return `
+          <a href="musicas/index.html?track=${track.slug}" class="track-row">
+            <span class="track-num">${num}</span>
+            <span class="track-title">${track.title}</span>
+            <span class="track-action">${actionText}</span>
+          </a>
+        `;
+      }).join('');
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Out Of Style - Faixa</title>
+  <link rel="stylesheet" href="../../../assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="../../../assets/imagens/capas/out-of-style-cover.jpeg">
+</head>
+
+<body class="artist-littering">
+
+  <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
+  <header class="top-nav">
+    <div class="top-nav-container">
+      <span class="top-nav-logo">PIGPENFAN</span>
+      <nav class="top-nav-links">
+        <a href="../../../index.html">INÍCIO</a>
+        <a href="../../../artistas/peterc2/index.html">PETERC2</a>
+        <a href="../../../artistas/jcdive/index.html">JC DIVE</a>
+        <a href="../../../artistas/littering/index.html" class="active">LITTERING</a>
+        <a href="../../../index.html#contato" class="nav-contact-btn">CONTATO</a>
+      </nav>
+    </div>
+  </header>
+
+<main class="center">
+
+  <a href="../index.html" class="back">← voltar ao single</a>
+
+  <div class="album-detail-container">
+    <h1 id="track-title" class="album-detail-title">—</h1>
+    <p class="artist small-text" id="track-artist" style="margin-top: 4px; color: #888888; letter-spacing: 2px;"></p>
+
+    <!-- CAIXA DE CAPA FALLBACK SE NÃO HOUVER VÍDEO -->
+    <div id="track-placeholder" style="display: none; width: 220px; margin: 20px auto 10px auto;">
+      <img src="../../../assets/imagens/capas/out-of-style-cover.jpeg" alt="Out Of Style" class="album-detail-cover" style="margin-bottom: 0;">
+    </div>
+
+    <!-- PLAYER DE VÍDEO SE HOUVER YOUTUBE -->
+    <div id="track-video-wrapper" class="music-section" style="width: 100%; margin-top: 20px; display: flex;">
+      <div class="player-wrapper">
+        <iframe
+          id="track-video"
+          width="560"
+          height="315"
+          src=""
+          title=""
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <div class="lyrics" id="track-lyrics" style="margin-top: 20px;"></div>
+
+    <div class="small-text" style="margin-top: 20px; color: #666666;">
+      Single: Out Of Style <br>
+      Written and produced by Littering
+    </div>
+
+    <div class="track-nav" style="margin-top: 25px;">
+      <a href="#" id="track-prev" class="prev">← anterior</a>
+      <a href="#" id="track-next" class="next">próxima →</a>
+    </div>
+  </div>
+
+</main>
+
+<script src="tracks.js"></script>
+<script>
+  function render(slug) {
+    const foundIdx = TRACKS.findIndex(t => t.slug === slug);
+    const idx = foundIdx === -1 ? 0 : foundIdx;
+    const track = TRACKS[idx];
+
+    document.title = track.title + " - Littering";
+    document.getElementById('track-title').textContent = track.title;
+    document.getElementById('track-artist').textContent = track.artist;
+    document.getElementById('track-lyrics').textContent = track.lyrics ? track.lyrics.trim() : '';
+
+    const video = document.getElementById('track-video');
+    const videoWrapper = document.getElementById('track-video-wrapper');
+    const placeholder = document.getElementById('track-placeholder');
+
+    if (track.youtube) {
+      video.src = 'https://www.youtube.com/embed/' + track.youtube;
+      video.title = track.title;
+      videoWrapper.style.display = 'flex';
+      placeholder.style.display = 'none';
+    } else {
+      videoWrapper.style.display = 'none';
+      placeholder.style.display = 'block';
+    }
+
+    const prev = TRACKS[(idx - 1 + TRACKS.length) % TRACKS.length];
+    const next = TRACKS[(idx + 1) % TRACKS.length];
+    document.getElementById('track-prev').href = '?track=' + prev.slug;
+    document.getElementById('track-next').href = '?track=' + next.slug;
+
+    history.replaceState(null, '', '?track=' + track.slug);
+    window.scrollTo(0, 0);
+  }
+
+  const params = new URLSearchParams(location.search);
+  render(params.get('track'));
+</script>
+
+</body>
+</html>

@@ -203,14 +203,22 @@ const SITE_DATA = {
     {
       id: "out-of-style",
       title: "Out Of Style",
-      subtitle: "Littering • Em Breve",
-      type: "Banda",
-      releaseDate: "2026-12-31",
-      formattedDate: "Em Breve",
+      subtitle: "Littering • 09/10/2026",
+      type: "Single",
+      releaseDate: "2026-10-09",
+      formattedDate: "09/10/2026",
       cover: "assets/imagens/capas/out-of-style-cover.jpeg",
-      link: "artistas/littering/index.html",
-      artists: ["littering", "peterc2", "jcdive"],
-      streaming: {}
+      link: "projetos/out-of-style/index.html",
+      artists: ["littering"],
+      streaming: {},
+      tracks: [
+        {
+          slug: "out-of-style",
+          title: "Out Of Style",
+          artist: "Littering",
+          lyrics: `When she sticks \npaper in her tongue\nThen she feels\nSings a million songs\nAnd she's gone for now\nUntil she's there for more\nThen she's gone for now\nUntil she's at your door\n\nGirl, You are out of style\nYou are out of style in everything you wanna do \nyou are out of style\nYou are out of style\n\nWhen she said \nNothing is ever gone\nThen I had\nLips and broken bones\nAnd she's gone for now\nbut not until she's there for more\nThen she's gone for now\nbut not until she's at your door\n\nYou are out of style\nYou are out of style in everything you wanna do \nYou are out of style girl\nYou are out of style\nOhh ohh\nYou are out of style, girl \nYou are out of style in everything you wanna do \nyou are out of style\nYou are out of style`
+        }
+      ]
     }
   ]
 };
