@@ -48,26 +48,22 @@ I will try it tomorrow
 fall apart with everything we build to see
 you're branching in sides of a tree
 It's said thats faster that i can wait
-
 But your dream blot out in the spring
 
-oh oh ohh
-Its calling you
-oh oh ohh
-I am calling you
-I fall in you
-I fall in you
+I am awaken, no alarms  (It happens) 
+when solid state dreaming spine (It has no end) 
+(I hold still) 
+in my world is spinning all around (Ahead of despear) 
 
-for every omission
+I am waiting, like another(It happens) 
+solid state dreaming spine (Its warm)
+try to turn this in (I am not allowed)  
+all we speak and care (Ahead of despear) 
 
-I am flawling in you
-I am flawling in you
-I fall in you
-I fall in you
-
-with every addicton
-
-I am following you`
+Its calling
+Its frawling 
+Its calling 
+Its frawling`
   },
   {
     slug: "possession-part-2",
@@ -75,7 +71,7 @@ I am following you`
     artist: "Peterc2",
     youtube: "",
     lyrics: `I don't have the time but I would die for you
-I don't have the time but I would die for you
+I don't have the time but I would die for you 
 I don't have the time but I would die for you (I do)
 I would die for you If i had the time`
   },
@@ -85,7 +81,7 @@ I would die for you If i had the time`
     artist: "Peterc2",
     youtube: "",
     lyrics: `A voice mumbling "carrot babies"
-you just can't understand
+you can't understand
 
 Flooding churches
 In the bachelor station
@@ -100,35 +96,39 @@ And you had just payed your rent
 ohh ohh`
   },
   {
-    slug: "shaking-hands",
-    title: "Shaking Hands",
+    slug: "whatever-happened",
+    title: "Whatever Happened",
     artist: "Peterc2",
     youtube: "",
-    lyrics: `You had my possessions
-and I won't forget you.
-Feel like natural thing,
-but I won't forget you.
+    lyrics: `How bad this could get?
+how bad is doing nothing 
+When you close a true life
+It's never close to nothing
+When I was a need for you
+in a closedown to rotting
+Where i merge
 
-And I hadn't
-showed any pleasure
-You know
-I listen to you
-Absolution
-You know I hadn't
-You lost the picture
-you know
-you know
-you know`
-  },
-  {
-    slug: "the-sailor",
-    title: "The Sailor",
-    artist: "Peterc2",
-    youtube: "",
-    lyrics: `Sailing away in a mountain of cottons
-Sailing away in a mountain of cottons
-Sailing away in a mountain of cottons
-Sailing away in a mountain of cottons`
+I'll be here for you
+Heaven isn't holding a travel to you
+Maybe your just my bad interest
+
+I had an eerie looking
+in the place you've stoled my eyes
+And I went out for nothing
+where i'll purge
+
+I'll be here for you
+Heaven isn't lookin any closer to you
+Heaven is your whole interest
+
+How bad is doing nothing true
+I wrote a song for you, and you don't know
+I'm been close to rotting
+where you crush
+
+death led me to you
+Heaven isn't lowering crawling to you
+Isn't this a bad a interest`
   },
   {
     slug: "asleep",
@@ -147,6 +147,37 @@ Dreams are led, sir (and all come true)
 I am on your tree
 Ignore the screams
 I am not a dream`
+  },
+  {
+    slug: "shaking-hands",
+    title: "Shaking Hands",
+    artist: "Peterc2",
+    youtube: "",
+    lyrics: `You had my possessions
+and I won't forget you.
+Feel like natural thing,
+but I won't forget you.
+
+And I hadn't
+showed any pleasure
+You know 
+I listen to you
+Absolution
+You know I hadn't 
+You lost the picture
+you know
+you know 
+you know`
+  },
+  {
+    slug: "the-sailor",
+    title: "The Sailor",
+    artist: "Peterc2",
+    youtube: "",
+    lyrics: `Sailing away in a mountain of cottons
+Sailing away in a mountain of cottons
+Sailing away in a mountain of cottons
+Sailing away in a mountain of cottons`
   },
   {
     slug: "no-one-spoke",
@@ -180,9 +211,51 @@ As you spoke`
 Nobody is here for me
 Disgusted by a drill of wonder
 I'am leveling self deprecation
-because the world is round and glad
+because the world is round and glad (Inclined to lie in a sky too bright)
 yourself is enough and a need for me
-I want to live down forever`
+I want to live down forever (Became a fly to freeze your cries)
+
+(I climb in time to steal your eye)
+(I get you high to seal your mind)`
+  },
+  {
+    slug: "king-shit",
+    title: "King Shit",
+    artist: "Peterc2",
+    youtube: "",
+    lyrics: `A bunch of undying rats
+Trying to kiss me
+The fear of falling wet
+on dumb statistics
+blowing drugs and drown
+its in my mistic
+
+Plainning stick ambush
+Try to put the surface out
+And I'll go running
+Spitting perfume of the bottle
+
+Hey, downcast comrade
+don't die so simplistic
+Passing as a godly mistrust
+Trying to bliss me
+Those little blown head girls 
+could be so artistic
+but now they're just statistics
+
+I'am feeling my safety down
+by that grotesque lust
+Their guns are restraining
+shown off so stupidly
+
+I am running back to my basement
+When you got no place to go
+I am running back to the basement
+When you're my only trust
+I am running back to the basement
+Where you got no plans to do
+I am running back to the basement
+When you got no place to go`
   },
   {
     slug: "death-valley",
@@ -199,9 +272,9 @@ Been sent around the wishes
 all because of you
 Sworn around the fishes
 and lead 'cause of you
-silenced by your changes
+silenced by your changes 
 I weep 'cause of you
-hang around the distance
+hang around the distance 
 The stress goes for you (All below you)`
   },
   {
@@ -213,11 +286,10 @@ The stress goes for you (All below you)`
 You've been resting low (skepting blighters, you're clame the swan)
 I've been trying (Are you so under weather)
 You're my nesting flow (write the letter show me the pleasure)
-(I don't wanna listen your fucking blues)
 
-I've been crying (I will stab to be sure)
-You've been resting low (You're a eerie shore)
-I've been drying (if you wanna live underwater)
+I've been crying (I will stab to be sure) 
+You've been resting low (You're a eerie shore) 
+I've been drying (if you wanna live underwater) 
 Unleashed is bad to know (hand me the letter and show me your lesson)
 
 I will stab you to be sure
@@ -230,37 +302,49 @@ oohh`
     title: "Cosmic metaphysical Engineers",
     artist: "Peterc2",
     youtube: "",
-    lyrics: `Breathe in
-the letter I send you
-whoever it goes
+    lyrics: `Breathe in the letter 
+i've send you
+however it goes
 cut out fawn
-been crashing through the floor
-you're done
-with nowhere to go
+been crashing through floor
+you're done with nowhere to go
+
+Auaa
+lalala 
+aua
+lala
 
 Burned bushes
-she ripped and plunged
-to feel undereating
-I constantly pushed the very best from you
+She ripped and plunged
+To feel undereating
+I constantly pushed the very best for you
 your polluted eyes
-is where i recover from you
+is where I recover from you
 
-In ripnic jerks
-i greet the rest of you
-a union lever
+In hypnic jerks 
+I greet the rest of you
+A union lever
 or seas of bloodsheds
-the gods of stinginess
-in rings of plastic
+The gods stinginess
+In rings of plastic
 I brush this blessing from
 the fraud you are
 
-Its like a dune devil race
-Its like a doom devil rain
-its like a dune devil eraser
-Its like a dune devil race
-Its like a dune devil race
-Its like a dune devil race
-Its like a dune devil race
-Its like a dune devil race`
+(It's like a dune devil erased)
+(It's like a doom vapor haze)
+(It's like a dune devil ways)
+(slide a dune devil wave) 
+(It's like a doom vapor wave)`
+  },
+  {
+    slug: "no-one-knows",
+    title: "No One Knows [Bonus Track]",
+    artist: "Peterc2",
+    youtube: "",
+    lyrics: `No one knows where to hide
+everyone counts on someone to decide
+
+No one knows where to hide
+everyone counts on someone to decide`
   }
 ];
