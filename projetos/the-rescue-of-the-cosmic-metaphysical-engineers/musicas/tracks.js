@@ -50,12 +50,12 @@ you're branching in sides of a tree
 It's said thats faster that i can wait
 But your dream blot out in the spring
 
-I am awaken, no alarms  (It happens) 
+I am awaken, no alarms (It happens) 
 when solid state dreaming spine (It has no end) 
 (I hold still) 
 in my world is spinning all around (Ahead of despear) 
 
-I am waiting, like another(It happens) 
+I am waiting, like another (It happens) 
 solid state dreaming spine (Its warm)
 try to turn this in (I am not allowed)  
 all we speak and care (Ahead of despear) 
@@ -308,11 +308,6 @@ however it goes
 cut out fawn
 been crashing through floor
 you're done with nowhere to go
-
-Auaa
-lalala 
-aua
-lala
 
 Burned bushes
 She ripped and plunged
