@@ -12,7 +12,7 @@ const TRACKS = [
     title: "Pull Back the Ancients",
     artist: "Peterc2",
     youtube: "",
-    lyrics: `If you want do the right to me
+    lyrics: `If you want to do the right to me
 If you want me to stay
 and i know, i won't dare
 If you want me to solve the clues
@@ -30,7 +30,7 @@ I'll be the last to love forevermore`
     artist: "Peterc2",
     youtube: "",
     lyrics: `Crawling through you
-You're commanding in my head
+You're commanding my head
 sprawl into this
 strength that you never had
 
@@ -41,7 +41,7 @@ that can wrap this enormous ordeal
 
 You starred in my dream, dear
 confusing what has been real,
-you'd mess up every cheer that i had
+you'd mess it up every cheer that i had
 leaving it with every fear that i'am
 
 I will try it tomorrow
@@ -55,14 +55,14 @@ when solid state dreaming spine (It has no end)
 (I hold still) 
 in my world is spinning all around (Ahead of despear) 
 
-I am waiting, like another (It happens) 
+I am waiting, like another (It happens)
 solid state dreaming spine (Its warm)
-try to turn this in (I am not allowed)  
-all we speak and care (Ahead of despear) 
+try to turn this in (I am not allowed) 
+all we speak and care (Ahead of despear)
 
 Its calling
 Its frawling 
-Its calling 
+Its calling
 Its frawling`
   },
   {
@@ -91,9 +91,7 @@ The freaks step crushed your handbones baby
 You can just pay their band
 
 I feel stopped as the winds are spreading
-And you had just payed your rent
-
-ohh ohh`
+And you had just payed your rent`
   },
   {
     slug: "whatever-happened",
@@ -223,7 +221,7 @@ I want to live down forever (Became a fly to freeze your cries)
     title: "King Shit",
     artist: "Peterc2",
     youtube: "",
-    lyrics: `A bunch of undying rats
+    lyrics: `A bunch of dying rats
 Trying to kiss me
 The fear of falling wet
 on dumb statistics
@@ -232,7 +230,7 @@ its in my mistic
 
 Plainning stick ambush
 Try to put the surface out
-And I'll go running
+then I'll go running on stakes to miss
 Spitting perfume of the bottle
 
 Hey, downcast comrade
@@ -292,10 +290,7 @@ You've been resting low (You're a eerie shore)
 I've been drying (if you wanna live underwater) 
 Unleashed is bad to know (hand me the letter and show me your lesson)
 
-I will stab you to be sure
-
-Ohh
-oohh`
+I will stab you to be sure`
   },
   {
     slug: "cosmic-metaphysical-engineers",
