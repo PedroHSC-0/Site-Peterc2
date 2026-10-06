@@ -67,26 +67,8 @@
 
 </main>
 
-  <script src="musicas/tracks.js"></script>
   <script src="../../assets/js/site-data.js"></script>
+  <script src="../../assets/js/render-engine.js"></script>
   <script src="../../assets/js/analytics.js"></script>
-  <script>
-    (function renderDynamicTracklist() {
-      const container = document.getElementById('tracklist-table');
-      if (!container || typeof TRACKS === 'undefined') return;
-
-      container.innerHTML = TRACKS.map((track, i) => {
-        const num = String(i + 1).padStart(2, '0');
-        const actionText = track.youtube ? 'OUVIR ▶' : 'VER LETRA ▶';
-        return `
-          <a href="musicas/index.html?track=${track.slug}" class="track-row">
-            <span class="track-num">${num}</span>
-            <span class="track-title">${track.title}</span>
-            <span class="track-action">${actionText}</span>
-          </a>
-        `;
-      }).join('');
-    })();
-  </script>
 </body>
 </html>

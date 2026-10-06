@@ -237,7 +237,7 @@ Hey, downcast comrade
 don't die so simplistic
 Passing as a godly mistrust
 Trying to bliss me
-Those little blown head girls 
+Those little blown head girls
 could be so artistic
 but now they're just statistics
 

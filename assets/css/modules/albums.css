@@ -4,7 +4,7 @@
 
 .ocean-trench,
 .desert-sample {
-  background-color: #0d0d0d;
+  background-color: transparent;
   color: #cccccc;
 }
 
@@ -36,8 +36,10 @@
   max-width: 650px;
   width: 100%;
   margin: 20px auto;
-  background: #111111;
-  border: 1px solid #222222;
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 30px 25px;
 }
 

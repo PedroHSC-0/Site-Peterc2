@@ -13,9 +13,13 @@ body, p, a, span, li, button, input, select, textarea, table, td, th {
   font-family: "Out of Tune", Impact, fantasy, sans-serif;
 }
 
-/* Configuração do corpo da página - Fundo escuro fosco e texto limpo */
+html {
+  background-color: #000000;
+}
+
+/* Configuração do corpo da página - Fundo transparente com overlay e texto limpo */
 body {
-  background-color: #0d0d0d;
+  background-color: transparent;
   color: #cccccc;
   font-family: "Out of Tune", Impact, fantasy, sans-serif;
   overflow-x: hidden;

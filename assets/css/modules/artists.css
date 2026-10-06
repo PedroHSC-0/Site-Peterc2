@@ -5,7 +5,7 @@
 .artist-peterc2,
 .artist-jcdive,
 .artist-littering {
-  background-color: #0d0d0d;
+  background-color: transparent;
   color: #cccccc;
 }
 
@@ -30,8 +30,10 @@
   max-width: 800px;
   margin: 30px 0;
   text-align: left;
-  background: #111111;
-  border: 1px solid #222222;
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 25px;
 }
 

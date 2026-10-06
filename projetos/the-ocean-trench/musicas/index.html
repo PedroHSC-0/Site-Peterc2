@@ -69,44 +69,9 @@
 
 </main>
 
-<script src="tracks.js"></script>
-<script>
-  function render(slug) {
-    const foundIdx = TRACKS.findIndex(t => t.slug === slug);
-    const idx = foundIdx === -1 ? 0 : foundIdx;
-    const track = TRACKS[idx];
-
-    document.title = track.title + " - The Ocean Trench";
-    document.getElementById('track-title').textContent = track.title;
-    document.getElementById('track-artist').textContent = track.artist;
-    document.getElementById('track-lyrics').textContent = track.lyrics ? track.lyrics.trim() : '';
-
-    const video = document.getElementById('track-video');
-    const videoWrapper = document.getElementById('track-video-wrapper');
-    const placeholder = document.getElementById('track-placeholder');
-
-    if (track.youtube) {
-      video.src = 'https://www.youtube.com/embed/' + track.youtube;
-      video.title = track.title;
-      videoWrapper.style.display = 'flex';
-      placeholder.style.display = 'none';
-    } else {
-      videoWrapper.style.display = 'none';
-      placeholder.style.display = 'block';
-    }
-
-    const prev = TRACKS[(idx - 1 + TRACKS.length) % TRACKS.length];
-    const next = TRACKS[(idx + 1) % TRACKS.length];
-    document.getElementById('track-prev').href = '?track=' + prev.slug;
-    document.getElementById('track-next').href = '?track=' + next.slug;
-
-    history.replaceState(null, '', '?track=' + track.slug);
-    window.scrollTo(0, 0);
-  }
-
-  const params = new URLSearchParams(location.search);
-  render(params.get('track'));
-</script>
+<script src="../../../assets/js/site-data.js"></script>
+<script src="../../../assets/js/render-engine.js"></script>
+<script src="../../../assets/js/analytics.js"></script>
 
 </body>
 </html>
