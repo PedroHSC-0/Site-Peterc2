@@ -403,11 +403,32 @@
       document.body.prepend(bgOverlay);
     }
 
-    if (bgOverlay) {
-      bgOverlay.style.backgroundImage = `url("${safePath}")`;
-    }
-    if (typeof document !== 'undefined' && document.body) {
-      document.body.style.setProperty('--bg-image', `url("${safePath}")`);
+    // Carregamento Inteligente: Pré-carrega a imagem na memória antes de exibir com fade suave
+    if (typeof Image !== 'undefined') {
+      const imgLoader = new Image();
+      imgLoader.src = safePath;
+
+      const revealBackground = () => {
+        if (bgOverlay) {
+          bgOverlay.style.backgroundImage = `url("${safePath}")`;
+          bgOverlay.classList.add('loaded');
+        }
+        if (typeof document !== 'undefined' && document.body) {
+          document.body.style.setProperty('--bg-image', `url("${safePath}")`);
+        }
+      };
+
+      if (imgLoader.complete) {
+        revealBackground();
+      } else {
+        imgLoader.onload = revealBackground;
+        setTimeout(revealBackground, 250);
+      }
+    } else {
+      if (bgOverlay) {
+        bgOverlay.style.backgroundImage = `url("${safePath}")`;
+        bgOverlay.classList.add('loaded');
+      }
     }
   }
 

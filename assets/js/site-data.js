@@ -13,11 +13,11 @@ const SITE_DATA = {
     provider: "ga4",
     gaMeasurementId: "G-HF911PG7DV"
   },
-  defaultBackground: "assets/imagens/background/background 1.jpg",
+  defaultBackground: "assets/imagens/background/background-1.webp",
   brand: {
     name: "PIGPENFAN",
     title: "Pigpenfan",
-    background: "assets/imagens/background/background 1.jpg"
+    background: "assets/imagens/background/background-1.webp"
   },
 
   // ---------------------------------------------------------
@@ -71,7 +71,7 @@ const SITE_DATA = {
       name: "Peterc2",
       role: "Guitarra, Vocais & Produção",
       portrait: "assets/imagens/icones/peterc2-icon.jpg",
-      background: "assets/imagens/background/background 1.jpg",
+      background: "assets/imagens/background/background-1.webp",
       page: "artistas/peterc2/index.html",
       contacts: {
         instagram: { label: "Instagram", value: "@peterc2_", url: "https://www.instagram.com/peterc2_/", icon: "assets/imagens/icones/instagram.svg" },
@@ -86,7 +86,7 @@ const SITE_DATA = {
       name: "JC Dive",
       role: "Guitarra e Vocais",
       portrait: "assets/imagens/icones/jcdive-icon.jpeg",
-      background: "assets/imagens/background/background 1.jpg",
+      background: "assets/imagens/background/background-1.webp",
       page: "artistas/jcdive/index.html",
       contacts: {
         instagram: { label: "Instagram", value: "@jcdive_", url: "https://www.instagram.com/jcdive_/", icon: "assets/imagens/icones/instagram.svg" },
@@ -101,7 +101,7 @@ const SITE_DATA = {
       name: "Littering",
       role: "Banda",
       portrait: "assets/imagens/icones/littering-icon.png",
-      background: "assets/imagens/background/background 1.jpg",
+      background: "assets/imagens/background/background-1.webp",
       page: "artistas/littering/index.html",
       members: [
         { name: "Peterc2", role: "Guitarra e vocais" },

@@ -740,7 +740,12 @@ audio {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  transition: background-image 0.5s ease-in-out;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, background-image 0.5s ease-in-out;
+}
+
+#page-bg-overlay.loaded {
+  opacity: 1;
 }
 
 #page-bg-overlay::after {
