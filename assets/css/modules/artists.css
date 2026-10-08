@@ -28,21 +28,19 @@
 .artist-projects {
   width: 100%;
   max-width: 800px;
-  margin: 30px 0;
+  margin: 35px 0 10px 0;
   text-align: left;
-  background: rgba(15, 15, 15, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 25px;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .artist-projects .section-title {
   font-size: 13px;
   letter-spacing: 3px;
   color: #ffffff;
-  border-bottom: 1px solid #333333;
-  padding-bottom: 8px;
+  border-bottom: none;
+  padding-bottom: 4px;
   margin-bottom: 15px;
 }
 
@@ -53,10 +51,39 @@
 .artist-projects .project-link {
   font-size: 14px;
   letter-spacing: 2px;
-  color: #aaaaaa;
+  color: #cccccc;
   display: block;
+  transition: none;
 }
 
 .artist-projects .project-link:hover {
-  color: #ffffff;
+  color: #cccccc;
+}
+
+/* Integrantes da banda (layout simples e limpo) */
+.members-box {
+  margin: 20px auto 10px auto;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+}
+
+.members-box h2 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #888888;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.members-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  color: #cccccc;
+  line-height: 1.8;
 }

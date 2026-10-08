@@ -17,9 +17,9 @@ html {
   background-color: #000000;
 }
 
-/* Configuração do corpo da página - Fundo transparente com overlay e texto limpo */
+/* Configuração do corpo da página - Fundo imersivo com overlay e texto limpo */
 body {
-  background-color: transparent;
+  background-color: #000000;
   color: #cccccc;
   font-family: "Out of Tune", Impact, fantasy, sans-serif;
   overflow-x: hidden;
@@ -30,6 +30,28 @@ body {
   min-height: 100vh;
   width: 100%;
   padding-top: 80px; /* Offset amplo para a barra superior fixa em todas as resoluções */
+  isolation: isolate; /* Garante que backgrounds com z-index negativo fiquem perfeitamente visíveis */
+  --bg-blur: 8px; /* Intensidade do desfoque dos wallpapers de fundo */
+}
+
+/* Backgrounds padrão definidos via CSS para exibição instantânea */
+body.home {
+  --bg-image: url("../../imagens/background/background-1.webp");
+}
+body.artist-peterc2 {
+  --bg-image: url("../../imagens/background/background-2.webp");
+}
+body.artist-jcdive {
+  --bg-image: url("../../imagens/background/background-3.webp");
+}
+body.artist-littering {
+  --bg-image: url("../../imagens/background/background-4.webp");
+}
+body.desert-sample {
+  --bg-image: url("../../imagens/background/background-1.webp");
+}
+body.ocean-trench {
+  --bg-image: url("../../imagens/background/background-3.webp");
 }
 
 /* Tipografia para Títulos */
@@ -59,13 +81,13 @@ p {
 
 /* Links globais */
 a {
-  color: #aaaaaa;
+  color: #cccccc;
   text-decoration: none;
-  transition: color 0.15s linear;
+  transition: none;
 }
 
 a:hover {
-  color: #ffffff;
+  color: #cccccc;
 }
 
 /* Container de layout centralizado com topo alinhado */
@@ -108,18 +130,19 @@ main {
 
 /* Botões genéricos tradicionais */
 .button {
-  border: 1px solid #444444;
+  border: none;
   padding: 8px 16px;
   margin-top: 15px;
   display: inline-block;
   color: #cccccc;
-  background: transparent;
+  background: #181818;
   text-align: center;
+  transition: none;
 }
 
 .button:hover {
-  border-color: #ffffff;
-  color: #ffffff;
+  color: #cccccc;
+  background: #181818;
 }
 
 /* Botão voltar simples padronizado com folga superior garantida */
@@ -127,15 +150,16 @@ main {
   display: block;
   margin: 15px auto 25px auto;
   font-size: 12px;
-  color: #777777;
+  color: #888888;
   letter-spacing: 1px;
   text-align: center;
   flex-shrink: 0;
   line-height: 1.2;
+  transition: none;
 }
 
 .back:hover {
-  color: #ffffff;
+  color: #888888;
 }
 
 /* Utilitários de texto */

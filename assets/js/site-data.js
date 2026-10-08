@@ -20,6 +20,7 @@ const SITE_DATA = {
     background: "assets/imagens/background/background-1.webp"
   },
 
+
   // ---------------------------------------------------------
   // VÍDEOS EM DESTAQUE (EXIBIDOS NO TOPO DA PÁGINA PRINCIPAL)
   // ---------------------------------------------------------
@@ -30,7 +31,7 @@ const SITE_DATA = {
       artist: "Littering",
       releaseDate: "2026-10-09",
       youtube: "OxUAjis-6U8",
-      cover: "assets/imagens/capas/out-of-style-cover.jpeg",
+      cover: "assets/imagens/capas/out-of-style-cover.webp",
       description: "Trailer do novo single Out Of Style da banda Littering."
     },
     {
@@ -39,7 +40,7 @@ const SITE_DATA = {
       artist: "Peterc2",
       releaseDate: "2026-09-23",
       youtube: "q4yJVpG1IJ8",
-      cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.jpeg",
+      cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
       description: "Vídeo da faixa The Rescue por Peterc2."
     },
     {
@@ -48,7 +49,7 @@ const SITE_DATA = {
       artist: "Peterc2 e JC Dive",
       releaseDate: "2026-04-10",
       youtube: "EPZbv-gqIFM",
-      cover: "assets/imagens/capas/the-ocean-trench-cover.jpeg",
+      cover: "assets/imagens/capas/the-ocean-trench-cover.webp",
       description: "Visualizer do Álbum The Ocean Trench por Peterc2 e JC Dive."
     },
     {
@@ -57,7 +58,7 @@ const SITE_DATA = {
       artist: "Peterc2 e JC Dive",
       releaseDate: "2026-03-13",
       youtube: "ejZl0Vpves4",
-      cover: "assets/imagens/capas/desert-sample-cover.jpeg",
+      cover: "assets/imagens/capas/desert-sample-cover.webp",
       description: "Vídeo do EP Desert Sample por Peterc2 e JC Dive."
     }
   ],
@@ -70,8 +71,8 @@ const SITE_DATA = {
       id: "peterc2",
       name: "Peterc2",
       role: "Guitarra, Vocais & Produção",
-      portrait: "assets/imagens/icones/peterc2-icon.jpg",
-      background: "assets/imagens/background/background-1.webp",
+      portrait: "assets/imagens/icones/peterc2-icon.webp",
+      background: "assets/imagens/background/background-2.webp",
       page: "artistas/peterc2/index.html",
       contacts: {
         instagram: { label: "Instagram", value: "@peterc2_", url: "https://www.instagram.com/peterc2_/", icon: "assets/imagens/icones/instagram.svg" },
@@ -85,8 +86,8 @@ const SITE_DATA = {
       id: "jcdive",
       name: "JC Dive",
       role: "Guitarra e Vocais",
-      portrait: "assets/imagens/icones/jcdive-icon.jpeg",
-      background: "assets/imagens/background/background-1.webp",
+      portrait: "assets/imagens/icones/jcdive-icon.webp",
+      background: "assets/imagens/background/background-3.webp",
       page: "artistas/jcdive/index.html",
       contacts: {
         instagram: { label: "Instagram", value: "@jcdive_", url: "https://www.instagram.com/jcdive_/", icon: "assets/imagens/icones/instagram.svg" },
@@ -100,8 +101,8 @@ const SITE_DATA = {
       id: "littering",
       name: "Littering",
       role: "Banda",
-      portrait: "assets/imagens/icones/littering-icon.png",
-      background: "assets/imagens/background/background-1.webp",
+      portrait: "assets/imagens/icones/littering-icon.webp",
+      background: "assets/imagens/background/background-4.webp",
       page: "artistas/littering/index.html",
       members: [
         { name: "Peterc2", role: "Guitarra e vocais" },
@@ -131,7 +132,7 @@ const SITE_DATA = {
       type: "Colaboração",
       releaseDate: "2026-03-13",
       formattedDate: "13/03/2026",
-      cover: "assets/imagens/capas/desert-sample-cover.jpeg",
+      cover: "assets/imagens/capas/desert-sample-cover.webp",
       link: "projetos/desert-sample/index.html",
       artists: ["peterc2", "jcdive"],
       streaming: {
@@ -186,7 +187,7 @@ const SITE_DATA = {
       type: "Colaboração",
       releaseDate: "2026-04-10",
       formattedDate: "10/04/2026",
-      cover: "assets/imagens/capas/the-ocean-trench-cover.jpeg",
+      cover: "assets/imagens/capas/the-ocean-trench-cover.webp",
       link: "projetos/the-ocean-trench/index.html",
       artists: ["peterc2", "jcdive", "littering"],
       streaming: {
@@ -353,7 +354,7 @@ const SITE_DATA = {
       type: "Solo",
       releaseDate: "2026-12-31",
       formattedDate: "Em Breve",
-      cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.jpeg",
+      cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
       link: "projetos/the-rescue-of-the-cosmic-metaphysical-engineers/index.html",
       artists: ["peterc2"],
       streaming: {},
@@ -480,7 +481,8 @@ const SITE_DATA = {
       type: "Single",
       releaseDate: "2026-10-09",
       formattedDate: "09/10/2026",
-      cover: "assets/imagens/capas/out-of-style-cover.jpeg",
+      cover: "assets/imagens/capas/out-of-style-cover.webp",
+      background: "assets/imagens/background/background-4.webp",
       link: "projetos/out-of-style/index.html",
       artists: ["littering"],
       streaming: {},
@@ -494,7 +496,23 @@ const SITE_DATA = {
         }
       ]
     }
-  ]
+  ],
+
+  // ---------------------------------------------------------
+  // MERCH / PRODUTOS OFICIAIS (LOJA)
+  // ---------------------------------------------------------
+  // COMO ADICIONAR PRODUTOS NO FUTURO:
+  // 1. Salve as fotos em: assets/imagens/merch/ (ex: camiseta.webp)
+  // 2. Adicione os itens dentro do array abaixo:
+  //    {
+  //      id: "camiseta-oficial",
+  //      title: "Camiseta Oficial",
+  //      subtitle: "R$ 80,00",
+  //      image: "assets/imagens/merch/camiseta.webp",
+  //      link: "https://peterc2.bandcamp.com/merch/..."
+  //    }
+  // ---------------------------------------------------------
+  merch: []
 };
 
 Object.freeze(SITE_DATA);

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Pigpenfan</title>
+  <link rel="stylesheet" href="../assets/css/style.css?v=6">
+  <link rel="preload" as="image" href="../assets/imagens/background/background-1.webp">
+  <link rel="icon" type="image/webp" href="../assets/imagens/icones/peterc2-icon.webp">
+</head>
+
+<body class="page-sobre">
+  <div id="page-bg-overlay"></div>
+
+  <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
+  <header class="top-nav">
+    <div class="top-nav-container">
+      <a href="../index.html" class="top-nav-logo">PIGPENFAN</a>
+      <nav class="top-nav-links">
+        <a href="../index.html">INÍCIO</a>
+        <a href="index.html" class="active">SOBRE</a>
+        <a href="../artistas/peterc2/index.html">PETERC2</a>
+        <a href="../artistas/jcdive/index.html">JC DIVE</a>
+        <a href="../artistas/littering/index.html">LITTERING</a>
+        <a href="../index.html#merch">MERCH</a>
+        <a href="../index.html#contato" class="nav-contact-btn">CONTATO</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="center">
+
+    <!-- ===================== FOTOS DOS ARTISTAS ===================== -->
+    <section class="collab-section about-artists-section" style="width: 100%; max-width: 900px; margin-top: 25px;">
+      <div class="artist-gallery" id="about-artists-gallery">
+        <!-- Renderizado dinamicamente via render-engine.js a partir de SITE_DATA.artists -->
+        <a href="../artistas/peterc2/index.html" class="artist-image-card">
+          <img src="../assets/imagens/icones/peterc2-icon.webp" alt="Peterc2" class="artist-portrait">
+          <span class="artist-card-title">Peterc2</span>
+        </a>
+
+        <a href="../artistas/jcdive/index.html" class="artist-image-card">
+          <img src="../assets/imagens/icones/jcdive-icon.webp" alt="JC Dive" class="artist-portrait">
+          <span class="artist-card-title">JC Dive</span>
+        </a>
+
+        <a href="../artistas/littering/index.html" class="artist-image-card">
+          <img src="../assets/imagens/icones/littering-icon.webp" alt="Littering" class="artist-portrait">
+          <span class="artist-card-title">Littering</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================== TEXTO SECO (SOBRE O PROJETO) ===================== -->
+    <section class="collab-section about-text-section">
+      <h2 class="collab-title">Sobre o Projeto</h2>
+      <div class="about-text-container" id="about-text-container">
+        <p class="about-text">Depois de alguns meses do lançamento do álbum colaborativo entre Peterc2 e JC Dive 'The Ocean Trench', um álbum de músicas rapidamente compostas e gravadas, altamente inspirado no modelo de produção da banda Guided By Voices e do artista Alex G, a banda Littering foi formada com a chegada do baterista be_cruz e a baixista pietrawrr, para novas composições na linha das faixas 'Littering' e 'Return to the Shed' do primeiro projeto.</p>
+        <p class="about-text">Passados alguns meses, já possuíam material suficiente para novos lançamentos. Realizaram seu primeiro show em parceria com a Kasa Soul em um evento beneficente e mostraram seu repertório pela primeira vez ao público. O single "Out of Style" marca a estreia da banda e sairá no dia 09/10/2026.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../assets/js/site-data.js"></script>
+  <script src="../assets/js/render-engine.js"></script>
+  <script src="../assets/js/analytics.js"></script>
+</body>
+</html>

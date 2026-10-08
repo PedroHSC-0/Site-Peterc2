@@ -4,22 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Rescue Of The Cosmic Metaphysical Engineers - Álbum</title>
-  <link rel="stylesheet" href="../../assets/css/style.css">
-  <link rel="preload" as="image" href="../../assets/imagens/background/background-1.webp">
-  <link rel="icon" type="image/x-icon" href="../../assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.jpeg">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=6">
+  <link rel="preload" as="image" href="../../assets/imagens/background/background-2.webp">
+  <link rel="icon" type="image/webp" href="../../assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp">
 </head>
 
 <body class="artist-peterc2">
+  <div id="page-bg-overlay"></div>
 
   <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
   <header class="top-nav">
     <div class="top-nav-container">
-      <span class="top-nav-logo">PIGPENFAN</span>
+      <a href="../../index.html" class="top-nav-logo">PIGPENFAN</a>
       <nav class="top-nav-links">
         <a href="../../index.html">INÍCIO</a>
+        <a href="../../sobre/index.html">SOBRE</a>
         <a href="../../artistas/peterc2/index.html">PETERC2</a>
         <a href="../../artistas/jcdive/index.html">JC DIVE</a>
         <a href="../../artistas/littering/index.html">LITTERING</a>
+        <a href="../../index.html#merch">MERCH</a>
         <a href="../../index.html#contato" class="nav-contact-btn">CONTATO</a>
       </nav>
     </div>
@@ -31,19 +34,19 @@
 
   <!-- ===================== PAINEL DO ÁLBUM & TRACKLIST ===================== -->
   <div class="album-detail-container">
-    <img src="../../assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.jpeg" alt="The Rescue Of The Cosmic Metaphysical Engineers" class="album-detail-cover">
+    <img src="../../assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp" alt="The Rescue Of The Cosmic Metaphysical Engineers" class="album-detail-cover">
 
     <div class="album-detail-info">
       <h1 class="album-detail-title">The Rescue Of The Cosmic Metaphysical Engineers</h1>
       <p class="album-detail-sub">PETERC2</p>
       <p class="small-text">LANÇAMENTO: EM BREVE</p>
 
-      <!-- FAIXAS / TRACKLIST DINÂMICA DEDUZIDA DE TRACKS.JS -->
+      <!-- FAIXAS / TRACKLIST DINÂMICA (SITE_DATA) -->
       <div class="album-tracklist-box">
         <h2 class="album-tracklist-title">FAIXAS DO ÁLBUM</h2>
 
         <div class="tracklist-table" id="tracklist-table">
-          <!-- Gerado automaticamente a partir de musicas/tracks.js -->
+          <!-- Gerado dinamicamente via render-engine.js a partir de site-data.js -->
         </div>
       </div>
 

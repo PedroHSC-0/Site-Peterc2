@@ -7,10 +7,8 @@
    ========================================================= */
 .top-nav {
   width: 100%;
-  background: rgba(12, 12, 12, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(8, 8, 8, 0.92);
+  border-bottom: none;
   padding: 14px 20px;
   position: fixed;
   top: 0;
@@ -32,8 +30,13 @@
   font-size: 14px;
   letter-spacing: 3px;
   font-weight: bold;
-  color: #ffffff;
+  color: #ffffff !important;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.top-nav-logo:hover {
+  color: #ffffff !important;
 }
 
 .top-nav-links {
@@ -46,29 +49,33 @@
 .top-nav-links a {
   font-size: 12px;
   letter-spacing: 2px;
-  color: #888888;
+  color: #cccccc;
   padding: 4px 8px;
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s linear;
+  border-bottom: none;
+  transition: none;
 }
 
-.top-nav-links a:hover,
 .top-nav-links a.active {
   color: #ffffff;
-  border-bottom-color: #555555;
+  font-weight: bold;
+}
+
+.top-nav-links a:hover {
+  color: #cccccc;
 }
 
 .top-nav-links a.nav-contact-btn {
-  border: 1px solid #444444;
-  border-radius: 4px;
+  border: none;
+  border-radius: 0;
   color: #cccccc;
+  background: #181818;
   padding: 4px 12px;
+  transition: none;
 }
 
 .top-nav-links a.nav-contact-btn:hover {
-  border-color: #ffffff;
-  color: #ffffff;
-  background: #222222;
+  color: #cccccc;
+  background: #181818;
 }
 
 /* =========================================================
@@ -76,11 +83,11 @@
    ========================================================= */
 .artist-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 25px;
   width: 100%;
   max-width: 850px;
-  margin: 30px auto;
+  margin: 25px auto 40px auto;
   justify-content: center;
 }
 
@@ -89,17 +96,10 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  background: rgba(18, 18, 18, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 16px;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.artist-image-card:hover {
-  border-color: #555555;
-  background: rgba(26, 26, 26, 0.85);
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: none;
 }
 
 .artist-portrait {
@@ -107,25 +107,22 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border: none;
-  margin-bottom: 12px;
-  filter: grayscale(0.2);
-  transition: filter 0.2s ease;
-}
-
-.artist-image-card:hover .artist-portrait {
-  filter: grayscale(0);
+  box-shadow: none;
+  margin-bottom: 10px;
+  filter: none;
+  transition: none;
 }
 
 .portrait-placeholder {
   width: 100%;
   aspect-ratio: 1 / 1;
-  border: 1px dashed #444444;
-  background: rgba(13, 13, 13, 0.7);
+  border: none;
+  background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   padding: 15px;
   text-align: center;
 }
@@ -161,7 +158,7 @@
 .album-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  gap: 25px;
   width: 100%;
   margin: 15px auto 0 auto;
   justify-content: center;
@@ -172,25 +169,20 @@
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  background: rgba(18, 18, 18, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 14px;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.album-card:hover {
-  border-color: #555555;
-  background: rgba(26, 26, 26, 0.85);
+  background: transparent;
+  border: none;
+  padding: 0;
+  transition: none;
 }
 
 .album-card-cover {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border: 1px solid #333333;
+  border: none;
+  box-shadow: none;
   margin-bottom: 10px;
+  transition: none;
 }
 
 .album-card-title {
@@ -212,15 +204,13 @@
    3. SEÇÃO DE CONTATOS TRADICIONAL (CENTRALIZADA)
    ========================================================= */
 .contacts-section {
-  margin: 40px auto 0 auto;
+  margin: 40px auto 20px auto;
   width: 100%;
   max-width: 750px;
   text-align: left;
-  background: rgba(14, 14, 14, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 25px;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .contacts-header {
@@ -228,8 +218,8 @@
   letter-spacing: 3px;
   color: #ffffff;
   text-transform: uppercase;
-  border-bottom: 1px solid #333333;
-  padding-bottom: 10px;
+  border-bottom: none;
+  padding-bottom: 4px;
   margin-bottom: 20px;
   text-align: left;
 }
@@ -249,6 +239,7 @@
   margin-bottom: 10px;
   text-transform: uppercase;
   text-align: left;
+  border-bottom: none;
 }
 
 .contact-list {
@@ -261,23 +252,23 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 14px;
-  background: #161616;
-  border: 1px solid #262626;
+  padding: 8px 12px;
+  background: #0f0f0f;
+  border: none;
   font-size: 13px;
   min-width: 0;
+  transition: none;
 }
 
 .contact-item.clickable:hover {
-  border-color: #444444;
-  background: #1c1c1c;
+  background: #0f0f0f;
 }
 
 .contact-item .icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
-  opacity: 0.85;
+  opacity: 1;
   flex-shrink: 0;
 }
 
@@ -297,8 +288,8 @@
 }
 
 .contact-item.placeholder {
-  opacity: 0.5;
-  border-style: dashed;
+  opacity: 1;
+  border: none;
 }
 
 .contact-item.placeholder .value {
@@ -321,6 +312,7 @@
   margin: 6px 0;
   word-break: break-word;
   text-align: center;
+  transition: none;
 }
 
 audio {
@@ -341,8 +333,8 @@ audio {
   width: 100%;
   margin: 0 auto;
   background: #000;
-  border: 1px solid #333;
-  padding: 6px;
+  border: none;
+  padding: 0;
 }
 
 .player-wrapper iframe {
@@ -370,12 +362,17 @@ audio {
   max-width: 500px;
 }
 
+.track-nav a {
+  transition: none;
+}
+
 .cover {
   width: 240px;
   max-width: 100%;
   height: auto;
   margin: 20px auto;
-  border: 1px solid #333;
+  border: none;
+  box-shadow: none;
   display: block;
 }
 
@@ -391,19 +388,21 @@ audio {
 
 .platform-icons a {
   display: inline-block;
+  transition: none;
 }
 
 .platform-icons img {
   width: 36px;
   height: 36px;
   object-fit: contain;
-  border: 1px solid #333333;
+  border: none;
   padding: 6px;
   background: #141414;
+  transition: none;
 }
 
 .platform-icons img:hover {
-  border-color: #777777;
+  background: #141414;
 }
 
 /* =========================================================
@@ -486,32 +485,28 @@ audio {
 }
 
 /* =========================================================
-   CAROUSEL DE VÍDEOS EM DESTAQUE
+   CAROUSEL DE VÍDEOS EM DESTAQUE (LAYOUT SIMPLES & DIRETO)
    ========================================================= */
 .video-carousel-container {
   width: 100%;
-  background: rgba(12, 12, 12, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  padding: 20px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-bottom: 30px;
 }
 
 .video-carousel-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #222222;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: none;
+  padding-bottom: 4px;
 }
 
 .video-carousel-title {
   font-family: 'Fake Smiths', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
   letter-spacing: 2px;
   margin: 0;
@@ -521,7 +516,7 @@ audio {
 .video-carousel-controls {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .video-carousel-counter {
@@ -531,30 +526,29 @@ audio {
 }
 
 .video-carousel-btn {
-  background: #141414;
-  border: 1px solid #333333;
-  color: #ffffff;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
+  background: #181818;
+  border: none;
+  color: #cccccc;
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 16px;
-  transition: all 0.2s ease;
+  font-size: 14px;
+  transition: none;
 }
 
 .video-carousel-btn:hover {
-  background: #252525;
-  border-color: #ffffff;
-  transform: scale(1.05);
+  background: #181818;
+  color: #cccccc;
 }
 
 .video-carousel-stage {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
 .video-carousel-player-wrapper {
@@ -562,8 +556,7 @@ audio {
   width: 100%;
   padding-top: 56.25%; /* 16:9 Aspect Ratio */
   background: #000000;
-  border: 1px solid #262626;
-  border-radius: 4px;
+  border: none;
   overflow: hidden;
 }
 
@@ -578,72 +571,67 @@ audio {
 
 .video-carousel-info {
   text-align: left;
-  padding: 5px 2px;
+  padding: 4px 0;
 }
 
 .video-carousel-info-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
   letter-spacing: 1px;
 }
 
 .video-carousel-info-meta {
-  font-size: 13px;
+  font-size: 12px;
   color: #888888;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .video-carousel-info-desc {
   font-size: 13px;
-  color: #bbbbbb;
+  color: #aaaaaa;
   line-height: 1.5;
 }
 
 .video-carousel-thumbs {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   overflow-x: auto;
-  padding-top: 15px;
-  border-top: 1px solid #1a1a1a;
+  padding-top: 12px;
+  border-top: none;
   scrollbar-width: thin;
   scrollbar-color: #333333 #0a0a0a;
 }
 
 .video-carousel-thumb-card {
-  flex: 0 0 calc(25% - 9px);
-  min-width: 140px;
-  background: rgba(18, 18, 18, 0.7);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  padding: 8px;
+  flex: 0 0 calc(25% - 8px);
+  min-width: 130px;
+  background: transparent;
+  border: none;
+  padding: 6px;
   cursor: pointer;
   text-align: left;
-  transition: all 0.2s ease;
+  transition: none;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .video-carousel-thumb-card:hover {
-  background: rgba(26, 26, 26, 0.85);
-  border-color: #666666;
+  background: transparent;
 }
 
 .video-carousel-thumb-card.active {
-  background: rgba(30, 30, 30, 0.9);
-  border-color: #ffffff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  background: #1a1a1a;
 }
 
 .video-carousel-thumb-cover {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: 2px;
   background: #000;
+  border: none;
 }
 
 .video-carousel-thumb-title {
@@ -664,33 +652,25 @@ audio {
 }
 
 @media (max-width: 600px) {
-  .video-carousel-container {
-    padding: 12px;
-  }
-
   .video-carousel-thumb-card {
-    flex: 0 0 130px;
+    flex: 0 0 120px;
   }
 }
 
 /* =========================================================
-   CONTAINER DO ARTISTA (FOTO DE PERFIL E NOME COM CONTEINER)
+   CONTAINER DO ARTISTA (FOTO DE PERFIL E NOME - DIRETO & LIMPO)
    ========================================================= */
 .artist-header-box {
   width: 100%;
   max-width: 500px;
-  margin: 25px auto 25px auto;
-  background: rgba(13, 13, 13, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 6px;
-  padding: 24px 20px;
+  margin: 20px auto 10px auto;
+  background: transparent;
+  border: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7);
 }
 
 .artist-header-box .artist-portrait {
@@ -699,23 +679,21 @@ audio {
   height: 160px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid #333333;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  border: none;
+  margin-bottom: 12px;
 }
 
 .artist-header-title {
   font-family: 'Fake Smiths', sans-serif;
-  font-size: 26px;
+  font-size: 24px;
   color: #ffffff;
-  margin: 0 0 6px 0;
+  margin: 0 0 4px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 .artist-header-role {
-  font-size: 13px;
+  font-size: 12px;
   color: #888888;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -723,25 +701,99 @@ audio {
 }
 
 /* =========================================================
-   SISTEMA DE BACKGROUND DE IMAGEM DA PÁGINA (COM ALTO CONTRASTE)
+   SEÇÃO DE MERCH / PRODUTOS (ESTILO SECO & MINIMALISTA)
+   ========================================================= */
+.merch-section {
+  scroll-margin-top: 80px;
+}
+
+.merch-notice {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #888888;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 5px 0 25px 0;
+}
+
+.merch-track-container {
+  width: 100%;
+}
+
+.merch-track-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.merch-counter {
+  font-size: 12px;
+  color: #888888;
+  letter-spacing: 1px;
+}
+
+.merch-track-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.merch-track-btn {
+  background: #181818;
+  border: none;
+  color: #cccccc;
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: none;
+}
+
+.merch-track-btn:hover {
+  background: #181818;
+  color: #cccccc;
+}
+
+.merch-track {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #333333 transparent;
+  padding-bottom: 10px;
+}
+
+.merch-track .album-card {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+}
+
+/* =========================================================
+   SISTEMA DE BACKGROUND DE IMAGEM DA PÁGINA (COM DESFOQUE SUAVE & ALTO CONTRASTE)
    ========================================================= */
 #page-bg-overlay {
   position: fixed;
-  top: -150px;
-  bottom: -150px;
-  left: -150px;
-  right: -150px;
-  width: calc(100vw + 300px);
-  height: calc(100vh + 300px);
+  top: -30px;
+  left: -30px;
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
   pointer-events: none;
-  z-index: -999;
+  z-index: -1;
   background-image: var(--bg-image, none);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out, background-image 0.5s ease-in-out;
+  filter: blur(var(--bg-blur, 8px));
+  -webkit-filter: blur(var(--bg-blur, 8px));
+  transform: scale(1.04);
+  opacity: 1;
+  transition: none;
 }
 
 #page-bg-overlay.loaded {
@@ -755,9 +807,43 @@ audio {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%),
-              linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 100%);
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.7) 100%),
+              linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.65) 100%);
   pointer-events: none;
 }
 
+/* =========================================================
+   PÁGINA SOBRE (ESTILO SECO & MINIMALISTA)
+   ========================================================= */
+.about-artists-section,
+.about-projects-section {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 25px;
+}
 
+.about-text-section {
+  width: 100%;
+  max-width: 900px;
+  margin-top: 35px;
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.about-text-container {
+  margin-top: 15px;
+}
+
+.about-text,
+.about-text-container p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #cccccc;
+  letter-spacing: 0.5px;
+  margin: 0 0 16px 0;
+}
+
+.about-text:last-child,
+.about-text-container p:last-child {
+  margin-bottom: 0;
+}

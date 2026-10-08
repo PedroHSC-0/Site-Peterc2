@@ -4,22 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pigpenfan</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=6">
   <link rel="preload" as="image" href="assets/imagens/background/background-1.webp">
-  <link rel="icon" type="image/x-icon" href="assets/imagens/icones/peterc2-icon.jpg">
+  <link rel="icon" type="image/webp" href="assets/imagens/icones/peterc2-icon.webp">
 </head>
 
 <body class="home">
+  <div id="page-bg-overlay"></div>
 
   <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
   <header class="top-nav">
     <div class="top-nav-container">
-      <span class="top-nav-logo">PIGPENFAN</span>
+      <a href="index.html" class="top-nav-logo">PIGPENFAN</a>
       <nav class="top-nav-links">
         <a href="index.html" class="active">INÍCIO</a>
+        <a href="sobre/index.html">SOBRE</a>
         <a href="artistas/peterc2/index.html">PETERC2</a>
         <a href="artistas/jcdive/index.html">JC DIVE</a>
         <a href="artistas/littering/index.html">LITTERING</a>
+        <a href="#merch">MERCH</a>
         <a href="#contato" class="nav-contact-btn">CONTATO</a>
       </nav>
     </div>
@@ -47,19 +50,19 @@
 
       <!-- PETERC2 -->
       <a href="artistas/peterc2/index.html" class="artist-image-card">
-        <img src="assets/imagens/icones/peterc2-icon.jpg" alt="Peterc2" class="artist-portrait">
+        <img src="assets/imagens/icones/peterc2-icon.webp" alt="Peterc2" class="artist-portrait">
         <span class="artist-card-title">Peterc2</span>
       </a>
 
       <!-- JC DIVE -->
       <a href="artistas/jcdive/index.html" class="artist-image-card">
-        <img src="assets/imagens/icones/jcdive-icon.jpeg" alt="JC Dive" class="artist-portrait">
+        <img src="assets/imagens/icones/jcdive-icon.webp" alt="JC Dive" class="artist-portrait">
         <span class="artist-card-title">JC Dive</span>
       </a>
 
       <!-- LITTERING -->
       <a href="artistas/littering/index.html" class="artist-image-card">
-        <img src="assets/imagens/icones/littering-icon.png" alt="Littering" class="artist-portrait">
+        <img src="assets/imagens/icones/littering-icon.webp" alt="Littering" class="artist-portrait">
         <span class="artist-card-title">Littering</span>
       </a>
 
@@ -71,17 +74,24 @@
       <div class="album-gallery">
         <!-- Desert Sample: Lançamento 13/03/2026 -->
         <a href="projetos/desert-sample/index.html" class="album-card" data-release-date="2026-03-13">
-          <img src="assets/imagens/capas/desert-sample-cover.jpeg" alt="Desert Sample" class="album-card-cover">
+          <img src="assets/imagens/capas/desert-sample-cover.webp" alt="Desert Sample" class="album-card-cover">
           <span class="album-card-title">Desert Sample</span>
           <span class="album-card-sub">Peterc2 e JC Dive • 13/03/2026</span>
         </a>
         <!-- The Ocean Trench: Lançamento 10/04/2026 -->
         <a href="projetos/the-ocean-trench/index.html" class="album-card" data-release-date="2026-04-10">
-          <img src="assets/imagens/capas/the-ocean-trench-cover.jpeg" alt="The Ocean Trench" class="album-card-cover">
+          <img src="assets/imagens/capas/the-ocean-trench-cover.webp" alt="The Ocean Trench" class="album-card-cover">
           <span class="album-card-title">The Ocean Trench</span>
           <span class="album-card-sub">Peterc2 e JC Dive • 10/04/2026</span>
         </a>
       </div>
+    </section>
+
+    <!-- ===================== SEÇÃO DE MERCH / PRODUTOS (CAROUSEL) ===================== -->
+    <section id="merch" class="collab-section merch-section" style="width: 100%; max-width: 900px; margin-top: 35px;">
+      <h2 class="collab-title">Merch</h2>
+      <p class="merch-notice">Em Breve</p>
+      <div id="merch-carousel-wrapper" style="display: none;"></div>
     </section>
 
     <!-- ===================== SEÇÃO DE CONTATOS TRADICIONAL ===================== -->

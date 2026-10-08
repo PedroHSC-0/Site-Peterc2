@@ -4,11 +4,11 @@
 
 /* TODOS OS @IMPORT DEVEM FICAR NO TOPO DO ARQUIVO CSS */
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-@import "modules/base.css";
-@import "modules/components.css";
-@import "modules/home.css";
-@import "modules/artists.css";
-@import "modules/albums.css";
+@import "modules/base.css?v=6";
+@import "modules/components.css?v=6";
+@import "modules/home.css?v=6";
+@import "modules/artists.css?v=6";
+@import "modules/albums.css?v=6";
 
 /* =========================================================
    FONTES CUSTOMIZADAS: FAKE SMITHS, SERIAL PUBLICATION, OUT OF TUNE & SHADY LANE
@@ -45,4 +45,71 @@
   src: url('../fonts/shady-lane-font/ShadyLane-7XvK.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+/* =========================================================
+   ESTILO SECO ABSOLUTO: 0 HOVERS, 0 OPACIDADE, 0 BORDAS EM FOTOS
+   ========================================================= */
+*, *::before, *::after {
+  transition: none !important;
+  animation: none !important;
+  -webkit-transition: none !important;
+  -webkit-animation: none !important;
+}
+
+*:hover {
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+/* Zero opacidade ou efeito em links, botões e cards */
+a, a:hover, a:focus, a:active,
+button, button:hover, button:focus, button:active,
+.artist-image-card, .artist-image-card:hover,
+.album-card, .album-card:hover,
+.video-carousel-thumb-card, .video-carousel-thumb-card:hover,
+.contact-item, .contact-item:hover,
+.track-row, .track-row:hover {
+  opacity: 1 !important;
+  transition: none !important;
+  filter: none !important;
+}
+
+/* Zero bordas em todas as imagens, fotos e capas */
+img,
+picture,
+.artist-portrait,
+.album-card-cover,
+.album-detail-cover,
+.cover,
+.video-carousel-thumb-cover,
+.merch-featured-img,
+.merch-carousel-thumb-cover,
+.platform-icons img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+img:hover,
+picture:hover,
+.artist-portrait:hover,
+.album-card-cover:hover,
+.album-detail-cover:hover,
+.cover:hover,
+.video-carousel-thumb-cover:hover,
+.merch-featured-img:hover,
+.merch-carousel-thumb-cover:hover,
+.platform-icons img:hover {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
 }
