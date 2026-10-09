@@ -92,8 +92,8 @@ const SITE_DATA = {
       contacts: {
         instagram: { label: "Instagram", value: "@jcdive_", url: "https://www.instagram.com/jcdive_/", icon: "assets/imagens/icones/instagram.svg" },
         youtube:   { label: "YouTube",   value: null, url: null, icon: "assets/imagens/icones/youtube.svg" },
-        spotify:   { label: "Spotify",   value: null, url: null, icon: "assets/imagens/icones/spotify.svg" },
-        apple:     { label: "Apple Music", value: null, url: null, icon: "assets/imagens/icones/apple.svg" },
+        spotify:   { label: "Spotify",   value: "JC Dive", url: "https://open.spotify.com/artist/5qf8Aj1IZurEACkVGfiUoL", icon: "assets/imagens/icones/spotify.svg" },
+        apple:     { label: "Apple Music", value: "JC Dive", url: "https://music.apple.com/br/artist/jc-dive/1889215882", icon: "assets/imagens/icones/apple.svg" },
         bandcamp:  { label: "Bandcamp",  value: null, url: null, icon: "assets/imagens/icones/bandcamp.svg" }
       }
     },
@@ -113,9 +113,9 @@ const SITE_DATA = {
       contacts: {
         instagram: { label: "Instagram", value: "@litteringband", url: "https://www.instagram.com/litteringband/", icon: "assets/imagens/icones/instagram.svg" },
         youtube:   { label: "YouTube",   value: "@litteringband", url: "https://www.youtube.com/@litteringband", icon: "assets/imagens/icones/youtube.svg" },
-        spotify:   { label: "Spotify",   value: null, url: null, icon: "assets/imagens/icones/spotify.svg" },
+        spotify:   { label: "Spotify",   value: "Littering", url: "https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy", icon: "assets/imagens/icones/spotify.svg" },
         apple:     { label: "Apple Music", value: null, url: null, icon: "assets/imagens/icones/apple.svg" },
-        bandcamp:  { label: "Bandcamp",  value: null, url: null, icon: "assets/imagens/icones/bandcamp.svg" }
+        bandcamp:  { label: "Bandcamp",  value: "littering.bandcamp.com", url: "https://littering.bandcamp.com/track/out-of-style", icon: "assets/imagens/icones/bandcamp.svg" }
       }
     }
   },
@@ -485,13 +485,17 @@ const SITE_DATA = {
       background: "assets/imagens/background/background-4.webp",
       link: "projetos/out-of-style/index.html",
       artists: ["littering"],
-      streaming: {},
+      streaming: {
+        youtube: "https://www.youtube.com/watch?v=KYDc9z9Gl6c",
+        spotify: "https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy",
+        bandcamp: "https://littering.bandcamp.com/track/out-of-style"
+      },
       tracks: [
         {
           slug: "out-of-style",
           title: "Out Of Style",
           artist: "Littering",
-          youtube: "",
+          youtube: "KYDc9z9Gl6c",
           lyrics: `When she sticks\npaper in her tongue\nThen she feels\nSings a million songs\nAnd she's gone for now\nUntil she's there for more\nThen she's gone for now\nUntil she's at your door\n\nGirl, You are out of style\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style\n\nWhen she said\nNothing is ever gone\nThen I had\nLips and broken bones\nAnd she's gone for now\nbut not until she's there for more\nThen she's gone for now\nbut not until she's at your door\n\nYou are out of style\nYou are out of style in everything you wanna do\nYou are out of style girl\nYou are out of style\nOhh ohh\nYou are out of style, girl\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style`
         }
       ]
@@ -512,7 +516,13 @@ const SITE_DATA = {
   //      link: "https://peterc2.bandcamp.com/merch/..."
   //    }
   // ---------------------------------------------------------
-  merch: []
+  merch: [{
+    id:"chaveiros-littering",
+    title: "Chaveiros Littering",
+    subtitle: "Menor: R$ 5,00\nMaior: R$ 8,00",
+    image: "assets/imagens/merch/chaveiros.webp",
+    link: "https://ig.me/m/litteringband"
+  }]
 };
 
 Object.freeze(SITE_DATA);

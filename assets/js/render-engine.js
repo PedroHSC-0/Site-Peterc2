@@ -373,7 +373,9 @@
     if (videoWrapper && placeholder) {
       if (track.youtube) {
         if (video) {
-          video.src = 'https://www.youtube.com/embed/' + track.youtube;
+          const ytMatch = String(track.youtube).match(/(?:youtu\.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*)/);
+          const ytId = ytMatch ? ytMatch[1] : track.youtube;
+          video.src = 'https://www.youtube.com/embed/' + ytId;
           video.title = track.title;
         }
         videoWrapper.style.display = 'flex';
