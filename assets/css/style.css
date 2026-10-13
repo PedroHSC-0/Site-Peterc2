@@ -71,6 +71,10 @@ button, button:hover, button:focus, button:active,
 .artist-image-card, .artist-image-card:hover,
 .album-card, .album-card:hover,
 .video-carousel-thumb-card, .video-carousel-thumb-card:hover,
+.gallery-carousel-card, .gallery-carousel-card:hover,
+.gallery-event-tab-btn, .gallery-event-tab-btn:hover,
+.lightbox-close-btn, .lightbox-close-btn:hover,
+.lightbox-nav-btn, .lightbox-nav-btn:hover,
 .contact-item, .contact-item:hover,
 .track-row, .track-row:hover {
   opacity: 1 !important;
@@ -88,6 +92,8 @@ picture,
 .video-carousel-thumb-cover,
 .merch-featured-img,
 .merch-carousel-thumb-cover,
+.gallery-carousel-cover,
+.lightbox-image,
 .platform-icons img {
   border: none !important;
   outline: none !important;
@@ -105,6 +111,8 @@ picture:hover,
 .video-carousel-thumb-cover:hover,
 .merch-featured-img:hover,
 .merch-carousel-thumb-cover:hover,
+.gallery-carousel-cover:hover,
+.lightbox-image:hover,
 .platform-icons img:hover {
   border: none !important;
   outline: none !important;

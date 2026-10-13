@@ -508,20 +508,244 @@
   }
 
   // =========================================================
-  // RENDERIZADOR DA PÁGINA SOBRE
+  // RENDERIZADOR DA PÁGINA SOBRE & CAROUSEL DE IMAGENS
   // =========================================================
+
+  let activeGalleryId = null;
+  let currentLightboxIdx = 0;
+  let galleryEvents = [];
+
+  function getActiveGalleryPhotos() {
+    const event = galleryEvents.find(e => e.id === activeGalleryId);
+    return event && Array.isArray(event.photos) ? event.photos : [];
+  }
+
+  function updateLightboxView() {
+    const photos = getActiveGalleryPhotos();
+    if (!photos || photos.length === 0) return;
+
+    const item = photos[currentLightboxIdx];
+    const prefix = getDepthPrefix();
+    const imgPath = typeof item === 'string' ? item : (item.image || '');
+    const imgEl = document.getElementById('lightbox-full-image');
+    const counterEl = document.getElementById('lightbox-counter');
+
+    if (imgEl) {
+      imgEl.src = prefix + imgPath;
+      imgEl.alt = `Foto ${currentLightboxIdx + 1} de ${photos.length}`;
+    }
+    if (counterEl) {
+      counterEl.textContent = `${currentLightboxIdx + 1} / ${photos.length}`;
+    }
+
+    const carouselCounter = document.getElementById('gallery-carousel-counter');
+    if (carouselCounter) {
+      carouselCounter.textContent = `${currentLightboxIdx + 1} / ${photos.length}`;
+    }
+  }
+
+  function openImageLightbox(arg1, arg2) {
+    if (typeof arg1 === 'number') {
+      currentLightboxIdx = arg1;
+    } else if (typeof arg1 === 'string') {
+      activeGalleryId = arg1;
+      currentLightboxIdx = typeof arg2 === 'number' ? arg2 : 0;
+    }
+
+    const photos = getActiveGalleryPhotos();
+    if (!photos || photos.length === 0) return;
+
+    currentLightboxIdx = Math.max(0, Math.min(currentLightboxIdx, photos.length - 1));
+    const modal = document.getElementById('image-lightbox-modal');
+    if (!modal) return;
+
+    updateLightboxView();
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeImageLightbox() {
+    const modal = document.getElementById('image-lightbox-modal');
+    if (!modal) return;
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function prevLightboxImage() {
+    const photos = getActiveGalleryPhotos();
+    if (!photos || photos.length === 0) return;
+    currentLightboxIdx = (currentLightboxIdx - 1 + photos.length) % photos.length;
+    updateLightboxView();
+  }
+
+  function nextLightboxImage() {
+    const photos = getActiveGalleryPhotos();
+    if (!photos || photos.length === 0) return;
+    currentLightboxIdx = (currentLightboxIdx + 1) % photos.length;
+    updateLightboxView();
+  }
+
+  function scrollAboutGallery(direction) {
+    const track = document.getElementById('gallery-carousel-track');
+    if (!track) return;
+    const card = track.querySelector('.gallery-carousel-card');
+    const step = card ? (card.offsetWidth + 20) : 230;
+    track.scrollBy({ left: direction * step, behavior: 'smooth' });
+  }
+
+  function scrollGallery(galleryId, direction) {
+    if (galleryId && galleryId !== activeGalleryId) {
+      switchGalleryEvent(galleryId);
+    }
+    scrollAboutGallery(direction);
+  }
+
+  function renderGalleryCards(photos, prefix, eventId) {
+    if (!photos || photos.length === 0) {
+      return '<p class="gallery-notice">Em Breve</p>';
+    }
+    return photos.map((item, index) => {
+      const imgPath = typeof item === 'string' ? item : (item.image || '');
+      return `
+        <div class="gallery-carousel-card" onclick="window.SiteEngine.openImageLightbox('${eventId}', ${index})" role="button" tabindex="0" title="Clique para ampliar" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.SiteEngine.openImageLightbox('${eventId}', ${index});}">
+          <div class="gallery-carousel-cover-wrap">
+            <img src="${prefix}${imgPath}" alt="Foto ${index + 1}" class="gallery-carousel-cover" loading="lazy">
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function switchGalleryEvent(eventId) {
+    const event = galleryEvents.find(e => e.id === eventId);
+    if (!event) return;
+    activeGalleryId = eventId;
+
+    galleryEvents.forEach(e => {
+      const tab = document.getElementById(`gallery-tab-${e.id}`);
+      if (tab) {
+        const isSelected = e.id === eventId;
+        tab.classList.toggle('active', isSelected);
+        tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+      }
+    });
+
+    const photos = Array.isArray(event.photos) ? event.photos : [];
+    const prefix = getDepthPrefix();
+    const track = document.getElementById('gallery-carousel-track');
+    const counter = document.getElementById('gallery-carousel-counter');
+
+    if (track) {
+      track.innerHTML = renderGalleryCards(photos, prefix, event.id);
+      track.scrollLeft = 0;
+    }
+
+    if (counter) {
+      counter.textContent = photos.length > 0 ? `1 / ${photos.length}` : '0 / 0';
+    }
+  }
+
+  function renderAboutGallery() {
+    const wrapper = document.getElementById('about-gallery-carousel-wrapper');
+    if (!wrapper || typeof SITE_DATA === 'undefined') return;
+
+    if (Array.isArray(SITE_DATA.aboutGalleries)) {
+      galleryEvents = SITE_DATA.aboutGalleries;
+    } else if (Array.isArray(SITE_DATA.aboutGallery)) {
+      galleryEvents = [{
+        id: 'confraterniza-soul',
+        title: 'Confraterniza Soul',
+        formattedDate: '06/09/26',
+        photos: SITE_DATA.aboutGallery
+      }];
+    } else {
+      galleryEvents = [];
+    }
+
+    if (galleryEvents.length === 0) return;
+
+    if (!activeGalleryId || !galleryEvents.some(e => e.id === activeGalleryId)) {
+      activeGalleryId = galleryEvents[0].id;
+    }
+
+    const activeEvent = galleryEvents.find(e => e.id === activeGalleryId) || galleryEvents[0];
+    const activePhotos = Array.isArray(activeEvent.photos) ? activeEvent.photos : [];
+    const prefix = getDepthPrefix();
+
+    wrapper.innerHTML = `
+      <div class="gallery-carousel-header">
+        <div class="gallery-event-tabs" role="tablist" aria-label="Selecione o show">
+          ${galleryEvents.map((event) => `
+            <button type="button"
+              class="gallery-event-tab-btn ${event.id === activeGalleryId ? 'active' : ''}"
+              id="gallery-tab-${event.id}"
+              role="tab"
+              aria-selected="${event.id === activeGalleryId ? 'true' : 'false'}"
+              onclick="window.SiteEngine.switchGalleryEvent('${event.id}')">
+              <span class="gallery-tab-title">${event.title || 'Show'}</span>
+              ${event.formattedDate ? `<span class="gallery-tab-sep">&bull;</span><span class="gallery-tab-date">${event.formattedDate}</span>` : ''}
+            </button>
+          `).join('')}
+        </div>
+
+        <div class="gallery-carousel-controls">
+          <span class="gallery-carousel-counter" id="gallery-carousel-counter">${activePhotos.length > 0 ? `1 / ${activePhotos.length}` : '0 / 0'}</span>
+          <button type="button" class="gallery-carousel-btn" onclick="window.SiteEngine.scrollAboutGallery(-1)" title="Anterior">‹</button>
+          <button type="button" class="gallery-carousel-btn" onclick="window.SiteEngine.scrollAboutGallery(1)" title="Próximo">›</button>
+        </div>
+      </div>
+
+      <div class="gallery-carousel-track" id="gallery-carousel-track" tabindex="0" aria-label="Carrossel de fotos">
+        ${renderGalleryCards(activePhotos, prefix, activeEvent.id)}
+      </div>
+    `;
+
+    const track = document.getElementById('gallery-carousel-track');
+    const counter = document.getElementById('gallery-carousel-counter');
+    if (track && counter) {
+      track.addEventListener('scroll', () => {
+        const photos = getActiveGalleryPhotos();
+        if (photos.length === 0) return;
+        const card = track.querySelector('.gallery-carousel-card');
+        if (!card) return;
+        const cardWidth = card.offsetWidth + 20;
+        const idx = Math.min(photos.length - 1, Math.max(0, Math.round(track.scrollLeft / cardWidth)));
+        counter.textContent = `${idx + 1} / ${photos.length}`;
+      }, { passive: true });
+    }
+  }
 
   function renderAboutPage() {
     const gallery = document.getElementById('about-artists-gallery');
-    if (!gallery || typeof SITE_DATA === 'undefined' || !SITE_DATA.artists) return;
+    if (gallery && typeof SITE_DATA !== 'undefined' && SITE_DATA.artists) {
+      const prefix = getDepthPrefix();
+      gallery.innerHTML = Object.values(SITE_DATA.artists).map(artist => `
+        <a href="${prefix}${artist.page}" class="artist-image-card">
+          <img src="${prefix}${artist.portrait}" alt="${artist.name}" class="artist-portrait">
+          <span class="artist-card-title">${artist.name}</span>
+        </a>
+      `).join('');
+    }
 
-    const prefix = getDepthPrefix();
-    gallery.innerHTML = Object.values(SITE_DATA.artists).map(artist => `
-      <a href="${prefix}${artist.page}" class="artist-image-card">
-        <img src="${prefix}${artist.portrait}" alt="${artist.name}" class="artist-portrait">
-        <span class="artist-card-title">${artist.name}</span>
-      </a>
-    `).join('');
+    renderAboutGallery();
+  }
+
+  // Atalhos de teclado para o modal da imagem (Esc, Setas)
+  if (typeof window !== 'undefined') {
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('image-lightbox-modal');
+      if (!modal || modal.style.display === 'none') return;
+
+      if (e.key === 'Escape') {
+        closeImageLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        prevLightboxImage();
+      } else if (e.key === 'ArrowRight') {
+        nextLightboxImage();
+      }
+    });
   }
 
   // =========================================================
@@ -561,7 +785,15 @@
     renderAlbumPage,
     renderSongPlayerPage,
     renderMerchSection,
-    renderAboutPage
+    renderAboutPage,
+    renderAboutGallery,
+    switchGalleryEvent,
+    scrollGallery,
+    scrollAboutGallery,
+    openImageLightbox,
+    closeImageLightbox,
+    prevLightboxImage,
+    nextLightboxImage
   };
 
   if (typeof window !== 'undefined') {

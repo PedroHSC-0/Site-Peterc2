@@ -349,7 +349,7 @@ const SITE_DATA = {
     {
       id: "rescue-cosmic",
       title: "The Rescue Of The Cosmic Metaphysical Engineers",
-      subtitle: "Em Breve",
+      subtitle: "Peterc2 • Em Breve",
       credit: "Peterc2",
       type: "Solo",
       releaseDate: "2026-12-31",
@@ -522,7 +522,59 @@ const SITE_DATA = {
     subtitle: "Menor: R$ 5,00\nMaior: R$ 8,00",
     image: "assets/imagens/merch/chaveiros.webp",
     link: "https://ig.me/m/litteringband"
-  }]
+  }],
+
+  // ---------------------------------------------------------
+  // GALERIAS DE FOTOS (PÁGINA SOBRE) - SEPARADAS POR SHOW
+  // ---------------------------------------------------------
+  aboutGalleries: [
+    {
+      id: "confraterniza-soul",
+      title: "Confraterniza Soul",
+      date: "2026-09-06",
+      formattedDate: "06/09/26",
+      photos: [
+        "assets/imagens/sobre/confraterniza-soul/sobre-01.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-02.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-03.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-04.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-05.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-06.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-07.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-08.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-09.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-10.webp"
+      ]
+    },
+    {
+      id: "feira-astral",
+      title: "Feira Astral",
+      date: "2026-10-10",
+      formattedDate: "10/10/26",
+      photos: [
+        "assets/imagens/sobre/feira-astral/sobre-01.webp",
+        "assets/imagens/sobre/feira-astral/sobre-02.webp",
+        "assets/imagens/sobre/feira-astral/sobre-03.webp",
+        "assets/imagens/sobre/feira-astral/sobre-04.webp",
+        "assets/imagens/sobre/feira-astral/sobre-05.webp",
+        "assets/imagens/sobre/feira-astral/sobre-06.webp",
+        "assets/imagens/sobre/feira-astral/sobre-07.webp",
+        "assets/imagens/sobre/feira-astral/sobre-08.webp",
+        "assets/imagens/sobre/feira-astral/sobre-09.webp",
+        "assets/imagens/sobre/feira-astral/sobre-10.webp",
+        "assets/imagens/sobre/feira-astral/sobre-11.webp",
+        "assets/imagens/sobre/feira-astral/sobre-12.webp",
+        "assets/imagens/sobre/feira-astral/sobre-13.webp",
+        "assets/imagens/sobre/feira-astral/sobre-14.webp",
+        "assets/imagens/sobre/feira-astral/sobre-15.webp",
+        "assets/imagens/sobre/feira-astral/sobre-16.webp"
+      ]
+    }
+  ]
 };
 
 Object.freeze(SITE_DATA);
+
+if (typeof window !== 'undefined') {
+  window.SITE_DATA = SITE_DATA;
+}

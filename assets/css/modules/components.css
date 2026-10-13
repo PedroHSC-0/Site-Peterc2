@@ -847,3 +847,364 @@ audio {
 .about-text-container p:last-child {
   margin-bottom: 0;
 }
+
+/* =========================================================
+   CAROUSEL DE IMAGENS / GALERIA (PÁGINA SOBRE)
+   ========================================================= */
+.gallery-carousel-container {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.gallery-carousel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: none;
+  padding-bottom: 4px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.gallery-event-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.gallery-event-tab-btn {
+  background: #181818;
+  border: none;
+  color: #888888;
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+.gallery-event-tab-btn:hover {
+  color: #cccccc;
+  background: #181818;
+}
+
+.gallery-event-tab-btn.active {
+  background: #252525;
+  color: #ffffff;
+}
+
+.gallery-tab-title {
+  font-weight: 500;
+}
+
+.gallery-tab-sep {
+  color: #555555;
+  font-size: 11px;
+}
+
+.gallery-tab-date {
+  font-size: 11px;
+  color: #666666;
+  letter-spacing: 1px;
+}
+
+.gallery-event-tab-btn.active .gallery-tab-date {
+  color: #aaaaaa;
+}
+
+.gallery-notice {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #888888;
+  text-transform: uppercase;
+  text-align: left;
+  margin: 15px 0 25px 0;
+}
+
+.gallery-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gallery-carousel-counter {
+  font-size: 12px;
+  color: #888888;
+  letter-spacing: 1px;
+}
+
+.gallery-carousel-btn {
+  background: #181818;
+  border: none;
+  color: #cccccc;
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  transition: none;
+}
+
+.gallery-carousel-btn:hover {
+  background: #181818;
+  color: #cccccc;
+}
+
+.gallery-carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: #333333 transparent;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-carousel-card {
+  flex: 0 0 210px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+.gallery-carousel-cover-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #000000;
+  margin-bottom: 0;
+}
+
+.gallery-carousel-cover {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
+.gallery-carousel-card-title {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #dddddd;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gallery-carousel-card-sub {
+  font-size: 11px;
+  color: #666666;
+  margin-top: 2px;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   MODAL DE IMAGEM AMPLIADA (LIGHTBOX / TAMANHO TOTAL)
+   ========================================================= */
+.image-lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.94);
+  cursor: zoom-out;
+}
+
+.lightbox-container {
+  position: relative;
+  z-index: 2;
+  max-width: 92vw;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.lightbox-close-btn {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 3;
+  background: #181818;
+  border: none;
+  color: #ffffff;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox-close-btn:hover {
+  background: #181818;
+  color: #ffffff;
+}
+
+.lightbox-nav-btn {
+  position: fixed;
+  top: calc(50% - 22px);
+  z-index: 3;
+  background: #181818;
+  border: none;
+  color: #cccccc;
+  width: 40px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox-nav-btn:hover {
+  background: #181818;
+  color: #cccccc;
+}
+
+.lightbox-prev-btn {
+  left: 20px;
+}
+
+.lightbox-next-btn {
+  right: 20px;
+}
+
+.lightbox-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 85vh;
+}
+
+.lightbox-image {
+  max-width: 85vw;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  user-select: none;
+}
+
+.lightbox-info {
+  margin-top: 14px;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 10px;
+}
+
+.lightbox-title {
+  font-family: 'Fake Smiths', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.lightbox-subtitle {
+  font-size: 12px;
+  color: #aaaaaa;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.lightbox-counter {
+  font-size: 11px;
+  color: #666666;
+  margin-top: 6px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .gallery-event-tab-btn {
+    font-size: 11px;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+    gap: 4px;
+  }
+  .gallery-tab-date {
+    font-size: 10px;
+  }
+  .gallery-carousel-card {
+    flex: 0 0 160px;
+  }
+  .lightbox-nav-btn {
+    width: 32px;
+    height: 38px;
+    font-size: 20px;
+  }
+  .lightbox-prev-btn {
+    left: 8px;
+  }
+  .lightbox-next-btn {
+    right: 8px;
+  }
+  .lightbox-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+  }
+  .lightbox-image {
+    max-width: 94vw;
+    max-height: 70vh;
+  }
+}
