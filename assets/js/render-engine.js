@@ -180,15 +180,79 @@
     const videos = getSortedVideos('desc');
     let currentIdx = 0;
 
+    function getEmbedUrl(rawYoutube) {
+      const match = String(rawYoutube || '').match(/(?:youtu\.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*)/);
+      const ytId = match ? match[1] : (rawYoutube || '');
+      return `https://www.youtube.com/embed/${ytId}`;
+    }
+
+    function scrollActiveThumbIntoView() {
+      const thumbsContainer = document.getElementById('video-carousel-thumbs');
+      if (!thumbsContainer) return;
+      const activeCard = thumbsContainer.children[currentIdx];
+      if (!activeCard) return;
+
+      const containerWidth = thumbsContainer.clientWidth;
+      const cardLeft = activeCard.offsetLeft;
+      const cardWidth = activeCard.offsetWidth;
+      const currentScroll = thumbsContainer.scrollLeft;
+
+      if (cardLeft < currentScroll) {
+        thumbsContainer.scrollTo({ left: cardLeft, behavior: 'smooth' });
+      } else if (cardLeft + cardWidth > currentScroll + containerWidth) {
+        thumbsContainer.scrollTo({ left: cardLeft + cardWidth - containerWidth, behavior: 'smooth' });
+      }
+    }
+
+    function updateStage() {
+      const video = videos[currentIdx];
+      const videoEmbedUrl = getEmbedUrl(video.youtube);
+
+      const iframe = document.getElementById('featured-video-iframe');
+      if (iframe && iframe.src !== videoEmbedUrl) {
+        iframe.src = videoEmbedUrl;
+        iframe.title = video.title;
+      }
+
+      const counter = section.querySelector('.video-carousel-counter');
+      if (counter) counter.textContent = `${currentIdx + 1} / ${videos.length}`;
+
+      const titleEl = section.querySelector('.video-carousel-info-title');
+      if (titleEl) titleEl.textContent = video.title;
+
+      const metaEl = section.querySelector('.video-carousel-info-meta');
+      if (metaEl) metaEl.textContent = `${video.artist} ${video.releaseDate ? '• Lançamento: ' + formatDateBR(video.releaseDate) : ''}`;
+
+      const descEl = section.querySelector('.video-carousel-info-desc');
+      if (descEl) {
+        descEl.textContent = video.description || '';
+        descEl.style.display = video.description ? 'block' : 'none';
+      }
+
+      const thumbCards = section.querySelectorAll('.video-carousel-thumb-card');
+      thumbCards.forEach((card, idx) => {
+        if (idx === currentIdx) {
+          card.classList.add('active');
+          card.setAttribute('aria-current', 'true');
+        } else {
+          card.classList.remove('active');
+          card.removeAttribute('aria-current');
+        }
+      });
+
+      scrollActiveThumbIntoView();
+    }
+
     function buildCarousel() {
       const video = videos[currentIdx];
-      const videoEmbedUrl = `https://www.youtube.com/embed/${video.youtube}`;
+      const videoEmbedUrl = getEmbedUrl(video.youtube);
 
       const thumbsHTML = videos.map((v, i) => `
         <button 
           class="video-carousel-thumb-card ${i === currentIdx ? 'active' : ''}" 
           onclick="window.SiteEngine.switchFeaturedVideo(${i})"
           title="${v.title}"
+          ${i === currentIdx ? 'aria-current="true"' : ''}
         >
           <img src="${v.cover || 'assets/imagens/capas/placeholder.webp'}" alt="${v.title}" class="video-carousel-thumb-cover">
           <span class="video-carousel-thumb-title">${v.title}</span>
@@ -226,31 +290,49 @@
               ${video.description ? `<div class="video-carousel-info-desc">${video.description}</div>` : ''}
             </div>
 
-            <div class="video-carousel-thumbs">
+            <div class="video-carousel-thumbs-header">
+              <span class="video-carousel-thumbs-label">TODOS OS VÍDEOS (${videos.length})</span>
+              <div class="video-carousel-thumbs-nav" ${videos.length <= 4 ? 'style="display:none;"' : ''}>
+                <button type="button" class="video-carousel-thumbs-btn" onclick="window.SiteEngine.scrollVideoThumbs(-1)" title="Rolar anteriores">‹</button>
+                <button type="button" class="video-carousel-thumbs-btn" onclick="window.SiteEngine.scrollVideoThumbs(1)" title="Rolar próximos">›</button>
+              </div>
+            </div>
+
+            <div class="video-carousel-thumbs" id="video-carousel-thumbs" tabindex="0" aria-label="Carrossel de vídeos">
               ${thumbsHTML}
             </div>
           </div>
         </div>
       `;
       section.style.display = 'block';
+      scrollActiveThumbIntoView();
     }
 
     window.SiteEngine = window.SiteEngine || {};
     window.SiteEngine.switchFeaturedVideo = function(index) {
       if (index >= 0 && index < videos.length) {
         currentIdx = index;
-        buildCarousel();
+        updateStage();
       }
     };
 
     window.SiteEngine.prevFeaturedVideo = function() {
       currentIdx = (currentIdx - 1 + videos.length) % videos.length;
-      buildCarousel();
+      updateStage();
     };
 
     window.SiteEngine.nextFeaturedVideo = function() {
       currentIdx = (currentIdx + 1) % videos.length;
-      buildCarousel();
+      updateStage();
+    };
+
+    window.SiteEngine.scrollVideoThumbs = function(direction) {
+      const thumbsContainer = document.getElementById('video-carousel-thumbs');
+      if (thumbsContainer) {
+        const card = thumbsContainer.querySelector('.video-carousel-thumb-card');
+        const step = card ? (card.offsetWidth + 10) : 220;
+        thumbsContainer.scrollBy({ left: direction * step, behavior: 'smooth' });
+      }
     };
 
     buildCarousel();

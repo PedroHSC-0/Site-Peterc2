@@ -26,6 +26,15 @@ const SITE_DATA = {
   // ---------------------------------------------------------
   videos: [
     {
+      id: "out-of-style-video",
+      title: "Out Of Style",
+      artist: "Littering",
+      releaseDate: "2026-10-09",
+      youtube: "9Z41zsEkG6c",
+      cover: "assets/imagens/capas/out-of-style-cover.webp",
+      description: "Lyric Video do Single Out Of Style da banda Littering."
+    },
+    {
       id: "trailer-out-of-style",
       title: "Out Of Style (Single Trailer)",
       artist: "Littering",
@@ -486,17 +495,17 @@ const SITE_DATA = {
       link: "projetos/out-of-style/index.html",
       artists: ["littering"],
       streaming: {
-        youtube: "https://www.youtube.com/watch?v=KYDc9z9Gl6c",
+        youtube: "https://www.youtube.com/watch?v=9Z41zsEkG6c",
         spotify: "https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy",
         bandcamp: "https://littering.bandcamp.com/track/out-of-style"
       },
-      tracks: [
+      tracks: [ 
         {
           slug: "out-of-style",
           title: "Out Of Style",
           artist: "Littering",
-          youtube: "KYDc9z9Gl6c",
-          lyrics: `When she sticks\npaper in her tongue\nThen she feels\nSings a million songs\nAnd she's gone for now\nUntil she's there for more\nThen she's gone for now\nUntil she's at your door\n\nGirl, You are out of style\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style\n\nWhen she said\nNothing is ever gone\nThen I had\nLips and broken bones\nAnd she's gone for now\nbut not until she's there for more\nThen she's gone for now\nbut not until she's at your door\n\nYou are out of style\nYou are out of style in everything you wanna do\nYou are out of style girl\nYou are out of style\nOhh ohh\nYou are out of style, girl\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style`
+          youtube: "9Z41zsEkG6c",
+          lyrics: `When she sticks\npaper in her tongue\nThen she feels\nSings a million songs\nAnd she's gone for now\nUntil she's there for more\nThen she's gone for now\nUntil she's at your door\n\nGirl, You are out of style\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style\n\nWhen she said\nNothing is ever gone\nThen I had\nLips and broken bones\nAnd she's gone for now\nbut not until she's there for more\nThen she's gone for now\nbut not until she's at your door\n\nYou are out of style\nYou are out of style in everything you wanna do\nYou are out of style girl\nYou are out of style\nYou are out of style, girl\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style`
         }
       ]
     }
