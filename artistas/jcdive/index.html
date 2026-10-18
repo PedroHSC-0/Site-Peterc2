@@ -31,73 +31,29 @@
   <div class="center">
 
     <div style="margin-top: 20px; max-width: 200px; width: 100%;">
-      <img src="../../assets/imagens/icones/jcdive-icon.webp" alt="JC Dive" class="artist-portrait">
+      <img src="../../assets/imagens/icones/jcdive-icon.webp" alt="JC Dive" class="artist-portrait" id="artist-portrait-img">
     </div>
 
-    <h1 style="margin-top: 15px;">JC DIVE</h1>
+    <h1 style="margin-top: 15px;" id="artist-name-title">JC DIVE</h1>
+
+    <!-- ===================== INTEGRANTES (SE HOUVER) ===================== -->
+    <div class="members-box" id="artist-members-box" style="display: none;"></div>
 
     <!-- ===================== LANÇAMENTOS (ORDENADOS POR DATA) ===================== -->
     <section class="artist-projects" style="margin-top: 30px;">
       <h2 class="section-title">LANÇAMENTOS</h2>
 
-      <div class="album-gallery">
-        <!-- Desert Sample -->
-        <a href="../../projetos/desert-sample/index.html" class="album-card" data-release-date="2026-03-13">
-          <img src="../../assets/imagens/capas/desert-sample-cover.webp" alt="Desert Sample" class="album-card-cover">
-          <span class="album-card-title">Desert Sample</span>
-          <span class="album-card-sub">Peterc2 e JC Dive • 13/03/2026</span>
-        </a>
-
-        <!-- The Ocean Trench -->
-        <a href="../../projetos/the-ocean-trench/index.html" class="album-card" data-release-date="2026-04-10">
-          <img src="../../assets/imagens/capas/the-ocean-trench-cover.webp" alt="The Ocean Trench" class="album-card-cover">
-          <span class="album-card-title">The Ocean Trench</span>
-          <span class="album-card-sub">Peterc2 e JC Dive • 10/04/2026</span>
-        </a>
-
-
+      <div class="album-gallery" id="artist-albums-gallery">
+        <!-- Renderizado dinamicamente via render-engine.js a partir de SITE_DATA.albums -->
       </div>
     </section>
 
     <!-- ===================== CONTATO TRADICIONAL ===================== -->
     <section id="contato" class="contacts-section">
-      <h2 class="contacts-header">CONTATO - JC DIVE</h2>
+      <h2 class="contacts-header" id="artist-contact-header">CONTATO - JC DIVE</h2>
 
-      <div class="contact-list">
-        <!-- Instagram Ativo -->
-        <a href="https://www.instagram.com/jcdive_/" target="_blank" class="contact-item clickable">
-          <img src="../../assets/imagens/icones/instagram.svg" alt="Instagram" class="icon">
-          <span class="label">Instagram</span>
-          <span class="value">@jcdive_</span>
-        </a>
-
-        <!-- YouTube -->
-        <div class="contact-item placeholder">
-          <img src="../../assets/imagens/icones/youtube.svg" alt="YouTube" class="icon">
-          <span class="label">YouTube</span>
-          <span class="value">Em Breve</span>
-        </div>
-
-        <!-- Spotify Ativo -->
-        <a href="https://open.spotify.com/artist/5qf8Aj1IZurEACkVGfiUoL" target="_blank" rel="noopener noreferrer" class="contact-item clickable">
-          <img src="../../assets/imagens/icones/spotify.svg" alt="Spotify" class="icon">
-          <span class="label">Spotify</span>
-          <span class="value">JC Dive</span>
-        </a>
-
-        <!-- Apple Music Ativo -->
-        <a href="https://music.apple.com/br/artist/jc-dive/1889215882" target="_blank" rel="noopener noreferrer" class="contact-item clickable">
-          <img src="../../assets/imagens/icones/apple.svg" alt="Apple Music" class="icon">
-          <span class="label">Apple Music</span>
-          <span class="value">JC Dive</span>
-        </a>
-
-        <!-- Bandcamp -->
-        <div class="contact-item placeholder">
-          <img src="../../assets/imagens/icones/bandcamp.svg" alt="Bandcamp" class="icon">
-          <span class="label">Bandcamp</span>
-          <span class="value">Em Breve</span>
-        </div>
+      <div class="contact-list" id="artist-contact-list">
+        <!-- Renderizado dinamicamente via render-engine.js a partir de SITE_DATA.artists -->
       </div>
     </section>
 

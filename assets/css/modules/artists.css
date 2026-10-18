@@ -4,7 +4,8 @@
 
 .artist-peterc2,
 .artist-jcdive,
-.artist-littering {
+.artist-littering,
+.artist-pietrawrr {
   background-color: transparent;
   color: #cccccc;
 }
@@ -21,6 +22,11 @@
 
 /* Littering */
 .artist-littering h1 {
+  color: #ffffff;
+}
+
+/* Pietrawrr */
+.artist-pietrawrr h1 {
   color: #ffffff;
 }
 

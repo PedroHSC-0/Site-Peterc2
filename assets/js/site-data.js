@@ -123,8 +123,24 @@ const SITE_DATA = {
         instagram: { label: "Instagram", value: "@litteringband", url: "https://www.instagram.com/litteringband/", icon: "assets/imagens/icones/instagram.svg" },
         youtube:   { label: "YouTube",   value: "@litteringband", url: "https://www.youtube.com/@litteringband", icon: "assets/imagens/icones/youtube.svg" },
         spotify:   { label: "Spotify",   value: "Littering", url: "https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy", icon: "assets/imagens/icones/spotify.svg" },
-        apple:     { label: "Apple Music", value: null, url: null, icon: "assets/imagens/icones/apple.svg" },
+        apple:     { label: "Apple Music", value: "Littering", url: "https://music.apple.com/br/artist/littering/6823551933", icon: "assets/imagens/icones/apple.svg" },
         bandcamp:  { label: "Bandcamp",  value: "littering.bandcamp.com", url: "https://littering.bandcamp.com/track/out-of-style", icon: "assets/imagens/icones/bandcamp.svg" }
+      }
+    },
+    pietrawrr: {
+      id: "pietrawrr",
+      name: "Pietrawrr",
+      role: "Baixo",
+      portrait: "assets/imagens/icones/pietrawrr-icon.webp",
+      background: "assets/imagens/background/background-4.webp",
+      page: "artistas/pietrawrr/index.html",
+      contacts: {
+        instagram: { label: "Instagram", value: "@pietrawrr", url: "https://www.instagram.com/pietrawrr/", icon: "assets/imagens/icones/instagram.svg" },
+        youtube:   { label: "YouTube",   value: null, url: null, icon: "assets/imagens/icones/youtube.svg" },
+        spotify:   { label: "Spotify",   value: "o sonho da razão produz monstros", url: "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1", icon: "assets/imagens/icones/spotify.svg" },
+        apple:     { label: "Apple Music", value: "O Sonho da Razão Produz Monstros", url: "https://music.apple.com/br/artist/o-sonho-da-raz%C3%A3o-produz-monstros/1894934054", icon: "assets/imagens/icones/apple.svg" },
+        bandcamp1: { label: "Bandcamp", value: "funeral parade of roses", url: "https://funeralparadeofroses.bandcamp.com/album/harsh-noise-to-jerk-off", icon: "assets/imagens/icones/bandcamp.svg" },
+        bandcamp2: { label: "Bandcamp", value: "o sonho da razão produz monstros", url: "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare", icon: "assets/imagens/icones/bandcamp.svg" }
       }
     }
   },
@@ -198,7 +214,7 @@ const SITE_DATA = {
       formattedDate: "10/04/2026",
       cover: "assets/imagens/capas/the-ocean-trench-cover.webp",
       link: "projetos/the-ocean-trench/index.html",
-      artists: ["peterc2", "jcdive", "littering"],
+      artists: ["peterc2", "jcdive"],
       streaming: {
         youtube: "https://www.youtube.com/watch?v=EPZbv-gqIFM",
         spotify: "https://open.spotify.com/album/4QOkz5ITgkpBjD1UTeUVXt",
@@ -497,6 +513,7 @@ const SITE_DATA = {
       streaming: {
         youtube: "https://www.youtube.com/watch?v=9Z41zsEkG6c",
         spotify: "https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy",
+        apple: "https://music.apple.com/br/artist/littering/6823551933",
         bandcamp: "https://littering.bandcamp.com/track/out-of-style"
       },
       tracks: [ 
@@ -506,6 +523,79 @@ const SITE_DATA = {
           artist: "Littering",
           youtube: "9Z41zsEkG6c",
           lyrics: `When she sticks\npaper in her tongue\nThen she feels\nSings a million songs\nAnd she's gone for now\nUntil she's there for more\nThen she's gone for now\nUntil she's at your door\n\nGirl, You are out of style\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style\n\nWhen she said\nNothing is ever gone\nThen I had\nLips and broken bones\nAnd she's gone for now\nbut not until she's there for more\nThen she's gone for now\nbut not until she's at your door\n\nYou are out of style\nYou are out of style in everything you wanna do\nYou are out of style girl\nYou are out of style\nYou are out of style, girl\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style`
+        }
+      ]
+    },
+    {
+      id: "harsh-noise-to-jerk-off",
+      title: "Harsh Noise To Jerk Off",
+      subtitle: "Pietrawrr • 30/08/2026",
+      credit: "Pietrawrr",
+      type: "EP",
+      releaseDate: "2026-08-30",
+      formattedDate: "30/08/2026",
+      cover: "assets/imagens/capas/harsh-noise-to-jerk-off-cover.webp",
+      background: "assets/imagens/background/background-4.webp",
+      link: "projetos/harsh-noise-to-jerk-off/index.html",
+      artists: ["pietrawrr"],
+      streaming: {
+        bandcamp: "https://funeralparadeofroses.bandcamp.com/album/harsh-noise-to-jerk-off"
+      },
+      tracks: [
+        {
+          slug: "[untitled - 1]",
+          title: "[untitled - 1]",
+          artist: "Pietrawrr",
+          youtube: "",
+          lyrics: `[Faixa Instrumental]`
+        },
+        {
+          slug: "[untitled - 2]",
+          title: "[untitled - 2]",
+          artist: "Pietrawrr",
+          youtube: "",
+          lyrics: `[Faixa Instrumental]`
+        },
+        {
+          slug: "[untitled - 3]",
+          title: "[untitled - 3]",
+          artist: "Pietrawrr",
+          youtube: "",
+          lyrics: `[Faixa Instrumental]`
+        },
+        {
+          slug: "[untitled - 4]",
+          title: "[untitled - 4]",
+          artist: "Pietrawrr",
+          youtube: "",
+          lyrics: `[Faixa Instrumental]`
+        }
+
+      ]
+    },
+    {
+      id: "o-sonho-da-razao-produz-monstros",
+      title: "O Sonho da Razão Produz Monstros",
+      subtitle: "Pietrawrr • 17/04/2026",
+      credit: "Pietrawrr",
+      type: "Single",
+      releaseDate: "2026-04-17",
+      formattedDate: "17/04/2026",
+      cover: "assets/imagens/capas/osonhodarazoproduzmonstros-cover.webp",
+      background: "assets/imagens/background/background-4.webp",
+      link: "projetos/o-sonho-da-razao-produz-monstros/index.html",
+      artists: ["pietrawrr"],
+      streaming: {
+        spotify: "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1",
+        bandcamp: "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare"
+      },
+      tracks: [
+        {
+          slug: "last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare",
+          title: "last time and big evening and if we say goodbye to the trauma nightmare",
+          artist: "Pietrawrr",
+          youtube: "",
+          lyrics: `...`
         }
       ]
     }
@@ -579,6 +669,14 @@ const SITE_DATA = {
         "assets/imagens/sobre/feira-astral/sobre-16.webp"
       ]
     }
+  ],
+
+  // ---------------------------------------------------------
+  // TEXTO INSTITUCIONAL / BIOGRAFIA (PÁGINA SOBRE)
+  // ---------------------------------------------------------
+  aboutText: [
+    "Depois de alguns meses do lançamento do álbum colaborativo entre Peterc2 e JC Dive 'The Ocean Trench', um álbum de músicas rapidamente compostas e gravadas, altamente inspirado no modelo de produção da banda Guided By Voices e do artista Alex G, a banda Littering foi formada com a chegada do baterista be_cruz e a baixista pietrawrr, para novas composições na linha das faixas 'Littering' e 'Return to the Shed' do primeiro projeto.",
+    "Passados alguns meses, já possuíam material suficiente para novos lançamentos. Realizaram seu primeiro show em parceria com a Kasa Soul em um evento beneficente e mostraram seu repertório pela primeira vez ao público. O single \"Out of Style\" marca a estreia da banda e sairá no dia 09/10/2026. No dia 10/10/2026 celebrarão seu primeiro lançamento com um show público na feira astral de Divinópolis-MG"
   ]
 };
 

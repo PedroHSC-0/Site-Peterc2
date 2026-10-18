@@ -31,82 +31,31 @@
   <div class="center">
 
     <div style="margin-top: 20px; max-width: 200px; width: 100%;">
-      <img src="../../assets/imagens/icones/littering-icon.webp" alt="Littering" class="artist-portrait">
+      <img src="../../assets/imagens/icones/littering-icon.webp" alt="Littering" class="artist-portrait" id="artist-portrait-img">
     </div>
 
-    <h1 style="margin-top: 15px;">LITTERING</h1>
+    <h1 style="margin-top: 15px;" id="artist-name-title">LITTERING</h1>
 
     <!-- ===================== INTEGRANTES DA BANDA ===================== -->
-    <div class="members-box">
-      <h2>INTEGRANTES</h2>
-      <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: #cccccc; line-height: 1.8;">
-        <li><strong style="color: #ffffff;">Peterc2</strong> — Guitarra e vocais</li>
-        <li><strong style="color: #ffffff;">JC Dive</strong> — Guitarra e vocais</li>
-        <li><strong style="color: #ffffff;">Pietrawrr</strong> — Baixo</li>
-        <li><strong style="color: #ffffff;">be_cruz</strong> — Bateria</li>
-      </ul>
+    <div class="members-box" id="artist-members-box">
+      <!-- Renderizado dinamicamente via render-engine.js a partir de SITE_DATA.artists.littering.members -->
     </div>
 
     <!-- ===================== LANÇAMENTOS (ORDENADOS POR DATA) ===================== -->
     <section class="artist-projects" style="margin-top: 30px;">
       <h2 class="section-title">LANÇAMENTOS</h2>
 
-      <div class="album-gallery">
-        <!-- Ocean Trench (Faixa Littering: 10/04/2026) -->
-        <a href="../../projetos/the-ocean-trench/musicas/index.html?track=littering" class="album-card" data-release-date="2026-04-10">
-          <img src="../../assets/imagens/capas/the-ocean-trench-cover.webp" alt="The Ocean Trench" class="album-card-cover">
-          <span class="album-card-title">Littering</span>
-          <span class="album-card-sub">Peterc2, JC Dive e Littering • 10/04/2026</span>
-        </a>
-
-        <!-- Out Of Style (Lançamento: 09/10/2026) -->
-        <a href="../../projetos/out-of-style/index.html" class="album-card" data-release-date="2026-10-09">
-          <img src="../../assets/imagens/capas/out-of-style-cover.webp" alt="Out Of Style" class="album-card-cover">
-          <span class="album-card-title">Out Of Style</span>
-          <span class="album-card-sub">Littering • 09/10/2026</span>
-        </a>
+      <div class="album-gallery" id="artist-albums-gallery">
+        <!-- Renderizado dinamicamente via render-engine.js a partir de SITE_DATA.albums -->
       </div>
     </section>
 
     <!-- ===================== CONTATO TRADICIONAL ===================== -->
     <section id="contato" class="contacts-section">
-      <h2 class="contacts-header">CONTATO - LITTERING</h2>
+      <h2 class="contacts-header" id="artist-contact-header">CONTATO - LITTERING</h2>
 
-      <div class="contact-list">
-        <!-- Instagram Ativo -->
-        <a href="https://www.instagram.com/litteringband/" target="_blank" rel="noopener noreferrer" class="contact-item clickable">
-          <img src="../../assets/imagens/icones/instagram.svg" alt="Instagram" class="icon">
-          <span class="label">Instagram</span>
-          <span class="value">@litteringband</span>
-        </a>
-
-        <!-- YouTube Ativo -->
-        <a href="https://www.youtube.com/@litteringband" target="_blank" rel="noopener noreferrer" class="contact-item clickable">
-          <img src="../../assets/imagens/icones/youtube.svg" alt="YouTube" class="icon">
-          <span class="label">YouTube</span>
-          <span class="value">@litteringband</span>
-        </a>
-
-        <!-- Spotify Ativo -->
-        <a href="https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy" target="_blank" rel="noopener noreferrer" class="contact-item clickable">
-          <img src="../../assets/imagens/icones/spotify.svg" alt="Spotify" class="icon">
-          <span class="label">Spotify</span>
-          <span class="value">Littering</span>
-        </a>
-
-        <!-- Apple Music -->
-        <div class="contact-item placeholder">
-          <img src="../../assets/imagens/icones/apple.svg" alt="Apple Music" class="icon">
-          <span class="label">Apple Music</span>
-          <span class="value">Em Breve</span>
-        </div>
-
-        <!-- Bandcamp Ativo -->
-        <a href="https://littering.bandcamp.com/track/out-of-style" target="_blank" rel="noopener noreferrer" class="contact-item clickable">
-          <img src="../../assets/imagens/icones/bandcamp.svg" alt="Bandcamp" class="icon">
-          <span class="label">Bandcamp</span>
-          <span class="value">littering.bandcamp.com</span>
-        </a>
+      <div class="contact-list" id="artist-contact-list">
+        <!-- Renderizado dinamicamente via render-engine.js a partir de SITE_DATA.artists -->
       </div>
     </section>
 

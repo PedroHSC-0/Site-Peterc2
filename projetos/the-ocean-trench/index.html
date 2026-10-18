@@ -30,36 +30,25 @@
 
 <main class="center">
 
-  <a href="../../index.html" class="back">← voltar ao início</a>
+  <a href="../../index.html" class="back" id="album-back-link">← voltar ao início</a>
 
   <!-- ===================== PAINEL DO ÁLBUM & TRACKLIST ===================== -->
   <div class="album-detail-container">
-    <img src="../../assets/imagens/capas/the-ocean-trench-cover.webp" alt="The Ocean Trench" class="album-detail-cover">
+    <img src="../../assets/imagens/capas/the-ocean-trench-cover.webp" alt="The Ocean Trench" class="album-detail-cover" id="album-cover-img">
 
     <div class="album-detail-info">
-      <h1 class="album-detail-title">The Ocean Trench</h1>
-      <p class="album-detail-sub">PETERC2 e JC DIVE</p>
-      <p class="small-text">LANÇAMENTO: 10/04/2026</p>
+      <h1 class="album-detail-title" id="album-title-el">The Ocean Trench</h1>
+      <p class="album-detail-sub" id="album-sub-el">PETERC2 e JC DIVE</p>
+      <p class="small-text" id="album-date-el">LANÇAMENTO: 10/04/2026</p>
 
       <!-- PLATAFORMAS DE STREAMING -->
-      <div class="platform-icons" style="margin-top: 15px; margin-bottom: 20px;">
-        <a href="https://www.youtube.com/watch?v=EPZbv-gqIFM" target="_blank" title="Ouvir no YouTube">
-          <img src="../../assets/imagens/icones/youtube.svg" alt="YouTube">
-        </a>
-        <a href="https://open.spotify.com/album/4QOkz5ITgkpBjD1UTeUVXt" target="_blank" title="Ouvir no Spotify">
-          <img src="../../assets/imagens/icones/spotify.svg" alt="Spotify">
-        </a>
-        <a href="https://music.apple.com/br/album/the-ocean-trench/1891698389" target="_blank" title="Ouvir na Apple Music">
-          <img src="../../assets/imagens/icones/apple.svg" alt="Apple Music">
-        </a>
-        <a href="https://peterc2.bandcamp.com/" target="_blank" title="Ouvir no Bandcamp">
-          <img src="../../assets/imagens/icones/bandcamp.svg" alt="Bandcamp">
-        </a>
+      <div class="platform-icons" id="album-platform-icons" style="margin-top: 15px; margin-bottom: 20px;">
+        <!-- Renderizado dinamicamente via render-engine.js a partir de SITE_DATA.albums -->
       </div>
 
       <!-- FAIXAS / TRACKLIST DINÂMICA (SITE_DATA) -->
       <div class="album-tracklist-box">
-        <h2 class="album-tracklist-title">FAIXAS DO ÁLBUM</h2>
+        <h2 class="album-tracklist-title" id="album-tracklist-title">FAIXAS DO ÁLBUM</h2>
 
         <div class="tracklist-table" id="tracklist-table">
           <!-- Gerado dinamicamente via render-engine.js a partir de site-data.js -->

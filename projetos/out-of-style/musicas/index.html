@@ -30,7 +30,7 @@
 
 <main class="center">
 
-  <a href="../index.html" class="back">← voltar ao single</a>
+  <a href="../index.html" class="back" id="track-back-link">← voltar ao single</a>
 
   <div class="album-detail-container">
     <h1 id="track-title" class="album-detail-title">—</h1>
@@ -38,7 +38,7 @@
 
     <!-- CAIXA DE CAPA FALLBACK SE NÃO HOUVER VÍDEO -->
     <div id="track-placeholder" style="display: none; width: 220px; margin: 20px auto 10px auto;">
-      <img src="../../../assets/imagens/capas/out-of-style-cover.webp" alt="Out Of Style" class="album-detail-cover" style="margin-bottom: 0;">
+      <img id="track-placeholder-img" src="../../../assets/imagens/capas/out-of-style-cover.webp" alt="Out Of Style" class="album-detail-cover" style="margin-bottom: 0;">
     </div>
 
     <!-- PLAYER DE VÍDEO SE HOUVER YOUTUBE -->
@@ -60,7 +60,7 @@
 
     <div class="lyrics" id="track-lyrics" style="margin-top: 20px;"></div>
 
-    <div class="small-text" style="margin-top: 20px; color: #666666;">
+    <div class="small-text" id="track-album-info" style="margin-top: 20px; color: #666666;">
       Single: Out Of Style <br>
       Written and produced by Littering
     </div>

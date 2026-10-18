@@ -129,6 +129,36 @@
     return sortItemsByDate(filtered, 'desc', '9999-12-31');
   }
 
+  /**
+   * Renderiza os itens individuais de contato de um artista.
+   */
+  function renderContactItems(contacts, prefix = '') {
+    if (!contacts) return '';
+    return Object.entries(contacts).map(([key, item]) => {
+      if (!item) return '';
+      const iconPath = prefix + (item.icon || '');
+      const label = item.label || key;
+      const value = item.value || (item.url ? label : 'Em Breve');
+      if (item.url) {
+        return `
+          <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="contact-item clickable">
+            <img src="${iconPath}" alt="${label}" class="icon">
+            <span class="label">${label}</span>
+            <span class="value">${value}</span>
+          </a>
+        `;
+      } else {
+        return `
+          <div class="contact-item placeholder">
+            <img src="${iconPath}" alt="${label}" class="icon">
+            <span class="label">${label}</span>
+            <span class="value">${item.value || 'Em Breve'}</span>
+          </div>
+        `;
+      }
+    }).join('');
+  }
+
   // =========================================================
   // 0. RENDERIZADOR PADRONIZADO DA BARRA DE NAVEGAÇÃO (TOP-NAV)
   // =========================================================
@@ -143,25 +173,26 @@
 
     const isHome = !rawPath.includes('/artistas/') && !rawPath.includes('/projetos/') && !rawPath.includes('/sobre/');
     const isSobre = rawPath.includes('/sobre/');
-    const isPeterc2 = rawPath.includes('/peterc2');
-    const isJcDive = rawPath.includes('/jcdive');
-    const isLittering = rawPath.includes('/littering');
 
     const homeUrl = prefix ? prefix + 'index.html' : 'index.html';
     const sobreUrl = prefix + 'sobre/index.html';
-    const peterc2Url = prefix + 'artistas/peterc2/index.html';
-    const jcdiveUrl = prefix + 'artistas/jcdive/index.html';
-    const litteringUrl = prefix + 'artistas/littering/index.html';
     const merchUrl = isHome ? '#merch' : (prefix + 'index.html#merch');
     const contatoUrl = hasLocalContact ? '#contato' : (prefix + 'index.html#contato');
+
+    let artistsLinksHTML = '';
+    if (typeof SITE_DATA !== 'undefined' && SITE_DATA.artists) {
+      artistsLinksHTML = Object.values(SITE_DATA.artists).map(artist => {
+        const artistUrl = prefix + artist.page;
+        const isActive = rawPath.includes('/' + artist.id);
+        return `<a href="${artistUrl}" class="${isActive ? 'active' : ''}">${artist.name.toUpperCase()}</a>`;
+      }).join('\n        ');
+    }
 
     navContainer.innerHTML = `
       <a href="${homeUrl}" class="top-nav-logo">PIGPENFAN</a>
       <nav class="top-nav-links">
         <a href="${homeUrl}" class="${isHome ? 'active' : ''}">INÍCIO</a>
-        <a href="${peterc2Url}" class="${isPeterc2 ? 'active' : ''}">PETERC2</a>
-        <a href="${jcdiveUrl}" class="${isJcDive ? 'active' : ''}">JC DIVE</a>
-        <a href="${litteringUrl}" class="${isLittering ? 'active' : ''}">LITTERING</a>
+        ${artistsLinksHTML}
         <a href="${merchUrl}">MERCH</a>
         <a href="${sobreUrl}" class="${isSobre ? 'active' : ''}">SOBRE</a>
         <a href="${contatoUrl}" class="nav-contact-btn">CONTATO</a>
@@ -368,7 +399,54 @@
   }
 
   // =========================================================
-  // 3. RENDERIZADOR DE ARTISTAS (PÁGINAS DE ARTISTAS)
+  // 3. RENDERIZADORES DA PÁGINA INICIAL (HOME)
+  // =========================================================
+
+  function renderHomeArtists() {
+    const gallery = document.getElementById('home-artists-gallery') || document.querySelector('.center > .artist-gallery');
+    if (!gallery || typeof SITE_DATA === 'undefined' || !SITE_DATA.artists) return;
+    const prefix = getDepthPrefix();
+    gallery.innerHTML = Object.values(SITE_DATA.artists).map(artist => `
+      <a href="${prefix}${artist.page}" class="artist-image-card">
+        <img src="${prefix}${artist.portrait}" alt="${artist.name}" class="artist-portrait">
+        <span class="artist-card-title">${artist.name}</span>
+      </a>
+    `).join('');
+  }
+
+  function renderHomeCollaborations() {
+    const gallery = document.getElementById('collab-albums-gallery') || document.querySelector('.collab-section:not(#recent-releases-section):not(#featured-videos-section):not(#merch) .album-gallery');
+    if (!gallery || typeof SITE_DATA === 'undefined' || !SITE_DATA.albums) return;
+    const collabs = sortItemsByDate(
+      SITE_DATA.albums.filter(album => album.type === 'Colaboração' || (album.artists && album.artists.length > 1)),
+      'asc'
+    );
+    const prefix = getDepthPrefix();
+    gallery.innerHTML = collabs.map(album => `
+      <a href="${prefix}${album.link}" class="album-card" data-release-date="${album.releaseDate}">
+        <img src="${prefix}${album.cover}" alt="${album.title}" class="album-card-cover">
+        <span class="album-card-title">${album.title}</span>
+        <span class="album-card-sub">${album.subtitle}</span>
+      </a>
+    `).join('');
+  }
+
+  function renderHomeContacts() {
+    const container = document.getElementById('home-contacts-container');
+    if (!container || typeof SITE_DATA === 'undefined' || !SITE_DATA.artists) return;
+    const prefix = getDepthPrefix();
+    container.innerHTML = Object.values(SITE_DATA.artists).map(artist => `
+      <div class="contact-group">
+        <h3 class="contact-group-title">${artist.name}</h3>
+        <div class="contact-list">
+          ${renderContactItems(artist.contacts, prefix)}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  // =========================================================
+  // 4. RENDERIZADOR DE ARTISTAS (PÁGINAS DE ARTISTAS)
   // =========================================================
 
   function renderArtistPage() {
@@ -378,31 +456,143 @@
     const artist = SITE_DATA.artists[artistKey];
     if (!artist) return;
 
-    const gallery = document.querySelector('.artist-projects .album-gallery');
+    const prefix = getDepthPrefix();
+
+    document.title = `${artist.name} - Lançamentos e Contato`;
+
+    const portraitImg = document.getElementById('artist-portrait-img') || document.querySelector('.center .artist-portrait');
+    if (portraitImg) {
+      portraitImg.src = prefix + artist.portrait;
+      portraitImg.alt = artist.name;
+    }
+
+    const titleEl = document.getElementById('artist-name-title') || document.querySelector('.center > h1');
+    if (titleEl) {
+      titleEl.textContent = artist.name.toUpperCase();
+    }
+
+    const membersBox = document.getElementById('artist-members-box') || document.querySelector('.members-box');
+    if (membersBox) {
+      if (artist.members && artist.members.length > 0) {
+        membersBox.innerHTML = `
+          <h2>INTEGRANTES</h2>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: #cccccc; line-height: 1.8;">
+            ${artist.members.map(m => `<li><strong style="color: #ffffff;">${m.name}</strong> — ${m.role}</li>`).join('')}
+          </ul>
+        `;
+        membersBox.style.display = 'block';
+      } else {
+        membersBox.style.display = 'none';
+      }
+    }
+
+    const gallery = document.getElementById('artist-albums-gallery') || document.querySelector('.artist-projects .album-gallery');
     if (gallery && SITE_DATA.albums) {
       const artistAlbums = sortItemsByDate(
         SITE_DATA.albums.filter(album => album.artists && album.artists.includes(artistKey)),
         'desc'
       );
-      const prefix = getDepthPrefix();
+      if (artistAlbums.length === 0) {
+        gallery.innerHTML = '<p class="merch-notice" style="display:block; width:100%; text-align:center;">Em Breve</p>';
+      } else {
+        gallery.innerHTML = artistAlbums.map(album => `
+          <a href="${prefix}${album.link}" class="album-card" data-release-date="${album.releaseDate}">
+            <img src="${prefix}${album.cover}" alt="${album.title}" class="album-card-cover">
+            <span class="album-card-title">${album.title}</span>
+            <span class="album-card-sub">${album.subtitle}</span>
+          </a>
+        `).join('');
+      }
+    }
 
-      gallery.innerHTML = artistAlbums.map(album => `
-        <a href="${prefix}${album.link}" class="album-card" data-release-date="${album.releaseDate}">
-          <img src="${prefix}${album.cover}" alt="${album.title}" class="album-card-cover">
-          <span class="album-card-title">${album.title}</span>
-          <span class="album-card-sub">${album.subtitle}</span>
-        </a>
-      `).join('');
+    const contactHeader = document.getElementById('artist-contact-header') || document.querySelector('#contato .contacts-header');
+    if (contactHeader) {
+      contactHeader.textContent = `CONTATO - ${artist.name.toUpperCase()}`;
+    }
+
+    const contactList = document.getElementById('artist-contact-list') || document.querySelector('#contato .contact-list');
+    if (contactList && artist.contacts) {
+      contactList.innerHTML = renderContactItems(artist.contacts, prefix);
     }
   }
 
   // =========================================================
-  // 4. RENDERIZADOR DE ÁLBUNS E SINGLES (PÁGINAS DE PROJETOS)
+  // 5. RENDERIZADOR DE ÁLBUNS E SINGLES (PÁGINAS DE PROJETOS)
   // =========================================================
 
   function renderAlbumPage() {
     const album = getCurrentAlbum();
     if (!album) return;
+
+    const prefix = getDepthPrefix();
+
+    document.title = `${album.title} - ${album.type || 'Álbum'}`;
+
+    const coverImg = document.getElementById('album-cover-img') || document.querySelector('.album-detail-cover');
+    if (coverImg) {
+      coverImg.src = prefix + (album.cover || 'assets/imagens/capas/placeholder.webp');
+      coverImg.alt = album.title;
+    }
+
+    const titleEl = document.getElementById('album-title-el') || document.querySelector('.album-detail-title');
+    if (titleEl) {
+      titleEl.textContent = album.title;
+    }
+
+    const subEl = document.getElementById('album-sub-el') || document.querySelector('.album-detail-sub');
+    if (subEl) {
+      subEl.textContent = (album.credit || album.subtitle || '').toUpperCase();
+    }
+
+    const dateEl = document.getElementById('album-date-el') || document.querySelector('.album-detail-info .small-text');
+    if (dateEl) {
+      const dateText = album.formattedDate ? album.formattedDate : (album.releaseDate ? formatDateBR(album.releaseDate) : 'Em Breve');
+      dateEl.textContent = `LANÇAMENTO: ${dateText.toUpperCase()}`;
+    }
+
+    const backLink = document.getElementById('album-back-link') || document.querySelector('main.center > a.back');
+    if (backLink) {
+      if (album.artists && album.artists.length === 1 && SITE_DATA.artists && SITE_DATA.artists[album.artists[0]]) {
+        const singleArtist = SITE_DATA.artists[album.artists[0]];
+        backLink.href = prefix + singleArtist.page;
+        backLink.textContent = '← voltar ao artista';
+      } else {
+        backLink.href = prefix ? prefix + 'index.html' : 'index.html';
+        backLink.textContent = '← voltar ao início';
+      }
+    }
+
+    const tracklistTitle = document.getElementById('album-tracklist-title') || document.querySelector('.album-tracklist-title');
+    if (tracklistTitle) {
+      tracklistTitle.textContent = `FAIXAS DO ${(album.type || 'ÁLBUM').toUpperCase()}`;
+    }
+
+    const platformsContainer = document.getElementById('album-platform-icons') || document.querySelector('.platform-icons');
+    if (platformsContainer) {
+      if (album.streaming && Object.keys(album.streaming).length > 0) {
+        const platformMap = {
+          youtube:  { title: "Ouvir no YouTube",     icon: "assets/imagens/icones/youtube.svg" },
+          spotify:  { title: "Ouvir no Spotify",     icon: "assets/imagens/icones/spotify.svg" },
+          apple:    { title: "Ouvir na Apple Music", icon: "assets/imagens/icones/apple.svg" },
+          bandcamp: { title: "Ouvir no Bandcamp",    icon: "assets/imagens/icones/bandcamp.svg" }
+        };
+        const iconsHTML = Object.entries(album.streaming)
+          .filter(([key, url]) => url && platformMap[key])
+          .map(([key, url]) => {
+            const info = platformMap[key];
+            return `
+              <a href="${url}" target="_blank" rel="noopener noreferrer" title="${info.title}">
+                <img src="${prefix}${info.icon}" alt="${key}">
+              </a>
+            `;
+          }).join('');
+        platformsContainer.innerHTML = iconsHTML;
+        platformsContainer.style.display = iconsHTML ? 'flex' : 'none';
+      } else {
+        platformsContainer.innerHTML = '';
+        platformsContainer.style.display = 'none';
+      }
+    }
 
     const tracklistContainer = document.getElementById('tracklist-table');
     if (tracklistContainer && album.tracks) {
@@ -421,7 +611,7 @@
   }
 
   // =========================================================
-  // 5. RENDERIZADOR DO PLAYER DE MÚSICA (PÁGINAS DE FAIXAS)
+  // 6. RENDERIZADOR DO PLAYER DE MÚSICA (PÁGINAS DE FAIXAS)
   // =========================================================
 
   function renderSongPlayerPage() {
@@ -431,6 +621,7 @@
     const album = getCurrentAlbum();
     if (!album || !album.tracks || album.tracks.length === 0) return;
 
+    const prefix = getDepthPrefix();
     const params = new URLSearchParams(location.search);
     const slug = params.get('track');
 
@@ -451,6 +642,25 @@
     const video = document.getElementById('track-video');
     const videoWrapper = document.getElementById('track-video-wrapper');
     const placeholder = document.getElementById('track-placeholder');
+
+    const placeholderImg = document.getElementById('track-placeholder-img') || (placeholder ? placeholder.querySelector('img') : null);
+    if (placeholderImg) {
+      placeholderImg.src = prefix + (album.cover || 'assets/imagens/capas/placeholder.webp');
+      placeholderImg.alt = album.title;
+    }
+
+    const albumInfoEl = document.getElementById('track-album-info') || document.querySelector('.album-detail-container > .small-text:not(#track-artist)');
+    if (albumInfoEl) {
+      const typeLabel = album.type || 'Álbum';
+      const prodCredit = album.credit || track.artist;
+      albumInfoEl.innerHTML = `${typeLabel}: ${album.title} <br> Written and produced by ${prodCredit}`;
+    }
+
+    const backLink = document.getElementById('track-back-link') || document.querySelector('main.center > a.back');
+    if (backLink) {
+      backLink.href = '../index.html';
+      backLink.textContent = `← voltar ao ${(album.type || 'álbum').toLowerCase()}`;
+    }
 
     if (videoWrapper && placeholder) {
       if (track.youtube) {
@@ -811,6 +1021,11 @@
       `).join('');
     }
 
+    const textContainer = document.getElementById('about-text-container');
+    if (textContainer && typeof SITE_DATA !== 'undefined' && Array.isArray(SITE_DATA.aboutText)) {
+      textContainer.innerHTML = SITE_DATA.aboutText.map(paragraph => `<p class="about-text">${paragraph}</p>`).join('');
+    }
+
     renderAboutGallery();
   }
 
@@ -840,6 +1055,9 @@
       applyPageBackground();
       renderFeaturedVideosSection();
       renderRecentReleasesSection();
+      renderHomeArtists();
+      renderHomeCollaborations();
+      renderHomeContacts();
       renderArtistPage();
       renderAlbumPage();
       renderSongPlayerPage();
@@ -863,6 +1081,9 @@
     renderTopNav,
     renderFeaturedVideosSection,
     renderRecentReleasesSection,
+    renderHomeArtists,
+    renderHomeCollaborations,
+    renderHomeContacts,
     renderArtistPage,
     renderAlbumPage,
     renderSongPlayerPage,
