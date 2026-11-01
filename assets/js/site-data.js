@@ -1,4 +1,4 @@
-/**
+﻿/**
  * BANCO DE DADOS CENTRALIZADO DO SITE (SITE DATA)
  * 
  * 100% dos dados utilizados no site (músicas, letras, artistas, integrantes,
@@ -38,7 +38,7 @@ const SITE_DATA = {
       id: "trailer-out-of-style",
       title: "Out Of Style (Single Trailer)",
       artist: "Littering",
-      releaseDate: "2026-10-09",
+      releaseDate: "2026-09-29",
       youtube: "OxUAjis-6U8",
       cover: "assets/imagens/capas/out-of-style-cover.webp",
       description: "Trailer do novo single Out Of Style da banda Littering."
@@ -106,6 +106,22 @@ const SITE_DATA = {
         bandcamp:  { label: "Bandcamp",  value: null, url: null, icon: "assets/imagens/icones/bandcamp.svg" }
       }
     },
+    pietrawrr: {
+      id: "pietrawrr",
+      name: "Pietrawrr",
+      role: "Baixo",
+      portrait: "assets/imagens/icones/pietrawrr-icon.webp",
+      background: "assets/imagens/background/background-4.webp",
+      page: "artistas/pietrawrr/index.html",
+      contacts: {
+        instagram: { label: "Instagram", value: "@pietrawrr", url: "https://www.instagram.com/pietrawrr/", icon: "assets/imagens/icones/instagram.svg" },
+        youtube:   { label: "YouTube",   value: null, url: null, icon: "assets/imagens/icones/youtube.svg" },
+        spotify:   { label: "Spotify",   value: "o sonho da razão produz monstros", url: "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1", icon: "assets/imagens/icones/spotify.svg" },
+        apple:     { label: "Apple Music", value: "O Sonho da Razão Produz Monstros", url: "https://music.apple.com/br/artist/o-sonho-da-raz%C3%A3o-produz-monstros/1894934054", icon: "assets/imagens/icones/apple.svg" },
+        bandcamp1: { label: "Bandcamp", value: "funeral parade of roses", url: "https://funeralparadeofroses.bandcamp.com/album/harsh-noise-to-jerk-off", icon: "assets/imagens/icones/bandcamp.svg" },
+        bandcamp2: { label: "Bandcamp", value: "o sonho da razão produz monstros", url: "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare", icon: "assets/imagens/icones/bandcamp.svg" }
+      }
+    },
     littering: {
       id: "littering",
       name: "Littering",
@@ -125,22 +141,6 @@ const SITE_DATA = {
         spotify:   { label: "Spotify",   value: "Littering", url: "https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy", icon: "assets/imagens/icones/spotify.svg" },
         apple:     { label: "Apple Music", value: "Littering", url: "https://music.apple.com/br/artist/littering/6823551933", icon: "assets/imagens/icones/apple.svg" },
         bandcamp:  { label: "Bandcamp",  value: "littering.bandcamp.com", url: "https://littering.bandcamp.com/track/out-of-style", icon: "assets/imagens/icones/bandcamp.svg" }
-      }
-    },
-    pietrawrr: {
-      id: "pietrawrr",
-      name: "Pietrawrr",
-      role: "Baixo",
-      portrait: "assets/imagens/icones/pietrawrr-icon.webp",
-      background: "assets/imagens/background/background-4.webp",
-      page: "artistas/pietrawrr/index.html",
-      contacts: {
-        instagram: { label: "Instagram", value: "@pietrawrr", url: "https://www.instagram.com/pietrawrr/", icon: "assets/imagens/icones/instagram.svg" },
-        youtube:   { label: "YouTube",   value: null, url: null, icon: "assets/imagens/icones/youtube.svg" },
-        spotify:   { label: "Spotify",   value: "o sonho da razão produz monstros", url: "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1", icon: "assets/imagens/icones/spotify.svg" },
-        apple:     { label: "Apple Music", value: "O Sonho da Razão Produz Monstros", url: "https://music.apple.com/br/artist/o-sonho-da-raz%C3%A3o-produz-monstros/1894934054", icon: "assets/imagens/icones/apple.svg" },
-        bandcamp1: { label: "Bandcamp", value: "funeral parade of roses", url: "https://funeralparadeofroses.bandcamp.com/album/harsh-noise-to-jerk-off", icon: "assets/imagens/icones/bandcamp.svg" },
-        bandcamp2: { label: "Bandcamp", value: "o sonho da razão produz monstros", url: "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare", icon: "assets/imagens/icones/bandcamp.svg" }
       }
     }
   },
@@ -459,7 +459,7 @@ const SITE_DATA = {
           title: "The Rescue",
           artist: "Peterc2",
           youtube: "q4yJVpG1IJ8",
-          lyrics: `I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad (Inclined to lie in a sky too bright)\nyourself is enough and a need for me\nI want to live down forever (Became a fly to freeze your cries)\n\n(I climb in time to steal your eye)\n(I get you high to seal your mind)`
+          lyrics: `I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad (Inclined to lie in a sky too bright)\nyourself is enough and a need for me\nI want to live here down forever (Became a fly to freeze your cries)\n\n(I climb in time to steal your eye)\n(I get you high to seal your mind)`
         },
         {
           slug: "king-shit",
@@ -596,6 +596,31 @@ const SITE_DATA = {
           artist: "Pietrawrr",
           youtube: "",
           lyrics: `...`
+        }
+      ]
+    },
+    {
+      id: "young-man-found-with-a-cut",
+      title: "young man found with a cut to his abdomen on a beach told police about sex, swimming in the sea, LSD use, and hallucinations",
+      subtitle: "Pietrawrr • 30/10/2026",
+      credit: "Pietrawrr",
+      type: "Single",
+      releaseDate: "2026-10-30",
+      formattedDate: "30/10/2026",
+      cover: "assets/imagens/capas/young-man-found-with-a-cut-cover.webp",
+      background: "assets/imagens/background/background-4.webp",
+      link: "projetos/young-man-found-with-a-cut/index.html",
+      artists: ["pietrawrr"],
+      streaming: {
+        bandcamp: "https://funeralparadeofroses.bandcamp.com/track/young-man-found-with-a-cut-to-his-abdomen-on-a-beach-told-police-about-sex-swimming-in-the-sea-lsd-use-and-hallucinations"
+      },
+      tracks: [
+        {
+          slug: "young-man-found-with-a-cut-to-his-abdomen-on-a-beach-told-police-about-sex-swimming-in-the-sea-lsd-use-and-hallucinations",
+          title: "young man found with a cut to his abdomen on a beach told police about sex, swimming in the sea, LSD use, and hallucinations",
+          artist: "Pietrawrr",
+          youtube: "",
+          lyrics: `[30/10/2026 JAM SESSION\nFaixa Instrumental / Noise]`
         }
       ]
     }

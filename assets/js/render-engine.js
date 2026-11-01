@@ -1,4 +1,4 @@
-/**
+﻿/**
  * MOTOR DE RENDERIZAÇÃO AUTOMÁTICA DO SITE (RENDER ENGINE)
  * 
  * Lê centralizadamente os dados de SITE_DATA e garante a renderização
@@ -659,7 +659,7 @@
     const backLink = document.getElementById('track-back-link') || document.querySelector('main.center > a.back');
     if (backLink) {
       backLink.href = '../index.html';
-      backLink.textContent = `← voltar ao ${(album.type || 'álbum').toLowerCase()}`;
+      backLink.textContent = '← voltar';
     }
 
     if (videoWrapper && placeholder) {
