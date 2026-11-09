@@ -693,16 +693,48 @@ const SITE_DATA = {
         "assets/imagens/sobre/feira-astral/sobre-15.webp",
         "assets/imagens/sobre/feira-astral/sobre-16.webp"
       ]
+    },
+    {
+      id: "halloween-olimpo",
+      title: "Halloween Olimpo",
+      date: "2026-11-06",
+      formattedDate: "06/11/26",
+      photos: [
+        "assets/imagens/sobre/halloween-olimpo/sobre-01.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-02.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-03.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-04.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-05.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-06.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-07.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-08.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-09.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-10.webp"
+      ]
     }
   ],
 
   // ---------------------------------------------------------
   // TEXTO INSTITUCIONAL / BIOGRAFIA (PÁGINA SOBRE)
   // ---------------------------------------------------------
-  aboutText: [
-    "Depois de alguns meses do lançamento do álbum colaborativo entre Peterc2 e JC Dive 'The Ocean Trench', um álbum de músicas rapidamente compostas e gravadas, altamente inspirado no modelo de produção da banda Guided By Voices e do artista Alex G, a banda Littering foi formada com a chegada do baterista be_cruz e a baixista pietrawrr, para novas composições na linha das faixas 'Littering' e 'Return to the Shed' do primeiro projeto.",
-    "Passados alguns meses, já possuíam material suficiente para novos lançamentos. Realizaram seu primeiro show em parceria com a Kasa Soul em um evento beneficente e mostraram seu repertório pela primeira vez ao público. O single \"Out of Style\" marca a estreia da banda e sairá no dia 09/10/2026. No dia 10/10/2026 celebrarão seu primeiro lançamento com um show público na feira astral de Divinópolis-MG"
-  ]
+  // Escreva livremente entre as crases (`).
+  // - Quebras de linha simples são ignoradas (viram espaço).
+  // - Deixe UMA LINHA EM BRANCO para começar um novo parágrafo.
+  aboutText: `
+    Depois de alguns meses do lançamento do álbum colaborativo entre Peterc2
+    e JC Dive 'The Ocean Trench', um álbum de músicas rapidamente compostas e
+    gravadas, altamente inspirado no modelo de produção da banda Guided By
+    Voices e do artista Alex G, a banda Littering foi formada com a chegada do
+    baterista be_cruz e a baixista pietrawrr, para novas composições na linha
+    das faixas 'Littering' e 'Return to the Shed' do primeiro projeto.
+
+    Passados alguns meses, já possuíam material suficiente para novos
+    lançamentos. Realizaram seu primeiro show em parceria com a Kasa Soul em
+    um evento beneficente e mostraram seu repertório pela primeira vez ao
+    público. O single "Out of Style" marca a estreia da banda e sairá no dia
+    09/10/2026. No dia 10/10/2026 tiveram seu primeiro lançamento como banda em um
+    show público na feira astral de Divinópolis-MG.
+  `
 };
 
 Object.freeze(SITE_DATA);

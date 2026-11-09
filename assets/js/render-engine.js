@@ -1,4 +1,4 @@
-﻿/**
+/**
  * MOTOR DE RENDERIZAÇÃO AUTOMÁTICA DO SITE (RENDER ENGINE)
  * 
  * Lê centralizadamente os dados de SITE_DATA e garante a renderização
@@ -1022,8 +1022,14 @@
     }
 
     const textContainer = document.getElementById('about-text-container');
-    if (textContainer && typeof SITE_DATA !== 'undefined' && Array.isArray(SITE_DATA.aboutText)) {
-      textContainer.innerHTML = SITE_DATA.aboutText.map(paragraph => `<p class="about-text">${paragraph}</p>`).join('');
+    if (textContainer && typeof SITE_DATA !== 'undefined' && SITE_DATA.aboutText) {
+      const paragraphs = Array.isArray(SITE_DATA.aboutText)
+        ? SITE_DATA.aboutText
+        : SITE_DATA.aboutText
+            .split(/\r?\n\s*\r?\n/)
+            .map(p => p.replace(/\s+/g, ' ').trim())
+            .filter(Boolean);
+      textContainer.innerHTML = paragraphs.map(paragraph => `<p class="about-text">${paragraph}</p>`).join('');
     }
 
     renderAboutGallery();
