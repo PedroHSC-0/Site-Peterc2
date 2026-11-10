@@ -703,7 +703,9 @@
     const artistKey = getCurrentArtistKey();
     const album = getCurrentAlbum();
 
-    if (artistKey && SITE_DATA.artists && SITE_DATA.artists[artistKey]) {
+    if (album && album.background) {
+      bgUrl = album.background;
+    } else if (artistKey && SITE_DATA.artists && SITE_DATA.artists[artistKey]) {
       bgUrl = SITE_DATA.artists[artistKey].background || defaultBg || SITE_DATA.artists[artistKey].portrait;
     } else if (album) {
       bgUrl = album.background || defaultBg || album.cover;

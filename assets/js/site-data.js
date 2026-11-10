@@ -27,15 +27,16 @@ const SITE_DATA = {
   videos: [
     {
       id: "out-of-style-video",
+      albumId: "out-of-style",
       title: "Out Of Style",
       artist: "Littering",
-      releaseDate: "2026-10-09",
       youtube: "9Z41zsEkG6c",
       cover: "assets/imagens/capas/out-of-style-cover.webp",
       description: "Lyric Video do Single Out Of Style da banda Littering."
     },
     {
       id: "trailer-out-of-style",
+      albumId: "out-of-style",
       title: "Out Of Style (Single Trailer)",
       artist: "Littering",
       releaseDate: "2026-09-29",
@@ -45,6 +46,7 @@ const SITE_DATA = {
     },
     {
       id: "the-rescue-video",
+      albumId: "rescue-cosmic",
       title: "The Rescue (Music Video)",
       artist: "Peterc2",
       releaseDate: "2026-09-23",
@@ -54,18 +56,18 @@ const SITE_DATA = {
     },
     {
       id: "the-ocean-trench-full",
+      albumId: "the-ocean-trench",
       title: "The Ocean Trench (Full Album)",
       artist: "Peterc2 e JC Dive",
-      releaseDate: "2026-04-10",
       youtube: "EPZbv-gqIFM",
       cover: "assets/imagens/capas/the-ocean-trench-cover.webp",
       description: "Visualizer do Álbum The Ocean Trench por Peterc2 e JC Dive."
     },
     {
       id: "desert-sample-full",
+      albumId: "desert-sample",
       title: "Desert Sample (EP Completo)",
       artist: "Peterc2 e JC Dive",
-      releaseDate: "2026-03-13",
       youtube: "ejZl0Vpves4",
       cover: "assets/imagens/capas/desert-sample-cover.webp",
       description: "Vídeo do EP Desert Sample por Peterc2 e JC Dive."
@@ -148,15 +150,16 @@ const SITE_DATA = {
   // ---------------------------------------------------------
   // ÁLBUNS, EPS E SINGLES COM TODAS AS FAIXAS E LETRAS
   // ---------------------------------------------------------
+  // COMO ADICIONAR UM LANÇAMENTO:
+  // Preencha apenas o campo `releaseDate` (aceita 'YYYY-MM-DD', 'DD/MM/YYYY' ou 'Em Breve').
+  // Os campos `formattedDate` e `subtitle` são preenchidos AUTOMATICAMENTE pelo sistema!
   albums: [
     {
       id: "desert-sample",
       title: "Desert Sample",
-      subtitle: "Peterc2 e JC Dive • 13/03/2026",
       credit: "Peterc2 e JC Dive",
       type: "Colaboração",
       releaseDate: "2026-03-13",
-      formattedDate: "13/03/2026",
       cover: "assets/imagens/capas/desert-sample-cover.webp",
       link: "projetos/desert-sample/index.html",
       artists: ["peterc2", "jcdive"],
@@ -207,11 +210,9 @@ const SITE_DATA = {
     {
       id: "the-ocean-trench",
       title: "The Ocean Trench",
-      subtitle: "Peterc2 e JC Dive • 10/04/2026",
       credit: "Peterc2 e JC Dive",
       type: "Colaboração",
       releaseDate: "2026-04-10",
-      formattedDate: "10/04/2026",
       cover: "assets/imagens/capas/the-ocean-trench-cover.webp",
       link: "projetos/the-ocean-trench/index.html",
       artists: ["peterc2", "jcdive"],
@@ -374,50 +375,21 @@ const SITE_DATA = {
     {
       id: "rescue-cosmic",
       title: "The Rescue Of The Cosmic Metaphysical Engineers",
-      subtitle: "Peterc2 • Em Breve",
       credit: "Peterc2",
       type: "Solo",
-      releaseDate: "2026-12-31",
-      formattedDate: "Em Breve",
+      releaseDate: "2026-11-28",
       cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
+      background: "assets/imagens/background/background-5.webp",
       link: "projetos/the-rescue-of-the-cosmic-metaphysical-engineers/index.html",
       artists: ["peterc2"],
       streaming: {},
       tracks: [
         {
-          slug: "pull-back-the-ancients",
-          title: "Pull Back the Ancients",
+          slug: "pull-back-the-ancients-its-calling-you",
+          title: "Pull Back the Ancients / Its Calling You",
           artist: "Peterc2",
           youtube: "",
-          lyrics: `If you want to do the right to me\nIf you want me to stay\nand i know, i won't dare\nIf you want me to solve the clues\nI am the ancient love\n\nIf you want play the blind with me\nIf you want me to stay\nand you know, i don't care\nIf you want me to share the truth\nI'll be the last to love forevermore`
-        },
-        {
-          slug: "its-calling-you",
-          title: "Its Calling You",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `Crawling through you\nYou're commanding my head\nsprawl into this\nstrength that you never had\n\nI'm tossing the streets to meet you\nyou've been around and round to the start\nThere's no motion in this life\nthat can wrap this enormous ordeal\n\nYou starred in my dream, dear\nconfusing what has been real,\nyou'd mess it up every cheer that i had\nleaving it with every fear that i'am\n\nI will try it tomorrow\nfall apart with everything we build to see\nyou're branching in sides of a tree\nIt's said thats faster that i can wait\nBut your dream blot out in the spring\n\nI am awaken, no alarms (It happens)\nwhen solid state dreaming spine (It has no end)\n(I hold still)\nin my world is spinning all around (Ahead of despear)\n\nI am waiting, like another (It happens)\nsolid state dreaming spine (Its warm)\ntry to turn this in (I am not allowed)\nall we speak and care (Ahead of despear)\n\nIts calling\nIts frawling\nIts calling\nIts frawling`
-        },
-        {
-          slug: "possession-part-2",
-          title: "Possession Part 2",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `I don't have the time but I would die for you\nI don't have the time but I would die for you\nI don't have the time but I would die for you (I do)\nI would die for you If i had the time`
-        },
-        {
-          slug: "human-museum",
-          title: "Human Museum",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `A voice mumbling "carrot babies"\nyou can't understand\n\nFlooding churches\nIn the bachelor station\nBut you can wash yourself\n\nThe freaks step crushed your handbones baby\nYou can just pay their band\n\nI feel stopped as the winds are spreading\nAnd you had just payed your rent`
-        },
-        {
-          slug: "whatever-happened",
-          title: "Whatever Happened",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `How bad this could get?\nhow bad is doing nothing\nWhen you close a true life\nIt's never close to nothing\nWhen I was a need for you\nin a closedown to rotting\nWhere i merge\n\nI'll be here for you\nHeaven isn't holding a travel to you\nMaybe your just my bad interest\n\nI had an eerie looking\nin the place you've stoled my eyes\nAnd I went out for nothing\nwhere i'll purge\n\nI'll be here for you\nHeaven isn't lookin any closer to you\nHeaven is your whole interest\n\nHow bad is doing nothing true\nI wrote a song for you, and you don't know\nI'm been close to rotting\nwhere you crush\n\ndeath led me to you\nHeaven isn't lowering crawling to you\nIsn't this a bad a interest`
+          lyrics: `If you want do the right to me\nIf you want me to stay\nand i know, i won't dare\nIf you want me to solve the clues\nI am the ancient love\n\nIf you want play the blind with me\nIf you want me to stay\nand you know, i don't care\nIf you want me to share the truth\nI'll be the last to love forevermore\n\nCrawling through you\nYou're commanding in my head\nsprawl into this\nstrength that you never had\n\nI'm tossing the streets to meet you\nyou've been around and round to the start\nThere's no motion in this life\nthat can wrap this enormous ordeal\n\nYou starred in my dream, dear\nconfusing what has been real,\nyou'd mess up every cheer that i had\nleaving it with every fear that i'am\n\nI will try it tomorrow\nfall apart with everything we build to see\nyou're branching in sides of a tree\nIt's said thats faster that i can wait\nBut your dream blot out in the spring\n\nI am awaken, no alarms (It happens)\nwhen solid state dreaming spine (It has no end)\n(I hold still)\nin my world is spinning all around (Ahead of despear)\n\nI am waiting, feels like another (It happens)\nsolid state dreaming spine (Its warm)\ntry to turn this in (I am not allowed)\nall we speak and care (Ahead of despear)\n\nIts calling\nIts frawling\nIts calling\nIts frawling`
         },
         {
           slug: "asleep",
@@ -427,46 +399,39 @@ const SITE_DATA = {
           lyrics: `I am not a dream\nYou're not asleep\nWe are so free\nYou're not asleep\n\nI won't brag a thing\nDo you glad it all to me\nDreams are led, sir (and all come true)\n\nI am on your tree\nIgnore the screams\nI am not a dream`
         },
         {
-          slug: "shaking-hands",
-          title: "Shaking Hands",
+          slug: "whatever-happened",
+          title: "Whatever Happened",
           artist: "Peterc2",
           youtube: "",
-          lyrics: `You had my possessions\nand I won't forget you.\nFeel like natural thing,\nbut I won't forget you.\n\nAnd I hadn't\nshowed any pleasure\nYou know\nI listen to you\nAbsolution\nYou know I hadn't\nYou lost the picture\nyou know\nyou know\nyou know`
-        },
-        {
-          slug: "the-sailor",
-          title: "The Sailor",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `Sailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons`
-        },
-        {
-          slug: "no-one-spoke",
-          title: "No One Spoke",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `You maintain controling me\nMy head into my feet\nSpecs all in to me\nAs I walk into the bar\nAnd you roamimg\nI bleed\n\nand you're flaking me\nI love you flaking me\nAs you spoke`
-        },
-        {
-          slug: "under-scort",
-          title: "Under Scort",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `[Faixa Instrumental]`
+          lyrics: `How bad this could get?\nhow bad is doing nothing\nWhen you close a true life\nIt's never close to nothing\nWhen I was a need for you\nin a closedown to rotting\nWhere i merge\n\nI'll be here for you\nHeaven isn't holding a travel to you\nMaybe your just my bad interest\n\nI had an eerie looking\nin the place you've stoled my eyes\nAnd I went out for nothing\nwhere i'll purge\n\nI'll be here for you\nHeaven isn't lookin any closer to you\nHeaven is your whole interest\n\nHow bad is doing nothing true\nI wrote a song for you, and you don't know\nI'm been close to rotting\nwhere you crush\n\ndeath led me to you\nHeaven isn't lowering crawling to you\nIsn't this a bad a interest`
         },
         {
           slug: "the-rescue",
           title: "The Rescue",
           artist: "Peterc2",
           youtube: "q4yJVpG1IJ8",
-          lyrics: `I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad (Inclined to lie in a sky too bright)\nyourself is enough and a need for me\nI want to live here down forever (Became a fly to freeze your cries)\n\n(I climb in time to steal your eye)\n(I get you high to seal your mind)`
+          lyrics: `I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad (Inclined to lie in a sky too bright)\nyourself is enough and a need for me\nI want to live down here forever (Became a fly to freeze your cries)\n\n(I climb in time to steal your eye)\n(I get you high to seal your mind)`
         },
         {
           slug: "king-shit",
           title: "King Shit",
           artist: "Peterc2",
           youtube: "",
-          lyrics: `A bunch of dying rats\nTrying to kiss me\nThe fear of falling wet\non dumb statistics\nblowing drugs and drown\nits in my mistic\n\nPlainning stick ambush\nTry to put the surface out\nthen I'll go running on stakes to miss\nSpitting perfume of the bottle\n\nHey, downcast comrade\ndon't die so simplistic\nPassing as a godly mistrust\nTrying to bliss me\nThose little blown head girls\ncould be so artistic\nbut now they're just statistics\n\nI'am feeling my safety down\nby that grotesque lust\nTheir guns are restraining\nshown off so stupidly\n\nI am running back to my basement\nWhen you got no place to go\nI am running back to the basement\nWhen you're my only trust\nI am running back to the basement\nWhere you got no plans to do\nI am running back to the basement\nWhen you got no place to go`
+          lyrics: `A bunch of undying rats\nTrying to kiss me\nThe fear of falling wet\non dumb statistics\nblowing drugs and drown\nits in my mistic\n\nPlainning stick ambush\nTry to put the surface out\nthen I'll go running on stakes to miss\nSpitting perfume of the bottle\n\nHey, downcast comrade\ndon't die so simplistic\nPassing as a godly mistrust\nTrying to bliss me\nThose little blown head girls\ncould be so artistic\nbut now they're just statistics\n\nI'am feeling my safety down\nby that grotesque lust\nTheir guns are restraining\nshown off so stupidly\n\nI am running back to my basement\nWhen you got no place to go\nI am running back to the basement\nWhen you're my face to know\nI am running back to the basement\nWhere you got no plans to do\nI am running back to the basement\nWhen you got no place to go`
+        },
+        {
+          slug: "around",
+          title: "Around",
+          artist: "Peterc2",
+          youtube: "",
+          lyrics: `I see her there often (I came from the hunt)\nSoaking around\nshe came from the wilderness\nfar from this town\nShe live in the clouds\nRoaming around\n\nIt has been clear for a while\nWhen i am calling her\nand let me there for breakfest\nCertanly I'll drown (I am drowning)`
+        },
+        {
+          slug: "kind-sister-hunt",
+          title: "Kind Sister Hunt",
+          artist: "Peterc2",
+          youtube: "",
+          lyrics: `this dark hair as the river flows\nGet replaced and try it alone\nHow can I explain what she does to me\nCould I be able to see\nWhat the spacetime reserved to me\n\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me`
         },
         {
           slug: "death-valley",
@@ -476,36 +441,27 @@ const SITE_DATA = {
           lyrics: `Elaboring future faces\nAround the world the rest is yours\nSeen bumping around\ncounting and forming\nWith the winds below\n\nBeen sent around the wishes\nall because of you\nSworn around the fishes\nand lead 'cause of you\nsilenced by your changes\nI weep 'cause of you\nhang around the distance\nThe stress goes for you (All below you)`
         },
         {
-          slug: "lady-broom",
-          title: "Lady Broom",
+          slug: "the-sailor",
+          title: "The Sailor",
           artist: "Peterc2",
           youtube: "",
-          lyrics: `I've been drying (A turtle misplaced in to be pure)\nYou've been resting low (skepting blighters, you're clame the swan)\nI've been trying (Are you so under weather)\nYou're my nesting flow (write the letter show me the pleasure)\n\nI've been crying (I will stab to be sure)\nYou've been resting low (You're a eerie shore)\nI've been drying (if you wanna live underwater)\nUnleashed is bad to know (hand me the letter and show me your lesson)\n\nI will stab you to be sure`
+          lyrics: `Sailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons`
         },
         {
           slug: "cosmic-metaphysical-engineers",
-          title: "Cosmic metaphysical Engineers",
+          title: "Cosmic Metaphysical Engineers",
           artist: "Peterc2",
           youtube: "",
           lyrics: `Breathe in the letter\ni've send you\nhowever it goes\ncut out fawn\nbeen crashing through floor\nyou're done with nowhere to go\n\nBurned bushes\nShe ripped and plunged\nTo feel undereating\nI constantly pushed the very best for you\nyour polluted eyes\nis where I recover from you\n\nIn hypnic jerks\nI greet the rest of you\nA union lever\nor seas of bloodsheds\nThe gods stinginess\nIn rings of plastic\nI brush this blessing from\nthe fraud you are\n\n(It's like a dune devil erased)\n(It's like a doom vapor haze)\n(It's like a dune devil ways)\n(slide a dune devil wave)\n(It's like a doom vapor wave)`
-        },
-        {
-          slug: "no-one-knows",
-          title: "No One Knows [Bonus Track]",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `No one knows where to hide\neveryone counts on someone to decide\n\nNo one knows where to hide\neveryone counts on someone to decide`
         }
       ]
     },
     {
       id: "out-of-style",
       title: "Out Of Style",
-      subtitle: "Littering • 09/10/2026",
       credit: "Littering",
       type: "Single",
       releaseDate: "2026-10-09",
-      formattedDate: "09/10/2026",
       cover: "assets/imagens/capas/out-of-style-cover.webp",
       background: "assets/imagens/background/background-4.webp",
       link: "projetos/out-of-style/index.html",
@@ -529,11 +485,9 @@ const SITE_DATA = {
     {
       id: "harsh-noise-to-jerk-off",
       title: "Harsh Noise To Jerk Off",
-      subtitle: "Pietrawrr • 30/08/2026",
       credit: "Pietrawrr",
       type: "EP",
       releaseDate: "2026-08-30",
-      formattedDate: "30/08/2026",
       cover: "assets/imagens/capas/harsh-noise-to-jerk-off-cover.webp",
       background: "assets/imagens/background/background-4.webp",
       link: "projetos/harsh-noise-to-jerk-off/index.html",
@@ -576,11 +530,9 @@ const SITE_DATA = {
     {
       id: "o-sonho-da-razao-produz-monstros",
       title: "O Sonho da Razão Produz Monstros",
-      subtitle: "Pietrawrr • 17/04/2026",
       credit: "Pietrawrr",
       type: "Single",
       releaseDate: "2026-04-17",
-      formattedDate: "17/04/2026",
       cover: "assets/imagens/capas/osonhodarazoproduzmonstros-cover.webp",
       background: "assets/imagens/background/background-4.webp",
       link: "projetos/o-sonho-da-razao-produz-monstros/index.html",
@@ -602,11 +554,9 @@ const SITE_DATA = {
     {
       id: "young-man-found-with-a-cut",
       title: "young man found with a cut to his abdomen on a beach told police about sex, swimming in the sea, LSD use, and hallucinations",
-      subtitle: "Pietrawrr • 30/10/2026",
       credit: "Pietrawrr",
       type: "Single",
       releaseDate: "2026-10-30",
-      formattedDate: "30/10/2026",
       cover: "assets/imagens/capas/young-man-found-with-a-cut-cover.webp",
       background: "assets/imagens/background/background-4.webp",
       link: "projetos/young-man-found-with-a-cut/index.html",
@@ -656,7 +606,6 @@ const SITE_DATA = {
       id: "confraterniza-soul",
       title: "Confraterniza Soul",
       date: "2026-09-06",
-      formattedDate: "06/09/26",
       photos: [
         "assets/imagens/sobre/confraterniza-soul/sobre-01.webp",
         "assets/imagens/sobre/confraterniza-soul/sobre-02.webp",
@@ -674,7 +623,6 @@ const SITE_DATA = {
       id: "feira-astral",
       title: "Feira Astral",
       date: "2026-10-10",
-      formattedDate: "10/10/26",
       photos: [
         "assets/imagens/sobre/feira-astral/sobre-01.webp",
         "assets/imagens/sobre/feira-astral/sobre-02.webp",
@@ -698,7 +646,6 @@ const SITE_DATA = {
       id: "halloween-olimpo",
       title: "Halloween Olimpo",
       date: "2026-11-06",
-      formattedDate: "06/11/26",
       photos: [
         "assets/imagens/sobre/halloween-olimpo/sobre-01.webp",
         "assets/imagens/sobre/halloween-olimpo/sobre-02.webp",
@@ -736,6 +683,103 @@ const SITE_DATA = {
     show público na feira astral de Divinópolis-MG.
   `
 };
+
+// =========================================================
+// NORMALIZAÇÃO E AUTOMAÇÃO DE DATAS DE LANÇAMENTO
+// =========================================================
+// Permite preencher a data em APENAS UM LUGAR (`releaseDate` ou `date`).
+// Todos os outros dados derivados (ordenação ISO, data formatada DD/MM/AAAA,
+// subtítulo do card "Artista • DD/MM/AAAA" e vínculo de vídeos) são preenchidos
+// automaticamente pelo sistema!
+
+function parseReleaseDate(input) {
+  if (!input || typeof input !== 'string') {
+    return { iso: '9999-12-31', br: 'Em Breve' };
+  }
+  const clean = input.trim();
+  if (clean.toLowerCase() === 'em breve' || clean === '9999-12-31') {
+    return { iso: '9999-12-31', br: 'Em Breve' };
+  }
+  // Formato brasileiro DD/MM/AAAA ou D/M/AAAA
+  const brMatch = clean.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (brMatch) {
+    const day = brMatch[1].padStart(2, '0');
+    const month = brMatch[2].padStart(2, '0');
+    const year = brMatch[3];
+    return {
+      iso: `${year}-${month}-${day}`,
+      br: `${day}/${month}/${year}`
+    };
+  }
+  // Formato ISO AAAA-MM-DD ou AAAA-M-D
+  const isoMatch = clean.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+  if (isoMatch) {
+    const year = isoMatch[1];
+    const month = isoMatch[2].padStart(2, '0');
+    const day = isoMatch[3].padStart(2, '0');
+    return {
+      iso: `${year}-${month}-${day}`,
+      br: `${day}/${month}/${year}`
+    };
+  }
+  // Fallback: retorna o texto original
+  return { iso: clean, br: clean };
+}
+
+// 1. Álbuns: normaliza releaseDate, preenche formattedDate e subtitle
+const _albumsById = {};
+if (Array.isArray(SITE_DATA.albums)) {
+  SITE_DATA.albums.forEach(album => {
+    const rawDate = album.releaseDate || album.date;
+    const parsed = parseReleaseDate(rawDate);
+    
+    // releaseDate no padrão ISO (para filtros, ordenação e data-attributes)
+    album.releaseDate = parsed.iso;
+    
+    // formattedDate no padrão legível brasileiro (ex: "28/11/2005" ou "Em Breve")
+    if (!album.formattedDate) {
+      album.formattedDate = parsed.br;
+    }
+    
+    // subtitle automático: "Artista • Data" (ex: "Peterc2 • 28/11/2005")
+    if (!album.subtitle) {
+      let author = album.credit;
+      if (!author && Array.isArray(album.artists)) {
+        author = album.artists
+          .map(k => (SITE_DATA.artists && SITE_DATA.artists[k] ? SITE_DATA.artists[k].name : k))
+          .join(' e ');
+      }
+      album.subtitle = author ? `${author} • ${album.formattedDate}` : album.formattedDate;
+    }
+    
+    if (album.id) {
+      _albumsById[album.id] = album;
+    }
+  });
+}
+
+// 2. Vídeos: herda a data do álbum vinculado (albumId) se não especificada
+if (Array.isArray(SITE_DATA.videos)) {
+  SITE_DATA.videos.forEach(video => {
+    if (!video.releaseDate && video.albumId && _albumsById[video.albumId]) {
+      video.releaseDate = _albumsById[video.albumId].releaseDate;
+    } else if (video.releaseDate) {
+      const parsed = parseReleaseDate(video.releaseDate);
+      video.releaseDate = parsed.iso;
+    }
+  });
+}
+
+// 3. Galerias de fotos: preenche formattedDate automaticamente no formato DD/MM/AA
+if (Array.isArray(SITE_DATA.aboutGalleries)) {
+  SITE_DATA.aboutGalleries.forEach(gal => {
+    if (gal.date && !gal.formattedDate) {
+      const parsed = parseReleaseDate(gal.date);
+      const parts = parsed.br.split('/');
+      gal.formattedDate = parts.length === 3 ? `${parts[0]}/${parts[1]}/${parts[2].slice(-2)}` : parsed.br;
+    }
+  });
+}
 
 Object.freeze(SITE_DATA);
 
