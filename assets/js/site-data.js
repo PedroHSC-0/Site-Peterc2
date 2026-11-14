@@ -93,8 +93,8 @@ const SITE_DATA = {
       name: "Peterc2",
       role: "Guitarra, Vocais & Produção",
       portrait: "assets/imagens/icones/peterc2-icon.webp",
-      background: "assets/imagens/background/background-2.webp",
-      page: "artistas/peterc2/index.html",
+      background: "assets/imagens/background/background-5.webp",
+      page: "artistas/index.html?id=peterc2",
       contacts: {
         instagram: { label: "Instagram", value: "@peterc2_", url: "https://www.instagram.com/peterc2_/", icon: "assets/imagens/icones/instagram.svg" },
         youtube:   { label: "YouTube",   value: "@Peterc2",   url: "https://www.youtube.com/@Peterc2",   icon: "assets/imagens/icones/youtube.svg" },
@@ -109,7 +109,7 @@ const SITE_DATA = {
       role: "Guitarra e Vocais",
       portrait: "assets/imagens/icones/jcdive-icon.webp",
       background: "assets/imagens/background/background-3.webp",
-      page: "artistas/jcdive/index.html",
+      page: "artistas/index.html?id=jcdive",
       contacts: {
         instagram: { label: "Instagram", value: "@jcdive_", url: "https://www.instagram.com/jcdive_/", icon: "assets/imagens/icones/instagram.svg" },
         youtube:   { label: "YouTube",   value: null, url: null, icon: "assets/imagens/icones/youtube.svg" },
@@ -124,7 +124,7 @@ const SITE_DATA = {
       role: "Baixo",
       portrait: "assets/imagens/icones/pietrawrr-icon.webp",
       background: "assets/imagens/background/background-4.webp",
-      page: "artistas/pietrawrr/index.html",
+      page: "artistas/index.html?id=pietrawrr",
       contacts: {
         instagram: { label: "Instagram", value: "@pietrawrr", url: "https://www.instagram.com/pietrawrr/", icon: "assets/imagens/icones/instagram.svg" },
         youtube:   { label: "YouTube",   value: null, url: null, icon: "assets/imagens/icones/youtube.svg" },
@@ -139,8 +139,8 @@ const SITE_DATA = {
       name: "Littering",
       role: "Banda",
       portrait: "assets/imagens/icones/littering-icon.webp",
-      background: "assets/imagens/background/background-4.webp",
-      page: "artistas/littering/index.html",
+      background: "assets/imagens/background/background-2.webp",
+      page: "artistas/index.html?id=littering",
       members: [
         { name: "Peterc2", role: "Guitarra e vocais" },
         { name: "JC Dive", role: "Guitarra e vocais" },
@@ -171,7 +171,7 @@ const SITE_DATA = {
       type: "Colaboração",
       releaseDate: "2026-03-13",
       cover: "assets/imagens/capas/desert-sample-cover.webp",
-      link: "projetos/desert-sample/index.html",
+      link: "projetos/index.html?id=desert-sample",
       artists: ["peterc2", "jcdive"],
       streaming: {
         youtube: "https://youtu.be/GMJ9MhhTVsw",
@@ -224,7 +224,7 @@ const SITE_DATA = {
       type: "Colaboração",
       releaseDate: "2026-04-10",
       cover: "assets/imagens/capas/the-ocean-trench-cover.webp",
-      link: "projetos/the-ocean-trench/index.html",
+      link: "projetos/index.html?id=the-ocean-trench",
       artists: ["peterc2", "jcdive"],
       streaming: {
         youtube: "https://www.youtube.com/watch?v=EPZbv-gqIFM",
@@ -390,7 +390,7 @@ const SITE_DATA = {
       releaseDate: "2026-11-28",
       cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
       background: "assets/imagens/background/background-5.webp",
-      link: "projetos/the-rescue-of-the-cosmic-metaphysical-engineers/index.html",
+      link: "projetos/index.html?id=rescue-cosmic",
       artists: ["peterc2"],
       streaming: {},
       tracks: [
@@ -473,8 +473,8 @@ const SITE_DATA = {
       type: "Single",
       releaseDate: "2026-10-09",
       cover: "assets/imagens/capas/out-of-style-cover.webp",
-      background: "assets/imagens/background/background-4.webp",
-      link: "projetos/out-of-style/index.html",
+      background: "assets/imagens/background/background-2.webp",
+      link: "projetos/index.html?id=out-of-style",
       artists: ["littering"],
       streaming: {
         youtube: "https://www.youtube.com/watch?v=9Z41zsEkG6c",
@@ -500,7 +500,7 @@ const SITE_DATA = {
       releaseDate: "2026-08-30",
       cover: "assets/imagens/capas/harsh-noise-to-jerk-off-cover.webp",
       background: "assets/imagens/background/background-4.webp",
-      link: "projetos/harsh-noise-to-jerk-off/index.html",
+      link: "projetos/index.html?id=harsh-noise-to-jerk-off",
       artists: ["pietrawrr"],
       streaming: {
         bandcamp: "https://funeralparadeofroses.bandcamp.com/album/harsh-noise-to-jerk-off"
@@ -545,7 +545,7 @@ const SITE_DATA = {
       releaseDate: "2026-04-17",
       cover: "assets/imagens/capas/osonhodarazoproduzmonstros-cover.webp",
       background: "assets/imagens/background/background-4.webp",
-      link: "projetos/o-sonho-da-razao-produz-monstros/index.html",
+      link: "projetos/index.html?id=o-sonho-da-razao-produz-monstros",
       artists: ["pietrawrr"],
       streaming: {
         spotify: "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1",
@@ -569,7 +569,7 @@ const SITE_DATA = {
       releaseDate: "2026-10-30",
       cover: "assets/imagens/capas/young-man-found-with-a-cut-cover.webp",
       background: "assets/imagens/background/background-4.webp",
-      link: "projetos/young-man-found-with-a-cut/index.html",
+      link: "projetos/index.html?id=young-man-found-with-a-cut",
       artists: ["pietrawrr"],
       streaming: {
         bandcamp: "https://funeralparadeofroses.bandcamp.com/track/young-man-found-with-a-cut-to-his-abdomen-on-a-beach-told-police-about-sex-swimming-in-the-sea-lsd-use-and-hallucinations"
@@ -592,7 +592,7 @@ const SITE_DATA = {
       releaseDate: "2026-11-12",
       cover: "assets/imagens/capas/sudo-rm-rf-my-maleness-cover.webp",
       background: "assets/imagens/background/background-4.webp",
-      link: "projetos/young-man-found-with-a-cut/index.html",
+      link: "projetos/index.html?id=sudo-rm-rf-my-maleness",
       artists: ["pietrawrr"],
       streaming: {
         bandcamp: "https://funeralparadeofroses.bandcamp.com/track/sudo-rm-rf-my-maleness"

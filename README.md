@@ -74,18 +74,11 @@ Site-Peterc2/
 ├── sobre/
 │   └── index.html               # Página Sobre (biografia e galeria de fotos com seletor e lightbox)
 ├── artistas/
-│   ├── peterc2/index.html       # Perfil e discografia de Peterc2
-│   ├── jcdive/index.html        # Perfil e discografia de JC Dive
-│   ├── littering/index.html     # Perfil e discografia da banda Littering
-│   └── pietrawrr/index.html     # Perfil e discografia de Pietrawrr (Pietra)
-├── projetos/                    # Páginas dedicadas de álbuns e reprodutores com letras
-│   ├── desert-sample/
-│   ├── the-ocean-trench/
-│   ├── out-of-style/
-│   ├── the-rescue-of-the-cosmic-metaphysical-engineers/
-│   ├── harsh-noise-to-jerk-off/
-│   ├── o-sonho-da-razao-produz-monstros/
-│   └── young-man-found-with-a-cut/
+│   └── index.html               # Template dinâmico de artistas (?id=peterc2, ?id=pietrawrr, etc.)
+├── projetos/
+│   ├── index.html               # Template dinâmico de lançamentos/álbuns (?id=out-of-style, etc.)
+│   └── musicas/
+│       └── index.html           # Template dinâmico do player de faixas e letras (?album=...&track=...)
 ├── assets/
 │   ├── css/
 │   │   ├── style.css            # Folha de estilo mestra e resets

@@ -43,7 +43,11 @@
    */
   function getDepthPrefix() {
     const path = (typeof location !== 'undefined' && location.pathname) ? location.pathname.replace(/\\/g, '/') : '';
+    if (/\/projetos\/[^/]+\/musicas\//i.test(path)) return '../../../';
+    if (path.includes('/projetos/musicas/')) return '../../';
     if (path.includes('/musicas/')) return '../../../';
+    if (/\/projetos\/(index\.html)?$/i.test(path) || path.endsWith('/projetos') || path.endsWith('/projetos/')) return '../';
+    if (/\/artistas\/(index\.html)?$/i.test(path) || path.endsWith('/artistas') || path.endsWith('/artistas/')) return '../';
     if (path.includes('/artistas/') || path.includes('/projetos/')) return '../../';
     if (path.includes('/sobre/')) return '../';
     return '';
@@ -67,11 +71,27 @@
     const b = typeof document !== 'undefined' ? document.body : null;
     const path = (typeof location !== 'undefined' && location.pathname) ? location.pathname.toLowerCase().replace(/\\/g, '/') : '';
 
+    if (typeof location !== 'undefined' && location.search) {
+      const params = new URLSearchParams(location.search);
+      const artistParam = params.get('artist') || params.get('artista') || params.get('id');
+      if (artistParam) {
+        const lowerParam = artistParam.toLowerCase();
+        for (const key of Object.keys(SITE_DATA.artists)) {
+          if (key.toLowerCase() === lowerParam) return key;
+        }
+      }
+    }
+
     for (const key of Object.keys(SITE_DATA.artists)) {
       if ((b && b.classList.contains(`artist-${key}`)) || path.includes(`/artistas/${key}`) || path.includes(`/${key}/`) || path.endsWith(`/${key}`)) {
         return key;
       }
     }
+
+    if (/\/artistas\/(index\.html)?$/i.test(path) || path.endsWith('/artistas') || path.endsWith('/artistas/')) {
+      return Object.keys(SITE_DATA.artists)[0] || null;
+    }
+
     return null;
   }
 
@@ -82,6 +102,15 @@
     if (typeof SITE_DATA === 'undefined' || !SITE_DATA.albums) return null;
     const b = typeof document !== 'undefined' ? document.body : null;
     const path = (typeof location !== 'undefined' && location.pathname) ? location.pathname.toLowerCase().replace(/\\/g, '/') : '';
+
+    if (typeof location !== 'undefined' && location.search) {
+      const params = new URLSearchParams(location.search);
+      const albumParam = params.get('album') || params.get('id') || params.get('projeto');
+      if (albumParam) {
+        const found = SITE_DATA.albums.find(a => a.id === albumParam || a.id.toLowerCase() === albumParam.toLowerCase());
+        if (found) return found;
+      }
+    }
 
     return SITE_DATA.albums.find(album => {
       if (path.includes(album.id) || (b && b.classList.contains(album.id))) return true;
@@ -163,10 +192,11 @@
     const contatoUrl = hasLocalContact ? '#contato' : (prefix + 'index.html#contato');
 
     let artistsLinksHTML = '';
+    const currentArtistKey = getCurrentArtistKey();
     if (typeof SITE_DATA !== 'undefined' && SITE_DATA.artists) {
       artistsLinksHTML = Object.values(SITE_DATA.artists).map(artist => {
         const artistUrl = prefix + artist.page;
-        const isActive = rawPath.includes('/' + artist.id);
+        const isActive = currentArtistKey === artist.id || rawPath.includes('/' + artist.id);
         return `<a href="${artistUrl}" class="${isActive ? 'active' : ''}">${artist.name.toUpperCase()}</a>`;
       }).join('\n        ');
     }
@@ -442,19 +472,39 @@
 
     const prefix = getDepthPrefix();
 
+    // 1. Título da página
     document.title = `${artist.name} - Lançamentos e Contato`;
 
+    // 2. Classes do body para estilos CSS do artista
+    if (typeof document !== 'undefined' && document.body) {
+      for (const cls of Array.from(document.body.classList)) {
+        if (cls.startsWith('artist-')) {
+          document.body.classList.remove(cls);
+        }
+      }
+      document.body.classList.add(`artist-${artistKey}`);
+    }
+
+    // 3. Favicon da aba
+    const favicon = document.querySelector('link[rel="icon"]');
+    if (favicon && artist.portrait) {
+      favicon.href = prefix + artist.portrait;
+    }
+
+    // 4. Imagem do artista
     const portraitImg = document.getElementById('artist-portrait-img') || document.querySelector('.center .artist-portrait');
     if (portraitImg) {
       portraitImg.src = prefix + artist.portrait;
       portraitImg.alt = artist.name;
     }
 
+    // 5. Nome do artista no topo
     const titleEl = document.getElementById('artist-name-title') || document.querySelector('.center > h1');
     if (titleEl) {
       titleEl.textContent = artist.name.toUpperCase();
     }
 
+    // 6. Integrantes da banda (se houver)
     const membersBox = document.getElementById('artist-members-box') || document.querySelector('.members-box');
     if (membersBox) {
       if (artist.members && artist.members.length > 0) {
@@ -470,6 +520,7 @@
       }
     }
 
+    // 7. Lançamentos do artista
     const gallery = document.getElementById('artist-albums-gallery') || document.querySelector('.artist-projects .album-gallery');
     if (gallery && SITE_DATA.albums) {
       const artistAlbums = sortItemsByDate(
@@ -489,6 +540,7 @@
       }
     }
 
+    // 8. Seção de contato do artista
     const contactHeader = document.getElementById('artist-contact-header') || document.querySelector('#contato .contacts-header');
     if (contactHeader) {
       contactHeader.textContent = `CONTATO - ${artist.name.toUpperCase()}`;
@@ -505,12 +557,28 @@
   // =========================================================
 
   function renderAlbumPage() {
+    const path = (typeof location !== 'undefined' && location.pathname) ? location.pathname.toLowerCase().replace(/\\/g, '/') : '';
+    if (path.includes('/musicas/')) return;
+
     const album = getCurrentAlbum();
     if (!album) return;
 
     const prefix = getDepthPrefix();
 
     document.title = `${album.title} - ${album.type || 'Álbum'}`;
+
+    if (typeof document !== 'undefined' && document.body && album.artists && album.artists.length > 0) {
+      for (const cls of Array.from(document.body.classList)) {
+        if (cls.startsWith('artist-')) document.body.classList.remove(cls);
+      }
+      document.body.classList.add(`artist-${album.artists[0]}`);
+      document.body.classList.add(album.id);
+    }
+
+    const favicon = document.querySelector('link[rel="icon"]');
+    if (favicon && album.cover) {
+      favicon.href = prefix + album.cover;
+    }
 
     const coverImg = document.getElementById('album-cover-img') || document.querySelector('.album-detail-cover');
     if (coverImg) {
@@ -580,11 +648,15 @@
 
     const tracklistContainer = document.getElementById('tracklist-table');
     if (tracklistContainer && album.tracks) {
+      const isTemplate = /\/projetos\/(index\.html)?$/i.test(path) || path.endsWith('/projetos') || path.endsWith('/projetos/');
       tracklistContainer.innerHTML = album.tracks.map((track, i) => {
         const num = String(i + 1).padStart(2, '0');
         const actionText = track.youtube ? 'OUVIR ▶' : 'VER LETRA ▶';
+        const trackHref = isTemplate
+          ? `musicas/index.html?album=${encodeURIComponent(album.id)}&track=${encodeURIComponent(track.slug)}`
+          : `musicas/index.html?track=${encodeURIComponent(track.slug)}`;
         return `
-          <a href="musicas/index.html?track=${track.slug}" class="track-row">
+          <a href="${trackHref}" class="track-row">
             <span class="track-num">${num}</span>
             <span class="track-title">${track.title}</span>
             <span class="track-action">${actionText}</span>
@@ -614,6 +686,19 @@
     const track = album.tracks[idx];
 
     document.title = track.title + " - " + album.title;
+
+    if (typeof document !== 'undefined' && document.body && album.artists && album.artists.length > 0) {
+      for (const cls of Array.from(document.body.classList)) {
+        if (cls.startsWith('artist-')) document.body.classList.remove(cls);
+      }
+      document.body.classList.add(`artist-${album.artists[0]}`);
+      document.body.classList.add(album.id);
+    }
+
+    const favicon = document.querySelector('link[rel="icon"]');
+    if (favicon && album.cover) {
+      favicon.href = prefix + album.cover;
+    }
     
     const titleEl = document.getElementById('track-title');
     const artistEl = document.getElementById('track-artist');
@@ -640,9 +725,10 @@
       albumInfoEl.innerHTML = `${typeLabel}: ${album.title} <br> Written and produced by ${prodCredit}`;
     }
 
+    const isTemplate = path.includes('/projetos/musicas/');
     const backLink = document.getElementById('track-back-link') || document.querySelector('main.center > a.back');
     if (backLink) {
-      backLink.href = '../index.html';
+      backLink.href = isTemplate ? `../index.html?id=${encodeURIComponent(album.id)}` : '../index.html';
       backLink.textContent = '← voltar';
     }
 
@@ -668,11 +754,12 @@
     const prevEl = document.getElementById('track-prev');
     const nextEl = document.getElementById('track-next');
 
-    if (prevEl) prevEl.href = '?track=' + prevTrack.slug;
-    if (nextEl) nextEl.href = '?track=' + nextTrack.slug;
+    const albumParam = isTemplate ? `&album=${encodeURIComponent(album.id)}` : '';
+    if (prevEl) prevEl.href = '?track=' + encodeURIComponent(prevTrack.slug) + albumParam;
+    if (nextEl) nextEl.href = '?track=' + encodeURIComponent(nextTrack.slug) + albumParam;
 
     try {
-      history.replaceState(null, '', '?track=' + track.slug);
+      history.replaceState(null, '', '?track=' + encodeURIComponent(track.slug) + albumParam);
     } catch (e) {
       // Ignora erro em contexto de arquivo local (file://)
     }
@@ -1046,7 +1133,7 @@
   // =========================================================
 
   if (typeof document !== 'undefined') {
-    document.addEventListener('DOMContentLoaded', () => {
+    const runAllRenders = () => {
       renderTopNav();
       applyPageBackground();
       renderFeaturedVideosSection();
@@ -1059,7 +1146,13 @@
       renderSongPlayerPage();
       renderMerchSection();
       renderAboutPage();
-    });
+    };
+
+    document.addEventListener('DOMContentLoaded', runAllRenders);
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('popstate', runAllRenders);
+    }
   }
 
   // Exportação global
