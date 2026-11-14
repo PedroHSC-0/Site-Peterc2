@@ -26,6 +26,16 @@ const SITE_DATA = {
   // ---------------------------------------------------------
   videos: [
     {
+      id: "king-shit-video",
+      albumId: "rescue-cosmic",
+      title: "King Shit (Music Video)",
+      artist: "Peterc2",
+      releaseDate: "2026-11-13",
+      youtube: "gi5bazDn90c",
+      cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
+      description: "Vídeo da faixa King Shit por Peterc2."
+    },
+    {
       id: "out-of-style-video",
       albumId: "out-of-style",
       title: "Out Of Style",
@@ -120,7 +130,7 @@ const SITE_DATA = {
         youtube:   { label: "YouTube",   value: null, url: null, icon: "assets/imagens/icones/youtube.svg" },
         spotify:   { label: "Spotify",   value: "o sonho da razão produz monstros", url: "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1", icon: "assets/imagens/icones/spotify.svg" },
         apple:     { label: "Apple Music", value: "O Sonho da Razão Produz Monstros", url: "https://music.apple.com/br/artist/o-sonho-da-raz%C3%A3o-produz-monstros/1894934054", icon: "assets/imagens/icones/apple.svg" },
-        bandcamp1: { label: "Bandcamp", value: "funeral parade of roses", url: "https://funeralparadeofroses.bandcamp.com/album/harsh-noise-to-jerk-off", icon: "assets/imagens/icones/bandcamp.svg" },
+        bandcamp1: { label: "Bandcamp", value: "funeral parade of roses", url: "https://funeralparadeofroses.bandcamp.com/", icon: "assets/imagens/icones/bandcamp.svg" },
         bandcamp2: { label: "Bandcamp", value: "o sonho da razão produz monstros", url: "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare", icon: "assets/imagens/icones/bandcamp.svg" }
       }
     },
@@ -389,7 +399,7 @@ const SITE_DATA = {
           title: "Pull Back the Ancients / Its Calling You",
           artist: "Peterc2",
           youtube: "",
-          lyrics: `If you want do the right to me\nIf you want me to stay\nand i know, i won't dare\nIf you want me to solve the clues\nI am the ancient love\n\nIf you want play the blind with me\nIf you want me to stay\nand you know, i don't care\nIf you want me to share the truth\nI'll be the last to love forevermore\n\nCrawling through you\nYou're commanding in my head\nsprawl into this\nstrength that you never had\n\nI'm tossing the streets to meet you\nyou've been around and round to the start\nThere's no motion in this life\nthat can wrap this enormous ordeal\n\nYou starred in my dream, dear\nconfusing what has been real,\nyou'd mess up every cheer that i had\nleaving it with every fear that i'am\n\nI will try it tomorrow\nfall apart with everything we build to see\nyou're branching in sides of a tree\nIt's said thats faster that i can wait\nBut your dream blot out in the spring\n\nI am awaken, no alarms (It happens)\nwhen solid state dreaming spine (It has no end)\n(I hold still)\nin my world is spinning all around (Ahead of despear)\n\nI am waiting, feels like another (It happens)\nsolid state dreaming spine (Its warm)\ntry to turn this in (I am not allowed)\nall we speak and care (Ahead of despear)\n\nIts calling\nIts frawling\nIts calling\nIts frawling`
+          lyrics: `If you want to do the right to me\nIf you want me to stay\nand i know, i won't dare\nIf you want me to solve the clues\nI am the ancient love\n\nIf you want to play the blind with me\nIf you want me to stay\nand you know, i don't care\nIf you want me to share the truth\nI'll be the last to love forevermore\n\nCrawling through you\nYou're commanding in my head\nsprawl into this\nstrength that you never had\n\nI'm tossing the streets to meet you\nyou've been around and round to the start\nThere's no motion in this life\nthat can wrap this enormous ordeal\n\nYou starred in my dream, dear\nconfusing what has been real,\nyou'd mess up every cheer that i had\nleaving it with every fear that i'am\n\nI will try it tomorrow\nfall apart with everything we build to see\nyou're branching in sides of a tree\nIt's said thats faster that i can wait\nBut your dream blot out in the spring\n\nI am awaken, no alarms (It happens)\nwhen solid state dreaming spine (It has no end)\n(I hold still)\nin my world is spinning all around (Ahead of despear)\n\nI am waiting, feels like another (It happens)\nsolid state dreaming spine (Its warm)\ntry to turn this in (I am not allowed)\nall we speak and care (Ahead of despear)\n\nIts calling\nIts frawling\nIts calling\nIts frawling`
         },
         {
           slug: "asleep",
@@ -416,7 +426,7 @@ const SITE_DATA = {
           slug: "king-shit",
           title: "King Shit",
           artist: "Peterc2",
-          youtube: "",
+          youtube: "gi5bazDn90c",
           lyrics: `A bunch of undying rats\nTrying to kiss me\nThe fear of falling wet\non dumb statistics\nblowing drugs and drown\nits in my mistic\n\nPlainning stick ambush\nTry to put the surface out\nthen I'll go running on stakes to miss\nSpitting perfume of the bottle\n\nHey, downcast comrade\ndon't die so simplistic\nPassing as a godly mistrust\nTrying to bliss me\nThose little blown head girls\ncould be so artistic\nbut now they're just statistics\n\nI'am feeling my safety down\nby that grotesque lust\nTheir guns are restraining\nshown off so stupidly\n\nI am running back to my basement\nWhen you got no place to go\nI am running back to the basement\nWhen you're my face to know\nI am running back to the basement\nWhere you got no plans to do\nI am running back to the basement\nWhen you got no place to go`
         },
         {
@@ -431,7 +441,7 @@ const SITE_DATA = {
           title: "Kind Sister Hunt",
           artist: "Peterc2",
           youtube: "",
-          lyrics: `this dark hair as the river flows\nGet replaced and try it alone\nHow can I explain what she does to me\nCould I be able to see\nWhat the spacetime reserved to me\n\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me`
+          lyrics: `this dark hair as the river flows\nGet replaced and try it alone\nCould I be able to see\nWhat the spacetime reserved to me\n\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me`
         },
         {
           slug: "death-valley",
@@ -571,6 +581,29 @@ const SITE_DATA = {
           artist: "Pietrawrr",
           youtube: "",
           lyrics: `[30/10/2026 JAM SESSION\nFaixa Instrumental / Noise]`
+        }
+      ]
+    },
+    {
+      id: "sudo-rm-rf-my-maleness",
+      title: "sudo rm -rf my maleness",
+      credit: "Pietrawrr",
+      type: "Single",
+      releaseDate: "2026-11-12",
+      cover: "assets/imagens/capas/sudo-rm-rf-my-maleness-cover.webp",
+      background: "assets/imagens/background/background-4.webp",
+      link: "projetos/young-man-found-with-a-cut/index.html",
+      artists: ["pietrawrr"],
+      streaming: {
+        bandcamp: "https://funeralparadeofroses.bandcamp.com/track/sudo-rm-rf-my-maleness"
+      },
+      tracks: [
+        {
+          slug: "sudo-rm-rf-my-maleness",
+          title: "sudo rm -rf my maleness",
+          artist: "Pietrawrr",
+          youtube: "",
+          lyrics: `...`
         }
       ]
     }

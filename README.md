@@ -1,8 +1,8 @@
-# Pigpenfan (Site-Peterc2) — Showcase de Engenharia Web
+# Pigpenfan
 
-Repositório de **exposição de código e arquitetura frontend** desenvolvido para o coletivo musical **Pigpenfan**. O projeto apresenta a implementação completa de uma plataforma de catálogo musical, perfis de artistas, tocadores de áudio/vídeo com letras integradas, mostruário de produtos e galeria dinâmica de eventos com lightbox.
+Repositório de **exposição do código da arquitetura frontend** desenvolvido para o coletivo musical **Pigpenfan**. O projeto apresenta a implementação completa de uma plataforma de catálogo musical, perfis de artistas, players de áudio/vídeo com letras e links de outras plataformas, mostruário de produtos e galeria dinâmica de eventos com lightbox.
 
-> **Nota de Exposição:** Este repositório tem finalidade de exibição técnica e portfólio de código. Foi projetado para demonstrar práticas de engenharia de software frontend nativo, estruturação de dados desacoplada e manipulação avançada de DOM sem a necessidade de frameworks ou dependências externas.
+> **Nota de Exposição:** Este repositório tem finalidade de exibição técnica e portfólio de código. Foi publicado para demonstrar práticas de engenharia de software frontend nativo, estruturação de dados desacoplada e manipulação avançada de DOM sem a necessidade de frameworks ou dependências externas.
 
 ---
 
@@ -55,6 +55,17 @@ Para garantir que os mesmos componentes e scripts operem uniformemente em qualqu
 
 ---
 
+## 👥 Artistas e Projetos Catalogados
+
+O ecossistema musical do coletivo inclui páginas de perfil dedicadas, contatos e catálogo de lançamentos:
+
+- **Peterc2:** Guitarra, Vocais & Produção (*Desert Sample*, *The Ocean Trench*, *The Rescue Of The Cosmic Metaphysical Engineers*).
+- **JC Dive:** Guitarra e Vocais (*Desert Sample*, *The Ocean Trench*).
+- **Littering:** Banda de rock alternativo / indie (*Out Of Style*).
+- **Pietrawrr (Pietra):** Vocal, Guitarra & Noise (*Harsh Noise To Jerk Off*, *O Sonho da Razão Produz Monstros*, *young man found with a cut...*, *sudo rm -rf my maleness*).
+
+---
+
 ## 📂 Estrutura de Diretórios
 
 ```text
@@ -65,12 +76,16 @@ Site-Peterc2/
 ├── artistas/
 │   ├── peterc2/index.html       # Perfil e discografia de Peterc2
 │   ├── jcdive/index.html        # Perfil e discografia de JC Dive
-│   └── littering/index.html     # Perfil e discografia da banda Littering
+│   ├── littering/index.html     # Perfil e discografia da banda Littering
+│   └── pietrawrr/index.html     # Perfil e discografia de Pietrawrr (Pietra)
 ├── projetos/                    # Páginas dedicadas de álbuns e reprodutores com letras
 │   ├── desert-sample/
 │   ├── the-ocean-trench/
 │   ├── out-of-style/
-│   └── the-rescue-of-the-cosmic-metaphysical-engineers/
+│   ├── the-rescue-of-the-cosmic-metaphysical-engineers/
+│   ├── harsh-noise-to-jerk-off/
+│   ├── o-sonho-da-razao-produz-monstros/
+│   └── young-man-found-with-a-cut/
 ├── assets/
 │   ├── css/
 │   │   ├── style.css            # Folha de estilo mestra e resets

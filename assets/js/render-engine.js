@@ -106,27 +106,10 @@
     return sortItemsByDate(SITE_DATA?.albums, order, '9999-12-31');
   }
 
-  function getRecentReleases(daysDistance = 60) {
+  function getRecentReleases(limit = 4) {
     if (typeof SITE_DATA === 'undefined' || !SITE_DATA.albums) return [];
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-    const filtered = SITE_DATA.albums.filter(album => {
-      if (!album.releaseDate || album.formattedDate === 'Em Breve' || album.releaseDate === '9999-12-31') {
-        return true;
-      }
-
-      const parts = album.releaseDate.split('-');
-      if (parts.length !== 3) return true;
-
-      const releaseDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
-      const diffMs = Math.abs(releaseDate - today);
-      const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
-
-      return diffDays <= daysDistance;
-    });
-
-    return sortItemsByDate(filtered, 'desc', '9999-12-31');
+    const maxItems = typeof limit === 'number' && limit > 0 ? limit : 4;
+    return getSortedAlbums('desc').slice(0, maxItems);
   }
 
   /**
@@ -378,16 +361,17 @@
     const gallery = document.getElementById('recent-releases-gallery');
     if (!section || !gallery) return;
 
-    const recentAlbums = getRecentReleases(60);
+    const recentAlbums = getRecentReleases(4);
     if (recentAlbums.length === 0) {
       section.style.display = 'none';
       return;
     }
 
     gallery.innerHTML = recentAlbums.map(album => {
-      const coverImg = album.cover || 'assets/imagens/capas/placeholder.webp';
+      const coverImg = resolveRelativePath(album.cover || 'assets/imagens/capas/placeholder.webp');
+      const link = resolveRelativePath(album.link || '#');
       return `
-        <a href="${album.link}" class="album-card" data-release-date="${album.releaseDate}">
+        <a href="${link}" class="album-card" data-release-date="${album.releaseDate}">
           <img src="${coverImg}" alt="${album.title}" class="album-card-cover">
           <span class="album-card-title">${album.title}</span>
           <span class="album-card-sub">${album.subtitle}</span>
@@ -687,7 +671,11 @@
     if (prevEl) prevEl.href = '?track=' + prevTrack.slug;
     if (nextEl) nextEl.href = '?track=' + nextTrack.slug;
 
-    history.replaceState(null, '', '?track=' + track.slug);
+    try {
+      history.replaceState(null, '', '?track=' + track.slug);
+    } catch (e) {
+      // Ignora erro em contexto de arquivo local (file://)
+    }
   }
 
   // =========================================================
