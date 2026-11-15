@@ -409,8 +409,8 @@ const SITE_DATA = {
           lyrics: `I am not a dream\nYou're not asleep\nWe are so free\nYou're not asleep\n\nI won't brag a thing\nDo you glad it all to me\nDreams are led, sir (and all come true)\n\nI am on your tree\nIgnore the screams\nI am not a dream`
         },
         {
-          slug: "whatever-happened",
-          title: "Whatever Happened",
+          slug: "whatever-happened-there",
+          title: "Whatever Happened There",
           artist: "Peterc2",
           youtube: "",
           lyrics: `How bad this could get?\nhow bad is doing nothing\nWhen you close a true life\nIt's never close to nothing\nWhen I was a need for you\nin a closedown to rotting\nWhere i merge\n\nI'll be here for you\nHeaven isn't holding a travel to you\nMaybe your just my bad interest\n\nI had an eerie looking\nin the place you've stoled my eyes\nAnd I went out for nothing\nwhere i'll purge\n\nI'll be here for you\nHeaven isn't lookin any closer to you\nHeaven is your whole interest\n\nHow bad is doing nothing true\nI wrote a song for you, and you don't know\nI'm been close to rotting\nwhere you crush\n\ndeath led me to you\nHeaven isn't lowering crawling to you\nIsn't this a bad a interest`
