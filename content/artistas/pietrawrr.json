@@ -1,0 +1,45 @@
+{
+  "id": "pietrawrr",
+  "name": "Pietrawrr",
+  "role": "Baixo",
+  "portrait": "assets/imagens/icones/pietrawrr-icon.webp",
+  "background": "assets/imagens/background/background-4.webp",
+  "contacts": {
+    "instagram": {
+      "label": "Instagram",
+      "value": "@pietrawrr",
+      "url": "https://www.instagram.com/pietrawrr/",
+      "icon": "assets/imagens/icones/instagram.svg"
+    },
+    "youtube": {
+      "label": "YouTube",
+      "value": null,
+      "url": null,
+      "icon": "assets/imagens/icones/youtube.svg"
+    },
+    "spotify": {
+      "label": "Spotify",
+      "value": "o sonho da razão produz monstros",
+      "url": "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1",
+      "icon": "assets/imagens/icones/spotify.svg"
+    },
+    "apple": {
+      "label": "Apple Music",
+      "value": "O Sonho da Razão Produz Monstros",
+      "url": "https://music.apple.com/br/artist/o-sonho-da-raz%C3%A3o-produz-monstros/1894934054",
+      "icon": "assets/imagens/icones/apple.svg"
+    },
+    "bandcamp1": {
+      "label": "Bandcamp",
+      "value": "funeral parade of roses",
+      "url": "https://funeralparadeofroses.bandcamp.com/",
+      "icon": "assets/imagens/icones/bandcamp.svg"
+    },
+    "bandcamp2": {
+      "label": "Bandcamp",
+      "value": "o sonho da razão produz monstros",
+      "url": "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare",
+      "icon": "assets/imagens/icones/bandcamp.svg"
+    }
+  }
+}

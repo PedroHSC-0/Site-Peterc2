@@ -114,6 +114,7 @@
   box-shadow: none;
   margin-bottom: 10px;
   filter: none;
+  background: transparent;
   transition: none;
 }
 
@@ -191,7 +192,21 @@
   border: none;
   box-shadow: none;
   margin-bottom: 10px;
+  background-color: #121212;
   transition: none;
+}
+
+/* =========================================================
+   TRANSIÇÃO SUAVE DE IMAGENS (ANTI-POP-IN / SKELETON)
+   ========================================================= */
+.img-fade-in {
+  opacity: 0;
+  transition: opacity 0.28s cubic-bezier(0.2, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.img-fade-in.is-loaded {
+  opacity: 1;
 }
 
 .album-card-title {

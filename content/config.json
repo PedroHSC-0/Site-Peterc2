@@ -1,0 +1,12 @@
+{
+  "analytics": {
+    "provider": "ga4",
+    "gaMeasurementId": "G-HF911PG7DV"
+  },
+  "defaultBackground": "assets/imagens/background/background-1.webp",
+  "brand": {
+    "name": "PIGPENFAN",
+    "title": "Pigpenfan",
+    "background": "assets/imagens/background/background-1.webp"
+  }
+}

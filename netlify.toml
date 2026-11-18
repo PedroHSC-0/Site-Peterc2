@@ -1,0 +1,37 @@
+# =========================================================
+# CONFIGURAÇÃO DE BUILD E CACHE - NETLIFY
+# =========================================================
+
+[build]
+  command = "python3 scripts/build.py"
+  publish = "."
+
+# Cache imutável de longo prazo para imagens (1 ano)
+[[headers]]
+  for = "/assets/imagens/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache imutável de longo prazo para fontes locais (1 ano)
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache para folhas de estilo CSS (1 dia com revalidação)
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# Cache para scripts JavaScript (1 dia com revalidação)
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# Páginas HTML sempre verificam a versão mais recente
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

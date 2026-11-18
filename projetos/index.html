@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lançamento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap">
   <link rel="stylesheet" href="../assets/css/style.css?v=6">
   <link rel="icon" type="image/webp" href="../assets/imagens/capas/placeholder.webp">
 </head>
@@ -24,7 +27,7 @@
 
   <!-- ===================== PAINEL DO ÁLBUM & TRACKLIST ===================== -->
   <div class="album-detail-container">
-    <img src="../assets/imagens/capas/placeholder.webp" alt="Capa" class="album-detail-cover" id="album-cover-img">
+    <img src="../assets/imagens/capas/placeholder.webp" alt="Capa" class="album-detail-cover img-fade-in" id="album-cover-img" decoding="async">
 
     <div class="album-detail-info">
       <h1 class="album-detail-title" id="album-title-el">—</h1>
@@ -43,6 +46,11 @@
         <div class="tracklist-table" id="tracklist-table">
           <!-- Gerado dinamicamente via render-engine.js a partir de site-data.js -->
         </div>
+      </div>
+
+      <!-- MENSAGEM / NOTAS DO ÁLBUM (EMBAIXO DA TRACKLIST) -->
+      <div class="album-message-box" id="album-message-box" style="display: none;">
+        <p class="album-message-text" id="album-message-text"></p>
       </div>
 
     </div>

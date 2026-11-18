@@ -1,0 +1,46 @@
+{
+  "_comentario": "MODELO DE ARTISTA. Copie este arquivo, renomeie (ex: novo-artista.json) e preencha os dados.",
+  "id": "novo-artista",
+  "name": "Nome do Artista",
+  "role": "Instrumento ou Função",
+  "portrait": "assets/imagens/icones/novo-artista-icon.webp",
+  "background": "assets/imagens/background/background-1.webp",
+  "members": [
+    {
+      "name": "Nome do Integrante",
+      "role": "Instrumento"
+    }
+  ],
+  "contacts": {
+    "instagram": {
+      "label": "Instagram",
+      "value": "@perfil",
+      "url": "https://www.instagram.com/perfil/",
+      "icon": "assets/imagens/icones/instagram.svg"
+    },
+    "youtube": {
+      "label": "YouTube",
+      "value": "@Canal",
+      "url": "https://www.youtube.com/@Canal",
+      "icon": "assets/imagens/icones/youtube.svg"
+    },
+    "spotify": {
+      "label": "Spotify",
+      "value": "Nome no Spotify",
+      "url": "https://open.spotify.com/...",
+      "icon": "assets/imagens/icones/spotify.svg"
+    },
+    "apple": {
+      "label": "Apple Music",
+      "value": "Nome na Apple",
+      "url": "https://music.apple.com/...",
+      "icon": "assets/imagens/icones/apple.svg"
+    },
+    "bandcamp": {
+      "label": "Bandcamp",
+      "value": "perfil.bandcamp.com",
+      "url": "https://perfil.bandcamp.com/",
+      "icon": "assets/imagens/icones/bandcamp.svg"
+    }
+  }
+}

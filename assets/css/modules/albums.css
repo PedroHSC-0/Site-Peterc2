@@ -44,7 +44,9 @@
 .album-detail-cover {
   width: 220px;
   height: 220px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  background-color: #121212;
   border: none;
   box-shadow: none;
   margin: 0 auto 20px auto;
@@ -179,6 +181,28 @@
 
 .track-row:hover .track-action {
   color: #555555;
+}
+
+/* =========================================================
+   MENSAGEM / NOTAS DO ÁLBUM (EMBAIXO DA TRACKLIST)
+   ========================================================= */
+.album-message-box {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  padding: 18px 20px 0 20px;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.album-message-text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #aaaaaa;
+  white-space: pre-line;
+  word-break: break-word;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

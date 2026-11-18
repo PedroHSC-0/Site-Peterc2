@@ -1,0 +1,29 @@
+{
+  "_comentario": "ESTE ARQUIVO É UM MODELO. Copie este arquivo, renomeie (ex: meu-novo-album.json) e preencha os dados abaixo.",
+  "id": "nome-do-album-em-kebab-case",
+  "title": "Nome do Álbum ou Single",
+  "credit": "Nome do Artista ou Banda",
+  "type": "Single",
+  "releaseDate": "2026-12-01",
+  "cover": "assets/imagens/capas/nome-da-capa.webp",
+  "background": "assets/imagens/background/background-1.webp",
+  "artists": [
+    "peterc2"
+  ],
+  "streaming": {
+    "spotify": "https://open.spotify.com/...",
+    "apple": "https://music.apple.com/...",
+    "youtube": "https://youtube.com/...",
+    "bandcamp": "https://bandcamp.com/..."
+  },
+  "message": "Mensagem ou notas especiais sobre o projeto (opcional). Pode conter quebras de linha com \\n.",
+  "tracks": [
+    {
+      "slug": "nome-da-faixa-1",
+      "title": "Nome da Faixa 1",
+      "artist": "Nome do Artista",
+      "youtube": "ID_DO_VIDEO_YOUTUBE",
+      "lyrics": "Primeira linha da letra\nSegunda linha da letra\n\nOutro parágrafo"
+    }
+  ]
+}

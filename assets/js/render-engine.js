@@ -141,6 +141,37 @@
     return getSortedAlbums('desc').slice(0, maxItems);
   }
 
+  const DEFAULT_CONTACT_INFO = {
+    instagram: { label: "Instagram", icon: "assets/imagens/icones/instagram.svg" },
+    youtube:   { label: "YouTube",   icon: "assets/imagens/icones/youtube.svg" },
+    spotify:   { label: "Spotify",   icon: "assets/imagens/icones/spotify.svg" },
+    apple:     { label: "Apple Music", icon: "assets/imagens/icones/apple.svg" },
+    bandcamp:  { label: "Bandcamp",  icon: "assets/imagens/icones/bandcamp.svg" },
+    bandcamp1: { label: "Bandcamp",  icon: "assets/imagens/icones/bandcamp.svg" },
+    bandcamp2: { label: "Bandcamp",  icon: "assets/imagens/icones/bandcamp.svg" }
+  };
+
+  /**
+   * Retorna a URL da página do artista (calculada dinamicamente a partir do id caso omitida).
+   */
+  function getArtistPage(artist) {
+    if (!artist) return 'artistas/index.html';
+    if (typeof artist === 'string') return `artistas/index.html?id=${encodeURIComponent(artist)}`;
+    if (artist.page) return artist.page;
+    const id = artist.id || '';
+    return `artistas/index.html?id=${encodeURIComponent(id)}`;
+  }
+
+  /**
+   * Retorna a URL da página do lançamento (calculada dinamicamente a partir do id caso omitida).
+   */
+  function getAlbumLink(album) {
+    if (!album) return 'projetos/index.html';
+    if (typeof album === 'string') return `projetos/index.html?id=${encodeURIComponent(album)}`;
+    if (album.link) return album.link;
+    return `projetos/index.html?id=${encodeURIComponent(album.id || '')}`;
+  }
+
   /**
    * Renderiza os itens individuais de contato de um artista.
    */
@@ -148,8 +179,9 @@
     if (!contacts) return '';
     return Object.entries(contacts).map(([key, item]) => {
       if (!item) return '';
-      const iconPath = prefix + (item.icon || '');
-      const label = item.label || key;
+      const fallback = DEFAULT_CONTACT_INFO[key] || {};
+      const iconPath = prefix + (item.icon || fallback.icon || '');
+      const label = item.label || fallback.label || key;
       const value = item.value || (item.url ? label : 'Em Breve');
       if (item.url) {
         return `
@@ -195,7 +227,7 @@
     const currentArtistKey = getCurrentArtistKey();
     if (typeof SITE_DATA !== 'undefined' && SITE_DATA.artists) {
       artistsLinksHTML = Object.values(SITE_DATA.artists).map(artist => {
-        const artistUrl = prefix + artist.page;
+        const artistUrl = prefix + getArtistPage(artist);
         const isActive = currentArtistKey === artist.id || rawPath.includes('/' + artist.id);
         return `<a href="${artistUrl}" class="${isActive ? 'active' : ''}">${artist.name.toUpperCase()}</a>`;
       }).join('\n        ');
@@ -298,7 +330,15 @@
           title="${v.title}"
           ${i === currentIdx ? 'aria-current="true"' : ''}
         >
-          <img src="${v.cover || 'assets/imagens/capas/placeholder.webp'}" alt="${v.title}" class="video-carousel-thumb-cover">
+          <img 
+            src="${v.cover || 'assets/imagens/capas/placeholder.webp'}" 
+            alt="${v.title}" 
+            class="video-carousel-thumb-cover img-fade-in"
+            loading="${i < 4 ? 'eager' : 'lazy'}"
+            decoding="async"
+            onload="this.classList.add('is-loaded')"
+            onerror="this.classList.add('is-loaded')"
+          >
           <span class="video-carousel-thumb-title">${v.title}</span>
           <span class="video-carousel-thumb-artist">${v.artist}</span>
         </button>
@@ -397,12 +437,21 @@
       return;
     }
 
-    gallery.innerHTML = recentAlbums.map(album => {
+    gallery.innerHTML = recentAlbums.map((album, idx) => {
       const coverImg = resolveRelativePath(album.cover || 'assets/imagens/capas/placeholder.webp');
-      const link = resolveRelativePath(album.link || '#');
+      const link = resolveRelativePath(getAlbumLink(album));
+      const priority = idx < 4 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
       return `
         <a href="${link}" class="album-card" data-release-date="${album.releaseDate}">
-          <img src="${coverImg}" alt="${album.title}" class="album-card-cover">
+          <img 
+            src="${coverImg}" 
+            alt="${album.title}" 
+            class="album-card-cover img-fade-in"
+            ${priority}
+            decoding="async"
+            onload="this.classList.add('is-loaded')"
+            onerror="this.classList.add('is-loaded')"
+          >
           <span class="album-card-title">${album.title}</span>
           <span class="album-card-sub">${album.subtitle}</span>
         </a>
@@ -421,8 +470,16 @@
     if (!gallery || typeof SITE_DATA === 'undefined' || !SITE_DATA.artists) return;
     const prefix = getDepthPrefix();
     gallery.innerHTML = Object.values(SITE_DATA.artists).map(artist => `
-      <a href="${prefix}${artist.page}" class="artist-image-card">
-        <img src="${prefix}${artist.portrait}" alt="${artist.name}" class="artist-portrait">
+      <a href="${prefix}${getArtistPage(artist)}" class="artist-image-card">
+        <img 
+          src="${prefix}${artist.portrait || `assets/imagens/icones/${artist.id}-icon.webp`}" 
+          alt="${artist.name}" 
+          class="artist-portrait img-fade-in"
+          loading="eager"
+          decoding="async"
+          onload="this.classList.add('is-loaded')"
+          onerror="this.classList.add('is-loaded')"
+        >
         <span class="artist-card-title">${artist.name}</span>
       </a>
     `).join('');
@@ -437,8 +494,16 @@
     );
     const prefix = getDepthPrefix();
     gallery.innerHTML = collabs.map(album => `
-      <a href="${prefix}${album.link}" class="album-card" data-release-date="${album.releaseDate}">
-        <img src="${prefix}${album.cover}" alt="${album.title}" class="album-card-cover">
+      <a href="${prefix}${getAlbumLink(album)}" class="album-card" data-release-date="${album.releaseDate}">
+        <img 
+          src="${prefix}${album.cover}" 
+          alt="${album.title}" 
+          class="album-card-cover img-fade-in"
+          loading="lazy"
+          decoding="async"
+          onload="this.classList.add('is-loaded')"
+          onerror="this.classList.add('is-loaded')"
+        >
         <span class="album-card-title">${album.title}</span>
         <span class="album-card-sub">${album.subtitle}</span>
       </a>
@@ -494,8 +559,13 @@
     // 4. Imagem do artista
     const portraitImg = document.getElementById('artist-portrait-img') || document.querySelector('.center .artist-portrait');
     if (portraitImg) {
+      portraitImg.classList.add('img-fade-in');
+      portraitImg.classList.remove('is-loaded');
+      portraitImg.onload = () => portraitImg.classList.add('is-loaded');
+      portraitImg.onerror = () => portraitImg.classList.add('is-loaded');
       portraitImg.src = prefix + artist.portrait;
       portraitImg.alt = artist.name;
+      if (portraitImg.complete) portraitImg.classList.add('is-loaded');
     }
 
     // 5. Nome do artista no topo
@@ -530,9 +600,17 @@
       if (artistAlbums.length === 0) {
         gallery.innerHTML = '<p class="merch-notice" style="display:block; width:100%; text-align:center;">Em Breve</p>';
       } else {
-        gallery.innerHTML = artistAlbums.map(album => `
-          <a href="${prefix}${album.link}" class="album-card" data-release-date="${album.releaseDate}">
-            <img src="${prefix}${album.cover}" alt="${album.title}" class="album-card-cover">
+        gallery.innerHTML = artistAlbums.map((album, idx) => `
+          <a href="${prefix}${getAlbumLink(album)}" class="album-card" data-release-date="${album.releaseDate}">
+            <img 
+              src="${prefix}${album.cover}" 
+              alt="${album.title}" 
+              class="album-card-cover img-fade-in"
+              loading="${idx < 4 ? 'eager' : 'lazy'}"
+              decoding="async"
+              onload="this.classList.add('is-loaded')"
+              onerror="this.classList.add('is-loaded')"
+            >
             <span class="album-card-title">${album.title}</span>
             <span class="album-card-sub">${album.subtitle}</span>
           </a>
@@ -582,8 +660,13 @@
 
     const coverImg = document.getElementById('album-cover-img') || document.querySelector('.album-detail-cover');
     if (coverImg) {
+      coverImg.classList.add('img-fade-in');
+      coverImg.classList.remove('is-loaded');
+      coverImg.onload = () => coverImg.classList.add('is-loaded');
+      coverImg.onerror = () => coverImg.classList.add('is-loaded');
       coverImg.src = prefix + (album.cover || 'assets/imagens/capas/placeholder.webp');
       coverImg.alt = album.title;
+      if (coverImg.complete) coverImg.classList.add('is-loaded');
     }
 
     const titleEl = document.getElementById('album-title-el') || document.querySelector('.album-detail-title');
@@ -606,7 +689,7 @@
     if (backLink) {
       if (album.artists && album.artists.length === 1 && SITE_DATA.artists && SITE_DATA.artists[album.artists[0]]) {
         const singleArtist = SITE_DATA.artists[album.artists[0]];
-        backLink.href = prefix + singleArtist.page;
+        backLink.href = prefix + getArtistPage(singleArtist);
         backLink.textContent = '← voltar ao artista';
       } else {
         backLink.href = prefix ? prefix + 'index.html' : 'index.html';
@@ -664,6 +747,22 @@
         `;
       }).join('');
     }
+
+    // Mensagem / Notas especiais do Álbum (abaixo da tracklist)
+    const messageBox = document.getElementById('album-message-box');
+    const messageText = document.getElementById('album-message-text');
+    const albumMsg = album.message || album.notes || album.description || '';
+    if (messageBox && messageText) {
+      if (typeof albumMsg === 'string' && albumMsg.trim()) {
+        messageText.innerHTML = albumMsg.split(/\r?\n/).join('<br>');
+        messageBox.style.display = 'block';
+      } else if (Array.isArray(albumMsg) && albumMsg.length > 0) {
+        messageText.innerHTML = albumMsg.join('<br>');
+        messageBox.style.display = 'block';
+      } else {
+        messageBox.style.display = 'none';
+      }
+    }
   }
 
   // =========================================================
@@ -714,8 +813,13 @@
 
     const placeholderImg = document.getElementById('track-placeholder-img') || (placeholder ? placeholder.querySelector('img') : null);
     if (placeholderImg) {
+      placeholderImg.classList.add('img-fade-in');
+      placeholderImg.classList.remove('is-loaded');
+      placeholderImg.onload = () => placeholderImg.classList.add('is-loaded');
+      placeholderImg.onerror = () => placeholderImg.classList.add('is-loaded');
       placeholderImg.src = prefix + (album.cover || 'assets/imagens/capas/placeholder.webp');
       placeholderImg.alt = album.title;
+      if (placeholderImg.complete) placeholderImg.classList.add('is-loaded');
     }
 
     const albumInfoEl = document.getElementById('track-album-info') || document.querySelector('.album-detail-container > .small-text:not(#track-artist)');
@@ -856,7 +960,15 @@
         <div class="merch-track" id="merch-track">
           ${items.map(item => `
             <a href="${item.link || '#'}" class="album-card merch-card" ${item.link && item.link.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>
-              <img src="${prefix}${item.image || 'assets/imagens/capas/placeholder.webp'}" alt="${item.title}" class="album-card-cover">
+              <img 
+                src="${prefix}${item.image || 'assets/imagens/capas/placeholder.webp'}" 
+                alt="${item.title}" 
+                class="album-card-cover img-fade-in"
+                loading="lazy"
+                decoding="async"
+                onload="this.classList.add('is-loaded')"
+                onerror="this.classList.add('is-loaded')"
+              >
               <span class="album-card-title">${item.title}</span>
               <span class="album-card-sub">${item.subtitle || item.status || 'Em Breve'}</span>
             </a>
@@ -980,7 +1092,15 @@
       return `
         <div class="gallery-carousel-card" onclick="window.SiteEngine.openImageLightbox('${eventId}', ${index})" role="button" tabindex="0" title="Clique para ampliar" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.SiteEngine.openImageLightbox('${eventId}', ${index});}">
           <div class="gallery-carousel-cover-wrap">
-            <img src="${prefix}${imgPath}" alt="Foto ${index + 1}" class="gallery-carousel-cover" loading="lazy">
+            <img 
+              src="${prefix}${imgPath}" 
+              alt="Foto ${index + 1}" 
+              class="gallery-carousel-cover img-fade-in" 
+              loading="lazy"
+              decoding="async"
+              onload="this.classList.add('is-loaded')"
+              onerror="this.classList.add('is-loaded')"
+            >
           </div>
         </div>
       `;
@@ -1091,8 +1211,16 @@
     if (gallery && typeof SITE_DATA !== 'undefined' && SITE_DATA.artists) {
       const prefix = getDepthPrefix();
       gallery.innerHTML = Object.values(SITE_DATA.artists).map(artist => `
-        <a href="${prefix}${artist.page}" class="artist-image-card">
-          <img src="${prefix}${artist.portrait}" alt="${artist.name}" class="artist-portrait">
+        <a href="${prefix}${getArtistPage(artist)}" class="artist-image-card">
+          <img 
+            src="${prefix}${artist.portrait || `assets/imagens/icones/${artist.id}-icon.webp`}" 
+            alt="${artist.name}" 
+            class="artist-portrait img-fade-in"
+            loading="lazy"
+            decoding="async"
+            onload="this.classList.add('is-loaded')"
+            onerror="this.classList.add('is-loaded')"
+          >
           <span class="artist-card-title">${artist.name}</span>
         </a>
       `).join('');
@@ -1129,11 +1257,50 @@
   }
 
   // =========================================================
+  // CARREGAMENTO DO BANCO DE DADOS UNIFICADO (CONTENT/DATA.JSON)
+  // =========================================================
+
+  let _dataPromise = null;
+
+  async function ensureDataLoaded() {
+    if (typeof SITE_DATA === 'undefined') window.SITE_DATA = {};
+    if (SITE_DATA.artists && Object.keys(SITE_DATA.artists).length > 0 && Array.isArray(SITE_DATA.albums) && SITE_DATA.albums.length > 0) {
+      return SITE_DATA;
+    }
+    if (_dataPromise) return _dataPromise;
+
+    _dataPromise = (async () => {
+      const prefix = getDepthPrefix();
+      try {
+        const res = await fetch(`${prefix}content/data.json`);
+        if (res.ok) {
+          const data = await res.json();
+          // Mescla todas as entidades do JSON (config, brand, artists, albums, videos, merch, sobre)
+          Object.assign(SITE_DATA, data);
+
+          if (typeof SITE_DATA.normalizeArtists === 'function') {
+            SITE_DATA.normalizeArtists(SITE_DATA.artists);
+          }
+          if (typeof SITE_DATA.normalizeAlbums === 'function') {
+            SITE_DATA.normalizeAlbums(SITE_DATA.albums);
+          }
+        }
+      } catch (err) {
+        console.warn("Aviso: Falha ao carregar content/data.json via fetch.", err);
+      }
+      return SITE_DATA;
+    })();
+
+    return _dataPromise;
+  }
+
+  // =========================================================
   // INICIALIZAÇÃO QUANDO O DOM ESTIVER PRONTO
   // =========================================================
 
   if (typeof document !== 'undefined') {
-    const runAllRenders = () => {
+    const runAllRenders = async () => {
+      await ensureDataLoaded();
       renderTopNav();
       applyPageBackground();
       renderFeaturedVideosSection();
@@ -1146,13 +1313,30 @@
       renderSongPlayerPage();
       renderMerchSection();
       renderAboutPage();
+      applyImageFadeIn();
     };
 
-    document.addEventListener('DOMContentLoaded', runAllRenders);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', runAllRenders);
+    } else {
+      runAllRenders();
+    }
 
     if (typeof window !== 'undefined') {
       window.addEventListener('popstate', runAllRenders);
     }
+  }
+
+  function applyImageFadeIn(root) {
+    const scope = root || document;
+    scope.querySelectorAll('img.img-fade-in').forEach(img => {
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.add('is-loaded');
+      } else {
+        img.addEventListener('load', () => img.classList.add('is-loaded'), { once: true });
+        img.addEventListener('error', () => img.classList.add('is-loaded'), { once: true });
+      }
+    });
   }
 
   // Exportação global

@@ -1,0 +1,25 @@
+{
+  "id": "sudo-rm-rf-my-maleness",
+  "title": "sudo rm -rf my maleness",
+  "credit": "Pietrawrr",
+  "type": "Single",
+  "releaseDate": "2026-11-12",
+  "cover": "assets/imagens/capas/sudo-rm-rf-my-maleness-cover.webp",
+  "background": "assets/imagens/background/background-4.webp",
+  "artists": [
+    "pietrawrr"
+  ],
+  "streaming": {
+    "bandcamp": "https://funeralparadeofroses.bandcamp.com/track/sudo-rm-rf-my-maleness"
+  },
+  "message": "",
+  "tracks": [
+    {
+      "slug": "sudo-rm-rf-my-maleness",
+      "title": "sudo rm -rf my maleness",
+      "artist": "Pietrawrr",
+      "youtube": "",
+      "lyrics": "..."
+    }
+  ]
+}

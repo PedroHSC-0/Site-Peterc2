@@ -1,0 +1,39 @@
+{
+  "id": "jcdive",
+  "name": "JC Dive",
+  "role": "Guitarra e Vocais",
+  "portrait": "assets/imagens/icones/jcdive-icon.webp",
+  "background": "assets/imagens/background/background-3.webp",
+  "contacts": {
+    "instagram": {
+      "label": "Instagram",
+      "value": "@jcdive_",
+      "url": "https://www.instagram.com/jcdive_/",
+      "icon": "assets/imagens/icones/instagram.svg"
+    },
+    "youtube": {
+      "label": "YouTube",
+      "value": null,
+      "url": null,
+      "icon": "assets/imagens/icones/youtube.svg"
+    },
+    "spotify": {
+      "label": "Spotify",
+      "value": "JC Dive",
+      "url": "https://open.spotify.com/artist/5qf8Aj1IZurEACkVGfiUoL",
+      "icon": "assets/imagens/icones/spotify.svg"
+    },
+    "apple": {
+      "label": "Apple Music",
+      "value": "JC Dive",
+      "url": "https://music.apple.com/br/artist/jc-dive/1889215882",
+      "icon": "assets/imagens/icones/apple.svg"
+    },
+    "bandcamp": {
+      "label": "Bandcamp",
+      "value": null,
+      "url": null,
+      "icon": "assets/imagens/icones/bandcamp.svg"
+    }
+  }
+}

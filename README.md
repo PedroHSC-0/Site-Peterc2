@@ -79,13 +79,30 @@ Site-Peterc2/
 │   ├── index.html               # Template dinâmico de lançamentos/álbuns (?id=out-of-style, etc.)
 │   └── musicas/
 │       └── index.html           # Template dinâmico do player de faixas e letras (?album=...&track=...)
+├── content/
+│   ├── releases.json            # Catálogo unificado lido pelo navegador via fetch
+│   └── projetos/                # Arquivos individuais de lançamentos (.json por álbum)
+│       ├── _modelo-exemplo.json # Modelo para novos lançamentos
+│       ├── desert-sample.json
+│       ├── the-ocean-trench.json
+│       ├── rescue-cosmic.json
+│       ├── out-of-style.json
+│       ├── harsh-noise-to-jerk-off.json
+│       ├── o-sonho-da-razao-produz-monstros.json
+│       ├── young-man-found-with-a-cut.json
+│       └── sudo-rm-rf-my-maleness.json
+├── scripts/
+│   └── build.py                 # Compilador (content/projetos/*.json -> content/releases.json)
+├── build.bat                    # Script Windows para compilar releases.json com 2 cliques
+├── server.bat                   # Servidor local para testes no navegador (http://localhost:8000)
+├── netlify.toml                 # Configuração de build automático e cache imutável no Netlify
 ├── assets/
 │   ├── css/
 │   │   ├── style.css            # Folha de estilo mestra e resets
 │   │   └── modules/             # CSS modular (base, components, home, artists, albums)
 │   ├── js/
-│   │   ├── site-data.js         # Single Source of Truth (catálogo de dados)
-│   │   ├── render-engine.js     # Motor de renderização e manipulação do DOM
+│   │   ├── site-data.js         # Configurações gerais, artistas, vídeos e merch (sem dados duplicados)
+│   │   ├── render-engine.js     # Motor de renderização dinâmico (carrega releases.json via fetch)
 │   │   └── analytics.js         # Integração com GA4
 │   ├── fonts/                   # Tipografia local (@font-face)
 │   └── imagens/                 # Recursos visuais (.webp e .svg)

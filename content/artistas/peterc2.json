@@ -1,0 +1,39 @@
+{
+  "id": "peterc2",
+  "name": "Peterc2",
+  "role": "Guitarra, Vocais & Produção",
+  "portrait": "assets/imagens/icones/peterc2-icon.webp",
+  "background": "assets/imagens/background/background-5.webp",
+  "contacts": {
+    "instagram": {
+      "label": "Instagram",
+      "value": "@peterc2_",
+      "url": "https://www.instagram.com/peterc2_/",
+      "icon": "assets/imagens/icones/instagram.svg"
+    },
+    "youtube": {
+      "label": "YouTube",
+      "value": "@Peterc2",
+      "url": "https://www.youtube.com/@Peterc2",
+      "icon": "assets/imagens/icones/youtube.svg"
+    },
+    "spotify": {
+      "label": "Spotify",
+      "value": "Peterc2",
+      "url": "https://open.spotify.com/intl-pt/artist/5ctwbECCrGy6Uhnf6nbqKm",
+      "icon": "assets/imagens/icones/spotify.svg"
+    },
+    "apple": {
+      "label": "Apple Music",
+      "value": "Peterc2",
+      "url": "https://music.apple.com/br/artist/peterc2/1809169453",
+      "icon": "assets/imagens/icones/apple.svg"
+    },
+    "bandcamp": {
+      "label": "Bandcamp",
+      "value": "peterc2.bandcamp.com",
+      "url": "https://peterc2.bandcamp.com/",
+      "icon": "assets/imagens/icones/bandcamp.svg"
+    }
+  }
+}

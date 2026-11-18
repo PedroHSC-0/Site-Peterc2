@@ -1,645 +1,747 @@
-﻿/**
+/**
  * BANCO DE DADOS CENTRALIZADO DO SITE (SITE DATA)
  * 
- * 100% dos dados utilizados no site (músicas, letras, artistas, integrantes,
- * fotos, redes sociais, álbuns, créditos e vídeos do YouTube) são gerenciados AQUI.
+ * ⚠️ ATENÇÃO: ESTE ARQUIVO É GERADO AUTOMATICAMENTE POR `scripts/build.py`.
+ * NÃO EDITE ESTE ARQUIVO DIRETAMENTE!
+ * 
+ * Edite os arquivos fonte em `content/`:
+ *   - content/artistas/*.json (Artistas e bandas)
+ *   - content/projetos/*.json (Álbuns e singles)
+ *   - content/videos.json     (Vídeos em destaque)
+ *   - content/merch.json      (Loja/Merch)
+ *   - content/sobre.json      (Sobre e shows)
+ *   - content/config.json     (Configurações gerais)
  */
 
 const SITE_DATA = {
-  // ---------------------------------------------------------
-  // CONFIGURAÇÕES GERAIS E ANALYTICS
-  // ---------------------------------------------------------
-  analytics: {
-    provider: "ga4",
-    gaMeasurementId: "G-HF911PG7DV"
+  "analytics": {
+    "provider": "ga4",
+    "gaMeasurementId": "G-HF911PG7DV"
   },
-  defaultBackground: "assets/imagens/background/background-1.webp",
-  brand: {
-    name: "PIGPENFAN",
-    title: "Pigpenfan",
-    background: "assets/imagens/background/background-1.webp"
+  "defaultBackground": "assets/imagens/background/background-1.webp",
+  "brand": {
+    "name": "PIGPENFAN",
+    "title": "Pigpenfan",
+    "background": "assets/imagens/background/background-1.webp"
   },
-
-
-  // ---------------------------------------------------------
-  // VÍDEOS EM DESTAQUE (EXIBIDOS NO TOPO DA PÁGINA PRINCIPAL)
-  // ---------------------------------------------------------
-  videos: [
+  "videos": [
     {
-      id: "king-shit-video",
-      albumId: "rescue-cosmic",
-      title: "King Shit (Music Video)",
-      artist: "Peterc2",
-      releaseDate: "2026-11-13",
-      youtube: "gi5bazDn90c",
-      cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
-      description: "Vídeo da faixa King Shit por Peterc2."
+      "id": "king-shit-video",
+      "albumId": "rescue-cosmic",
+      "title": "King Shit (Music Video)",
+      "artist": "Peterc2",
+      "releaseDate": "2026-11-13",
+      "youtube": "gi5bazDn90c",
+      "cover": "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
+      "description": "Vídeo da faixa King Shit por Peterc2."
     },
     {
-      id: "out-of-style-video",
-      albumId: "out-of-style",
-      title: "Out Of Style",
-      artist: "Littering",
-      youtube: "9Z41zsEkG6c",
-      cover: "assets/imagens/capas/out-of-style-cover.webp",
-      description: "Lyric Video do Single Out Of Style da banda Littering."
+      "id": "out-of-style-video",
+      "albumId": "out-of-style",
+      "title": "Out Of Style",
+      "artist": "Littering",
+      "youtube": "9Z41zsEkG6c",
+      "cover": "assets/imagens/capas/out-of-style-cover.webp",
+      "description": "Lyric Video do Single Out Of Style da banda Littering."
     },
     {
-      id: "trailer-out-of-style",
-      albumId: "out-of-style",
-      title: "Out Of Style (Single Trailer)",
-      artist: "Littering",
-      releaseDate: "2026-09-29",
-      youtube: "OxUAjis-6U8",
-      cover: "assets/imagens/capas/out-of-style-cover.webp",
-      description: "Trailer do novo single Out Of Style da banda Littering."
+      "id": "trailer-out-of-style",
+      "albumId": "out-of-style",
+      "title": "Out Of Style (Single Trailer)",
+      "artist": "Littering",
+      "releaseDate": "2026-09-29",
+      "youtube": "OxUAjis-6U8",
+      "cover": "assets/imagens/capas/out-of-style-cover.webp",
+      "description": "Trailer do novo single Out Of Style da banda Littering."
     },
     {
-      id: "the-rescue-video",
-      albumId: "rescue-cosmic",
-      title: "The Rescue (Music Video)",
-      artist: "Peterc2",
-      releaseDate: "2026-09-23",
-      youtube: "q4yJVpG1IJ8",
-      cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
-      description: "Vídeo da faixa The Rescue por Peterc2."
+      "id": "the-rescue-video",
+      "albumId": "rescue-cosmic",
+      "title": "The Rescue (Music Video)",
+      "artist": "Peterc2",
+      "releaseDate": "2026-09-23",
+      "youtube": "q4yJVpG1IJ8",
+      "cover": "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
+      "description": "Vídeo da faixa The Rescue por Peterc2."
     },
     {
-      id: "the-ocean-trench-full",
-      albumId: "the-ocean-trench",
-      title: "The Ocean Trench (Full Album)",
-      artist: "Peterc2 e JC Dive",
-      youtube: "EPZbv-gqIFM",
-      cover: "assets/imagens/capas/the-ocean-trench-cover.webp",
-      description: "Visualizer do Álbum The Ocean Trench por Peterc2 e JC Dive."
+      "id": "the-ocean-trench-full",
+      "albumId": "the-ocean-trench",
+      "title": "The Ocean Trench (Full Album)",
+      "artist": "Peterc2 e JC Dive",
+      "youtube": "EPZbv-gqIFM",
+      "cover": "assets/imagens/capas/the-ocean-trench-cover.webp",
+      "description": "Visualizer do Álbum The Ocean Trench por Peterc2 e JC Dive."
     },
     {
-      id: "desert-sample-full",
-      albumId: "desert-sample",
-      title: "Desert Sample (EP Completo)",
-      artist: "Peterc2 e JC Dive",
-      youtube: "ejZl0Vpves4",
-      cover: "assets/imagens/capas/desert-sample-cover.webp",
-      description: "Vídeo do EP Desert Sample por Peterc2 e JC Dive."
+      "id": "desert-sample-full",
+      "albumId": "desert-sample",
+      "title": "Desert Sample (EP Completo)",
+      "artist": "Peterc2 e JC Dive",
+      "youtube": "ejZl0Vpves4",
+      "cover": "assets/imagens/capas/desert-sample-cover.webp",
+      "description": "Vídeo do EP Desert Sample por Peterc2 e JC Dive."
     }
   ],
-
-  // ---------------------------------------------------------
-  // ARTISTAS E BANDAS
-  // ---------------------------------------------------------
-  artists: {
-    peterc2: {
-      id: "peterc2",
-      name: "Peterc2",
-      role: "Guitarra, Vocais & Produção",
-      portrait: "assets/imagens/icones/peterc2-icon.webp",
-      background: "assets/imagens/background/background-5.webp",
-      page: "artistas/index.html?id=peterc2",
-      contacts: {
-        instagram: { label: "Instagram", value: "@peterc2_", url: "https://www.instagram.com/peterc2_/", icon: "assets/imagens/icones/instagram.svg" },
-        youtube:   { label: "YouTube",   value: "@Peterc2",   url: "https://www.youtube.com/@Peterc2",   icon: "assets/imagens/icones/youtube.svg" },
-        spotify:   { label: "Spotify",   value: "Peterc2",    url: "https://open.spotify.com/intl-pt/album/6e4YM0KzxqGHjwpnneDjBG", icon: "assets/imagens/icones/spotify.svg" },
-        apple:     { label: "Apple Music", value: "Peterc2",  url: "https://music.apple.com/br/album/desert-sample-ep/1889619290", icon: "assets/imagens/icones/apple.svg" },
-        bandcamp:  { label: "Bandcamp",  value: "peterc2.bandcamp.com", url: "https://peterc2.bandcamp.com/", icon: "assets/imagens/icones/bandcamp.svg" }
+  "artists": {
+    "jcdive": {
+      "id": "jcdive",
+      "name": "JC Dive",
+      "role": "Guitarra e Vocais",
+      "portrait": "assets/imagens/icones/jcdive-icon.webp",
+      "background": "assets/imagens/background/background-3.webp",
+      "contacts": {
+        "instagram": {
+          "label": "Instagram",
+          "value": "@jcdive_",
+          "url": "https://www.instagram.com/jcdive_/",
+          "icon": "assets/imagens/icones/instagram.svg"
+        },
+        "youtube": {
+          "label": "YouTube",
+          "value": null,
+          "url": null,
+          "icon": "assets/imagens/icones/youtube.svg"
+        },
+        "spotify": {
+          "label": "Spotify",
+          "value": "JC Dive",
+          "url": "https://open.spotify.com/artist/5qf8Aj1IZurEACkVGfiUoL",
+          "icon": "assets/imagens/icones/spotify.svg"
+        },
+        "apple": {
+          "label": "Apple Music",
+          "value": "JC Dive",
+          "url": "https://music.apple.com/br/artist/jc-dive/1889215882",
+          "icon": "assets/imagens/icones/apple.svg"
+        },
+        "bandcamp": {
+          "label": "Bandcamp",
+          "value": null,
+          "url": null,
+          "icon": "assets/imagens/icones/bandcamp.svg"
+        }
       }
     },
-    jcdive: {
-      id: "jcdive",
-      name: "JC Dive",
-      role: "Guitarra e Vocais",
-      portrait: "assets/imagens/icones/jcdive-icon.webp",
-      background: "assets/imagens/background/background-3.webp",
-      page: "artistas/index.html?id=jcdive",
-      contacts: {
-        instagram: { label: "Instagram", value: "@jcdive_", url: "https://www.instagram.com/jcdive_/", icon: "assets/imagens/icones/instagram.svg" },
-        youtube:   { label: "YouTube",   value: null, url: null, icon: "assets/imagens/icones/youtube.svg" },
-        spotify:   { label: "Spotify",   value: "JC Dive", url: "https://open.spotify.com/artist/5qf8Aj1IZurEACkVGfiUoL", icon: "assets/imagens/icones/spotify.svg" },
-        apple:     { label: "Apple Music", value: "JC Dive", url: "https://music.apple.com/br/artist/jc-dive/1889215882", icon: "assets/imagens/icones/apple.svg" },
-        bandcamp:  { label: "Bandcamp",  value: null, url: null, icon: "assets/imagens/icones/bandcamp.svg" }
-      }
-    },
-    pietrawrr: {
-      id: "pietrawrr",
-      name: "Pietrawrr",
-      role: "Baixo",
-      portrait: "assets/imagens/icones/pietrawrr-icon.webp",
-      background: "assets/imagens/background/background-4.webp",
-      page: "artistas/index.html?id=pietrawrr",
-      contacts: {
-        instagram: { label: "Instagram", value: "@pietrawrr", url: "https://www.instagram.com/pietrawrr/", icon: "assets/imagens/icones/instagram.svg" },
-        youtube:   { label: "YouTube",   value: null, url: null, icon: "assets/imagens/icones/youtube.svg" },
-        spotify:   { label: "Spotify",   value: "o sonho da razão produz monstros", url: "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1", icon: "assets/imagens/icones/spotify.svg" },
-        apple:     { label: "Apple Music", value: "O Sonho da Razão Produz Monstros", url: "https://music.apple.com/br/artist/o-sonho-da-raz%C3%A3o-produz-monstros/1894934054", icon: "assets/imagens/icones/apple.svg" },
-        bandcamp1: { label: "Bandcamp", value: "funeral parade of roses", url: "https://funeralparadeofroses.bandcamp.com/", icon: "assets/imagens/icones/bandcamp.svg" },
-        bandcamp2: { label: "Bandcamp", value: "o sonho da razão produz monstros", url: "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare", icon: "assets/imagens/icones/bandcamp.svg" }
-      }
-    },
-    littering: {
-      id: "littering",
-      name: "Littering",
-      role: "Banda",
-      portrait: "assets/imagens/icones/littering-icon.webp",
-      background: "assets/imagens/background/background-2.webp",
-      page: "artistas/index.html?id=littering",
-      members: [
-        { name: "Peterc2", role: "Guitarra e vocais" },
-        { name: "JC Dive", role: "Guitarra e vocais" },
-        { name: "Pietrawrr", role: "Baixo" },
-        { name: "be_cruz", role: "Bateria" }
+    "littering": {
+      "id": "littering",
+      "name": "Littering",
+      "role": "Banda",
+      "portrait": "assets/imagens/icones/littering-icon.png",
+      "background": "assets/imagens/background/background-2.webp",
+      "members": [
+        {
+          "name": "Peterc2",
+          "role": "Guitarra e vocais"
+        },
+        {
+          "name": "JC Dive",
+          "role": "Guitarra e vocais"
+        },
+        {
+          "name": "Pietrawrr",
+          "role": "Baixo"
+        },
+        {
+          "name": "be_cruz",
+          "role": "Bateria"
+        }
       ],
-      contacts: {
-        instagram: { label: "Instagram", value: "@litteringband", url: "https://www.instagram.com/litteringband/", icon: "assets/imagens/icones/instagram.svg" },
-        youtube:   { label: "YouTube",   value: "@litteringband", url: "https://www.youtube.com/@litteringband", icon: "assets/imagens/icones/youtube.svg" },
-        spotify:   { label: "Spotify",   value: "Littering", url: "https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy", icon: "assets/imagens/icones/spotify.svg" },
-        apple:     { label: "Apple Music", value: "Littering", url: "https://music.apple.com/br/artist/littering/6823551933", icon: "assets/imagens/icones/apple.svg" },
-        bandcamp:  { label: "Bandcamp",  value: "littering.bandcamp.com", url: "https://littering.bandcamp.com/track/out-of-style", icon: "assets/imagens/icones/bandcamp.svg" }
+      "contacts": {
+        "instagram": {
+          "label": "Instagram",
+          "value": "@litteringband",
+          "url": "https://www.instagram.com/litteringband/",
+          "icon": "assets/imagens/icones/instagram.svg"
+        },
+        "youtube": {
+          "label": "YouTube",
+          "value": "@litteringband",
+          "url": "https://www.youtube.com/@litteringband",
+          "icon": "assets/imagens/icones/youtube.svg"
+        },
+        "spotify": {
+          "label": "Spotify",
+          "value": "Littering",
+          "url": "https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy",
+          "icon": "assets/imagens/icones/spotify.svg"
+        },
+        "apple": {
+          "label": "Apple Music",
+          "value": "Littering",
+          "url": "https://music.apple.com/br/artist/littering/6823551933",
+          "icon": "assets/imagens/icones/apple.svg"
+        },
+        "bandcamp": {
+          "label": "Bandcamp",
+          "value": "littering.bandcamp.com",
+          "url": "https://littering.bandcamp.com/track/out-of-style",
+          "icon": "assets/imagens/icones/bandcamp.svg"
+        }
+      }
+    },
+    "peterc2": {
+      "id": "peterc2",
+      "name": "Peterc2",
+      "role": "Guitarra, Vocais & Produção",
+      "portrait": "assets/imagens/icones/peterc2-icon.webp",
+      "background": "assets/imagens/background/background-5.webp",
+      "contacts": {
+        "instagram": {
+          "label": "Instagram",
+          "value": "@peterc2_",
+          "url": "https://www.instagram.com/peterc2_/",
+          "icon": "assets/imagens/icones/instagram.svg"
+        },
+        "youtube": {
+          "label": "YouTube",
+          "value": "@Peterc2",
+          "url": "https://www.youtube.com/@Peterc2",
+          "icon": "assets/imagens/icones/youtube.svg"
+        },
+        "spotify": {
+          "label": "Spotify",
+          "value": "Peterc2",
+          "url": "https://open.spotify.com/intl-pt/artist/5ctwbECCrGy6Uhnf6nbqKm",
+          "icon": "assets/imagens/icones/spotify.svg"
+        },
+        "apple": {
+          "label": "Apple Music",
+          "value": "Peterc2",
+          "url": "https://music.apple.com/br/artist/peterc2/1809169453",
+          "icon": "assets/imagens/icones/apple.svg"
+        },
+        "bandcamp": {
+          "label": "Bandcamp",
+          "value": "peterc2.bandcamp.com",
+          "url": "https://peterc2.bandcamp.com/",
+          "icon": "assets/imagens/icones/bandcamp.svg"
+        }
+      }
+    },
+    "pietrawrr": {
+      "id": "pietrawrr",
+      "name": "Pietrawrr",
+      "role": "Baixo",
+      "portrait": "assets/imagens/icones/pietrawrr-icon.webp",
+      "background": "assets/imagens/background/background-4.webp",
+      "contacts": {
+        "instagram": {
+          "label": "Instagram",
+          "value": "@pietrawrr",
+          "url": "https://www.instagram.com/pietrawrr/",
+          "icon": "assets/imagens/icones/instagram.svg"
+        },
+        "youtube": {
+          "label": "YouTube",
+          "value": null,
+          "url": null,
+          "icon": "assets/imagens/icones/youtube.svg"
+        },
+        "spotify": {
+          "label": "Spotify",
+          "value": "o sonho da razão produz monstros",
+          "url": "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1",
+          "icon": "assets/imagens/icones/spotify.svg"
+        },
+        "apple": {
+          "label": "Apple Music",
+          "value": "O Sonho da Razão Produz Monstros",
+          "url": "https://music.apple.com/br/artist/o-sonho-da-raz%C3%A3o-produz-monstros/1894934054",
+          "icon": "assets/imagens/icones/apple.svg"
+        },
+        "bandcamp1": {
+          "label": "Bandcamp",
+          "value": "funeral parade of roses",
+          "url": "https://funeralparadeofroses.bandcamp.com/",
+          "icon": "assets/imagens/icones/bandcamp.svg"
+        },
+        "bandcamp2": {
+          "label": "Bandcamp",
+          "value": "o sonho da razão produz monstros",
+          "url": "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare",
+          "icon": "assets/imagens/icones/bandcamp.svg"
+        }
       }
     }
   },
-
-  // ---------------------------------------------------------
-  // ÁLBUNS, EPS E SINGLES COM TODAS AS FAIXAS E LETRAS
-  // ---------------------------------------------------------
-  // COMO ADICIONAR UM LANÇAMENTO:
-  // Preencha apenas o campo `releaseDate` (aceita 'YYYY-MM-DD', 'DD/MM/YYYY' ou 'Em Breve').
-  // Os campos `formattedDate` e `subtitle` são preenchidos AUTOMATICAMENTE pelo sistema!
-  albums: [
+  "albums": [
     {
-      id: "desert-sample",
-      title: "Desert Sample",
-      credit: "Peterc2 e JC Dive",
-      type: "Colaboração",
-      releaseDate: "2026-03-13",
-      cover: "assets/imagens/capas/desert-sample-cover.webp",
-      link: "projetos/index.html?id=desert-sample",
-      artists: ["peterc2", "jcdive"],
-      streaming: {
-        youtube: "https://youtu.be/GMJ9MhhTVsw",
-        spotify: "https://open.spotify.com/intl-pt/album/6e4YM0KzxqGHjwpnneDjBG",
-        apple: "https://music.apple.com/br/album/desert-sample-ep/1889619290",
-        bandcamp: "https://peterc2.bandcamp.com/"
-      },
-      tracks: [
+      "id": "rescue-cosmic",
+      "title": "The Rescue Of The Cosmic Metaphysical Engineers",
+      "credit": "Peterc2",
+      "type": "Solo",
+      "releaseDate": "2026-11-28",
+      "cover": "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
+      "background": "assets/imagens/background/background-5.webp",
+      "artists": [
+        "peterc2"
+      ],
+      "streaming": {},
+      "message": "Minha comemoração dos meus 21 anos é com esse álbum. Me cansei de trabalhar nessas músicas. Selecionei as melhores ideias que tive depois do The Ocean Trench. Percebi que comecei a usar ainda mais o Big Muff, até quando a música não pedia. O álbum era pra ser maior, descartei muitas músicas.",
+      "tracks": [
         {
-          slug: "the-ocean-trench",
-          title: "The Ocean Trench",
-          artist: "Peterc2 e JC Dive",
-          youtube: "GMJ9MhhTVsw",
-          lyrics: `I could be better\nBring the fire of you\nThe unit is too high\nUnder the station\n\nScared so stupidly\ntrying to understand the message\nYou cannot rest assured\nAnd act like you could fly\n\nI've been dancing\nOn the ocean floor\nAnd met some fishes\nWho want some more\n\nAll day fish drop playing on the seafloor\nLove that's freedom door\nMaybe someday you'll understand that\nFlying don't mean die\nAnd I'm\n\nFly me like a hot balloon\nFly like angels in the moon\nFly me like a hot balloon in space in place in place in place`
+          "slug": "pull-back-the-ancients-its-calling-you",
+          "title": "Pull Back the Ancients / Its Calling You",
+          "artist": "Peterc2",
+          "youtube": "",
+          "lyrics": "If you want to do the right to me\nIf you want me to stay\nand i know, i won't dare\nIf you want me to solve the clues\nI am the ancient love\n\nIf you want to play the blind with me\nIf you want me to stay\nand you know, i don't care\nIf you want me to share the truth\nI'll be the last to love forevermore\n\nCrawling through you\nYou're commanding in my head\nsprawl into this\nstrength that you never had\n\nI'm tossing the streets to meet you\nyou've been around and round to the start\nThere's no motion in this life\nthat can wrap this enormous ordeal\n\nYou starred in my dream, dear\nconfusing what has been real,\nyou'd mess up every cheer that i had\nleaving it with every fear that i'am\n\nI will try it tomorrow\nfall apart with everything we build to see\nyou're branching in sides of a tree\nIt's said thats faster that i can wait\nBut your dream blot out in the spring\n\nI am awaken, no alarms (It happens)\nwhen solid state dreaming spine (It has no end)\n(I hold still)\nin my world is spinning all around (Ahead of despear)\n\nI am waiting, feels like another (It happens)\nsolid state dreaming spine (Its warm)\ntry to turn this in (I am not allowed)\nall we speak and care (Ahead of despear)\n\nIts calling\nIts frawling\nIts calling\nIts frawling"
         },
         {
-          slug: "canto-do-silencio",
-          title: "Canto do Silêncio",
-          artist: "JC Dive e Peterc2",
-          youtube: "Vb42AxNU-pg",
-          lyrics: `O canto do silêncio\nFez sangrar\nOs meus ouvidos\nMe fez sonhar\nCom seus olhos\nCastanhos tão puros\nTão solúveis que fez derreter\nAs lágrimas do meu olhar\n\nÉ que tem algo em você\nQue não me deixa esquecer\nNão me deixa esquecer\nQue aquilo não era amor`
+          "slug": "asleep",
+          "title": "Asleep",
+          "artist": "Peterc2",
+          "youtube": "",
+          "lyrics": "I am not a dream\nYou're not asleep\nWe are so free\nYou're not asleep\n\nI won't brag a thing\nDo you glad it all to me\nDreams are led, sir (and all come true)\n\nI am on your tree\nIgnore the screams\nI am not a dream"
         },
         {
-          slug: "noname29",
-          title: "Noname 29",
-          artist: "Peterc2",
-          youtube: "D0Hm8rD7UA0",
-          lyrics: ``
+          "slug": "whatever-happened-there",
+          "title": "Whatever Happened There",
+          "artist": "Peterc2",
+          "youtube": "",
+          "lyrics": "How bad this could get?\nhow bad is doing nothing\nWhen you close a true life\nIt's never close to nothing\nWhen I was a need for you\nin a closedown to rotting\nWhere i merge\n\nI'll be here for you\nHeaven isn't holding a travel to you\nMaybe your just my bad interest\n\nI had an eerie looking\nin the place you've stoled my eyes\nAnd I went out for nothing\nwhere i'll purge\n\nI'll be here for you\nHeaven isn't lookin any closer to you\nHeaven is your whole interest\n\nHow bad is doing nothing true\nI wrote a song for you, and you don't know\nI'm been close to rotting\nwhere you crush\n\ndeath led me to you\nHeaven isn't lowering crawling to you\nIsn't this a bad a interest"
         },
         {
-          slug: "your-skull",
-          title: "Your Skull Is Warm and Soft",
-          artist: "Peterc2 e JC Dive",
-          youtube: "37bsAFdPYCw",
-          lyrics: `Try, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\n\nBarrow Blank\nIts hard to beat\nStand your fight\nWhat you want to be\n\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\n\nI will never pay attention to what you say.\nI will never pay attention to what you say.\nI will never pay attention to what you say.\nI will never pay attention`
+          "slug": "the-rescue",
+          "title": "The Rescue",
+          "artist": "Peterc2",
+          "youtube": "q4yJVpG1IJ8",
+          "lyrics": "I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad (Inclined to lie in a sky too bright)\nyourself is enough and a need for me\nI want to live down here forever (Became a fly to freeze your cries)\n\n(I climb in time to steal your eye)\n(I get you high to seal your mind)"
         },
         {
-          slug: "lilly",
-          title: "Lilly",
-          artist: "JC Dive e Peterc2",
-          youtube: "px3f54XOjCs",
-          lyrics: `Lilly knows too well\nHow to make me feel a thrill sometimes\nFeeling kinda blur\nSometimes sinking in the heat\n\nNever knew too well\nHow to stop to find a cure\nSometimes feeling mind in bloom\nSometimes feeling in the blues\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because she was never well\nI created it myself because Lilly knows too well\n\nLilly knows too well how to make me feel immune\nSometimes feeling mind in bloom\nSometimes feeling my cheap thrills\n\nAlways found it good\nHow to stop to glance balloons\nSometimes feeling animals\nSometimes killing my pupils\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because Lilly knows too well\nI created it myself because Lilly knows too well`
+          "slug": "king-shit",
+          "title": "King Shit",
+          "artist": "Peterc2",
+          "youtube": "gi5bazDn90c",
+          "lyrics": "A bunch of undying rats\nTrying to kiss me\nThe fear of falling wet\non dumb statistics\nblowing drugs and drown\nits in my mistic\n\nPlainning stick ambush\nTry to put the surface out\nthen I'll go running on stakes to miss\nSpitting perfume of the bottle\n\nHey, downcast comrade\ndon't die so simplistic\nPassing as a godly mistrust\nTrying to bliss me\nThose little blown head girls\ncould be so artistic\nbut now they're just statistics\n\nI'am feeling my safety down\nby that grotesque lust\nTheir guns are restraining\nshown off so stupidly\n\nI am running back to my basement\nWhen you got no place to go\nI am running back to the basement\nWhen you're my face to know\nI am running back to the basement\nWhere you got no plans to do\nI am running back to the basement\nWhen you got no place to go"
+        },
+        {
+          "slug": "around",
+          "title": "Around",
+          "artist": "Peterc2",
+          "youtube": "",
+          "lyrics": "I see her there often (I came from the hunt)\nSoaking around\nshe came from the wilderness\nfar from this town\nShe live in the clouds\nRoaming around\n\nIt has been clear for a while\nWhen i am calling her\nand let me there for breakfest\nCertanly I'll drown (I am drowning)"
+        },
+        {
+          "slug": "kind-sister-hunt",
+          "title": "Kind Sister Hunt",
+          "artist": "Peterc2",
+          "youtube": "",
+          "lyrics": "this dark hair as the river flows\nGet replaced and try it alone\nCould I be able to see\nWhat the spacetime reserved to me\n\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me"
+        },
+        {
+          "slug": "death-valley",
+          "title": "Death Valley",
+          "artist": "Peterc2",
+          "youtube": "",
+          "lyrics": "Elaboring future faces\nAround the world the rest is yours\nSeen bumping around\ncounting and forming\nWith the winds below\n\nBeen sent around the wishes\nall because of you\nSworn around the fishes\nand lead 'cause of you\nsilenced by your changes\nI weep 'cause of you\nhang around the distance\nThe stress goes for you (All below you)"
+        },
+        {
+          "slug": "the-sailor",
+          "title": "The Sailor",
+          "artist": "Peterc2",
+          "youtube": "",
+          "lyrics": "Sailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons"
+        },
+        {
+          "slug": "cosmic-metaphysical-engineers",
+          "title": "Cosmic Metaphysical Engineers",
+          "artist": "Peterc2",
+          "youtube": "",
+          "lyrics": "Breathe in the letter\ni've send you\nhowever it goes\ncut out fawn\nbeen crashing through floor\nyou're done with nowhere to go\n\nBurned bushes\nShe ripped and plunged\nTo feel undereating\nI constantly pushed the very best for you\nyour polluted eyes\nis where I recover from you\n\nIn hypnic jerks\nI greet the rest of you\nA union lever\nor seas of bloodsheds\nThe gods stinginess\nIn rings of plastic\nI brush this blessing from\nthe fraud you are\n\n(It's like a dune devil erased)\n(It's like a doom vapor haze)\n(It's like a dune devil ways)\n(slide a dune devil wave)\n(It's like a doom vapor wave)"
         }
       ]
     },
     {
-      id: "the-ocean-trench",
-      title: "The Ocean Trench",
-      credit: "Peterc2 e JC Dive",
-      type: "Colaboração",
-      releaseDate: "2026-04-10",
-      cover: "assets/imagens/capas/the-ocean-trench-cover.webp",
-      link: "projetos/index.html?id=the-ocean-trench",
-      artists: ["peterc2", "jcdive"],
-      streaming: {
-        youtube: "https://www.youtube.com/watch?v=EPZbv-gqIFM",
-        spotify: "https://open.spotify.com/album/4QOkz5ITgkpBjD1UTeUVXt",
-        apple: "https://music.apple.com/br/album/the-ocean-trench/1891698389",
-        bandcamp: "https://peterc2.bandcamp.com/"
+      "id": "sudo-rm-rf-my-maleness",
+      "title": "sudo rm -rf my maleness",
+      "credit": "Pietrawrr",
+      "type": "Single",
+      "releaseDate": "2026-11-12",
+      "cover": "assets/imagens/capas/sudo-rm-rf-my-maleness-cover.webp",
+      "background": "assets/imagens/background/background-4.webp",
+      "artists": [
+        "pietrawrr"
+      ],
+      "streaming": {
+        "bandcamp": "https://funeralparadeofroses.bandcamp.com/track/sudo-rm-rf-my-maleness"
       },
-      tracks: [
+      "message": "",
+      "tracks": [
         {
-          slug: "the-ocean-trench",
-          title: "The Ocean Trench",
-          artist: "Peterc2 e JC Dive",
-          youtube: "6JNBU0PBISE",
-          lyrics: `I could be better\nBring the fire of you\nThe unit is too high\nUnder the station\n\nScared so stupidly\ntrying to understand the message\nYou cannot rest assured\nAnd act like you could fly\n\nI've been dancing\nOn the ocean floor\nAnd met some fishes\nWho want some more\n\nAll day fish drop playing on the seafloor\nLove that's freedom door\nMaybe someday you'll understand that\nFlying don't mean die\nAnd I'm\n\nFly me like a hot balloon\nFly like angels in the moon\nFly me like a hot balloon in space in place in place in place`
-        },
-        {
-          slug: "golden-trick",
-          title: "Golden Trick",
-          artist: "Peterc2",
-          youtube: "a3BWvTFf6a0",
-          lyrics: `I can say? (I Know You)\nI can say?\n\nI can say that you know what you're about to do?\nIt will make everyone walk away from you\nLetting your fiery eyes shoot can harm you\nI decided to leave this fate a long time ago too for you.\n\nI can say?\nI can say? (I Know You)\n\nThere is something in the sky that we want to reach.\nThere something in that place.\nWe can rule the world\nAnd we should\n\nI can say?\nI can say? (I Know You)\n\nStill have so much to offer you\nFor your head\nFor your hair\nFor your eyes\nFor your heart`
-        },
-        {
-          slug: "cleaning",
-          title: "Cleaning",
-          artist: "Peterc2",
-          youtube: "KJd2c3H7-d8",
-          lyrics: `Clean up this room there's something there\nCaught in the fire just to get there\n\nClean up this room there's something there\nCaught in the fire just to get there`
-        },
-        {
-          slug: "birds-and-seeds",
-          title: "Birds And Seeds",
-          artist: "Peterc2",
-          youtube: "3L3PtrAo7Zo",
-          lyrics: `This threat is for everyone\nThis threat is for everyone\nThis threat is for everyone\nThis threat is for everyone\n\nI'll hold you in acid and salt\nTo keep your roots intact\nif that can keep you\nin the state you're in\n\nThis threat is for everyone\nThis threat is for everyone\n\nI will capture all your blessings one by one\nthis softness can fill me through\nA blossom would set them down`
-        },
-        {
-          slug: "canto-do-silencio",
-          title: "Canto do Silêncio",
-          artist: "JC Dive e Peterc2",
-          youtube: "1OFMx_H76qQ",
-          lyrics: `O canto do silêncio\nFez sangrar\nOs meus ouvidos\nMe fez sonhar\nCom seus olhos\nCastanhos tão puros\nTão solúveis que fez derreter\nAs lágrimas do meu olhar\n\nÉ que tem algo em você\nQue não me deixa esquecer\nNão me deixa esquecer\nQue aquilo não era amor`
-        },
-        {
-          slug: "how-bad-is-it",
-          title: "How Bad Is It",
-          artist: "Peterc2",
-          youtube: "viU8gimTItY",
-          lyrics: `The drawling curb, is there to stare\nJust to make an unfair set\nIt just found a reason to mess it\nshe's lost right to store\n\nIt's a cream and colorful soak\nthat I can't identify\nthis thriler might come out to hunt you\nAnd come out to let you down\n\nAnd Maybe i can tell you\nHow bad is it\nOnly you can know\nand maybe I could show you\nhow hate can leave\nfrom lows I might throw\n\nIt will be good\n\nI am burying our fidgety eye in amazement\nAlready spoils the frown\nYour wrapped fears and lies are contundent\nThe waves that come around\n\nyour disgust for myself is unfounded.\nAt this moment, I have no bounds.\nI'll gather these bones for you\nTo anywhere you want to go\n\nAnd maybe i can tell you\nHow bad is it\nOnly you can know\nand maybe I could show you\nhow hate can leave\nfrom lows I might throw`
-        },
-        {
-          slug: "i-will-cut-into-you",
-          title: "I Will Cut Into You",
-          artist: "Peterc2",
-          youtube: "2CqlmcCePvI",
-          lyrics: `It's open inside a low note\nIs time to fly on a snow flow\nAlmost every time It's a slow grow\nBut not this time, I\nI want you to come back again\nTurn on a light so you'll understand\nI will cut you open\nSo I can Feel Fine\n\nTime\nA strong feeling\nI'm high\nTingles explore me\nWhy\nIt's all getting over\nSomething's wrong\nI ignore the signs\n\nIt's open inside a low note\nIs time to fly on a snow flow\nAlmost every time It's a slow grow\nBut not this time, I\nI want you to come back again\nTurn on a light so you'll understand\nIt's the experience of a lifetime\nNow I think I could die`
-        },
-        {
-          slug: "on-the-house",
-          title: "On The House",
-          artist: "Peterc2",
-          youtube: "30yTVNkFeXI",
-          lyrics: `You don't have to lie to me\nI've wandered into your realm\nI've plumbed the depths of your fears\nThe only thing I can find is what draws us together\n\nIs a love\nIs your love\nIs a love\nIs your Love\n\nThat other day\nYou told me that humans are mysteries\nBut you're no mystery to me\nI just haven't unveiled you completely yet\n\nIs a love\nIs your love\nIs a love\nIs your love`
-        },
-        {
-          slug: "lilly",
-          title: "Lilly",
-          artist: "JC Dive e Peterc2",
-          youtube: "l9orgvq8REc",
-          lyrics: `Lilly knows too well\nHow to make me feel a thrill sometimes\nFeeling kinda blur\nSometimes sinking in the heat\n\nNever knew too well\nHow to stop to find a cure\nSometimes feeling mind in bloom\nSometimes feeling in the blues\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because she was never well\nI created it myself because Lilly knows too well\n\nLilly knows too well how to make me feel immune\nSometimes feeling mind in bloom\nSometimes feeling my cheap thrills\n\nAlways found it good\nHow to stop to glance balloons\nSometimes feeling animals\nSometimes killing my pupils\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because Lilly knows too well\nI created it myself because Lilly knows too well`
-        },
-        {
-          slug: "not-bad-at-all",
-          title: "Not Bad at All",
-          artist: "Peterc2",
-          youtube: "PwF86fd-X1c",
-          lyrics: `A fresh pair of puppet socks may keep him\naware of his harsh blasphemy.\nBut the creed of the blind crows\ndecided to abandon him beside of his high mastery.\n\nWinterize the season\nTame the break\nWork to please\nblock your rage\n\nFrom a relic black sparkler\nThere is a war that no one is hoping on.\nHe's afraid to sneaks in to peek\nand see a dead love hanging on.\n\nWinterize the season\nTame the brain\nWork the greed\nput your head in place`
-        },
-        {
-          slug: "my-view-is-bad",
-          title: "My View Is Bad",
-          artist: "Peterc2 e JC Dive",
-          youtube: "FPIJmeBQYa8",
-          lyrics: `My view from here is bad but not every time\nAll the clues could have brought me high\nOh, This void might just take a bite\nI can teach you what those noises can be right\nI might see you from the satellite\n\nI have been with the brothers of the big fight\nThis new threat makes my brain fry\nMy vision from here is bad but not every time\nI translate you into machine language\nI can see you from the satellite`
-        },
-        {
-          slug: "possession",
-          title: "Possession",
-          artist: "Peterc2",
-          youtube: "QZE7zb4Dllo",
-          lyrics: `I wish you every time you cry again\nLike frank sinatra when you fry within`
-        },
-        {
-          slug: "littering",
-          title: "Littering",
-          artist: "JC Dive e Peterc2",
-          youtube: "NjArWBfAS7c",
-          lyrics: `So cold\nAnimals assexual\nYour soul\nSeems to need protection\n\nCan't think about us\nother than happy litter\nhanging on clouds into\nthe endless circles of my life\n\nCan't think about us\nother than happy litter\nhanging on clouds into\nthe endless circles of my life\n\nIt's gold\nCover me with diamonds\nDon't go\nWait until the afternoon\n\nCan't think about us\nother than happy litter\nhanging on clouds into\nthe endless circles of my life\n\nCan't think about us\nother than happy litter\nhanging on clouds into\nthe endless circles of my life\n\nInfinite houses...\nInfinite people...`
-        },
-        {
-          slug: "the-night-shifts",
-          title: "The Night Shifts X Radio Report",
-          artist: "Peterc2",
-          youtube: "sUdQPdzG78A",
-          lyrics: ``
-        },
-        {
-          slug: "slow-attack",
-          title: "Slow Attack",
-          artist: "Peterc2",
-          youtube: "SFkEdFMmRYk",
-          lyrics: `A blue splinter in rounded bloom\ncovered in garish\nbrought a tall pin, good Samaritan\ncan not lock in the flourish\n\nAnd then we ran away\nWe were scared to death\nThe seeds were broken\nWe lost everything\n\nThe review has been dismissive\nThats a low doom trip\nIts a blocky eyed slippery side\nAnd he offers with anger.\n\nAnd then we ran away\nWe left everything behind\nNothing made sense anymore\nWhat can we do for life to shine again?\n\nThats when we ran away\nTo live without a noose around our necks\nI am dreaming with a time that may never come\nIts a beautiful life to share again\nWhat can we do for life to shine again?`
-        },
-        {
-          slug: "understone",
-          title: "Understone",
-          artist: "Peterc2",
-          youtube: "mfi-5EZJhqE",
-          lyrics: ``
-        },
-        {
-          slug: "your-skull",
-          title: "Your Skull Is Warm and Soft",
-          artist: "Peterc2 e JC Dive",
-          youtube: "ycQuwThmUME",
-          lyrics: `Try, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\n\nBarrow Blank\nIts hard to beat\nStand your fight\nWhat you want to be\n\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\n\nI will never pay attention to what you say.\nI will never pay attention to what you say.\nI will never pay attention to what you say.\nI will never pay attention`
-        },
-        {
-          slug: "our-king",
-          title: "Our King",
-          artist: "Peterc2",
-          youtube: "nro1IzIxfh4",
-          lyrics: `I told you\nno returns\nShine on me\nyour wisdom\nDream come true\nthings ain't right\n\nHail to your king\nSurrender your life to him\nHail to your king\nSurrender your life to him\n\nWe're going out for a walk\nTake the best takeover instead\nI had something\nYou have it all`
-        },
-        {
-          slug: "noname2",
-          title: "Noname 2",
-          artist: "Peterc2",
-          youtube: "Fq1q81CBtvo",
-          lyrics: ``
-        },
-        {
-          slug: "return-to-the-shed",
-          title: "Return to The Shed",
-          artist: "Peterc2",
-          youtube: "ONQIZcr1J04",
-          lyrics: `I still remember\nI'll talk about her for another day\nBeen dismissing and fading away\nfeeling a like a heart hanging in defence\n\nIt was supposed to be fair.\nLike a little girl's eyes melted away in the shed\nIt was supposed to be fair\nLike a fortune device just flew to stand in the air\n\ncan't let them escape\nyou can let them stay\ncan't let them escape\nyou can let them stay`
-        },
-        {
-          slug: "corner-van",
-          title: "Corner Van",
-          artist: "Peterc2 e JC Dive",
-          youtube: "8A399hebh6A",
-          lyrics: `Licks in my veins\nRiffs are made never the same\nAll vibrations made in vain\nAll guitars are playing break\n\nLives in a van\nSelling drugs to teenage fans\nDrops of hopes and chilling pain\nWatching faces melt in grey\n\nOut of place on town to stay\nAll my heroes did the same\nAnd it felt so great\nAnd grey\nGrey\n\nLicks in my veins\nRiffs are made never the same\nAll vibrations made in vain\nAll guitars are playing break\n\nLives in a van\nSelling drugs to teenage fans\nDrops of hopes and chilling pain\nWatching faces melt in grey`
+          "slug": "sudo-rm-rf-my-maleness",
+          "title": "sudo rm -rf my maleness",
+          "artist": "Pietrawrr",
+          "youtube": "",
+          "lyrics": "..."
         }
       ]
     },
     {
-      id: "rescue-cosmic",
-      title: "The Rescue Of The Cosmic Metaphysical Engineers",
-      credit: "Peterc2",
-      type: "Solo",
-      releaseDate: "2026-11-28",
-      cover: "assets/imagens/capas/the-rescue-of-the-cosmic-metaphysical-engineers-cover.webp",
-      background: "assets/imagens/background/background-5.webp",
-      link: "projetos/index.html?id=rescue-cosmic",
-      artists: ["peterc2"],
-      streaming: {},
-      tracks: [
+      "id": "young-man-found-with-a-cut",
+      "title": "young man found with a cut to his abdomen on a beach told police about sex, swimming in the sea, LSD use, and hallucinations",
+      "credit": "Pietrawrr",
+      "type": "Single",
+      "releaseDate": "2026-10-30",
+      "cover": "assets/imagens/capas/young-man-found-with-a-cut-cover.webp",
+      "background": "assets/imagens/background/background-4.webp",
+      "artists": [
+        "pietrawrr"
+      ],
+      "streaming": {
+        "bandcamp": "https://funeralparadeofroses.bandcamp.com/track/young-man-found-with-a-cut-to-his-abdomen-on-a-beach-told-police-about-sex-swimming-in-the-sea-lsd-use-and-hallucinations"
+      },
+      "message": "",
+      "tracks": [
         {
-          slug: "pull-back-the-ancients-its-calling-you",
-          title: "Pull Back the Ancients / Its Calling You",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `If you want to do the right to me\nIf you want me to stay\nand i know, i won't dare\nIf you want me to solve the clues\nI am the ancient love\n\nIf you want to play the blind with me\nIf you want me to stay\nand you know, i don't care\nIf you want me to share the truth\nI'll be the last to love forevermore\n\nCrawling through you\nYou're commanding in my head\nsprawl into this\nstrength that you never had\n\nI'm tossing the streets to meet you\nyou've been around and round to the start\nThere's no motion in this life\nthat can wrap this enormous ordeal\n\nYou starred in my dream, dear\nconfusing what has been real,\nyou'd mess up every cheer that i had\nleaving it with every fear that i'am\n\nI will try it tomorrow\nfall apart with everything we build to see\nyou're branching in sides of a tree\nIt's said thats faster that i can wait\nBut your dream blot out in the spring\n\nI am awaken, no alarms (It happens)\nwhen solid state dreaming spine (It has no end)\n(I hold still)\nin my world is spinning all around (Ahead of despear)\n\nI am waiting, feels like another (It happens)\nsolid state dreaming spine (Its warm)\ntry to turn this in (I am not allowed)\nall we speak and care (Ahead of despear)\n\nIts calling\nIts frawling\nIts calling\nIts frawling`
-        },
-        {
-          slug: "asleep",
-          title: "Asleep",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `I am not a dream\nYou're not asleep\nWe are so free\nYou're not asleep\n\nI won't brag a thing\nDo you glad it all to me\nDreams are led, sir (and all come true)\n\nI am on your tree\nIgnore the screams\nI am not a dream`
-        },
-        {
-          slug: "whatever-happened-there",
-          title: "Whatever Happened There",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `How bad this could get?\nhow bad is doing nothing\nWhen you close a true life\nIt's never close to nothing\nWhen I was a need for you\nin a closedown to rotting\nWhere i merge\n\nI'll be here for you\nHeaven isn't holding a travel to you\nMaybe your just my bad interest\n\nI had an eerie looking\nin the place you've stoled my eyes\nAnd I went out for nothing\nwhere i'll purge\n\nI'll be here for you\nHeaven isn't lookin any closer to you\nHeaven is your whole interest\n\nHow bad is doing nothing true\nI wrote a song for you, and you don't know\nI'm been close to rotting\nwhere you crush\n\ndeath led me to you\nHeaven isn't lowering crawling to you\nIsn't this a bad a interest`
-        },
-        {
-          slug: "the-rescue",
-          title: "The Rescue",
-          artist: "Peterc2",
-          youtube: "q4yJVpG1IJ8",
-          lyrics: `I feel mistrust behind a blunt\nNobody is here for me\nDisgusted by a drill of wonder\nI'am leveling self deprecation\nbecause the world is round and glad (Inclined to lie in a sky too bright)\nyourself is enough and a need for me\nI want to live down here forever (Became a fly to freeze your cries)\n\n(I climb in time to steal your eye)\n(I get you high to seal your mind)`
-        },
-        {
-          slug: "king-shit",
-          title: "King Shit",
-          artist: "Peterc2",
-          youtube: "gi5bazDn90c",
-          lyrics: `A bunch of undying rats\nTrying to kiss me\nThe fear of falling wet\non dumb statistics\nblowing drugs and drown\nits in my mistic\n\nPlainning stick ambush\nTry to put the surface out\nthen I'll go running on stakes to miss\nSpitting perfume of the bottle\n\nHey, downcast comrade\ndon't die so simplistic\nPassing as a godly mistrust\nTrying to bliss me\nThose little blown head girls\ncould be so artistic\nbut now they're just statistics\n\nI'am feeling my safety down\nby that grotesque lust\nTheir guns are restraining\nshown off so stupidly\n\nI am running back to my basement\nWhen you got no place to go\nI am running back to the basement\nWhen you're my face to know\nI am running back to the basement\nWhere you got no plans to do\nI am running back to the basement\nWhen you got no place to go`
-        },
-        {
-          slug: "around",
-          title: "Around",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `I see her there often (I came from the hunt)\nSoaking around\nshe came from the wilderness\nfar from this town\nShe live in the clouds\nRoaming around\n\nIt has been clear for a while\nWhen i am calling her\nand let me there for breakfest\nCertanly I'll drown (I am drowning)`
-        },
-        {
-          slug: "kind-sister-hunt",
-          title: "Kind Sister Hunt",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `this dark hair as the river flows\nGet replaced and try it alone\nCould I be able to see\nWhat the spacetime reserved to me\n\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me\nHow can I explain what she does to me`
-        },
-        {
-          slug: "death-valley",
-          title: "Death Valley",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `Elaboring future faces\nAround the world the rest is yours\nSeen bumping around\ncounting and forming\nWith the winds below\n\nBeen sent around the wishes\nall because of you\nSworn around the fishes\nand lead 'cause of you\nsilenced by your changes\nI weep 'cause of you\nhang around the distance\nThe stress goes for you (All below you)`
-        },
-        {
-          slug: "the-sailor",
-          title: "The Sailor",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `Sailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons\nSailing away in a mountain of cottons`
-        },
-        {
-          slug: "cosmic-metaphysical-engineers",
-          title: "Cosmic Metaphysical Engineers",
-          artist: "Peterc2",
-          youtube: "",
-          lyrics: `Breathe in the letter\ni've send you\nhowever it goes\ncut out fawn\nbeen crashing through floor\nyou're done with nowhere to go\n\nBurned bushes\nShe ripped and plunged\nTo feel undereating\nI constantly pushed the very best for you\nyour polluted eyes\nis where I recover from you\n\nIn hypnic jerks\nI greet the rest of you\nA union lever\nor seas of bloodsheds\nThe gods stinginess\nIn rings of plastic\nI brush this blessing from\nthe fraud you are\n\n(It's like a dune devil erased)\n(It's like a doom vapor haze)\n(It's like a dune devil ways)\n(slide a dune devil wave)\n(It's like a doom vapor wave)`
+          "slug": "young-man-found-with-a-cut-to-his-abdomen-on-a-beach-told-police-about-sex-swimming-in-the-sea-lsd-use-and-hallucinations",
+          "title": "young man found with a cut to his abdomen on a beach told police about sex, swimming in the sea, LSD use, and hallucinations",
+          "artist": "Pietrawrr",
+          "youtube": "",
+          "lyrics": "[30/10/2026 JAM SESSION\nFaixa Instrumental / Noise]"
         }
       ]
     },
     {
-      id: "out-of-style",
-      title: "Out Of Style",
-      credit: "Littering",
-      type: "Single",
-      releaseDate: "2026-10-09",
-      cover: "assets/imagens/capas/out-of-style-cover.webp",
-      background: "assets/imagens/background/background-2.webp",
-      link: "projetos/index.html?id=out-of-style",
-      artists: ["littering"],
-      streaming: {
-        youtube: "https://www.youtube.com/watch?v=9Z41zsEkG6c",
-        spotify: "https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy",
-        apple: "https://music.apple.com/br/artist/littering/6823551933",
-        bandcamp: "https://littering.bandcamp.com/track/out-of-style"
+      "id": "out-of-style",
+      "title": "Out Of Style",
+      "credit": "Littering",
+      "type": "Single",
+      "releaseDate": "2026-10-09",
+      "cover": "assets/imagens/capas/out-of-style-cover.webp",
+      "background": "assets/imagens/background/background-2.webp",
+      "artists": [
+        "littering"
+      ],
+      "streaming": {
+        "youtube": "https://www.youtube.com/watch?v=9Z41zsEkG6c",
+        "spotify": "https://open.spotify.com/intl-pt/artist/6RVnklAIS1iQOK6DupKUvy",
+        "apple": "https://music.apple.com/br/artist/littering/6823551933",
+        "bandcamp": "https://littering.bandcamp.com/track/out-of-style"
       },
-      tracks: [ 
+      "message": "",
+      "tracks": [
         {
-          slug: "out-of-style",
-          title: "Out Of Style",
-          artist: "Littering",
-          youtube: "9Z41zsEkG6c",
-          lyrics: `When she sticks\npaper in her tongue\nThen she feels\nSings a million songs\nAnd she's gone for now\nUntil she's there for more\nThen she's gone for now\nUntil she's at your door\n\nGirl, You are out of style\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style\n\nWhen she said\nNothing is ever gone\nThen I had\nLips and broken bones\nAnd she's gone for now\nbut not until she's there for more\nThen she's gone for now\nbut not until she's at your door\n\nYou are out of style\nYou are out of style in everything you wanna do\nYou are out of style girl\nYou are out of style\nYou are out of style, girl\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style`
+          "slug": "out-of-style",
+          "title": "Out Of Style",
+          "artist": "Littering",
+          "youtube": "9Z41zsEkG6c",
+          "lyrics": "When she sticks\npaper in her tongue\nThen she feels\nSings a million songs\nAnd she's gone for now\nUntil she's there for more\nThen she's gone for now\nUntil she's at your door\n\nGirl, You are out of style\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style\n\nWhen she said\nNothing is ever gone\nThen I had\nLips and broken bones\nAnd she's gone for now\nbut not until she's there for more\nThen she's gone for now\nbut not until she's at your door\n\nYou are out of style\nYou are out of style in everything you wanna do\nYou are out of style girl\nYou are out of style\nYou are out of style, girl\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style"
         }
       ]
     },
     {
-      id: "harsh-noise-to-jerk-off",
-      title: "Harsh Noise To Jerk Off",
-      credit: "Pietrawrr",
-      type: "EP",
-      releaseDate: "2026-08-30",
-      cover: "assets/imagens/capas/harsh-noise-to-jerk-off-cover.webp",
-      background: "assets/imagens/background/background-4.webp",
-      link: "projetos/index.html?id=harsh-noise-to-jerk-off",
-      artists: ["pietrawrr"],
-      streaming: {
-        bandcamp: "https://funeralparadeofroses.bandcamp.com/album/harsh-noise-to-jerk-off"
+      "id": "harsh-noise-to-jerk-off",
+      "title": "Harsh Noise To Jerk Off",
+      "credit": "Pietrawrr",
+      "type": "EP",
+      "releaseDate": "2026-08-30",
+      "cover": "assets/imagens/capas/harsh-noise-to-jerk-off-cover.webp",
+      "background": "assets/imagens/background/background-4.webp",
+      "artists": [
+        "pietrawrr"
+      ],
+      "streaming": {
+        "bandcamp": "https://funeralparadeofroses.bandcamp.com/album/harsh-noise-to-jerk-off"
       },
-      tracks: [
+      "message": "eu faço sexo de um jeito tão confuso e subversivo que termos como hétero e gay não se aplicam mais, você não entenderia nem se assistisse, pure faggot shit",
+      "tracks": [
         {
-          slug: "[untitled - 1]",
-          title: "[untitled - 1]",
-          artist: "Pietrawrr",
-          youtube: "",
-          lyrics: `[Faixa Instrumental]`
+          "slug": "[untitled - 1]",
+          "title": "[untitled - 1]",
+          "artist": "Pietrawrr",
+          "youtube": "",
+          "lyrics": "[Faixa Instrumental]"
         },
         {
-          slug: "[untitled - 2]",
-          title: "[untitled - 2]",
-          artist: "Pietrawrr",
-          youtube: "",
-          lyrics: `[Faixa Instrumental]`
+          "slug": "[untitled - 2]",
+          "title": "[untitled - 2]",
+          "artist": "Pietrawrr",
+          "youtube": "",
+          "lyrics": "[Faixa Instrumental]"
         },
         {
-          slug: "[untitled - 3]",
-          title: "[untitled - 3]",
-          artist: "Pietrawrr",
-          youtube: "",
-          lyrics: `[Faixa Instrumental]`
+          "slug": "[untitled - 3]",
+          "title": "[untitled - 3]",
+          "artist": "Pietrawrr",
+          "youtube": "",
+          "lyrics": "[Faixa Instrumental]"
         },
         {
-          slug: "[untitled - 4]",
-          title: "[untitled - 4]",
-          artist: "Pietrawrr",
-          youtube: "",
-          lyrics: `[Faixa Instrumental]`
-        }
-
-      ]
-    },
-    {
-      id: "o-sonho-da-razao-produz-monstros",
-      title: "O Sonho da Razão Produz Monstros",
-      credit: "Pietrawrr",
-      type: "Single",
-      releaseDate: "2026-04-17",
-      cover: "assets/imagens/capas/osonhodarazoproduzmonstros-cover.webp",
-      background: "assets/imagens/background/background-4.webp",
-      link: "projetos/index.html?id=o-sonho-da-razao-produz-monstros",
-      artists: ["pietrawrr"],
-      streaming: {
-        spotify: "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1",
-        bandcamp: "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare"
-      },
-      tracks: [
-        {
-          slug: "last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare",
-          title: "last time and big evening and if we say goodbye to the trauma nightmare",
-          artist: "Pietrawrr",
-          youtube: "",
-          lyrics: `...`
+          "slug": "[untitled - 4]",
+          "title": "[untitled - 4]",
+          "artist": "Pietrawrr",
+          "youtube": "",
+          "lyrics": "[Faixa Instrumental]"
         }
       ]
     },
     {
-      id: "young-man-found-with-a-cut",
-      title: "young man found with a cut to his abdomen on a beach told police about sex, swimming in the sea, LSD use, and hallucinations",
-      credit: "Pietrawrr",
-      type: "Single",
-      releaseDate: "2026-10-30",
-      cover: "assets/imagens/capas/young-man-found-with-a-cut-cover.webp",
-      background: "assets/imagens/background/background-4.webp",
-      link: "projetos/index.html?id=young-man-found-with-a-cut",
-      artists: ["pietrawrr"],
-      streaming: {
-        bandcamp: "https://funeralparadeofroses.bandcamp.com/track/young-man-found-with-a-cut-to-his-abdomen-on-a-beach-told-police-about-sex-swimming-in-the-sea-lsd-use-and-hallucinations"
+      "id": "o-sonho-da-razao-produz-monstros",
+      "title": "O Sonho da Razão Produz Monstros",
+      "credit": "Pietrawrr",
+      "type": "Single",
+      "releaseDate": "2026-04-17",
+      "cover": "assets/imagens/capas/osonhodarazoproduzmonstros-cover.webp",
+      "background": "assets/imagens/background/background-4.webp",
+      "artists": [
+        "pietrawrr"
+      ],
+      "streaming": {
+        "spotify": "https://open.spotify.com/track/5C59kmapOIeKb9wAIcnXsD?si=5b1081fad5a147c1",
+        "bandcamp": "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare"
       },
-      tracks: [
+      "message": "",
+      "tracks": [
         {
-          slug: "young-man-found-with-a-cut-to-his-abdomen-on-a-beach-told-police-about-sex-swimming-in-the-sea-lsd-use-and-hallucinations",
-          title: "young man found with a cut to his abdomen on a beach told police about sex, swimming in the sea, LSD use, and hallucinations",
-          artist: "Pietrawrr",
-          youtube: "",
-          lyrics: `[30/10/2026 JAM SESSION\nFaixa Instrumental / Noise]`
+          "slug": "last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare",
+          "title": "last time and big evening and if we say goodbye to the trauma nightmare",
+          "artist": "Pietrawrr",
+          "youtube": "",
+          "lyrics": "..."
         }
       ]
     },
     {
-      id: "sudo-rm-rf-my-maleness",
-      title: "sudo rm -rf my maleness",
-      credit: "Pietrawrr",
-      type: "Single",
-      releaseDate: "2026-11-12",
-      cover: "assets/imagens/capas/sudo-rm-rf-my-maleness-cover.webp",
-      background: "assets/imagens/background/background-4.webp",
-      link: "projetos/index.html?id=sudo-rm-rf-my-maleness",
-      artists: ["pietrawrr"],
-      streaming: {
-        bandcamp: "https://funeralparadeofroses.bandcamp.com/track/sudo-rm-rf-my-maleness"
+      "id": "the-ocean-trench",
+      "title": "The Ocean Trench",
+      "credit": "Peterc2 e JC Dive",
+      "type": "Álbum colaborativo",
+      "releaseDate": "2026-04-10",
+      "cover": "assets/imagens/capas/the-ocean-trench-cover.webp",
+      "artists": [
+        "peterc2",
+        "jcdive"
+      ],
+      "streaming": {
+        "youtube": "https://www.youtube.com/watch?v=EPZbv-gqIFM",
+        "spotify": "https://open.spotify.com/album/4QOkz5ITgkpBjD1UTeUVXt",
+        "apple": "https://music.apple.com/br/album/the-ocean-trench/1891698389",
+        "bandcamp": "https://peterc2.bandcamp.com/"
       },
-      tracks: [
+      "message": "",
+      "tracks": [
         {
-          slug: "sudo-rm-rf-my-maleness",
-          title: "sudo rm -rf my maleness",
-          artist: "Pietrawrr",
-          youtube: "",
-          lyrics: `...`
+          "slug": "the-ocean-trench",
+          "title": "The Ocean Trench",
+          "artist": "Peterc2 e JC Dive",
+          "youtube": "6JNBU0PBISE",
+          "lyrics": "I could be better\nBring the fire of you\nThe unit is too high\nUnder the station\n\nScared so stupidly\ntrying to understand the message\nYou cannot rest assured\nAnd act like you could fly\n\nI've been dancing\nOn the ocean floor\nAnd met some fishes\nWho want some more\n\nAll day fish drop playing on the seafloor\nLove that's freedom door\nMaybe someday you'll understand that\nFlying don't mean die\nAnd I'm\n\nFly me like a hot balloon\nFly like angels in the moon\nFly me like a hot balloon in space in place in place in place"
+        },
+        {
+          "slug": "golden-trick",
+          "title": "Golden Trick",
+          "artist": "Peterc2",
+          "youtube": "a3BWvTFf6a0",
+          "lyrics": "I can say? (I Know You)\nI can say?\n\nI can say that you know what you're about to do?\nIt will make everyone walk away from you\nLetting your fiery eyes shoot can harm you\nI decided to leave this fate a long time ago too for you.\n\nI can say?\nI can say? (I Know You)\n\nThere is something in the sky that we want to reach.\nThere something in that place.\nWe can rule the world\nAnd we should\n\nI can say?\nI can say? (I Know You)\n\nStill have so much to offer you\nFor your head\nFor your hair\nFor your eyes\nFor your heart"
+        },
+        {
+          "slug": "cleaning",
+          "title": "Cleaning",
+          "artist": "Peterc2",
+          "youtube": "KJd2c3H7-d8",
+          "lyrics": "Clean up this room there's something there\nCaught in the fire just to get there\n\nClean up this room there's something there\nCaught in the fire just to get there"
+        },
+        {
+          "slug": "birds-and-seeds",
+          "title": "Birds And Seeds",
+          "artist": "Peterc2",
+          "youtube": "3L3PtrAo7Zo",
+          "lyrics": "This threat is for everyone\nThis threat is for everyone\nThis threat is for everyone\nThis threat is for everyone\n\nI'll hold you in acid and salt\nTo keep your roots intact\nif that can keep you\nin the state you're in\n\nThis threat is for everyone\nThis threat is for everyone\n\nI will capture all your blessings one by one\nthis softness can fill me through\nA blossom would set them down"
+        },
+        {
+          "slug": "canto-do-silencio",
+          "title": "Canto do Silêncio",
+          "artist": "JC Dive e Peterc2",
+          "youtube": "1OFMx_H76qQ",
+          "lyrics": "O canto do silêncio\nFez sangrar\nOs meus ouvidos\nMe fez sonhar\nCom seus olhos\nCastanhos tão puros\nTão solúveis que fez derreter\nAs lágrimas do meu olhar\n\nÉ que tem algo em você\nQue não me deixa esquecer\nNão me deixa esquecer\nQue aquilo não era amor"
+        },
+        {
+          "slug": "how-bad-is-it",
+          "title": "How Bad Is It",
+          "artist": "Peterc2",
+          "youtube": "viU8gimTItY",
+          "lyrics": "The drawling curb, is there to stare\nJust to make an unfair set\nIt just found a reason to mess it\nshe's lost right to store\n\nIt's a cream and colorful soak\nthat I can't identify\nthis thriler might come out to hunt you\nAnd come out to let you down\n\nAnd Maybe i can tell you\nHow bad is it\nOnly you can know\nand maybe I could show you\nhow hate can leave\nfrom lows I might throw\n\nIt will be good\n\nI am burying our fidgety eye in amazement\nAlready spoils the frown\nYour wrapped fears and lies are contundent\nThe waves that come around\n\nyour disgust for myself is unfounded.\nAt this moment, I have no bounds.\nI'll gather these bones for you\nTo anywhere you want to go\n\nAnd maybe i can tell you\nHow bad is it\nOnly you can know\nand maybe I could show you\nhow hate can leave\nfrom lows I might throw"
+        },
+        {
+          "slug": "i-will-cut-into-you",
+          "title": "I Will Cut Into You",
+          "artist": "Peterc2",
+          "youtube": "2CqlmcCePvI",
+          "lyrics": "It's open inside a low note\nIs time to fly on a snow flow\nAlmost every time It's a slow grow\nBut not this time, I\nI want you to come back again\nTurn on a light so you'll understand\nI will cut you open\nSo I can Feel Fine\n\nTime\nA strong feeling\nI'm high\nTingles explore me\nWhy\nIt's all getting over\nSomething's wrong\nI ignore the signs\n\nIt's open inside a low note\nIs time to fly on a snow flow\nAlmost every time It's a slow grow\nBut not this time, I\nI want you to come back again\nTurn on a light so you'll understand\nIt's the experience of a lifetime\nNow I think I could die"
+        },
+        {
+          "slug": "on-the-house",
+          "title": "On The House",
+          "artist": "Peterc2",
+          "youtube": "30yTVNkFeXI",
+          "lyrics": "You don't have to lie to me\nI've wandered into your realm\nI've plumbed the depths of your fears\nThe only thing I can find is what draws us together\n\nIs a love\nIs your love\nIs a love\nIs your Love\n\nThat other day\nYou told me that humans are mysteries\nBut you're no mystery to me\nI just haven't unveiled you completely yet\n\nIs a love\nIs your love\nIs a love\nIs your love"
+        },
+        {
+          "slug": "lilly",
+          "title": "Lilly",
+          "artist": "JC Dive e Peterc2",
+          "youtube": "l9orgvq8REc",
+          "lyrics": "Lilly knows too well\nHow to make me feel a thrill sometimes\nFeeling kinda blur\nSometimes sinking in the heat\n\nNever knew too well\nHow to stop to find a cure\nSometimes feeling mind in bloom\nSometimes feeling in the blues\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because she was never well\nI created it myself because Lilly knows too well\n\nLilly knows too well how to make me feel immune\nSometimes feeling mind in bloom\nSometimes feeling my cheap thrills\n\nAlways found it good\nHow to stop to glance balloons\nSometimes feeling animals\nSometimes killing my pupils\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because Lilly knows too well\nI created it myself because Lilly knows too well"
+        },
+        {
+          "slug": "not-bad-at-all",
+          "title": "Not Bad at All",
+          "artist": "Peterc2",
+          "youtube": "PwF86fd-X1c",
+          "lyrics": "A fresh pair of puppet socks may keep him\naware of his harsh blasphemy.\nBut the creed of the blind crows\ndecided to abandon him beside of his high mastery.\n\nWinterize the season\nTame the break\nWork to please\nblock your rage\n\nFrom a relic black sparkler\nThere is a war that no one is hoping on.\nHe's afraid to sneaks in to peek\nand see a dead love hanging on.\n\nWinterize the season\nTame the brain\nWork the greed\nput your head in place"
+        },
+        {
+          "slug": "my-view-is-bad",
+          "title": "My View Is Bad",
+          "artist": "Peterc2 e JC Dive",
+          "youtube": "FPIJmeBQYa8",
+          "lyrics": "My view from here is bad but not every time\nAll the clues could have brought me high\nOh, This void might just take a bite\nI can teach you what those noises can be right\nI might see you from the satellite\n\nI have been with the brothers of the big fight\nThis new threat makes my brain fry\nMy vision from here is bad but not every time\nI translate you into machine language\nI can see you from the satellite"
+        },
+        {
+          "slug": "possession",
+          "title": "Possession",
+          "artist": "Peterc2",
+          "youtube": "QZE7zb4Dllo",
+          "lyrics": "I wish you every time you cry again\nLike frank sinatra when you fry within"
+        },
+        {
+          "slug": "littering",
+          "title": "Littering",
+          "artist": "JC Dive e Peterc2",
+          "youtube": "NjArWBfAS7c",
+          "lyrics": "So cold\nAnimals assexual\nYour soul\nSeems to need protection\n\nCan't think about us\nother than happy litter\nhanging on clouds into\nthe endless circles of my life\n\nCan't think about us\nother than happy litter\nhanging on clouds into\nthe endless circles of my life\n\nIt's gold\nCover me with diamonds\nDon't go\nWait until the afternoon\n\nCan't think about us\nother than happy litter\nhanging on clouds into\nthe endless circles of my life\n\nCan't think about us\nother than happy litter\nhanging on clouds into\nthe endless circles of my life\n\nInfinite houses...\nInfinite people..."
+        },
+        {
+          "slug": "the-night-shifts",
+          "title": "The Night Shifts X Radio Report",
+          "artist": "Peterc2",
+          "youtube": "sUdQPdzG78A",
+          "lyrics": ""
+        },
+        {
+          "slug": "slow-attack",
+          "title": "Slow Attack",
+          "artist": "Peterc2",
+          "youtube": "SFkEdFMmRYk",
+          "lyrics": "A blue splinter in rounded bloom\ncovered in garish\nbrought a tall pin, good Samaritan\ncan not lock in the flourish\n\nAnd then we ran away\nWe were scared to death\nThe seeds were broken\nWe lost everything\n\nThe review has been dismissive\nThats a low doom trip\nIts a blocky eyed slippery side\nAnd he offers with anger.\n\nAnd then we ran away\nWe left everything behind\nNothing made sense anymore\nWhat can we do for life to shine again?\n\nThats when we ran away\nTo live without a noose around our necks\nI am dreaming with a time that may never come\nIts a beautiful life to share again\nWhat can we do for life to shine again?"
+        },
+        {
+          "slug": "understone",
+          "title": "Understone",
+          "artist": "Peterc2",
+          "youtube": "mfi-5EZJhqE",
+          "lyrics": ""
+        },
+        {
+          "slug": "your-skull",
+          "title": "Your Skull Is Warm and Soft",
+          "artist": "Peterc2 e JC Dive",
+          "youtube": "ycQuwThmUME",
+          "lyrics": "Try, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\n\nBarrow Blank\nIts hard to beat\nStand your fight\nWhat you want to be\n\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\n\nI will never pay attention to what you say.\nI will never pay attention to what you say.\nI will never pay attention to what you say.\nI will never pay attention"
+        },
+        {
+          "slug": "our-king",
+          "title": "Our King",
+          "artist": "Peterc2",
+          "youtube": "nro1IzIxfh4",
+          "lyrics": "I told you\nno returns\nShine on me\nyour wisdom\nDream come true\nthings ain't right\n\nHail to your king\nSurrender your life to him\nHail to your king\nSurrender your life to him\n\nWe're going out for a walk\nTake the best takeover instead\nI had something\nYou have it all"
+        },
+        {
+          "slug": "noname2",
+          "title": "Noname 2",
+          "artist": "Peterc2",
+          "youtube": "Fq1q81CBtvo",
+          "lyrics": ""
+        },
+        {
+          "slug": "return-to-the-shed",
+          "title": "Return to The Shed",
+          "artist": "Peterc2",
+          "youtube": "ONQIZcr1J04",
+          "lyrics": "I still remember\nI'll talk about her for another day\nBeen dismissing and fading away\nfeeling a like a heart hanging in defence\n\nIt was supposed to be fair.\nLike a little girl's eyes melted away in the shed\nIt was supposed to be fair\nLike a fortune device just flew to stand in the air\n\ncan't let them escape\nyou can let them stay\ncan't let them escape\nyou can let them stay"
+        },
+        {
+          "slug": "corner-van",
+          "title": "Corner Van",
+          "artist": "Peterc2 e JC Dive",
+          "youtube": "8A399hebh6A",
+          "lyrics": "Licks in my veins\nRiffs are made never the same\nAll vibrations made in vain\nAll guitars are playing break\n\nLives in a van\nSelling drugs to teenage fans\nDrops of hopes and chilling pain\nWatching faces melt in grey\n\nOut of place on town to stay\nAll my heroes did the same\nAnd it felt so great\nAnd grey\nGrey\n\nLicks in my veins\nRiffs are made never the same\nAll vibrations made in vain\nAll guitars are playing break\n\nLives in a van\nSelling drugs to teenage fans\nDrops of hopes and chilling pain\nWatching faces melt in grey"
+        }
+      ]
+    },
+    {
+      "id": "desert-sample",
+      "title": "Desert Sample",
+      "credit": "Peterc2 e JC Dive",
+      "type": "Álbum colaborativo",
+      "releaseDate": "2026-03-13",
+      "cover": "assets/imagens/capas/desert-sample-cover.webp",
+      "artists": [
+        "peterc2",
+        "jcdive"
+      ],
+      "streaming": {
+        "youtube": "https://youtu.be/GMJ9MhhTVsw",
+        "spotify": "https://open.spotify.com/intl-pt/album/6e4YM0KzxqGHjwpnneDjBG",
+        "apple": "https://music.apple.com/br/album/desert-sample-ep/1889619290",
+        "bandcamp": "https://peterc2.bandcamp.com/"
+      },
+      "message": "",
+      "tracks": [
+        {
+          "slug": "the-ocean-trench",
+          "title": "The Ocean Trench",
+          "artist": "Peterc2 e JC Dive",
+          "youtube": "GMJ9MhhTVsw",
+          "lyrics": "I could be better\nBring the fire of you\nThe unit is too high\nUnder the station\n\nScared so stupidly\ntrying to understand the message\nYou cannot rest assured\nAnd act like you could fly\n\nI've been dancing\nOn the ocean floor\nAnd met some fishes\nWho want some more\n\nAll day fish drop playing on the seafloor\nLove that's freedom door\nMaybe someday you'll understand that\nFlying don't mean die\nAnd I'm\n\nFly me like a hot balloon\nFly like angels in the moon\nFly me like a hot balloon in space in place in place in place"
+        },
+        {
+          "slug": "canto-do-silencio",
+          "title": "Canto do Silêncio",
+          "artist": "JC Dive e Peterc2",
+          "youtube": "Vb42AxNU-pg",
+          "lyrics": "O canto do silêncio\nFez sangrar\nOs meus ouvidos\nMe fez sonhar\nCom seus olhos\nCastanhos tão puros\nTão solúveis que fez derreter\nAs lágrimas do meu olhar\n\nÉ que tem algo em você\nQue não me deixa esquecer\nNão me deixa esquecer\nQue aquilo não era amor"
+        },
+        {
+          "slug": "noname29",
+          "title": "Noname 29",
+          "artist": "Peterc2",
+          "youtube": "D0Hm8rD7UA0",
+          "lyrics": ""
+        },
+        {
+          "slug": "your-skull",
+          "title": "Your Skull Is Warm and Soft",
+          "artist": "Peterc2 e JC Dive",
+          "youtube": "37bsAFdPYCw",
+          "lyrics": "Try, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\n\nBarrow Blank\nIts hard to beat\nStand your fight\nWhat you want to be\n\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\n\nI will never pay attention to what you say.\nI will never pay attention to what you say.\nI will never pay attention to what you say.\nI will never pay attention"
+        },
+        {
+          "slug": "lilly",
+          "title": "Lilly",
+          "artist": "JC Dive e Peterc2",
+          "youtube": "px3f54XOjCs",
+          "lyrics": "Lilly knows too well\nHow to make me feel a thrill sometimes\nFeeling kinda blur\nSometimes sinking in the heat\n\nNever knew too well\nHow to stop to find a cure\nSometimes feeling mind in bloom\nSometimes feeling in the blues\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because she was never well\nI created it myself because Lilly knows too well\n\nLilly knows too well how to make me feel immune\nSometimes feeling mind in bloom\nSometimes feeling my cheap thrills\n\nAlways found it good\nHow to stop to glance balloons\nSometimes feeling animals\nSometimes killing my pupils\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because Lilly knows too well\nI created it myself because Lilly knows too well"
         }
       ]
     }
   ],
-
-  // ---------------------------------------------------------
-  // MERCH / PRODUTOS OFICIAIS (LOJA)
-  // ---------------------------------------------------------
-  // COMO ADICIONAR PRODUTOS NO FUTURO:
-  // 1. Salve as fotos em: assets/imagens/merch/ (ex: camiseta.webp)
-  // 2. Adicione os itens dentro do array abaixo:
-  //    {
-  //      id: "camiseta-oficial",
-  //      title: "Camiseta Oficial",
-  //      subtitle: "R$ 80,00",
-  //      image: "assets/imagens/merch/camiseta.webp",
-  //      link: "https://peterc2.bandcamp.com/merch/..."
-  //    }
-  // ---------------------------------------------------------
-  merch: [{
-    id:"chaveiros-littering",
-    title: "Chaveiros Littering",
-    subtitle: "Menor: R$ 5,00\nMaior: R$ 8,00",
-    image: "assets/imagens/merch/chaveiros.webp",
-    link: "https://ig.me/m/litteringband"
-  }],
-
-  // ---------------------------------------------------------
-  // GALERIAS DE FOTOS (PÁGINA SOBRE) - SEPARADAS POR SHOW
-  // ---------------------------------------------------------
-  aboutGalleries: [
+  "merch": [
     {
-      id: "confraterniza-soul",
-      title: "Confraterniza Soul",
-      date: "2026-09-06",
-      photos: [
+      "id": "chaveiros-littering",
+      "title": "Chaveiros Littering",
+      "subtitle": "Menor: R$ 5,00\nMaior: R$ 8,00",
+      "image": "assets/imagens/merch/chaveiros.webp",
+      "link": "https://ig.me/m/litteringband"
+    }
+  ],
+  "aboutGalleries": [
+    {
+      "id": "confraterniza-soul",
+      "title": "Confraterniza Soul",
+      "date": "2026-09-06",
+      "photos": [
         "assets/imagens/sobre/confraterniza-soul/sobre-01.webp",
         "assets/imagens/sobre/confraterniza-soul/sobre-02.webp",
         "assets/imagens/sobre/confraterniza-soul/sobre-03.webp",
@@ -653,10 +755,10 @@ const SITE_DATA = {
       ]
     },
     {
-      id: "feira-astral",
-      title: "Feira Astral",
-      date: "2026-10-10",
-      photos: [
+      "id": "feira-astral",
+      "title": "Feira Astral",
+      "date": "2026-10-10",
+      "photos": [
         "assets/imagens/sobre/feira-astral/sobre-01.webp",
         "assets/imagens/sobre/feira-astral/sobre-02.webp",
         "assets/imagens/sobre/feira-astral/sobre-03.webp",
@@ -676,10 +778,10 @@ const SITE_DATA = {
       ]
     },
     {
-      id: "halloween-olimpo",
-      title: "Halloween Olimpo",
-      date: "2026-11-06",
-      photos: [
+      "id": "halloween-olimpo",
+      "title": "Halloween Olimpo",
+      "date": "2026-11-06",
+      "photos": [
         "assets/imagens/sobre/halloween-olimpo/sobre-01.webp",
         "assets/imagens/sobre/halloween-olimpo/sobre-02.webp",
         "assets/imagens/sobre/halloween-olimpo/sobre-03.webp",
@@ -691,39 +793,23 @@ const SITE_DATA = {
         "assets/imagens/sobre/halloween-olimpo/sobre-09.webp",
         "assets/imagens/sobre/halloween-olimpo/sobre-10.webp"
       ]
+    },
+    {
+      "id": "heavy-chama",
+      "title": "Heavy Chama",
+      "date": "2026-11-14",
+      "photos": []
     }
   ],
-
-  // ---------------------------------------------------------
-  // TEXTO INSTITUCIONAL / BIOGRAFIA (PÁGINA SOBRE)
-  // ---------------------------------------------------------
-  // Escreva livremente entre as crases (`).
-  // - Quebras de linha simples são ignoradas (viram espaço).
-  // - Deixe UMA LINHA EM BRANCO para começar um novo parágrafo.
-  aboutText: `
-    Depois de alguns meses do lançamento do álbum colaborativo entre Peterc2
-    e JC Dive 'The Ocean Trench', um álbum de músicas rapidamente compostas e
-    gravadas, altamente inspirado no modelo de produção da banda Guided By
-    Voices e do artista Alex G, a banda Littering foi formada com a chegada do
-    baterista be_cruz e a baixista pietrawrr, para novas composições na linha
-    das faixas 'Littering' e 'Return to the Shed' do primeiro projeto.
-
-    Passados alguns meses, já possuíam material suficiente para novos
-    lançamentos. Realizaram seu primeiro show em parceria com a Kasa Soul em
-    um evento beneficente e mostraram seu repertório pela primeira vez ao
-    público. O single "Out of Style" marca a estreia da banda e sairá no dia
-    09/10/2026. No dia 10/10/2026 tiveram seu primeiro lançamento como banda em um
-    show público na feira astral de Divinópolis-MG.
-  `
+  "aboutText": [
+    "Depois de alguns meses do lançamento do álbum colaborativo entre Peterc2 e JC Dive 'The Ocean Trench', um álbum de músicas rapidamente compostas e gravadas, altamente inspirado no modelo de produção da banda Guided By Voices e do artista Alex G, a banda Littering foi formada com a chegada do baterista be_cruz e a baixista pietrawrr, para novas composições na linha das faixas 'Littering' e 'Return to the Shed' do primeiro projeto.",
+    "Passados alguns meses, já possuíam material suficiente para novos lançamentos. Realizaram seu primeiro show em parceria com a Kasa Soul em um evento beneficente e mostraram seu repertório pela primeira vez ao público. O single \"Out of Style\" marca a estreia da banda e sairá no dia 09/10/2026. No dia 10/10/2026 tiveram seu primeiro lançamento como banda em um show público na feira astral de Divinópolis-MG."
+  ]
 };
 
 // =========================================================
-// NORMALIZAÇÃO E AUTOMAÇÃO DE DATAS DE LANÇAMENTO
+// NORMALIZAÇÃO E AUTOMAÇÃO DE DADOS
 // =========================================================
-// Permite preencher a data em APENAS UM LUGAR (`releaseDate` ou `date`).
-// Todos os outros dados derivados (ordenação ISO, data formatada DD/MM/AAAA,
-// subtítulo do card "Artista • DD/MM/AAAA" e vínculo de vídeos) são preenchidos
-// automaticamente pelo sistema!
 
 function parseReleaseDate(input) {
   if (!input || typeof input !== 'string') {
@@ -733,7 +819,6 @@ function parseReleaseDate(input) {
   if (clean.toLowerCase() === 'em breve' || clean === '9999-12-31') {
     return { iso: '9999-12-31', br: 'Em Breve' };
   }
-  // Formato brasileiro DD/MM/AAAA ou D/M/AAAA
   const brMatch = clean.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
   if (brMatch) {
     const day = brMatch[1].padStart(2, '0');
@@ -744,7 +829,6 @@ function parseReleaseDate(input) {
       br: `${day}/${month}/${year}`
     };
   }
-  // Formato ISO AAAA-MM-DD ou AAAA-M-D
   const isoMatch = clean.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
   if (isoMatch) {
     const year = isoMatch[1];
@@ -755,26 +839,21 @@ function parseReleaseDate(input) {
       br: `${day}/${month}/${year}`
     };
   }
-  // Fallback: retorna o texto original
   return { iso: clean, br: clean };
 }
 
-// 1. Álbuns: normaliza releaseDate, preenche formattedDate e subtitle
-const _albumsById = {};
-if (Array.isArray(SITE_DATA.albums)) {
-  SITE_DATA.albums.forEach(album => {
+function normalizeAlbums(albums) {
+  if (!Array.isArray(albums)) return;
+  const _albumsById = {};
+  albums.forEach(album => {
     const rawDate = album.releaseDate || album.date;
     const parsed = parseReleaseDate(rawDate);
-    
-    // releaseDate no padrão ISO (para filtros, ordenação e data-attributes)
     album.releaseDate = parsed.iso;
     
-    // formattedDate no padrão legível brasileiro (ex: "28/11/2005" ou "Em Breve")
     if (!album.formattedDate) {
       album.formattedDate = parsed.br;
     }
     
-    // subtitle automático: "Artista • Data" (ex: "Peterc2 • 28/11/2005")
     if (!album.subtitle) {
       let author = album.credit;
       if (!author && Array.isArray(album.artists)) {
@@ -784,38 +863,62 @@ if (Array.isArray(SITE_DATA.albums)) {
       }
       album.subtitle = author ? `${author} • ${album.formattedDate}` : album.formattedDate;
     }
+
+    if (!album.link && album.id) {
+      album.link = `projetos/index.html?id=${encodeURIComponent(album.id)}`;
+    }
+
+    if (Array.isArray(album.tracks)) {
+      album.tracks.forEach(track => {
+        if (!track.artist) {
+          track.artist = album.credit || (album.artists && SITE_DATA.artists && SITE_DATA.artists[album.artists[0]] ? SITE_DATA.artists[album.artists[0]].name : '');
+        }
+        if (!track.slug && track.title) {
+          track.slug = track.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        }
+      });
+    }
     
     if (album.id) {
       _albumsById[album.id] = album;
     }
   });
+
+  if (Array.isArray(SITE_DATA.videos)) {
+    SITE_DATA.videos.forEach(video => {
+      if (!video.releaseDate && video.albumId && _albumsById[video.albumId]) {
+        video.releaseDate = _albumsById[video.albumId].releaseDate;
+      } else if (video.releaseDate) {
+        const parsed = parseReleaseDate(video.releaseDate);
+        video.releaseDate = parsed.iso;
+      }
+    });
+  }
 }
 
-// 2. Vídeos: herda a data do álbum vinculado (albumId) se não especificada
-if (Array.isArray(SITE_DATA.videos)) {
-  SITE_DATA.videos.forEach(video => {
-    if (!video.releaseDate && video.albumId && _albumsById[video.albumId]) {
-      video.releaseDate = _albumsById[video.albumId].releaseDate;
-    } else if (video.releaseDate) {
-      const parsed = parseReleaseDate(video.releaseDate);
-      video.releaseDate = parsed.iso;
-    }
-  });
+function normalizeArtists(artists) {
+  if (artists && typeof artists === 'object') {
+    Object.entries(artists).forEach(([key, artist]) => {
+      if (!artist.id) artist.id = key;
+      if (!artist.page) {
+        artist.page = `artistas/index.html?id=${encodeURIComponent(artist.id)}`;
+      }
+      if (!artist.portrait) {
+        artist.portrait = `assets/imagens/icones/${artist.id}-icon.webp`;
+      }
+    });
+  }
 }
 
-// 3. Galerias de fotos: preenche formattedDate automaticamente no formato DD/MM/AA
-if (Array.isArray(SITE_DATA.aboutGalleries)) {
-  SITE_DATA.aboutGalleries.forEach(gal => {
-    if (gal.date && !gal.formattedDate) {
-      const parsed = parseReleaseDate(gal.date);
-      const parts = parsed.br.split('/');
-      gal.formattedDate = parts.length === 3 ? `${parts[0]}/${parts[1]}/${parts[2].slice(-2)}` : parsed.br;
-    }
-  });
+if (typeof SITE_DATA !== 'undefined') {
+  if (Array.isArray(SITE_DATA.albums)) normalizeAlbums(SITE_DATA.albums);
+  if (SITE_DATA.artists) normalizeArtists(SITE_DATA.artists);
+  SITE_DATA.normalizeAlbums = normalizeAlbums;
+  SITE_DATA.normalizeArtists = normalizeArtists;
+  SITE_DATA.parseReleaseDate = parseReleaseDate;
 }
-
-Object.freeze(SITE_DATA);
 
 if (typeof window !== 'undefined') {
   window.SITE_DATA = SITE_DATA;
 }
+

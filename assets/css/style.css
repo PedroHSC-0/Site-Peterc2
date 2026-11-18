@@ -2,8 +2,6 @@
    SITE PETERC2 - ESTILOS PRINCIPAIS (MODULARIZADO)
    ========================================================= */
 
-/* TODOS OS @IMPORT DEVEM FICAR NO TOPO DO ARQUIVO CSS */
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import "modules/base.css?v=6";
 @import "modules/components.css?v=6";
 @import "modules/home.css?v=6";

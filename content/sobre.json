@@ -1,0 +1,72 @@
+{
+  "aboutText": [
+    "Depois de alguns meses do lançamento do álbum colaborativo entre Peterc2 e JC Dive 'The Ocean Trench', um álbum de músicas rapidamente compostas e gravadas, altamente inspirado no modelo de produção da banda Guided By Voices e do artista Alex G, a banda Littering foi formada com a chegada do baterista be_cruz e a baixista pietrawrr, para novas composições na linha das faixas 'Littering' e 'Return to the Shed' do primeiro projeto.",
+    "Passados alguns meses, já possuíam material suficiente para novos lançamentos. Realizaram seu primeiro show em parceria com a Kasa Soul em um evento beneficente e mostraram seu repertório pela primeira vez ao público. O single \"Out of Style\" marca a estreia da banda e sairá no dia 09/10/2026. No dia 10/10/2026 tiveram seu primeiro lançamento como banda em um show público na feira astral de Divinópolis-MG."
+  ],
+  "aboutGalleries": [
+    {
+      "id": "confraterniza-soul",
+      "title": "Confraterniza Soul",
+      "date": "2026-09-06",
+      "photos": [
+        "assets/imagens/sobre/confraterniza-soul/sobre-01.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-02.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-03.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-04.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-05.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-06.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-07.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-08.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-09.webp",
+        "assets/imagens/sobre/confraterniza-soul/sobre-10.webp"
+      ]
+    },
+    {
+      "id": "feira-astral",
+      "title": "Feira Astral",
+      "date": "2026-10-10",
+      "photos": [
+        "assets/imagens/sobre/feira-astral/sobre-01.webp",
+        "assets/imagens/sobre/feira-astral/sobre-02.webp",
+        "assets/imagens/sobre/feira-astral/sobre-03.webp",
+        "assets/imagens/sobre/feira-astral/sobre-04.webp",
+        "assets/imagens/sobre/feira-astral/sobre-05.webp",
+        "assets/imagens/sobre/feira-astral/sobre-06.webp",
+        "assets/imagens/sobre/feira-astral/sobre-07.webp",
+        "assets/imagens/sobre/feira-astral/sobre-08.webp",
+        "assets/imagens/sobre/feira-astral/sobre-09.webp",
+        "assets/imagens/sobre/feira-astral/sobre-10.webp",
+        "assets/imagens/sobre/feira-astral/sobre-11.webp",
+        "assets/imagens/sobre/feira-astral/sobre-12.webp",
+        "assets/imagens/sobre/feira-astral/sobre-13.webp",
+        "assets/imagens/sobre/feira-astral/sobre-14.webp",
+        "assets/imagens/sobre/feira-astral/sobre-15.webp",
+        "assets/imagens/sobre/feira-astral/sobre-16.webp"
+      ]
+    },
+    {
+      "id": "halloween-olimpo",
+      "title": "Halloween Olimpo",
+      "date": "2026-11-06",
+      "photos": [
+        "assets/imagens/sobre/halloween-olimpo/sobre-01.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-02.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-03.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-04.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-05.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-06.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-07.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-08.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-09.webp",
+        "assets/imagens/sobre/halloween-olimpo/sobre-10.webp"
+      ]
+    },
+    {
+      "id": "heavy-chama",
+      "title": "Heavy Chama",
+      "date": "2026-11-14",
+      "photos": [
+      ]
+    }
+  ]
+}

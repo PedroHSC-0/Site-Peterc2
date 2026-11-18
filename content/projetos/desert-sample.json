@@ -1,0 +1,56 @@
+{
+  "id": "desert-sample",
+  "title": "Desert Sample",
+  "credit": "Peterc2 e JC Dive",
+  "type": "Álbum colaborativo",
+  "releaseDate": "2026-03-13",
+  "cover": "assets/imagens/capas/desert-sample-cover.webp",
+  "artists": [
+    "peterc2",
+    "jcdive"
+  ],
+  "streaming": {
+    "youtube": "https://youtu.be/GMJ9MhhTVsw",
+    "spotify": "https://open.spotify.com/intl-pt/album/6e4YM0KzxqGHjwpnneDjBG",
+    "apple": "https://music.apple.com/br/album/desert-sample-ep/1889619290",
+    "bandcamp": "https://peterc2.bandcamp.com/"
+  },
+  "message": "",
+  "tracks": [
+    {
+      "slug": "the-ocean-trench",
+      "title": "The Ocean Trench",
+      "artist": "Peterc2 e JC Dive",
+      "youtube": "GMJ9MhhTVsw",
+      "lyrics": "I could be better\nBring the fire of you\nThe unit is too high\nUnder the station\n\nScared so stupidly\ntrying to understand the message\nYou cannot rest assured\nAnd act like you could fly\n\nI've been dancing\nOn the ocean floor\nAnd met some fishes\nWho want some more\n\nAll day fish drop playing on the seafloor\nLove that's freedom door\nMaybe someday you'll understand that\nFlying don't mean die\nAnd I'm\n\nFly me like a hot balloon\nFly like angels in the moon\nFly me like a hot balloon in space in place in place in place"
+    },
+    {
+      "slug": "canto-do-silencio",
+      "title": "Canto do Silêncio",
+      "artist": "JC Dive e Peterc2",
+      "youtube": "Vb42AxNU-pg",
+      "lyrics": "O canto do silêncio\nFez sangrar\nOs meus ouvidos\nMe fez sonhar\nCom seus olhos\nCastanhos tão puros\nTão solúveis que fez derreter\nAs lágrimas do meu olhar\n\nÉ que tem algo em você\nQue não me deixa esquecer\nNão me deixa esquecer\nQue aquilo não era amor"
+    },
+    {
+      "slug": "noname29",
+      "title": "Noname 29",
+      "artist": "Peterc2",
+      "youtube": "D0Hm8rD7UA0",
+      "lyrics": ""
+    },
+    {
+      "slug": "your-skull",
+      "title": "Your Skull Is Warm and Soft",
+      "artist": "Peterc2 e JC Dive",
+      "youtube": "37bsAFdPYCw",
+      "lyrics": "Try, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\n\nBarrow Blank\nIts hard to beat\nStand your fight\nWhat you want to be\n\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows (I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\nTry, try, try do the wind blows ( I hope to return to your skull)\n\nI will never pay attention to what you say.\nI will never pay attention to what you say.\nI will never pay attention to what you say.\nI will never pay attention"
+    },
+    {
+      "slug": "lilly",
+      "title": "Lilly",
+      "artist": "JC Dive e Peterc2",
+      "youtube": "px3f54XOjCs",
+      "lyrics": "Lilly knows too well\nHow to make me feel a thrill sometimes\nFeeling kinda blur\nSometimes sinking in the heat\n\nNever knew too well\nHow to stop to find a cure\nSometimes feeling mind in bloom\nSometimes feeling in the blues\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because she was never well\nI created it myself because Lilly knows too well\n\nLilly knows too well how to make me feel immune\nSometimes feeling mind in bloom\nSometimes feeling my cheap thrills\n\nAlways found it good\nHow to stop to glance balloons\nSometimes feeling animals\nSometimes killing my pupils\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because Lilly knows too well\nI created it myself because Lilly knows too well"
+    }
+  ]
+}
