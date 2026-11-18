@@ -64,6 +64,54 @@
   }
 
   /**
+   * Auxiliar para definir ou atualizar uma metatag no <head>.
+   */
+  function setMetaTag(attrName, attrVal, content) {
+    if (!content || typeof document === 'undefined') return;
+    let tag = document.querySelector(`meta[${attrName}="${attrVal}"]`);
+    if (!tag) {
+      tag = document.createElement('meta');
+      tag.setAttribute(attrName, attrVal);
+      document.head.appendChild(tag);
+    }
+    tag.setAttribute('content', content);
+  }
+
+  /**
+   * Atualiza dinamicamente as metatags de SEO, Open Graph e Twitter Cards da página.
+   */
+  function updatePageMeta({ title, description, image, type = 'website' } = {}) {
+    if (typeof document === 'undefined') return;
+
+    if (title) {
+      document.title = title;
+      setMetaTag('property', 'og:title', title);
+      setMetaTag('name', 'twitter:title', title);
+    }
+    if (description) {
+      setMetaTag('name', 'description', description);
+      setMetaTag('property', 'og:description', description);
+      setMetaTag('name', 'twitter:description', description);
+    }
+    if (image) {
+      let fullImageUrl = image;
+      try {
+        if (typeof location !== 'undefined' && !image.startsWith('http://') && !image.startsWith('https://')) {
+          fullImageUrl = new URL(image, location.href).href;
+        }
+      } catch (e) {}
+      setMetaTag('property', 'og:image', fullImageUrl);
+      setMetaTag('name', 'twitter:image', fullImageUrl);
+    }
+    if (type) {
+      setMetaTag('property', 'og:type', type);
+    }
+    if (typeof location !== 'undefined') {
+      setMetaTag('property', 'og:url', location.href);
+    }
+  }
+
+  /**
    * Identifica a chave do artista atual a partir da classe do body ou pathname.
    */
   function getCurrentArtistKey() {
@@ -537,8 +585,13 @@
 
     const prefix = getDepthPrefix();
 
-    // 1. Título da página
-    document.title = `${artist.name} - Lançamentos e Contato`;
+    // 1. Título e Metatags da página (SEO & Social Sharing)
+    const metaTitle = `${artist.name} | Pigpenfan`;
+    const metaDesc = artist.role 
+      ? `${artist.name} (${artist.role}) no coletivo musical Pigpenfan. Discografia, lançamentos e contatos.`
+      : `Perfil e lançamentos de ${artist.name} no coletivo musical Pigpenfan.`;
+    const metaImg = artist.portrait ? prefix + artist.portrait : '';
+    updatePageMeta({ title: metaTitle, description: metaDesc, image: metaImg, type: 'profile' });
 
     // 2. Classes do body para estilos CSS do artista
     if (typeof document !== 'undefined' && document.body) {
@@ -643,7 +696,13 @@
 
     const prefix = getDepthPrefix();
 
-    document.title = `${album.title} - ${album.type || 'Álbum'}`;
+    // Metatags dinâmicas de SEO e Open Graph
+    const metaTitle = `${album.title} - ${album.credit || 'Pigpenfan'}`;
+    const metaDesc = (typeof album.message === 'string' && album.message.trim())
+      ? `${album.title} (${album.type || 'Lançamento'}). ${album.message.substring(0, 150)}...`
+      : `Ouça ${album.title} por ${album.credit || 'Pigpenfan'} no catálogo oficial Pigpenfan. Faixas, letras e links de streaming.`;
+    const metaImg = album.cover ? prefix + album.cover : '';
+    updatePageMeta({ title: metaTitle, description: metaDesc, image: metaImg, type: 'music.album' });
 
     if (typeof document !== 'undefined' && document.body && album.artists && album.artists.length > 0) {
       for (const cls of Array.from(document.body.classList)) {
@@ -784,7 +843,13 @@
     const idx = foundIdx === -1 ? 0 : foundIdx;
     const track = album.tracks[idx];
 
-    document.title = track.title + " - " + album.title;
+    // Metatags dinâmicas de SEO e Open Graph
+    const metaTitle = `${track.title} - ${album.title} | Pigpenfan`;
+    const metaDesc = (typeof track.lyrics === 'string' && track.lyrics.trim())
+      ? `Letra e player da faixa "${track.title}" do álbum "${album.title}". Ouça e confira a letra completa.`
+      : `Ouça "${track.title}" do álbum "${album.title}" no Pigpenfan.`;
+    const metaImg = album.cover ? prefix + album.cover : '';
+    updatePageMeta({ title: metaTitle, description: metaDesc, image: metaImg, type: 'music.song' });
 
     if (typeof document !== 'undefined' && document.body && album.artists && album.artists.length > 0) {
       for (const cls of Array.from(document.body.classList)) {
@@ -1314,6 +1379,7 @@
       renderMerchSection();
       renderAboutPage();
       applyImageFadeIn();
+      registerServiceWorker();
     };
 
     if (document.readyState === 'loading') {
@@ -1325,6 +1391,20 @@
     if (typeof window !== 'undefined') {
       window.addEventListener('popstate', runAllRenders);
     }
+  }
+
+  function registerServiceWorker() {
+    if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
+    if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+
+    window.addEventListener('load', () => {
+      const prefix = getDepthPrefix();
+      navigator.serviceWorker.register(prefix + 'sw.js')
+        .then(() => {
+          // Registrado com sucesso
+        })
+        .catch(() => {});
+    });
   }
 
   function applyImageFadeIn(root) {
