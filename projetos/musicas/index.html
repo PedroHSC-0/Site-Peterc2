@@ -33,11 +33,11 @@
   <meta name="apple-mobile-web-app-title" content="Pigpenfan">
 
   <!-- Estilos e Recursos -->
-  <link rel="stylesheet" href="../../assets/css/style.css?v=6">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=8">
   <link rel="icon" type="image/webp" href="../../assets/imagens/capas/placeholder.webp">
 </head>
 
-<body>
+<body data-page="song">
   <div id="page-bg-overlay"></div>
 
   <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
@@ -57,7 +57,7 @@
 
     <!-- CAIXA DE CAPA FALLBACK SE NÃO HOUVER VÍDEO -->
     <div id="track-placeholder" style="display: none; width: 220px; margin: 20px auto 10px auto;">
-      <img id="track-placeholder-img" src="../../assets/imagens/capas/placeholder.webp" alt="Capa" class="album-detail-cover img-fade-in" style="margin-bottom: 0;" decoding="async">
+      <img id="track-placeholder-img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="" class="album-detail-cover img-placeholder" style="margin-bottom: 0;" decoding="async">
     </div>
 
     <!-- PLAYER DE VÍDEO SE HOUVER YOUTUBE -->

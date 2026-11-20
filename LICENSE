@@ -1,0 +1,68 @@
+================================================================================
+LICENÇA MISTA / MIXED LICENSE — PIGPENFAN
+================================================================================
+
+Este repositório utiliza licenciamento misto, separando o código-fonte do
+conteúdo artístico e das fontes de terceiros:
+
+1. CÓDIGO-FONTE (*.html, *.css, *.js, *.py, *.bat, *.toml, *.yml,
+   manifest.webmanifest): licenciado sob a Licença MIT abaixo.
+2. CONTEÚDO ARTÍSTICO E MÍDIA (diretórios `content/` e `assets/imagens/`):
+   TODOS OS DIREITOS RESERVADOS (ver seção específica abaixo).
+3. FONTES DE TERCEIROS (diretório `assets/fonts/`): permanecem sujeitas às
+   licenças de seus respectivos autores (consulte os arquivos `.txt` em cada
+   subpasta de fonte).
+
+--------------------------------------------------------------------------------
+1. MIT LICENSE (APLICÁVEL APENAS AO CÓDIGO-FONTE)
+--------------------------------------------------------------------------------
+
+Copyright (c) 2026 Pedro Henrique Silva Costa (Pigpenfan)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+2. CONTEÚDO ARTÍSTICO E MÍDIA — TODOS OS DIREITOS RESERVADOS
+   ARTISTIC CONTENT & MEDIA — ALL RIGHTS RESERVED
+--------------------------------------------------------------------------------
+
+Copyright (c) 2026 Pedro Henrique Silva Costa (Pigpenfan) e artistas do coletivo
+Pigpenfan (Peterc2, JC Dive, Littering, Pietrawrr).
+
+[PT-BR]
+Todo o conteúdo artístico, editorial e visual presente neste repositório —
+incluindo, sem limitação, músicas, títulos, letras, biografias, nomes e
+logotipos de artistas e bandas, capas de álbuns e singles, artes de produtos e
+fotografias de shows nos diretórios `content/` e `assets/imagens/` — é protegido
+por direitos autorais com TODOS OS DIREITOS RESERVADOS.
+
+É proibida a cópia, reprodução, modificação, redistribuição, publicação ou uso
+comercial desses materiais sem autorização prévia e por escrito dos respectivos
+titulares.
+
+[EN]
+All artistic, editorial, and visual content in this repository — including,
+without limitation, songs, titles, lyrics, biographies, artist and band names
+and logos, album and single covers, merchandise artwork, and live show
+photographs located under `content/` and `assets/imagens/` — is protected by
+copyright with ALL RIGHTS RESERVED.
+
+You may not copy, reproduce, modify, redistribute, republish, or use these
+materials commercially without prior written permission from the respective
+rights holders.

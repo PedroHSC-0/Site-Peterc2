@@ -4,15 +4,16 @@ from PIL import Image
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IMAGES_DIR = os.path.join(ROOT_DIR, 'assets', 'imagens')
-BACKUP_DIR = os.path.join(ROOT_DIR, 'assets', 'imagens_backup')
+BACKUP_DIR = os.path.join(os.path.expanduser('~'), 'Documents', 'Site-Peterc2-Backups', 'imagens_backup')
 
 def create_full_backup():
-    """Copia 100% de assets/imagens para assets/imagens_backup de forma segura."""
+    """Copia 100% de assets/imagens para a pasta de backup em Documentos de forma segura."""
     if os.path.exists(BACKUP_DIR):
-        print(f"📁 Pasta de backup já existe em: {os.path.relpath(BACKUP_DIR, ROOT_DIR)}")
+        print(f"📁 Pasta de backup já existe em: {BACKUP_DIR}")
         return
 
-    print(f"📦 Criando backup completo de todas as imagens originais em {os.path.relpath(BACKUP_DIR, ROOT_DIR)}...")
+    print(f"📦 Criando backup completo de todas as imagens originais em {BACKUP_DIR}...")
+    os.makedirs(os.path.dirname(BACKUP_DIR), exist_ok=True)
     shutil.copytree(IMAGES_DIR, BACKUP_DIR)
     
     orig_count = sum(len(files) for _, _, files in os.walk(IMAGES_DIR))
@@ -116,7 +117,7 @@ def optimize_heavy_images():
     print(f"\n🎉 Otimização concluída!")
     print(f"   Imagens otimizadas: {optimized_count}")
     print(f"   Economia total de tráfego: {saved_mb:.2f} MB")
-    print(f"   Todas as imagens originais intocadas continuam em: assets/imagens_backup/")
+    print(f"   Todas as imagens originais intocadas continuam em: {BACKUP_DIR}")
 
 if __name__ == '__main__':
     create_full_backup()

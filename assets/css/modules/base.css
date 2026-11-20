@@ -32,6 +32,7 @@ body {
   padding-top: 80px; /* Offset amplo para a barra superior fixa em todas as resoluções */
   isolation: isolate; /* Garante que backgrounds com z-index negativo fiquem perfeitamente visíveis */
   --bg-blur: 8px; /* Intensidade do desfoque dos wallpapers de fundo */
+  --img-placeholder-bg: #2b2b2b;
 }
 
 /* Backgrounds padrão definidos via CSS para exibição instantânea */

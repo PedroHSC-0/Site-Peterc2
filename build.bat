@@ -11,5 +11,5 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 echo.
-echo [SUCESSO] content/data.json atualizado com sucesso!
+echo [SUCESSO] content/data.json, assets/js/site-data.js e assets/css/style.css atualizados com sucesso!
 pause

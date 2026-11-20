@@ -5,7 +5,9 @@ on:
     branches:
       - main
     paths:
-      - 'content/projetos/**'
+      - 'content/**'
+      - '!content/data.json'
+      - 'assets/css/modules/**'
       - 'scripts/build.py'
 
 permissions:
@@ -23,7 +25,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Compile releases to site-data.js
+      - name: Compile site data and CSS bundle
         run: |
           python scripts/build.py
 
@@ -31,5 +33,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/js/site-data.js content/catalog.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-compile catalog from content/projetos [skip ci]" && git push)
+          git add assets/js/site-data.js content/data.json assets/css/style.css
+          git diff --staged --quiet || (git commit -m "chore: auto-compile site data and styles [skip ci]" && git push)

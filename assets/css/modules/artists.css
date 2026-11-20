@@ -10,22 +10,9 @@
   color: #cccccc;
 }
 
-/* Peterc2 */
-.artist-peterc2 h1 {
-  color: #ffffff;
-}
-
-/* JC Dive */
-.artist-jcdive h1 {
-  color: #ffffff;
-}
-
-/* Littering */
-.artist-littering h1 {
-  color: #ffffff;
-}
-
-/* Pietrawrr */
+.artist-peterc2 h1,
+.artist-jcdive h1,
+.artist-littering h1,
 .artist-pietrawrr h1 {
   color: #ffffff;
 }

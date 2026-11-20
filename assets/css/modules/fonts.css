@@ -1,0 +1,34 @@
+/* =========================================================
+   FONTES CUSTOMIZADAS: FAKE SMITHS, SERIAL PUBLICATION, OUT OF TUNE & SHADY LANE
+   ========================================================= */
+@font-face {
+  font-family: 'Fake Smiths';
+  src: url('../../fonts/fake-smiths-font/FakeSmiths-zG4l.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Serial Publication';
+  src: url('../../fonts/serial-publication-font/Serialpublicationdemo-qxo1.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Out of Tune';
+  src: url('../../fonts/out-of-tune-font/OutOfTune-A6zA.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Shady Lane';
+  src: url('../../fonts/shady-lane-font/ShadyLane-7XvK.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

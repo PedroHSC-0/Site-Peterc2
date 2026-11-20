@@ -6,6 +6,21 @@
   command = "python3 scripts/build.py"
   publish = "."
 
+# Evita gasto de minutos de build com Pull Requests externos / branches secundárias
+[context.deploy-preview]
+  ignore = "exit 0"
+
+[context.branch-deploy]
+  ignore = "exit 0"
+
+# Cabeçalhos globais de segurança
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
 # Cache imutável de longo prazo para imagens (1 ano)
 [[headers]]
   for = "/assets/imagens/*"

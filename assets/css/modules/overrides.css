@@ -1,0 +1,74 @@
+/* =========================================================
+   ESTILO SECO ABSOLUTO: 0 HOVERS, 0 OPACIDADE, 0 BORDAS EM FOTOS
+   ========================================================= */
+*, *::before, *::after {
+  transition: none !important;
+  animation: none !important;
+  -webkit-transition: none !important;
+  -webkit-animation: none !important;
+}
+
+*:hover {
+  opacity: 1 !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+/* Zero opacidade ou efeito em links, botões e cards */
+a, a:hover, a:focus, a:active,
+button, button:hover, button:focus, button:active,
+.artist-image-card, .artist-image-card:hover,
+.album-card, .album-card:hover,
+.video-carousel-thumb-card, .video-carousel-thumb-card:hover,
+.gallery-carousel-card, .gallery-carousel-card:hover,
+.gallery-event-tab-btn, .gallery-event-tab-btn:hover,
+.lightbox-close-btn, .lightbox-close-btn:hover,
+.lightbox-nav-btn, .lightbox-nav-btn:hover,
+.contact-item, .contact-item:hover,
+.track-row, .track-row:hover {
+  opacity: 1 !important;
+  transition: none !important;
+  filter: none !important;
+}
+
+/* Zero bordas em todas as imagens, fotos e capas */
+img,
+picture,
+.artist-portrait,
+.album-card-cover,
+.album-detail-cover,
+.cover,
+.video-carousel-thumb-cover,
+.merch-featured-img,
+.merch-carousel-thumb-cover,
+.gallery-carousel-cover,
+.lightbox-image,
+.platform-icons img {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+img:hover,
+picture:hover,
+.artist-portrait:hover,
+.album-card-cover:hover,
+.album-detail-cover:hover,
+.cover:hover,
+.video-carousel-thumb-cover:hover,
+.merch-featured-img:hover,
+.merch-carousel-thumb-cover:hover,
+.gallery-carousel-cover:hover,
+.lightbox-image:hover,
+.platform-icons img:hover {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transform: none !important;
+}

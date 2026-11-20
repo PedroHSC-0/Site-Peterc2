@@ -2,7 +2,7 @@
 // PIGPENFAN - SERVICE WORKER (PWA & OFFLINE CACHE)
 // =========================================================
 
-const CACHE_NAME = 'pigpenfan-cache-v1';
+const CACHE_NAME = 'pigpenfan-cache-v3';
 
 // Recursos essenciais para pré-cache imediato
 const PRECACHE_URLS = [
@@ -12,12 +12,7 @@ const PRECACHE_URLS = [
   './projetos/index.html',
   './projetos/musicas/index.html',
   './sobre/index.html',
-  './assets/css/style.css?v=6',
-  './assets/css/modules/base.css?v=6',
-  './assets/css/modules/components.css?v=6',
-  './assets/css/modules/home.css?v=6',
-  './assets/css/modules/artists.css?v=6',
-  './assets/css/modules/albums.css?v=6',
+  './assets/css/style.css?v=8',
   './assets/js/site-data.js',
   './assets/js/render-engine.js',
   './assets/js/analytics.js',

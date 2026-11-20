@@ -13,6 +13,39 @@
 
 (function () {
 
+  const BLANK_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E";
+
+  function handleImageLoad(img) {
+    if (!img) return;
+    const src = img.getAttribute('src') || '';
+    if (src && src !== BLANK_IMG && img.naturalWidth > 0) {
+      img.classList.add('is-loaded');
+    }
+  }
+
+  function handleImageError(img) {
+    if (!img || img.dataset.fallbackApplied === '1') return;
+    img.dataset.fallbackApplied = '1';
+    img.classList.remove('is-loaded');
+    img.src = BLANK_IMG;
+  }
+
+  function setImageWithPlaceholder(imgEl, src, alt = '') {
+    if (!imgEl) return;
+    imgEl.classList.add('img-placeholder');
+    imgEl.classList.remove('is-loaded');
+    delete imgEl.dataset.fallbackApplied;
+    imgEl.alt = alt;
+    imgEl.onload = () => handleImageLoad(imgEl);
+    imgEl.onerror = () => handleImageError(imgEl);
+    imgEl.src = BLANK_IMG;
+    if (!src) return;
+    imgEl.src = src;
+    if (imgEl.complete && imgEl.naturalWidth > 0) {
+      imgEl.classList.add('is-loaded');
+    }
+  }
+
   // =========================================================
   // AUXILIARES DE CAMINHO, DATA E SELEÇÃO DE ENTIDADES
   // =========================================================
@@ -61,6 +94,25 @@
       return url || '';
     }
     return getDepthPrefix() + url;
+  }
+
+  /**
+   * Identifica a página atual via data-page do body ou fallback pelo pathname.
+   */
+  function getCurrentPage() {
+    const bodyPage = typeof document !== 'undefined' && document.body
+      ? document.body.dataset.page
+      : '';
+    if (bodyPage) return bodyPage;
+
+    const path = (typeof location !== 'undefined' && location.pathname)
+      ? location.pathname.toLowerCase().replace(/\\/g, '/')
+      : '';
+    if (path.includes('/musicas/')) return 'song';
+    if (path.includes('/projetos/')) return 'album';
+    if (path.includes('/artistas/')) return 'artist';
+    if (path.includes('/sobre/')) return 'about';
+    return 'home';
   }
 
   /**
@@ -260,11 +312,12 @@
     if (!navContainer) return;
 
     const prefix = getDepthPrefix();
+    const page = getCurrentPage();
     const rawPath = (typeof location !== 'undefined' && location.pathname) ? location.pathname.toLowerCase().replace(/\\/g, '/') : '';
     const hasLocalContact = !!document.getElementById('contato');
 
-    const isHome = !rawPath.includes('/artistas/') && !rawPath.includes('/projetos/') && !rawPath.includes('/sobre/');
-    const isSobre = rawPath.includes('/sobre/');
+    const isHome = page === 'home';
+    const isSobre = page === 'about';
 
     const homeUrl = prefix ? prefix + 'index.html' : 'index.html';
     const sobreUrl = prefix + 'sobre/index.html';
@@ -272,7 +325,7 @@
     const contatoUrl = hasLocalContact ? '#contato' : (prefix + 'index.html#contato');
 
     let artistsLinksHTML = '';
-    const currentArtistKey = getCurrentArtistKey();
+    const currentArtistKey = page === 'artist' ? getCurrentArtistKey() : null;
     if (typeof SITE_DATA !== 'undefined' && SITE_DATA.artists) {
       artistsLinksHTML = Object.values(SITE_DATA.artists).map(artist => {
         const artistUrl = prefix + getArtistPage(artist);
@@ -379,13 +432,13 @@
           ${i === currentIdx ? 'aria-current="true"' : ''}
         >
           <img 
-            src="${v.cover || 'assets/imagens/capas/placeholder.webp'}" 
+            src="${v.cover ? resolveRelativePath(v.cover) : BLANK_IMG}" 
             alt="${v.title}" 
-            class="video-carousel-thumb-cover img-fade-in"
+            class="video-carousel-thumb-cover img-placeholder"
             loading="${i < 4 ? 'eager' : 'lazy'}"
             decoding="async"
-            onload="this.classList.add('is-loaded')"
-            onerror="this.classList.add('is-loaded')"
+            onload="window.SiteEngine.handleImageLoad(this)"
+            onerror="window.SiteEngine.handleImageError(this)"
           >
           <span class="video-carousel-thumb-title">${v.title}</span>
           <span class="video-carousel-thumb-artist">${v.artist}</span>
@@ -486,7 +539,7 @@
     }
 
     gallery.innerHTML = recentAlbums.map((album, idx) => {
-      const coverImg = resolveRelativePath(album.cover || 'assets/imagens/capas/placeholder.webp');
+      const coverImg = album.cover ? resolveRelativePath(album.cover) : BLANK_IMG;
       const link = resolveRelativePath(getAlbumLink(album));
       const priority = idx < 4 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
       return `
@@ -494,11 +547,11 @@
           <img 
             src="${coverImg}" 
             alt="${album.title}" 
-            class="album-card-cover img-fade-in"
+            class="album-card-cover img-placeholder"
             ${priority}
             decoding="async"
-            onload="this.classList.add('is-loaded')"
-            onerror="this.classList.add('is-loaded')"
+            onload="window.SiteEngine.handleImageLoad(this)"
+            onerror="window.SiteEngine.handleImageError(this)"
           >
           <span class="album-card-title">${album.title}</span>
           <span class="album-card-sub">${album.subtitle}</span>
@@ -522,11 +575,11 @@
         <img 
           src="${prefix}${artist.portrait || `assets/imagens/icones/${artist.id}-icon.webp`}" 
           alt="${artist.name}" 
-          class="artist-portrait img-fade-in"
+          class="artist-portrait img-placeholder"
           loading="eager"
           decoding="async"
-          onload="this.classList.add('is-loaded')"
-          onerror="this.classList.add('is-loaded')"
+          onload="window.SiteEngine.handleImageLoad(this)"
+          onerror="window.SiteEngine.handleImageError(this)"
         >
         <span class="artist-card-title">${artist.name}</span>
       </a>
@@ -544,13 +597,13 @@
     gallery.innerHTML = collabs.map(album => `
       <a href="${prefix}${getAlbumLink(album)}" class="album-card" data-release-date="${album.releaseDate}">
         <img 
-          src="${prefix}${album.cover}" 
+          src="${album.cover ? prefix + album.cover : BLANK_IMG}" 
           alt="${album.title}" 
-          class="album-card-cover img-fade-in"
+          class="album-card-cover img-placeholder"
           loading="lazy"
           decoding="async"
-          onload="this.classList.add('is-loaded')"
-          onerror="this.classList.add('is-loaded')"
+          onload="window.SiteEngine.handleImageLoad(this)"
+          onerror="window.SiteEngine.handleImageError(this)"
         >
         <span class="album-card-title">${album.title}</span>
         <span class="album-card-sub">${album.subtitle}</span>
@@ -612,13 +665,7 @@
     // 4. Imagem do artista
     const portraitImg = document.getElementById('artist-portrait-img') || document.querySelector('.center .artist-portrait');
     if (portraitImg) {
-      portraitImg.classList.add('img-fade-in');
-      portraitImg.classList.remove('is-loaded');
-      portraitImg.onload = () => portraitImg.classList.add('is-loaded');
-      portraitImg.onerror = () => portraitImg.classList.add('is-loaded');
-      portraitImg.src = prefix + artist.portrait;
-      portraitImg.alt = artist.name;
-      if (portraitImg.complete) portraitImg.classList.add('is-loaded');
+      setImageWithPlaceholder(portraitImg, artist.portrait ? prefix + artist.portrait : '', artist.name);
     }
 
     // 5. Nome do artista no topo
@@ -656,13 +703,13 @@
         gallery.innerHTML = artistAlbums.map((album, idx) => `
           <a href="${prefix}${getAlbumLink(album)}" class="album-card" data-release-date="${album.releaseDate}">
             <img 
-              src="${prefix}${album.cover}" 
+              src="${album.cover ? prefix + album.cover : BLANK_IMG}" 
               alt="${album.title}" 
-              class="album-card-cover img-fade-in"
+              class="album-card-cover img-placeholder"
               loading="${idx < 4 ? 'eager' : 'lazy'}"
               decoding="async"
-              onload="this.classList.add('is-loaded')"
-              onerror="this.classList.add('is-loaded')"
+              onload="window.SiteEngine.handleImageLoad(this)"
+              onerror="window.SiteEngine.handleImageError(this)"
             >
             <span class="album-card-title">${album.title}</span>
             <span class="album-card-sub">${album.subtitle}</span>
@@ -719,13 +766,7 @@
 
     const coverImg = document.getElementById('album-cover-img') || document.querySelector('.album-detail-cover');
     if (coverImg) {
-      coverImg.classList.add('img-fade-in');
-      coverImg.classList.remove('is-loaded');
-      coverImg.onload = () => coverImg.classList.add('is-loaded');
-      coverImg.onerror = () => coverImg.classList.add('is-loaded');
-      coverImg.src = prefix + (album.cover || 'assets/imagens/capas/placeholder.webp');
-      coverImg.alt = album.title;
-      if (coverImg.complete) coverImg.classList.add('is-loaded');
+      setImageWithPlaceholder(coverImg, album.cover ? prefix + album.cover : '', album.title);
     }
 
     const titleEl = document.getElementById('album-title-el') || document.querySelector('.album-detail-title');
@@ -878,13 +919,7 @@
 
     const placeholderImg = document.getElementById('track-placeholder-img') || (placeholder ? placeholder.querySelector('img') : null);
     if (placeholderImg) {
-      placeholderImg.classList.add('img-fade-in');
-      placeholderImg.classList.remove('is-loaded');
-      placeholderImg.onload = () => placeholderImg.classList.add('is-loaded');
-      placeholderImg.onerror = () => placeholderImg.classList.add('is-loaded');
-      placeholderImg.src = prefix + (album.cover || 'assets/imagens/capas/placeholder.webp');
-      placeholderImg.alt = album.title;
-      if (placeholderImg.complete) placeholderImg.classList.add('is-loaded');
+      setImageWithPlaceholder(placeholderImg, album.cover ? prefix + album.cover : '', album.title);
     }
 
     const albumInfoEl = document.getElementById('track-album-info') || document.querySelector('.album-detail-container > .small-text:not(#track-artist)');
@@ -942,17 +977,20 @@
     if (typeof SITE_DATA === 'undefined') return;
 
     const defaultBg = SITE_DATA.defaultBackground || (SITE_DATA.brand && SITE_DATA.brand.background);
+    const page = getCurrentPage();
     let bgUrl = defaultBg;
 
-    const artistKey = getCurrentArtistKey();
-    const album = getCurrentAlbum();
-
-    if (album && album.background) {
-      bgUrl = album.background;
-    } else if (artistKey && SITE_DATA.artists && SITE_DATA.artists[artistKey]) {
-      bgUrl = SITE_DATA.artists[artistKey].background || defaultBg || SITE_DATA.artists[artistKey].portrait;
-    } else if (album) {
-      bgUrl = album.background || defaultBg || album.cover;
+    if (page === 'artist') {
+      const artistKey = getCurrentArtistKey();
+      const artist = artistKey && SITE_DATA.artists ? SITE_DATA.artists[artistKey] : null;
+      if (artist) {
+        bgUrl = artist.background || defaultBg || artist.portrait;
+      }
+    } else if (page === 'album' || page === 'song') {
+      const album = getCurrentAlbum();
+      if (album) {
+        bgUrl = album.background || defaultBg || album.cover;
+      }
     } else {
       bgUrl = (SITE_DATA.brand && SITE_DATA.brand.background) || defaultBg;
     }
@@ -1026,13 +1064,13 @@
           ${items.map(item => `
             <a href="${item.link || '#'}" class="album-card merch-card" ${item.link && item.link.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>
               <img 
-                src="${prefix}${item.image || 'assets/imagens/capas/placeholder.webp'}" 
+                src="${item.image ? prefix + item.image : BLANK_IMG}" 
                 alt="${item.title}" 
-                class="album-card-cover img-fade-in"
+                class="album-card-cover img-placeholder"
                 loading="lazy"
                 decoding="async"
-                onload="this.classList.add('is-loaded')"
-                onerror="this.classList.add('is-loaded')"
+                onload="window.SiteEngine.handleImageLoad(this)"
+                onerror="window.SiteEngine.handleImageError(this)"
               >
               <span class="album-card-title">${item.title}</span>
               <span class="album-card-sub">${item.subtitle || item.status || 'Em Breve'}</span>
@@ -1077,8 +1115,7 @@
     const counterEl = document.getElementById('lightbox-counter');
 
     if (imgEl) {
-      imgEl.src = prefix + imgPath;
-      imgEl.alt = `Foto ${currentLightboxIdx + 1} de ${photos.length}`;
+      setImageWithPlaceholder(imgEl, imgPath ? prefix + imgPath : '', `Foto ${currentLightboxIdx + 1} de ${photos.length}`);
     }
     if (counterEl) {
       counterEl.textContent = `${currentLightboxIdx + 1} / ${photos.length}`;
@@ -1117,6 +1154,12 @@
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    const imgEl = document.getElementById('lightbox-full-image');
+    if (imgEl) {
+      imgEl.classList.remove('is-loaded');
+      imgEl.src = BLANK_IMG;
+      imgEl.alt = '';
+    }
   }
 
   function prevLightboxImage() {
@@ -1158,13 +1201,13 @@
         <div class="gallery-carousel-card" onclick="window.SiteEngine.openImageLightbox('${eventId}', ${index})" role="button" tabindex="0" title="Clique para ampliar" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.SiteEngine.openImageLightbox('${eventId}', ${index});}">
           <div class="gallery-carousel-cover-wrap">
             <img 
-              src="${prefix}${imgPath}" 
+              src="${imgPath ? prefix + imgPath : BLANK_IMG}" 
               alt="Foto ${index + 1}" 
-              class="gallery-carousel-cover img-fade-in" 
+              class="gallery-carousel-cover img-placeholder" 
               loading="lazy"
               decoding="async"
-              onload="this.classList.add('is-loaded')"
-              onerror="this.classList.add('is-loaded')"
+              onload="window.SiteEngine.handleImageLoad(this)"
+              onerror="window.SiteEngine.handleImageError(this)"
             >
           </div>
         </div>
@@ -1193,6 +1236,7 @@
 
     if (track) {
       track.innerHTML = renderGalleryCards(photos, prefix, event.id);
+      initImagePlaceholders(track);
       track.scrollLeft = 0;
     }
 
@@ -1280,11 +1324,11 @@
           <img 
             src="${prefix}${artist.portrait || `assets/imagens/icones/${artist.id}-icon.webp`}" 
             alt="${artist.name}" 
-            class="artist-portrait img-fade-in"
+            class="artist-portrait img-placeholder"
             loading="lazy"
             decoding="async"
-            onload="this.classList.add('is-loaded')"
-            onerror="this.classList.add('is-loaded')"
+            onload="window.SiteEngine.handleImageLoad(this)"
+            onerror="window.SiteEngine.handleImageError(this)"
           >
           <span class="artist-card-title">${artist.name}</span>
         </a>
@@ -1303,22 +1347,41 @@
     }
 
     renderAboutGallery();
+    bindLightboxEvents();
   }
 
-  // Atalhos de teclado para o modal da imagem (Esc, Setas)
-  if (typeof window !== 'undefined') {
-    window.addEventListener('keydown', (e) => {
-      const modal = document.getElementById('image-lightbox-modal');
-      if (!modal || modal.style.display === 'none') return;
+  let _lightboxBound = false;
 
-      if (e.key === 'Escape') {
+  function bindLightboxEvents() {
+    if (_lightboxBound || typeof document === 'undefined') return;
+    const modal = document.getElementById('image-lightbox-modal');
+    if (!modal) return;
+    _lightboxBound = true;
+
+    modal.addEventListener('click', (e) => {
+      const target = e.target instanceof Element ? e.target : e.target?.parentElement;
+      if (!target) return;
+      if (target.closest('.lightbox-backdrop') || target.closest('.lightbox-close-btn')) {
         closeImageLightbox();
-      } else if (e.key === 'ArrowLeft') {
+      } else if (target.closest('.lightbox-prev-btn')) {
         prevLightboxImage();
-      } else if (e.key === 'ArrowRight') {
+      } else if (target.closest('.lightbox-next-btn')) {
         nextLightboxImage();
       }
     });
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('keydown', (e) => {
+        if (modal.style.display === 'none') return;
+        if (e.key === 'Escape') {
+          closeImageLightbox();
+        } else if (e.key === 'ArrowLeft') {
+          prevLightboxImage();
+        } else if (e.key === 'ArrowRight') {
+          nextLightboxImage();
+        }
+      });
+    }
   }
 
   // =========================================================
@@ -1342,13 +1405,6 @@
           const data = await res.json();
           // Mescla todas as entidades do JSON (config, brand, artists, albums, videos, merch, sobre)
           Object.assign(SITE_DATA, data);
-
-          if (typeof SITE_DATA.normalizeArtists === 'function') {
-            SITE_DATA.normalizeArtists(SITE_DATA.artists);
-          }
-          if (typeof SITE_DATA.normalizeAlbums === 'function') {
-            SITE_DATA.normalizeAlbums(SITE_DATA.albums);
-          }
         }
       } catch (err) {
         console.warn("Aviso: Falha ao carregar content/data.json via fetch.", err);
@@ -1360,71 +1416,102 @@
   }
 
   // =========================================================
-  // INICIALIZAÇÃO QUANDO O DOM ESTIVER PRONTO
+  // ROTEAMENTO POR PÁGINA & INICIALIZAÇÃO
   // =========================================================
 
-  if (typeof document !== 'undefined') {
-    const runAllRenders = async () => {
-      await ensureDataLoaded();
-      renderTopNav();
-      applyPageBackground();
+  const PAGE_RENDERERS = {
+    home() {
       renderFeaturedVideosSection();
       renderRecentReleasesSection();
       renderHomeArtists();
       renderHomeCollaborations();
-      renderHomeContacts();
-      renderArtistPage();
-      renderAlbumPage();
-      renderSongPlayerPage();
       renderMerchSection();
-      renderAboutPage();
-      applyImageFadeIn();
-      registerServiceWorker();
-    };
+      renderHomeContacts();
+    },
+    artist: renderArtistPage,
+    album: renderAlbumPage,
+    song: renderSongPlayerPage,
+    about: renderAboutPage
+  };
 
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', runAllRenders);
-    } else {
-      runAllRenders();
-    }
-
-    if (typeof window !== 'undefined') {
-      window.addEventListener('popstate', runAllRenders);
-    }
-  }
+  let _swRegistered = false;
 
   function registerServiceWorker() {
-    if (typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
+    if (_swRegistered || typeof window === 'undefined' || !('serviceWorker' in navigator)) return;
     if (location.protocol !== 'http:' && location.protocol !== 'https:') return;
+    _swRegistered = true;
 
-    window.addEventListener('load', () => {
+    const doRegister = () => {
       const prefix = getDepthPrefix();
       navigator.serviceWorker.register(prefix + 'sw.js')
         .then(() => {
           // Registrado com sucesso
         })
         .catch(() => {});
-    });
+    };
+
+    if (typeof document !== 'undefined' && document.readyState === 'complete') {
+      doRegister();
+    } else {
+      window.addEventListener('load', doRegister, { once: true });
+    }
   }
 
-  function applyImageFadeIn(root) {
+  if (typeof document !== 'undefined') {
+    const renderCurrentPage = async () => {
+      await ensureDataLoaded();
+      renderTopNav();
+      applyPageBackground();
+
+      const renderer = PAGE_RENDERERS[getCurrentPage()];
+      if (typeof renderer === 'function') {
+        renderer();
+      }
+
+      initImagePlaceholders();
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', renderCurrentPage, { once: true });
+    } else {
+      renderCurrentPage();
+    }
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('popstate', renderCurrentPage);
+    }
+
+    registerServiceWorker();
+  }
+
+  function initImagePlaceholders(root) {
     const scope = root || document;
-    scope.querySelectorAll('img.img-fade-in').forEach(img => {
+    scope.querySelectorAll('img.img-placeholder').forEach(img => {
+      const src = img.getAttribute('src') || '';
+      if (!src || src === BLANK_IMG) {
+        img.classList.remove('is-loaded');
+        return;
+      }
       if (img.complete && img.naturalWidth > 0) {
         img.classList.add('is-loaded');
+      } else if (img.complete && img.naturalWidth === 0) {
+        handleImageError(img);
       } else {
-        img.addEventListener('load', () => img.classList.add('is-loaded'), { once: true });
-        img.addEventListener('error', () => img.classList.add('is-loaded'), { once: true });
+        img.addEventListener('load', () => handleImageLoad(img), { once: true });
+        img.addEventListener('error', () => handleImageError(img), { once: true });
       }
     });
   }
 
   // Exportação global
   const SiteEngine = {
+    handleImageLoad,
+    handleImageError,
     sortItemsByDate,
     formatDateBR,
     getDepthPrefix,
     resolveRelativePath,
+    getCurrentPage,
     getCurrentArtistKey,
     getCurrentAlbum,
     getSortedVideos,

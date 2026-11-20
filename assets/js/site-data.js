@@ -42,7 +42,8 @@ const SITE_DATA = {
       "artist": "Littering",
       "youtube": "9Z41zsEkG6c",
       "cover": "assets/imagens/capas/out-of-style-cover.webp",
-      "description": "Lyric Video do Single Out Of Style da banda Littering."
+      "description": "Lyric Video do Single Out Of Style da banda Littering.",
+      "releaseDate": "2026-10-09"
     },
     {
       "id": "trailer-out-of-style",
@@ -71,7 +72,8 @@ const SITE_DATA = {
       "artist": "Peterc2 e JC Dive",
       "youtube": "EPZbv-gqIFM",
       "cover": "assets/imagens/capas/the-ocean-trench-cover.webp",
-      "description": "Visualizer do Álbum The Ocean Trench por Peterc2 e JC Dive."
+      "description": "Visualizer do Álbum The Ocean Trench por Peterc2 e JC Dive.",
+      "releaseDate": "2026-04-10"
     },
     {
       "id": "desert-sample-full",
@@ -80,7 +82,8 @@ const SITE_DATA = {
       "artist": "Peterc2 e JC Dive",
       "youtube": "ejZl0Vpves4",
       "cover": "assets/imagens/capas/desert-sample-cover.webp",
-      "description": "Vídeo do EP Desert Sample por Peterc2 e JC Dive."
+      "description": "Vídeo do EP Desert Sample por Peterc2 e JC Dive.",
+      "releaseDate": "2026-03-13"
     }
   ],
   "artists": {
@@ -121,7 +124,8 @@ const SITE_DATA = {
           "url": null,
           "icon": "assets/imagens/icones/bandcamp.svg"
         }
-      }
+      },
+      "page": "artistas/index.html?id=jcdive"
     },
     "littering": {
       "id": "littering",
@@ -178,7 +182,8 @@ const SITE_DATA = {
           "url": "https://littering.bandcamp.com/track/out-of-style",
           "icon": "assets/imagens/icones/bandcamp.svg"
         }
-      }
+      },
+      "page": "artistas/index.html?id=littering"
     },
     "peterc2": {
       "id": "peterc2",
@@ -217,7 +222,8 @@ const SITE_DATA = {
           "url": "https://peterc2.bandcamp.com/",
           "icon": "assets/imagens/icones/bandcamp.svg"
         }
-      }
+      },
+      "page": "artistas/index.html?id=peterc2"
     },
     "pietrawrr": {
       "id": "pietrawrr",
@@ -262,7 +268,8 @@ const SITE_DATA = {
           "url": "https://osonhodarazoproduzmonstros.bandcamp.com/album/last-time-and-big-evening-and-if-we-say-goodbye-to-the-trauma-nightmare",
           "icon": "assets/imagens/icones/bandcamp.svg"
         }
-      }
+      },
+      "page": "artistas/index.html?id=pietrawrr"
     }
   },
   "albums": [
@@ -350,7 +357,10 @@ const SITE_DATA = {
           "youtube": "",
           "lyrics": "Breathe in the letter\ni've send you\nhowever it goes\ncut out fawn\nbeen crashing through floor\nyou're done with nowhere to go\n\nBurned bushes\nShe ripped and plunged\nTo feel undereating\nI constantly pushed the very best for you\nyour polluted eyes\nis where I recover from you\n\nIn hypnic jerks\nI greet the rest of you\nA union lever\nor seas of bloodsheds\nThe gods stinginess\nIn rings of plastic\nI brush this blessing from\nthe fraud you are\n\n(It's like a dune devil erased)\n(It's like a doom vapor haze)\n(It's like a dune devil ways)\n(slide a dune devil wave)\n(It's like a doom vapor wave)"
         }
-      ]
+      ],
+      "formattedDate": "28/11/2026",
+      "subtitle": "Peterc2 • 28/11/2026",
+      "link": "projetos/index.html?id=rescue-cosmic"
     },
     {
       "id": "sudo-rm-rf-my-maleness",
@@ -375,7 +385,10 @@ const SITE_DATA = {
           "youtube": "",
           "lyrics": "..."
         }
-      ]
+      ],
+      "formattedDate": "12/11/2026",
+      "subtitle": "Pietrawrr • 12/11/2026",
+      "link": "projetos/index.html?id=sudo-rm-rf-my-maleness"
     },
     {
       "id": "young-man-found-with-a-cut",
@@ -400,7 +413,10 @@ const SITE_DATA = {
           "youtube": "",
           "lyrics": "[30/10/2026 JAM SESSION\nFaixa Instrumental / Noise]"
         }
-      ]
+      ],
+      "formattedDate": "30/10/2026",
+      "subtitle": "Pietrawrr • 30/10/2026",
+      "link": "projetos/index.html?id=young-man-found-with-a-cut"
     },
     {
       "id": "out-of-style",
@@ -428,7 +444,10 @@ const SITE_DATA = {
           "youtube": "9Z41zsEkG6c",
           "lyrics": "When she sticks\npaper in her tongue\nThen she feels\nSings a million songs\nAnd she's gone for now\nUntil she's there for more\nThen she's gone for now\nUntil she's at your door\n\nGirl, You are out of style\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style\n\nWhen she said\nNothing is ever gone\nThen I had\nLips and broken bones\nAnd she's gone for now\nbut not until she's there for more\nThen she's gone for now\nbut not until she's at your door\n\nYou are out of style\nYou are out of style in everything you wanna do\nYou are out of style girl\nYou are out of style\nYou are out of style, girl\nYou are out of style in everything you wanna do\nyou are out of style\nYou are out of style"
         }
-      ]
+      ],
+      "formattedDate": "09/10/2026",
+      "subtitle": "Littering • 09/10/2026",
+      "link": "projetos/index.html?id=out-of-style"
     },
     {
       "id": "harsh-noise-to-jerk-off",
@@ -474,7 +493,10 @@ const SITE_DATA = {
           "youtube": "",
           "lyrics": "[Faixa Instrumental]"
         }
-      ]
+      ],
+      "formattedDate": "30/08/2026",
+      "subtitle": "Pietrawrr • 30/08/2026",
+      "link": "projetos/index.html?id=harsh-noise-to-jerk-off"
     },
     {
       "id": "o-sonho-da-razao-produz-monstros",
@@ -500,7 +522,10 @@ const SITE_DATA = {
           "youtube": "",
           "lyrics": "..."
         }
-      ]
+      ],
+      "formattedDate": "17/04/2026",
+      "subtitle": "Pietrawrr • 17/04/2026",
+      "link": "projetos/index.html?id=o-sonho-da-razao-produz-monstros"
     },
     {
       "id": "the-ocean-trench",
@@ -668,7 +693,10 @@ const SITE_DATA = {
           "youtube": "8A399hebh6A",
           "lyrics": "Licks in my veins\nRiffs are made never the same\nAll vibrations made in vain\nAll guitars are playing break\n\nLives in a van\nSelling drugs to teenage fans\nDrops of hopes and chilling pain\nWatching faces melt in grey\n\nOut of place on town to stay\nAll my heroes did the same\nAnd it felt so great\nAnd grey\nGrey\n\nLicks in my veins\nRiffs are made never the same\nAll vibrations made in vain\nAll guitars are playing break\n\nLives in a van\nSelling drugs to teenage fans\nDrops of hopes and chilling pain\nWatching faces melt in grey"
         }
-      ]
+      ],
+      "formattedDate": "10/04/2026",
+      "subtitle": "Peterc2 e JC Dive • 10/04/2026",
+      "link": "projetos/index.html?id=the-ocean-trench"
     },
     {
       "id": "desert-sample",
@@ -724,7 +752,10 @@ const SITE_DATA = {
           "youtube": "px3f54XOjCs",
           "lyrics": "Lilly knows too well\nHow to make me feel a thrill sometimes\nFeeling kinda blur\nSometimes sinking in the heat\n\nNever knew too well\nHow to stop to find a cure\nSometimes feeling mind in bloom\nSometimes feeling in the blues\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because she was never well\nI created it myself because Lilly knows too well\n\nLilly knows too well how to make me feel immune\nSometimes feeling mind in bloom\nSometimes feeling my cheap thrills\n\nAlways found it good\nHow to stop to glance balloons\nSometimes feeling animals\nSometimes killing my pupils\n\nDo i wanna be\nStill lying to myself\nDo i wanna stay\nSinking in this hell\n\nI created it myself because Lilly knows too well\nI created it myself because Lilly knows too well"
         }
-      ]
+      ],
+      "formattedDate": "13/03/2026",
+      "subtitle": "Peterc2 e JC Dive • 13/03/2026",
+      "link": "projetos/index.html?id=desert-sample"
     }
   ],
   "merch": [
@@ -807,118 +838,6 @@ const SITE_DATA = {
   ]
 };
 
-// =========================================================
-// NORMALIZAÇÃO E AUTOMAÇÃO DE DADOS
-// =========================================================
-
-function parseReleaseDate(input) {
-  if (!input || typeof input !== 'string') {
-    return { iso: '9999-12-31', br: 'Em Breve' };
-  }
-  const clean = input.trim();
-  if (clean.toLowerCase() === 'em breve' || clean === '9999-12-31') {
-    return { iso: '9999-12-31', br: 'Em Breve' };
-  }
-  const brMatch = clean.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-  if (brMatch) {
-    const day = brMatch[1].padStart(2, '0');
-    const month = brMatch[2].padStart(2, '0');
-    const year = brMatch[3];
-    return {
-      iso: `${year}-${month}-${day}`,
-      br: `${day}/${month}/${year}`
-    };
-  }
-  const isoMatch = clean.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
-  if (isoMatch) {
-    const year = isoMatch[1];
-    const month = isoMatch[2].padStart(2, '0');
-    const day = isoMatch[3].padStart(2, '0');
-    return {
-      iso: `${year}-${month}-${day}`,
-      br: `${day}/${month}/${year}`
-    };
-  }
-  return { iso: clean, br: clean };
-}
-
-function normalizeAlbums(albums) {
-  if (!Array.isArray(albums)) return;
-  const _albumsById = {};
-  albums.forEach(album => {
-    const rawDate = album.releaseDate || album.date;
-    const parsed = parseReleaseDate(rawDate);
-    album.releaseDate = parsed.iso;
-    
-    if (!album.formattedDate) {
-      album.formattedDate = parsed.br;
-    }
-    
-    if (!album.subtitle) {
-      let author = album.credit;
-      if (!author && Array.isArray(album.artists)) {
-        author = album.artists
-          .map(k => (SITE_DATA.artists && SITE_DATA.artists[k] ? SITE_DATA.artists[k].name : k))
-          .join(' e ');
-      }
-      album.subtitle = author ? `${author} • ${album.formattedDate}` : album.formattedDate;
-    }
-
-    if (!album.link && album.id) {
-      album.link = `projetos/index.html?id=${encodeURIComponent(album.id)}`;
-    }
-
-    if (Array.isArray(album.tracks)) {
-      album.tracks.forEach(track => {
-        if (!track.artist) {
-          track.artist = album.credit || (album.artists && SITE_DATA.artists && SITE_DATA.artists[album.artists[0]] ? SITE_DATA.artists[album.artists[0]].name : '');
-        }
-        if (!track.slug && track.title) {
-          track.slug = track.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-        }
-      });
-    }
-    
-    if (album.id) {
-      _albumsById[album.id] = album;
-    }
-  });
-
-  if (Array.isArray(SITE_DATA.videos)) {
-    SITE_DATA.videos.forEach(video => {
-      if (!video.releaseDate && video.albumId && _albumsById[video.albumId]) {
-        video.releaseDate = _albumsById[video.albumId].releaseDate;
-      } else if (video.releaseDate) {
-        const parsed = parseReleaseDate(video.releaseDate);
-        video.releaseDate = parsed.iso;
-      }
-    });
-  }
-}
-
-function normalizeArtists(artists) {
-  if (artists && typeof artists === 'object') {
-    Object.entries(artists).forEach(([key, artist]) => {
-      if (!artist.id) artist.id = key;
-      if (!artist.page) {
-        artist.page = `artistas/index.html?id=${encodeURIComponent(artist.id)}`;
-      }
-      if (!artist.portrait) {
-        artist.portrait = `assets/imagens/icones/${artist.id}-icon.webp`;
-      }
-    });
-  }
-}
-
-if (typeof SITE_DATA !== 'undefined') {
-  if (Array.isArray(SITE_DATA.albums)) normalizeAlbums(SITE_DATA.albums);
-  if (SITE_DATA.artists) normalizeArtists(SITE_DATA.artists);
-  SITE_DATA.normalizeAlbums = normalizeAlbums;
-  SITE_DATA.normalizeArtists = normalizeArtists;
-  SITE_DATA.parseReleaseDate = parseReleaseDate;
-}
-
 if (typeof window !== 'undefined') {
   window.SITE_DATA = SITE_DATA;
 }
-

@@ -1,0 +1,14 @@
+# Memória local do agente (caminhos da máquina do usuário)
+memory.md
+
+# Backups locais e arquivos temporários de imagens
+assets/imagens_backup/
+*.temp.webp
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db

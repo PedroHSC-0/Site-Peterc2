@@ -33,12 +33,12 @@
   <meta name="apple-mobile-web-app-title" content="Pigpenfan">
 
   <!-- Estilos e Recursos -->
-  <link rel="stylesheet" href="../assets/css/style.css?v=6">
+  <link rel="stylesheet" href="../assets/css/style.css?v=8">
   <link rel="preload" as="image" href="../assets/imagens/background/background-1.webp" fetchpriority="high">
   <link rel="icon" type="image/webp" href="../assets/imagens/icones/peterc2-icon.webp">
 </head>
 
-<body class="page-sobre">
+<body class="page-sobre" data-page="about">
   <div id="page-bg-overlay"></div>
 
   <!-- ===================== BARRA SUPERIOR DE NAVEGAÇÃO ===================== -->
@@ -75,17 +75,17 @@
 
   <!-- ===================== MODAL DE VISUALIZAÇÃO AMPLIADA (LIGHTBOX) ===================== -->
   <div id="image-lightbox-modal" class="image-lightbox-modal" aria-hidden="true" style="display: none;">
-    <div class="lightbox-backdrop" onclick="window.SiteEngine.closeImageLightbox()" title="Clique para fechar"></div>
+    <div class="lightbox-backdrop" title="Clique para fechar"></div>
     <div class="lightbox-container" role="dialog" aria-modal="true" aria-label="Visualizador de Imagem">
-      <button type="button" class="lightbox-close-btn" onclick="window.SiteEngine.closeImageLightbox()" title="Fechar (Esc)">✕</button>
-      <button type="button" class="lightbox-nav-btn lightbox-prev-btn" onclick="window.SiteEngine.prevLightboxImage()" title="Anterior (←)">‹</button>
+      <button type="button" class="lightbox-close-btn" title="Fechar (Esc)">✕</button>
+      <button type="button" class="lightbox-nav-btn lightbox-prev-btn" title="Anterior (←)">‹</button>
       <div class="lightbox-stage">
-        <img id="lightbox-full-image" src="" alt="Imagem ampliada" class="lightbox-image">
+        <img id="lightbox-full-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="" class="lightbox-image img-placeholder">
         <div class="lightbox-info">
           <div id="lightbox-counter" class="lightbox-counter"></div>
         </div>
       </div>
-      <button type="button" class="lightbox-nav-btn lightbox-next-btn" onclick="window.SiteEngine.nextLightboxImage()" title="Próximo (→)">›</button>
+      <button type="button" class="lightbox-nav-btn lightbox-next-btn" title="Próximo (→)">›</button>
     </div>
   </div>
 
