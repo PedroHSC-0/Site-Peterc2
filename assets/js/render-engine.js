@@ -82,7 +82,7 @@
     if (/\/projetos\/(index\.html)?$/i.test(path) || path.endsWith('/projetos') || path.endsWith('/projetos/')) return '../';
     if (/\/artistas\/(index\.html)?$/i.test(path) || path.endsWith('/artistas') || path.endsWith('/artistas/')) return '../';
     if (path.includes('/artistas/') || path.includes('/projetos/')) return '../../';
-    if (path.includes('/sobre/')) return '../';
+    if (path.includes('/sobre/') || path.endsWith('/sobre')) return '../';
     return '';
   }
 
@@ -111,7 +111,7 @@
     if (path.includes('/musicas/')) return 'song';
     if (path.includes('/projetos/')) return 'album';
     if (path.includes('/artistas/')) return 'artist';
-    if (path.includes('/sobre/')) return 'about';
+    if (path.includes('/sobre/') || path.endsWith('/sobre')) return 'about';
     return 'home';
   }
 

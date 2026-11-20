@@ -2,7 +2,7 @@
 // PIGPENFAN - SERVICE WORKER (PWA & OFFLINE CACHE)
 // =========================================================
 
-const CACHE_NAME = 'pigpenfan-cache-v3';
+const CACHE_NAME = 'pigpenfan-cache-v4';
 
 // Recursos essenciais para pré-cache imediato
 const PRECACHE_URLS = [
@@ -12,10 +12,10 @@ const PRECACHE_URLS = [
   './projetos/index.html',
   './projetos/musicas/index.html',
   './sobre/index.html',
-  './assets/css/style.css?v=8',
-  './assets/js/site-data.js',
-  './assets/js/render-engine.js',
-  './assets/js/analytics.js',
+  './assets/css/style.css?v=9',
+  './assets/js/site-data.js?v=9',
+  './assets/js/render-engine.js?v=9',
+  './assets/js/analytics.js?v=9',
   './content/data.json',
   './manifest.webmanifest',
   './assets/imagens/icones/pwa-icon-192.png',
@@ -61,11 +61,12 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Para páginas HTML e JSON de dados: Network-First com fallback para Cache
+  // Para páginas HTML, JSON de dados, JS e CSS: Network-First com fallback para Cache
   const isHTML = req.headers.get('accept')?.includes('text/html') || url.pathname.endsWith('.html') || url.pathname.endsWith('/');
   const isDataJson = url.pathname.endsWith('data.json');
+  const isAppAsset = url.pathname.endsWith('.js') || url.pathname.endsWith('.css');
 
-  if (isHTML || isDataJson) {
+  if (isHTML || isDataJson || isAppAsset) {
     event.respondWith(
       fetch(req)
         .then((networkRes) => {
@@ -83,7 +84,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Para assets estáticos (imagens, CSS, JS, fontes): Cache-First com atualização em background
+  // Para assets estáticos (imagens, fontes, manifesto): Cache-First com atualização em background
   event.respondWith(
     caches.match(req).then((cachedRes) => {
       if (cachedRes) {

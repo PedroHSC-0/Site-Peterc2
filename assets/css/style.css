@@ -1529,6 +1529,8 @@ audio {
 }
 
 .lightbox-image.is-loaded {
+  width: auto;
+  height: auto;
   background-color: transparent;
 }
 
